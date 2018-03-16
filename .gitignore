@@ -1,0 +1,10 @@
+# Files to be excluded 
+*.log
+*.aux
+*.gz
+*.toc
+*.lof
+*.lot
+*.out
+*.dvi
+*.pdf
