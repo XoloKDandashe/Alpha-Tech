@@ -213,7 +213,72 @@
 				\textbf{Description}: The user will be able to see what previous cards they have stored and access the details of each card.\\
 				\textbf{Previous requirement needed}: FR13\\
 				\subsection{Performance Requirements}
+				In the following section, the performance expectations and measurements of the application will be specified.
 				
+				\textbf{Quality Requirement 1}\\
+				\textbf{Title}: Usage of search feature\\
+				\textbf{Description}: The user must easily understand how to use the search feature. The user must be able to use keywords to find specific business cards.\\
+				
+				\textbf{Quality Requirement 2}\\
+				\textbf{Title}: Results of search feature\\
+				\textbf{Description}: The user must get a result set with every search in a list format which the user can understand and use accordingly, unless the result set is empty which means a notification of an empty result set was found.\\
+				
+				\textbf{Quality Requirement 3}\\
+				\textbf{Title}: Usage of Location services\\
+				\textbf{Description}: Location services provided by the user's device should give an almost accurate location, that the user should be able to understand which will be used to save the user's address when registering.\\
+				
+				\textbf{Quality Requirement 3}\\
+				\textbf{Title}: Usage of Navigation services\\
+				\textbf{Description}: Navigation services provided by the user's device should give an almost accurate path,that the user should be able to understand which will be followed by the user to the specified address.\\
+				
+				\textbf{Quality Requirement 4}\\
+				\textbf{Title}: Usage of QR code\\
+				\textbf{Description}: Information should not be lost or modified during conversion of information from the virtual business card to a QR code.\\
+				
+				\textbf{Quality Requirement 5}\\
+				\textbf{Title}: Usage of QR code\\
+				\textbf{Description}: Information should not be lost or modified during conversion into from a QR code to a virtual business card.\\
+				
+				\textbf{Response Time}
+				\textbf{Quality Requirement 6}\\
+				\textbf{Title}: Response of a search\\
+				\textbf{Description}: The response time of a search initiated by a user to look for a specific business card.\\
+				\textbf{Meter}:Measurements obtained from 10 Business card searches during testing.\\
+				\textbf{Must}:\\
+				\textbf{Wish}:\\
+				
+				\textbf{Quality Requirement 7}\\
+				\textbf{Title}: NFC Exchange\\
+				\textbf{Description}: Exchanging information between two devices via NFC.\\
+				\textbf{Meter}:Measurements obtained from 10 NFC Exchanges during testing.\\
+				\textbf{Must}:\\
+				\textbf{Wish}:\\
+				
+				\textbf{Quality Requirement 8}\\
+				\textbf{Title}: QR Exchange\\
+				\textbf{Description}: Exchanging information between two devices via QR.\\
+				\textbf{Meter}:Measurements obtained from 10 QR Exchanges during testing.\\
+				\textbf{Must}:\\
+				\textbf{Wish}:\\
+				The application must:
+				\begin{itemize}
+					\item 
+					Check if NFC chip is available in the device before exchanging information to and from another device.
+					\item
+					Check if Camera is available in the device for before QR scanning.  
+					\item
+					Display a message if an error has occurred.
+					\item
+					Ensure QR scan should be successful within 5 seconds after acquiring the QR code.
+					\item
+					Ensure NFC exchange should be completed within 2 seconds.
+					\item
+					Exchange information between two user only.
+					\item
+					Be able to manage a large sum of small sized virtual business cards. Many objects of a small size.
+					\item
+					Be able to deal with fault tolerance by having down-time of at least 7\% of the time. 
+				\end{itemize}
 				\subsection{Design Constraints}
 				\paragraph\indent
 				This application is constrained in two main areas, namely hardware and software. We will look at these two areas separately.
