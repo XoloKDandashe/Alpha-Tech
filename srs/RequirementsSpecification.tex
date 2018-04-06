@@ -115,14 +115,84 @@
 
 	\section{Specific Requirements}
 				\subsection{External Interface Requirements}
-				\subsection{Functional Requirements}
+						Since the prototype will  be developed for Android systems and later on expanded to iOS ,this part of the specification will 		                                                primarily assume the Android OS is the operating system for the system.
+						\subsubsection{Interfaces} 
+					         The app will require system privileges to make use of certain features and information provided by the Android OS.
+						 \begin{itemize}
+							      \item \textbf{NFC}\\
+					        The system will be dependant on the device's NFC system services to be able to read the nfc smart card and also send                              business cards via NFC to another device.Access to this feature forms the backbone of the app as most of the subsystems are dependant on it.
+								\item \textbf{Camera}\\
+						If a mobile device does not have a NFC chip our app will use the camera on the phone to scan a QR code .
+						\end{itemize}
+						\subsubsection{User Interfaces}
+						    There will be a unified user interface which can be broken down into 4 subsystems all of which will be displayed 		           simultaneously. The 5th subsystem (Searching) will tie into the navigational subsystem \\
+                                                  \begin{itemize}
+					        \item \textbf{Send Card}\\
+						Users will use the Send Card subsystem to Send thier business card information to another device using NFC or a QR code that has been generated .The user will select the option they want ,if NFC is selected the system will check whether the device has a NFC and if its on after that 	it will attempt to send the business card to a receiver and will display a popup showing whether the transfer was succesfull or not.				       
+
+						\item \textbf{Recieve Card}\\
+						Users will use the receive card subsystem to receive a business card from a sender which might be a smartcard or another device either through NFC or scanning the QR code.
+
+						\item \textbf{Update Details}\\
+						This will give the user the ability to update all thier information .
+						
+						\item \textbf{Manage Cards}\\
+						Users and Administrators will interact with the update subsystem with the administrators having more privillages.The users will be able to view their saved cards while the admin will be able to view cards ,write ,update and delete information from a smartcard.
+
+                                                 
+                                              
+                                                \item \textbf{Searching}\\
+						This will be a minor add-on to the Manage Cards Subsystem which will allow users to search for business cards they have saved on their device.
+                                                  \end{itemize}
+                                              \subsubsection{System Interfaces}
+							\begin{itemize}
+    						    \item \textbf{An android phone } \\
+    						    Android devices are the most commonly used devices, so development will initially focus on these devices. There are android devices with many varying specifications, but we will focus on newer models in order to simplify the prototype. \\
+    
+    						\end{itemize}
+                                               \subsubsection{Software Interfaces}
+        					\begin{itemize}
+        					    \item \textbf{Android NFC API}\\
+        					    This would be our tool of choice as it covers the basis for sending and receiving data through NFC ,which our system requires for successful implementation.
+						 \item \textbf{Google Maps API}\\
+        					    This would be our tool of choice as it covers the basis for navigation which will be an add on at a later stage for our system.
+        					    \item \textbf{Other}\\
+        					    Other libraries and API's will then be added to the project later to cater for any extensions once our core features have been implemented.
+        					\end{itemize}
+                                              \subsubsection{Hardware Interfaces}
+    						\begin{itemize}
+						  \item \textbf{NFC chip} \\
+						The nfc chip on the phone and the smartcard are the ones to be used for the transfer of information.
+    						    \item \textbf{Camera} \\
+    						    We will use the Camera if a phone does not have a NFC chip to read a QR code that consist of the business card information . \\
+						\end{itemize}
+						\subsubsection{Communication Interfaces}
+						\begin{itemize}
+    						    
+    						    \item \textbf{Near field communication (NFC)} \\
+    						    We will make use NFC to write and read data from a NFC smart card.    						    
+    						  
+    						    \item \textbf{E-mail} \\
+    						    We will use email for registration and login, which will then allow us to identify different users.  \\
+    						\end{itemize}
+
+ 				\subsection{Functional Requirements}
 				\subsection{Performance Requirements}
 				\subsection{Design Constraints}
 				\paragraph\indent
 				This application is constrained in two main areas, namely hardware and software. We will look at these two areas separately.
 				 \subsubsection{Hardware}
+					\begin{enumerate}
+						\item The SmartCard can only store a small amount of information since it has limited space.
+						\item NFC has a small range so the phone and card or phone and phone need to be in contact.
+					\end{enumerate}
 				
 				 \subsubsection{Software}
+					\begin{enumerate}
+						\item The system must be able to operate efficiently.
+						\item The system should securely transfer information.
+                                                 \item The system must be able to keep all user information secure.
+					\end{enumerate}
 			
 				 \subsubsection{Other}
 				
@@ -131,26 +201,30 @@
 				\subsection{Software System attributes}
 				
 				\subsubsection{Reliability}
-    			
+    				The system must be able to perform all its functions under the stated conditions and produce correct and consistent results. 
     				
-				\subsubsection{Portability}
- 
-    				
-				\subsubsection{Robustness}
-    		
-    				
+				
 				\subsubsection{Security}
-    			
+    					\begin{itemize}
+					\item Only administrators must be able to write information to the SmartCard.
+					\item All data must be transmitted in a securely.
+
+					\end{itemize}
     				
-				\subsubsection{Reusability}
+				\subsubsection{Manageability}
+					\begin{itemize}
+							\item We will make use of open-source libraries to ensure that there is less code to maintain.
+							\item The system should be developed in a manner that will allow developers to extend features with ease.
+						\end{itemize}
 	
 				    
 				\subsubsection{Efficiency}
-				  
+				  The system must be able to perform various functions and produce desired results with minimum expenditure of time and resources.which is the sending of correct business card information and also store the correct information on the receiving device.
 				\subsubsection{Availability}
+	                          The system must be always available provided that the minimum hardware requirements are met.
 				 
 	
-				\subsubsection{Interoperability}
+				
 				
 
 				\subsection{Other Requirements}
