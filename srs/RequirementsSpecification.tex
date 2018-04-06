@@ -22,13 +22,18 @@
 	\begin{minipage}{0.4\textwidth}
 		\begin{flushleft} \large
 			\textbf{NAMES:}\\[0.4cm]
-			Mathe {Musa}
+
+			Mathe {Musa} \\
+			Mufamadi {Khodani} \\
+			Setoaba {Phuti} \\ 
 		\end{flushleft}
 	\end{minipage}
 	\begin{minipage}{0.4\textwidth}
 		\begin{flushright} \large
 			\textbf{STUDENT NUMBER:} \\[0.4cm]
-			u15048030
+			u15048030\\
+			u14197520 \\
+			u13032616 \\
 		\end{flushright}
 	\end{minipage}
 
@@ -47,9 +52,11 @@
 			
 
 		\subsection{Purpose}
-			
+			The purpose of this document is to outline the requirements and design specifications of the SmartCard system. This document provides a detailed explanation of system constraints, interfaces and interactions with other external applications. This document serves as a reference for developing the first version of the system for the development team and will also provide a detailed description of the system for clients and any other interested party.
+
 
 		\subsection{Scope}
+The SmartCard system is a mobile-based application that is used to transfer business data from one device to another using either NFC or QR code scanner. A virtual business card will be generated for the user using the information the user signed up with and will then be transmitted with a single tap using the NFC too available on their smart device. Alternatively the smart device’s camera will be used to scan the QR code on another device. The application should be free to download from either a mobile phone application store or similar services. 
 
 
 		\subsection{Definition, Acronyms, and Abbreviations}
@@ -64,14 +71,31 @@
 				\hline
 				Administrator & An actor that is given specific permission for managing and controlling the system\\
 				\hline
+				QR code & Trademark a type of bar code that can be read both horizontally and vertically, allowing large amounts of information to be encoded in it.\\
+				\hline
+				NFC & Near field communication \\
+				\hline
 				\end{tabular}
 
+
 		\subsection{References}
-			[1] IEEE Software Engineering Standards Committee, "IEEE Std 830-1998, IEEE Recommended Practice for Software Requirements Specifications", October 20,1998
-
+\begin{itemize}
+			\item [[1]] IEEE Software Engineering Standards Committee, "IEEE Std 830-1998, IEEE Recommended Practice for Software Requirements Specifications", October 20,1998 \\
+			\item [[2]] QR code. (n.d.). Collins English Dictionary - Complete \& Unabridged 10th Edition. Retrieved April 6, 2018 from Dictionary.com website http://www.dictionary.com/browse/qr-code
+		
+		\end{itemize}
 		\subsection{Overview}
+				This SRS  describes the SmartCard System and it is divided into three major sections. \\ 
+		
 				\begin{tabular}{ |p{3cm}||p{11cm}|  }
-
+				\hline
+					Section 1 &  This section details the purpose and scope of the SmartCard system. Definitions, acronyms and abbreviations are listed here to help interpret the SRS appropriately. A list of references to any material that is used in the SRS is included in this section. 
+					\\
+				\hline
+					Section 2 & This section provides the overview of the SmartCard system as a product and describes its context, relations and interfaces to other components of the total system. A summary of functions, general characteristics of the users and any restrictions or contradictions are also outlined in this section. Furthermore any assumptions and dependencies made about the system are also discussed.\\
+					\hline
+					Section 3 & This section provides a detailed description for each of the system interfaces, hardware interfaces, software interfaces and communications interface. A detailed description of the functionality of each of the functional requirements, performance related capabilities, restrictions and all quality related requirements are included in this section.\\
+\hline
 				\end{tabular}
 	\newpage
 	\section{Overall Description}
