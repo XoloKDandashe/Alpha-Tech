@@ -160,6 +160,33 @@ The NFC device will be used to read/write to NFC business card.(Check diagram be
 				   
 \subsubsection{Software Interfaces}
 
+
+\begin{tabular}{ |p{3cm}|p{9cm}|  }
+				\hline
+				\textbf{} & \textbf{Definition}\\
+				\hline
+				Cards & Will have both QR and NFC chips embedded on them.\\
+				\hline
+				Application & Android studios
+$\bullet$\ Java
+$\bullet$\ Barcode API
+$\bullet$\ NFC API
+\\
+				\hline
+				 Web portal & HTML5,CSS,PHP,Javascript\\
+				
+				\hline
+				 Google maps & Google maps API\\
+				\hline
+				 Database & Firebase database–JSON\\
+				\hline
+				
+				\end{tabular}
+\begin{figure}[ht!]
+\centering
+\includegraphics[width=60mm]{Software.png}
+\caption{Software interface block diagram}
+\end{figure}
 	
 					
 \subsubsection{Communications Interfaces}
@@ -170,26 +197,41 @@ The NFC device will be used to read/write to NFC business card.(Check diagram be
 \caption{Communication block diagram }
 \end{figure}
 
-				1.	NFC Device to NFC device communication\\
-$\bullet$\ A phone with an NFC chip exchanging information with another phone having an NFC chip.\\
-2.	NFC Device to a NFC business card chip communication\\
-$\bullet$\ A phone with NFC chip reading/writing to a NFC business card.\\ 
-3.	Device to QR card communication\\
-$\bullet$\ A phone without NFC reading business card which has both NFC chip and QR reader.\\
-4.	Device to device communication\\
-$\bullet$\ Phone without NFC generating QR code to be read by another phone without NFC.\\
-5.	Device connecting to Google maps\\
-$\bullet$\ Mobile app communicates with the google maps to get the get the office location of another user.(Check diagram above)
+$\bullet$\ NFC Device to NFC device communication\\ \\
+ A phone with an NFC chip exchanging information with another phone having an NFC chip.\\  \\
+$\bullet$\ NFC Device to a NFC business card chip communication\\ \\
+ A phone with NFC chip reading/writing to a NFC business card.\\  \\
+$\bullet$\ Device to QR card communication\\ \\
+A phone without NFC reading business card which has both NFC chip and QR reader.\\ \\
+$\bullet$\ Device to device communication\\ \\
+ Phone without NFC generating QR code to be read by another phone without NFC.\\ \\
+$\bullet$\ Device connecting to Google maps\\ \\
+Mobile app communicates with the google maps to get the get the office location of another user.(Check diagram above)
 
 
 
 			
 				
-					\subsubsection{Operations}
+\subsubsection{Operations}
+
+\begin{figure}[ht!]
+\centering
+\includegraphics[width=90mm]{operation2.png}
+\caption{User mode operations }
+\end{figure}				
 
 
 
+\begin{figure}[ht!]
+\centering
+\includegraphics[width=30mm]{operations.png}
+\caption{Card Operations }
+\end{figure}
 
+
+$\bullet$\ View cards– User can view the cards which were scanned. \\
+\\$\bullet$\ Delete information- User can decide to delete the details of the cards which were scanned . \\
+\\$\bullet$\ Update information- User can update the information to the card.
 
 
 
@@ -198,7 +240,7 @@ $\bullet$\ Mobile app communicates with the google maps to get the get the offic
 					\item Sign Up
 					
 					\subitem
-					- Every user needs to sign up in order to use the product.
+					Every user needs to sign up in order to use the product.
 					\item
 					Log in
 					\subitem
@@ -208,11 +250,11 @@ $\bullet$\ Mobile app communicates with the google maps to get the get the offic
 					\item 
 					Send Card
 					\subitem
-					Users are able to send their business cards to other users of the application via QR code or NFC functionality.
+					Users are able to send their business cards to other users of the application via QR code or NFC 						functionality.
 					\item
 					Receive Card
 					\subitem
-					Users are able to receive business card information through tapping their mobile device on the 'smart business card', putting phones back to back and receive through NFC functionality or scanning a generated QR code.
+					Users are able to receive business card information through tapping their mobile device on the 						'smart business card', putting phones back to back and receive through NFC functionality or 							scanning a generated QR code.
 					\item 
 					Delete Card
 					\subitem
@@ -224,7 +266,7 @@ $\bullet$\ Mobile app communicates with the google maps to get the get the offic
 					\item
 					Generate QR Code
 					\subitem
-					For mobile devices without NFC functionality, QR codes can be generated for sending or receiving purposes.
+					For mobile devices without NFC functionality, QR codes can be generated for sending or receiving 						purposes.
 					\item
 					Embed QR code to physical code
 					\subitem
@@ -232,7 +274,7 @@ $\bullet$\ Mobile app communicates with the google maps to get the get the offic
 					\item
 					Scan physical Business Card
 					\subitem
-					The product can scan physical business cards and enable users to save and share the information electronically.
+					The product can scan physical business cards and enable users to save and share the information 						electronically.
 					\item
 					Card shelves
 					\subitem
@@ -241,11 +283,11 @@ $\bullet$\ Mobile app communicates with the google maps to get the get the offic
 					\item
 					Search card
 					\subitem
-					Product enables users to search saved business cards according to first or last name, Company and position.
+					Product enables users to search saved business cards according to first or last name, Company and 					position.
 					\item
 					GPS functionality	
 					\subitem
-					The product will use Google API's in order to give directions to the specified address mentioned on an individuals business card.
+					The product will use Google API's in order to give directions to the specified address mentioned on 						an individuals business card.
 				\end{itemize}
 
 				\subsection{User Characteristics}
