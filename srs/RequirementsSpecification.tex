@@ -2,7 +2,7 @@
 
 \usepackage{graphicx}
 \usepackage{grffile}
-\usepackage{babel,blindtext}
+\usepackage{babel}
 \usepackage{parskip}
 \textwidth = 426pt
 \oddsidemargin = 17pt
@@ -109,6 +109,7 @@ The SmartCard system is a mobile-based application that is used to transfer busi
 		\subsection{Product Perspective}
 			
 
+
 \subsubsection{User Interfaces}
 				
 \begin{figure}[!htb]
@@ -159,33 +160,7 @@ The NFC device will be used to read/write to NFC business card.(Check diagram be
 				   
 \subsubsection{Software Interfaces}
 
-\begin{tabular}{ |p{3cm}|p{9cm}|  }
-				\hline
-				\textbf{} & \textbf{Definition}\\
-				\hline
-				Cards & Will have both QR and NFC chips embedded on them.\\
-				\hline
-				Application & Android studios
-$\bullet$\ Java
-$\bullet$\ Barcode API
-$\bullet$\ NFC API
-\\
-				\hline
-				 Web portal & HTML5,CSS,PHP,Javascript\\
-				
-				\hline
-				 Google maps & Google maps API\\
-				\hline
-				 Database & Firebase database–JSON\\
-				\hline
-				
-				\end{tabular}
-\begin{figure}[ht!]
-\centering
-\includegraphics[width=60mm]{Software.png}
-\caption{Software interface block diagram}
-\end{figure}
-			
+	
 					
 \subsubsection{Communications Interfaces}
 
@@ -207,29 +182,12 @@ $\bullet$\ Phone without NFC generating QR code to be read by another phone with
 $\bullet$\ Mobile app communicates with the google maps to get the get the office location of another user.(Check diagram above)
 
 
+
 			
 				
-						\subsubsection{Operations}
+					\subsubsection{Operations}
 
 
-\begin{figure}[ht!]
-\centering
-\includegraphics[width=90mm]{operation2.png}
-\caption{User mode operations }
-\end{figure}				
-
-
-
-\begin{figure}[ht!]
-\centering
-\includegraphics[width=30mm]{operations.png}
-\caption{Card Operations }
-\end{figure}
-
-
-$\bullet$\ View cards– User can view the cards which were scanned.
-\\$\bullet$\ Delete information- User can decide to delete the details of the cards which were scanned .
-\\$\bullet$\ Update information- User can update the information to the card.
 
 
 
