@@ -2,7 +2,7 @@
 
 \usepackage{graphicx}
 \usepackage{grffile}
-\usepackage{babel,blindtext}
+\usepackage{babel}
 \usepackage{parskip}
 \textwidth = 426pt
 \oddsidemargin = 17pt
@@ -109,9 +109,8 @@ The SmartCard system is a mobile-based application that is used to transfer busi
 		\subsection{Product Perspective}
 			
 
-		
 
-				\subsubsection{User Interfaces}
+\subsubsection{User Interfaces}
 				
 \begin{figure}[!htb]
 \minipage{0.32\textwidth}
@@ -129,15 +128,14 @@ The SmartCard system is a mobile-based application that is used to transfer busi
 \end{figure}
 
 								
-$\bullet$\ When a user opens the application he/she will see the login page as displayed in figure 1.\\$\bullet$\ If it is a new user then he/she will click on the register link which will then take the user to the register form as shown in figure 2.\\$\bullet$\ After the user successfully registers then the user will be able to see the main page as displayed by figure 3.\\$\bullet$\ The main page shows that the user can be able to send a business card to another user, the user can also receive business cards from other users, the user can update his/her details on the application and also manage the cards which have been received/read from other user.
+$\bullet$\ When a user opens the application he/she will see the login page as displayed in figure 1.\\ \\$\bullet$\ If it is a new user then he/she will click on the register link which will then take the user to the register form as shown in figure 2.\\ \\$\bullet$\ After the user successfully registers then the user will be able to see the main page as displayed by figure 3.\\ \\$\bullet$\ The main page shows that the user can be able to send a business card to another user, the user can also receive business cards from other users, the user can update his/her details on the application and also manage the cards which have been received/read from other user.
 
 
 		\subsubsection{System Interfaces}
 
-
-$\bullet$\ Users use mobile device to read/write to business card using the application.
-\\$\bullet$\ The application stores and retrieves information from database.
-\\$\bullet$\ The web portal reads/writes to the business cards then stores the information to the database.
+$\bullet$\ Users use mobile device to read/write to business card using the application.\\
+\\$\bullet$\ The application stores and retrieves information from database.\\
+\\$\bullet$\ The web portal reads/writes to the business cards then stores the information to the database.\\
 \\$\bullet$\ The mobile application will integrate google maps to it so that people can use it for location purposes when searching for another user’s work area.
 
 \begin{figure}[ht!]
@@ -146,11 +144,10 @@ $\bullet$\ Users use mobile device to read/write to business card using the appl
 \caption{Block diagram for the system }
 \end{figure}	
 						
-
-					\subsubsection{Hardware Interfaces}				
-$\bullet$\ Devices with NFC will be using the chip on their phones to read from the NFC business card. \\$\bullet$\
-The devices which do not have the NFC chip will be using the QR code on the business card to scan the information to the phone.\\$\bullet$\
-The web portal will be accessed using a laptop or computer.\\$\bullet$\
+\subsubsection{Hardware Interfaces}				
+$\bullet$\ Devices with NFC will be using the chip on their phones to read from the NFC business card.\\ \\$\bullet$\
+The devices which do not have the NFC chip will be using the QR code on the business card to scan the information to the phone.\\ \\$\bullet$\
+The web portal will be accessed using a laptop or computer.\\ \\$\bullet$\
 The NFC device will be used to read/write to NFC business card.(Check diagram below)\\
 \begin{figure}[ht!]
 \centering
@@ -159,7 +156,7 @@ The NFC device will be used to read/write to NFC business card.(Check diagram be
 \end{figure}
 
 				   
-				\subsubsection{Software Interfaces}
+\subsubsection{Software Interfaces}
 
 
 \begin{tabular}{ |p{3cm}|p{9cm}|  }
@@ -188,9 +185,23 @@ $\bullet$\ NFC API
 \includegraphics[width=60mm]{Software.png}
 \caption{Software interface block diagram}
 \end{figure}
-			
+	
 					
 \subsubsection{Communications Interfaces}
+
+
+
+
+$\bullet$\ NFC Device to NFC device communication\\ \\
+ A phone with an NFC chip exchanging information with another phone having an NFC chip.\\  \\
+$\bullet$\ NFC Device to a NFC business card chip communication\\ \\
+ A phone with NFC chip reading/writing to a NFC business card.\\  \\
+$\bullet$\ Device to QR card communication\\ \\
+A phone without NFC reading business card which has both NFC chip and QR reader.\\ \\
+$\bullet$\ Device to device communication\\ \\
+ Phone without NFC generating QR code to be read by another phone without NFC.\\ \\
+$\bullet$\ Device connecting to Google maps\\ \\
+Mobile app communicates with the google maps to get the get the office location of another user.(Check diagram above)
 
 \begin{figure}[ht!]
 \centering
@@ -198,30 +209,14 @@ $\bullet$\ NFC API
 \caption{Communication block diagram }
 \end{figure}
 
-				1.	NFC Device to NFC device communication\\
-$\bullet$\ A phone with an NFC chip exchanging information with another phone having an NFC chip.\\
-2.	NFC Device to a NFC business card chip communication\\
-$\bullet$\ A phone with NFC chip reading/writing to a NFC business card.\\
-3.	Device to QR card communication\\
-$\bullet$\ A phone without NFC reading business card which has both NFC chip and QR reader.\\
-4.	Device to device communication\\
-$\bullet$\ Phone without NFC generating QR code to be read by another phone without NFC.\\
-5.	Device connecting to Google maps\\
-$\bullet$\ Mobile app communicates with the google maps to get the get the office location of another user.(Check diagram above)
-
-
-			
 				
-						\subsubsection{Operations}
-
+\subsubsection{Operations}
 
 \begin{figure}[ht!]
 \centering
 \includegraphics[width=90mm]{operation2.png}
 \caption{User mode operations }
 \end{figure}				
-
-
 
 \begin{figure}[ht!]
 \centering
@@ -230,74 +225,65 @@ $\bullet$\ Mobile app communicates with the google maps to get the get the offic
 \end{figure}
 
 
-$\bullet$\ View cards– User can view the cards which were scanned.
-\\$\bullet$\ Delete information- User can decide to delete the details of the cards which were scanned .
+$\bullet$\ View cards– User can view the cards which were scanned. \\
+\\$\bullet$\ Delete information- User can decide to delete the details of the cards which were scanned . \\
 \\$\bullet$\ Update information- User can update the information to the card.
 
 
-					
-		
-
-
-
-
-
-
-
-
+				\newpage
 				\subsection{Product Functions}
 				\begin{itemize} 
 					\item Sign Up
 					
 					\subitem
-					- Every user needs to sign up in order to use the product.
+					Every user needs to sign up in order to use the product.
 					\item
 					Log in
 					\subitem
-					- The user needs to log in using the email and password they used when signing up.
+					The user needs to log in using the email and password they used when signing up.
 					\subitem 
-					- Once the user logs out, the user can only use the application if they log back in.
+					Once the user logs out, the user can only use the application if they log back in.
 					\item 
 					Send Card
 					\subitem
-					- Users are able to send their business cards to other users of the application via QR code or NFC functionality.
+					Users are able to send their business cards to other users of the application via QR code or NFC 						functionality.
 					\item
 					Receive Card
 					\subitem
-					- Users are able to receive business card information through tapping their mobile device on the 'smart business card', putting phones back to back and receive through NFC functionality or scanning a generated QR code.
+					Users are able to receive business card information through tapping their mobile device on the 						'smart business card', putting phones back to back and receive through NFC functionality or 							scanning a generated QR code.
 					\item 
 					Delete Card
 					\subitem
-					- Users are able to delete their business card information.
+					Users are able to delete their business card information.
 					\item
 					Modify Card
 					\subitem
-					- Users are able to modify their business card information on the chip through the application.
+					Users are able to modify their business card information on the chip through the application.
 					\item
 					Generate QR Code
 					\subitem
-					- For mobile devices without NFC functionality, QR codes can be generated for sending or receiving purposes.
+					For mobile devices without NFC functionality, QR codes can be generated for sending or receiving 						purposes.
 					\item
 					Embed QR code to physical code
 					\subitem
-					- The System will generate a QR code that will be on the physical business card.
+					The System will generate a QR code that will be on the physical business card.
 					\item
 					Scan physical Business Card
 					\subitem
-					- The product can scan physical business cards and enable users to save and share the information electronically.
+					The product can scan physical business cards and enable users to save and share the information 						electronically.
 					\item
 					Card shelves
 					\subitem
-					- The product allows sorting of different business cards according to different categories.
+					The product allows sorting of different business cards according to different categories.
 					
 					\item
 					Search card
 					\subitem
-					- Product enables users to search saved business cards according to first or last name, Company and position.
+					Product enables users to search saved business cards according to first or last name, Company and 					position.
 					\item
 					GPS functionality	
 					\subitem
-					- The product will use Google API's in order to give directions to the specified address mentioned on an individuals business card.
+					The product will use Google API's in order to give directions to the specified address mentioned on 						an individuals business card.
 				\end{itemize}
 
 				\subsection{User Characteristics}
@@ -330,30 +316,27 @@ $\bullet$\ View cards– User can view the cards which were scanned.
 				\subsection{Constraints}
             
 				
-				The constraints on the project are related to the provision of hardware resources to implement and test. 				 Our project is coded
-				mainly in android studio which may require a lot of time when building. At present we are using laptops                                 that are only on 2/4 gig RAM
-                                running intel inside processor which can be very slow when building a project during testing. For better                                 perfomance and more efficient
-                                building, laptops that use atleast 6gig of RAM and a i5 processor would be beneficial.\par
+				$\bullet$\  The constraints on the project are related to the provision of hardware resources to implement and test. Our project is coded mainly in android studio which may require a lot of time when building. At present we are using laptops                                 				that are only on 2/4 gig RAM running intel inside processor which can be very slow when building a project during testing. For better perfomance and more efficient building, laptops that use atleast 6gig of RAM and a i5 processor would be 							beneficial.\par
 
-                                The mobile devices that are going to run our application are constrained by NFC technology. The phone                                   you're using to run the application needs to have NFC technology on it. To overcome this particular                                     constraint, will make use of QR codes as a substitute to mobile devices that do not contain NFC                                         technology on them. 
+                                	$\bullet$\ The mobile devices that are going to run our application are constrained by NFC technology. The phone you're using to run the application needs to have NFC technology on it. To overcome this particular constraint, will make use of QR codes 					as a substitute to mobile devices that do not contain NFC technology on them. 
 
-                                Normal business cards without any NFC chips embedded in them will also be a constraint when using the                                   system. Because these cards don't have NFC chips, we are going to have  to scan them to our sytem and                                   embed a QR code on them so they can also be used.
+                                	$\bullet$\ Normal business cards without any NFC chips embedded in them will also be a constraint when using the system. Because these cards don't have NFC chips, we are going to have  to scan them to our sytem and embed a QR code on them so 					they can also be used.
 
-                                Another constraint is that our application will only work on android phones so people that use other                                     operating systems on their mobile devices won't have acces to it.  
+                                	$\bullet$\  Another constraint is that our application will only work on android phones so people that use other operating systems on their mobile devices won't have acces to it.  
 				
 				\subsubsection{Assumptions and Dependencies}
 				
-				 It assumed that the user is familiar/has basic knowledge with mobile applications  and also familiar                                    with handling the keyboard on the phone for registering and login in operations.
+				 $\bullet$\ It assumed that the user is familiar/has basic knowledge with mobile applications  and also familiar with handling the keyboard on the phone for registering and login in operations.
 
-                                 It is assumed that the user will have mobile data on their phone when using our location service                                        because Google maps will be integrated in our application which requires mobile data/ WI-FI to work.
+                                 	 $\bullet$\ It is assumed that the user will have mobile data on their phone when using our location service because Google maps will be integrated in our application which requires mobile data/ WI-FI to work.
 
-                                 User Manual will be provided for the application 
+                                	 $\bullet$\ User Manual will be provided for the application 
 		
 		\newpage
 
 	\section{Specific Requirements}
 				\subsection{External Interface Requirements}
-						Since the prototype will  be developed for Android systems and later on expanded to iOS ,this part of the specification will 		                                                primarily assume the Android OS is the operating system for the system.
+						Since the prototype will  be developed for Android systems and later on expanded to iOS ,this part of the specification will primarily assume the Android OS is the operating system for the system.
 						\subsubsection{Interfaces} 
 					         The app will require system privileges to make use of certain features and information provided by the Android OS.
 						 \begin{itemize}
@@ -588,18 +571,20 @@ $\bullet$\ View cards– User can view the cards which were scanned.
 				\paragraph\indent
 				This application is constrained in two main areas, namely hardware and software. We will look at these two areas separately.
 				 \subsubsection{Hardware}
-					\begin{enumerate}
-						\item The SmartCard can only store a small amount of information since it has limited space.
-						\item NFC has a small range so the phone and card or phone and phone need to be in contact.
-					\end{enumerate}
+				
+						$\bullet$\ The SmartCard can only store a small amount of information since it has limited space.
+
+						$\bullet$\  NFC has a small range so the phone and card or phone and phone need to be in contact.
+					
 				
 				 \subsubsection{Software}
-					\begin{enumerate}
-						\item The system must be able to operate efficiently.
-						\item The system should securely transfer information.
-                                                 \item The system must be able to keep all user information secure.
-					\end{enumerate}
-			
+					
+					$\bullet$\ The system must be able to operate efficiently.
+
+					$\bullet$\ The system should securely transfer information.
+
+                                                     $\bullet$\  The system must be able to keep all user information secure.
+					
 				 \subsubsection{Other}
 				
 					

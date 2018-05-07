@@ -1,0 +1,83 @@
+
+\documentclass[english]{article}
+
+\usepackage{graphicx}
+\usepackage{grffile}
+\usepackage{babel}
+\usepackage{parskip}
+\textwidth = 426pt
+\oddsidemargin = 17pt
+
+
+\title{Test Policy document}
+\date{\today}
+\graphicspath{{Pictures/}}
+
+\begin{document}
+	\maketitle
+	
+	\newpage
+
+	
+
+
+	\pagenumbering{arabic}
+	
+
+	\section{Mission of Testing}
+	To effectively deliver efficient and effective software that meets the customers requirements. 
+
+
+	\section{Test Description}
+	The Test will include the following test cases:
+	
+		\subsection{QR Code functionality}
+		\begin{itemize} 
+			\item Check if the QR code generates correct information
+			\item Check the scanner scans properly 
+		\end{itemize}
+		
+		\subsection{NFC functionality}
+		\begin{itemize} 
+			\item Check if the App notifies the user if the NFC technology is not switched on.
+			\item NFC technology sends information
+			\item NFC technology receives information
+		\end{itemize}
+		\subsection{Storage}
+		\begin{itemize} 
+			\item Check if the information is stored correctly.
+			\item Check if the information can be retrieved from the database.
+		\end{itemize}
+		
+
+	\section{Test Evaluation}
+	
+	We will use Travis-CI to test if everything has been implemented correctly.
+	Travis-CI is a continuous integration, hosted service,  
+	\section{Quality level to be achieved}
+	We aim to have no outstanding faults prior to product release.
+	
+	\section{Approach to Test process improvement}
+	Project review meetings are held in regards to improving the project. 
+	
+	\section{Travis-CI yml file}
+	language: android
+	
+	android:
+	components:
+	- platform-tools
+	- tools
+	
+	
+	//The SDK version we used to compile our project:
+	 android-26
+	
+	//The BuildTools version used in our project: 
+	 build-tools-26.0.2
+	
+	//Other additional components:  extra-google-google-play-services
+	
+	//The emulator that we will be using:
+	 sys-img-armeabi-v7a-android-17	
+		
+\end{document}
