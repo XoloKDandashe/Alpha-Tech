@@ -130,46 +130,43 @@ $\bullet$\ Example, if you are creating a layout for the SignInActivity, the nam
 $\bullet$\ No commented out code must be committed unless you have a very good reason that is clearly described in a comment by the code you are committing. \par
 
 
-\section{Repository}
-
-
-\begin{figure}[ht!]
-\centering
-\includegraphics[width=90mm]{repo.png}
-\caption{Repository structure }
-\end{figure}				
-
 \subsection{Repository definitions}
 $\bullet$\ All the pictures should be in a folder called Pictures. \par
 $\bullet$\ All the files should belong to a specific folder. \par
 $\bullet$\ Folder names should be descriptive enough to show what they contain. \par
-$\bullet$\ The diagram below shows the structure of the repository. \par
 
+\section{Code quality}
+\subsection{To ensure code quality:}
+$\bullet$\ Android Studio code style will be used. \par
+$\bullet$\ Coding standard rules mentioned above will be used for resources naming conventions, formatting and also to ensure version control.
+ \par
+$\bullet$\ Testing will be conducted using JUnit to run unit tests. \par
+$\bullet$\ Lint tool will be used to identify bugs. \par
+$\bullet$\ FindBugs tool will be used to spot issues related to performance and correctness of code. \par
 
+\section{Repository}
 
+\subsection{Branching}		
 
+\begin{figure}[!htb]
+\minipage{0.5\textwidth}
+  \includegraphics[width=\linewidth]{Branching.png}
+  \caption{Branching}\label{Branching}
+\endminipage\hfill
+\minipage{0.4\textwidth}
+  \includegraphics[width=\linewidth]{GitStructure.png}
+  \caption{Git structure}\label{Git structure}
+\endminipage\hfill
+\end{figure}
 
+\subsection{Merging}
 
+\begin{figure}[ht!]
+\centering
+\includegraphics[width=90mm]{merging.png}
+\caption{Merging }
+\end{figure}	
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-		\subsection{References}
-\begin{itemize}
-			\item https://source.android.com/setup/contribute/code-style\\
-			\item https://github.com/ekimual/android-coding-standards
-		\end{itemize}
 		
 
 
