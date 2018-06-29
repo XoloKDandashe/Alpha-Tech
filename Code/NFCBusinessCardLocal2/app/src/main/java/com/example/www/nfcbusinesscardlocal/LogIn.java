@@ -33,7 +33,8 @@ public class LogIn extends AppCompatActivity {
         admin.setMobileNumber("+27 74 935 9620");
         admin.setWorkTelephone("+27 14 935 9620");
         admin.setEmailAddress("admin@info.com");
-        admin.setPassword("admin");
+       // admin.setWorkAddress("");
+        admin.setPassword("a");
         UserList.add(admin);
     }
     public void openMainMenu(View view){
@@ -61,6 +62,11 @@ public class LogIn extends AppCompatActivity {
     }
     public void openRegistration(View view){
         Intent intent = new Intent(this,Registration.class);
+        intent.putExtra("userlist",UserList);
+        startActivity(intent);
+    }
+    public void openImportCard(View view){
+        Intent intent = new Intent(this,ImportCardDetails.class);
         intent.putExtra("userlist",UserList);
         startActivity(intent);
     }
