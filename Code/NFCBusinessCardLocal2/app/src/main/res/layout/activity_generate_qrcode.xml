@@ -1,34 +1,42 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.example.langi.generateqrcode.GeneratorActivity">
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="QR Code Generator"/>
-
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="40dp"
-        android:text="GENERATE"
-        android:id="@+id/gen_btn"/>
+    android:orientation="vertical"
+    android:padding="@dimen/padding">
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/Logo"
+        android:src="@mipmap/clientlogo"
+        android:layout_marginBottom="@dimen/spacing"/>
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="500dp">
+        android:layout_height="wrap_content">
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/fontsize"
+            android:textColor="@color/white"
+            android:background="@color/epiuseblue"
+            android:text="@string/grbanner"
+            android:id="@+id/gen_btn"/>
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="300dp">
 
         <ImageView
             android:id="@+id/image"
             android:layout_width="match_parent"
             android:layout_height="match_parent" />
     </LinearLayout>
-</RelativeLayout>
+    <Button
+        android:layout_width="@dimen/signoutbtn"
+        android:layout_height="@dimen/signoutbtn"
+        android:onClick="backMainActivity"
+        android:background="@mipmap/backarrow"/>
+</LinearLayout>
