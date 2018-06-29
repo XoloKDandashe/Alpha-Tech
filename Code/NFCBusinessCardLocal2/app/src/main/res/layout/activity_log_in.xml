@@ -90,5 +90,15 @@
         android:onClick="openRegistration"
         android:gravity="center"
         />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/fontsize"
+        android:textStyle="bold"
+        android:textColor="@color/epiuseblue"
+        android:text="Import Business Card"
+        android:onClick="openImportCard"
+        android:gravity="center"
+        />
     <!--Log in end-->
 </LinearLayout>

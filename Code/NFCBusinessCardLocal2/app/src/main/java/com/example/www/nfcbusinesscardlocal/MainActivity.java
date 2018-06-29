@@ -23,6 +23,7 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(this,ViewDetails.class);
         intent.putExtra("LoginUser",person);
         startActivity(intent);
+        finish();
     }
     public void openManageCards(View view){
         Intent intent = new Intent(this,ManageCards.class);
@@ -34,7 +35,7 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
     public void openReceiveCard(View view){
-        Intent intent = new Intent(this,ReceiverActivity.class);
+        Intent intent = new Intent(this,ReceiverInterface.class);
         intent.putExtra("LoginUser",person);
         startActivity(intent);
     }

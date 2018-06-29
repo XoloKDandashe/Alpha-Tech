@@ -73,4 +73,11 @@ public class GenerateQRCode extends AppCompatActivity {
         });
 
     }
+    public void backMainActivity(View view){
+        onBackPressed();
+    }
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+    }
 }

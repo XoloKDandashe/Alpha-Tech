@@ -1,4 +1,4 @@
-package com.jetruby.nfc.example.nfc;
+package com.example.www.nfcbusinesscardlocal;
 
 import android.nfc.NdefMessage;
 import android.nfc.NdefRecord;

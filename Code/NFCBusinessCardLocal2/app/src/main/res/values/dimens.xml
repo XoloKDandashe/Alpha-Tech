@@ -2,6 +2,7 @@
 <resources>
     <!-- Smartphone sizes -->
     <dimen name="padding">15dp</dimen>
+    <dimen name="lesspadding">10dp</dimen>
     <!--Main Menu Dimensions-->
     <dimen name="Logo">75dp</dimen>
     <dimen name="buttons">150dp</dimen>
