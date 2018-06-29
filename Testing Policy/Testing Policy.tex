@@ -1,6 +1,11 @@
 
 \documentclass[english]{article}
-
+\usepackage[utf8]{inputenc}
+\usepackage[margin=1in]{geometry}
+\usepackage{graphicx,wrapfig,lipsum}
+\usepackage{caption}
+\usepackage{refstyle}
+\usepackage{titlepic}
 \usepackage{graphicx}
 \usepackage{grffile}
 \usepackage{babel}
@@ -9,12 +14,48 @@
 \oddsidemargin = 17pt
 
 
-\title{Test Policy document}
+\title{Cos301 : Test Policy\\
+	for the SmartCard Application\\
+}
 \date{\today}
 \graphicspath{{Pictures/}}
 
 \begin{document}
 	\maketitle
+	\begin{figure}[!t]
+		\includegraphics{up_logo.png}
+	\end{figure}
+	\begin{minipage}{0.4\textwidth}
+		\begin{flushleft} \large
+			\textbf{NAMES:}\\[0.4cm]
+			Mufamadi {Khodani} \\
+			Setoaba {Phuti} \\
+			Dandashe {Kagiso Xolo} \\
+			Mashaba {Mpho} \\
+			Mathe {Musa} \\
+			Ntsoane {Thabo}\\
+		\end{flushleft}
+	\end{minipage}
+	\begin{minipage}{0.4\textwidth}
+		\begin{flushright} \large
+			\textbf{STUDENT NUMBER:} \\[0.4cm]
+			u14197520 \\
+			u13032616 \\
+			u14245681 \\
+			u14309999 \\
+			u15048030 \\
+			u15107532 \\
+		\end{flushright}
+	\end{minipage}
+	
+	
+	\pagenumbering{gobble}
+	\newpage
+	
+	\tableofcontents
+	
+	
+	\pagenumbering{arabic}
 	
 	\newpage
 
@@ -25,40 +66,61 @@
 	
 
 	\section{Mission of Testing}
-	To effectively deliver efficient and effective software that meets the customers requirements. 
+	To effectively deliver efficient and effective software that meets the customers requirements. To further ensure that quality software is produced.  
 
 
 	\section{Test Description}
-	The Test will include the following test cases:
-	
-		\subsection{QR Code functionality}
-		\begin{itemize} 
-			\item Check if the QR code generates correct information
-			\item Check the scanner scans properly 
-		\end{itemize}
-		
-		\subsection{NFC functionality}
-		\begin{itemize} 
-			\item Check if the App notifies the user if the NFC technology is not switched on.
-			\item NFC technology sends information
-			\item NFC technology receives information
-		\end{itemize}
-		\subsection{Storage}
+	Our Testing process will be divided into two sections. Unit testing and manual testing. 
+	\subsection {Unit testing}
+			\subsubsection{Storage}
 		\begin{itemize} 
 			\item Check if the information is stored correctly.
 			\item Check if the information can be retrieved from the database.
 		\end{itemize}
+			\subsubsection{Application activities and functions}
+			\begin{itemize}
+				\item Ensure that an appointment can be set and retrived
+				\item Validate that emails are of the correct form 
+				\item Ensure that a user can be created
+			\end{itemize}
+	
+	\subsection {Manual testing}
+	In manual testing the test cases will be excuted manually as the name suggests(by a human being that is). 
+		\subsubsection{QR Code functionality}
+		\begin{itemize} 
+			\item Check if the QR code generates correct information
+			\item Check the scanner scans properly
+			\item Check that the information transmitted to another device is accurate. 
+		\end{itemize}
+		
+		\subsubsection{NFC functionality}
+		\begin{itemize} 
+			\item Check if the App notifies the user if the NFC technology is not switched on.
+			\item ensure that the device sends information
+			\item ensure that the information transmitted is accurate
+		\end{itemize}
+		\subsubsection{Import Card}
+		\begin{itemize}
+			\item Ensure that a physical card can be scanned
+			\item Ensure that the information that extracted is as accurate as possible.tent...
+		\end{itemize}
+		
+			
+	
 		
 
 	\section{Test Evaluation}
 	
-	We will use Travis-CI to test if everything has been implemented correctly.
-	Travis-CI is a continuous integration, hosted service,  
+	We will use JUnit and  Travis-CI to ensure that implementations have been functions as it should.
+	Travis-CI is a continuous integration, hosted service,  JUnit is a testing framework for Android and Java applications.
 	\section{Quality level to be achieved}
 	We aim to have no outstanding faults prior to product release.
 	
 	\section{Approach to Test process improvement}
-	Project review meetings are held in regards to improving the project. 
+	
+	Project review meetings are held in regards to improving the project.
+	
+	 
 	
 	\section{Travis-CI yml file}
 	language: android
@@ -79,5 +141,9 @@
 	
 	//The emulator that we will be using:
 	 sys-img-armeabi-v7a-android-17	
+	 
+	\section{Testing Scripts}
+	
+	RegTest.java
 		
 \end{document}
