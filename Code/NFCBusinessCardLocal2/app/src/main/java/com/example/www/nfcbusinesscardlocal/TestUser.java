@@ -6,23 +6,25 @@ import android.telecom.Call;
 import junit.framework.Test;
 
 import java.io.Serializable;
-
-
+import java.security.NoSuchAlgorithmException;
+import java.security.NoSuchProviderException;
+import java.security.SecureRandom;
+import java.security.MessageDigest;
 
 public class TestUser implements Serializable{
     //Attributes
     private String fullname, jobTitle, password;
     private String companyName,mobileNumber,workTelephone,emailAddress,workAddress;
+    private String recievedCards,appointmentlist;
     //String facebook_link,linkedIn_link,googleplus_link;
-    public TestUser()
-    {
-        fullname=jobTitle=password=companyName=workAddress=mobileNumber=workTelephone=emailAddress="";//facebook_link=linkedIn_link=googleplus_link="";
+    public TestUser(){
     }
     public TestUser(TestUser copy)
     {
         fullname=copy.getFullname(); jobTitle=copy.getJobTitle();password=copy.getPassword();
         companyName=copy.getCompanyName();mobileNumber=copy.getMobileNumber();workTelephone=copy.getWorkTelephone();
         emailAddress=copy.getEmailAddress();workAddress=copy.getWorkAddress();
+        recievedCards=getRecievedCards();appointmentlist=getAppointmentlist();
     }
     //setters
     public void setFullname(String fullname) {
@@ -33,8 +35,10 @@ public class TestUser implements Serializable{
         this.jobTitle = jobTitle;
     }
 
-    public void setPassword(String password) {
-        this.password = password;
+    public void setPassword(String password) //throws NoSuchAlgorithmException,NoSuchProviderException
+    {
+        //byte[] salt=getSalt();
+        this.password = password;//getSecurePassword(password,salt);
     }
 
     public void setCompanyName(String companyName) {
@@ -53,17 +57,12 @@ public class TestUser implements Serializable{
 
     public void setWorkAddress(String workAddress) {this.workAddress = workAddress;}
 
-    /* void setFacebook_link(String facebook_link) {
-        this.facebook_link = facebook_link;
+    public void setRecievedCards(String recievedCards){
+        this.recievedCards=recievedCards;
     }
-
-    public void setGoogleplus_link(String googleplus_link) {
-        this.googleplus_link = googleplus_link;
+    public void setAppointmentlist (String appointmentlist){
+        this.appointmentlist=appointmentlist;
     }
-
-    public void setLinkedIn_link(String linkedIn_link) {
-        this.linkedIn_link = linkedIn_link;
-    }*/
     //getters
 
     public String getFullname() {
@@ -111,18 +110,19 @@ public class TestUser implements Serializable{
     public String getWorkAddress() {
        if(workAddress.isEmpty()||workAddress.compareTo("")==0)
         { return "n/a";}
-        /*String [] stringArray=workAddress.split(",");
-        String ReturnString="";
-        for(int i=0;i<stringArray.length;i++)
-        {
-            ReturnString+=stringArray[i];
-            if((i+1)<stringArray.length==true)
-            {
-                ReturnString+=",";
-            }
-        }*/
         return workAddress;
     }
+    public String getRecievedCards(){
+        if(recievedCards.isEmpty()||workAddress.compareTo("")==0)
+            return "";
+        return recievedCards;
+    }
+    public String getAppointmentlist(){
+        if(appointmentlist.isEmpty()||appointmentlist.compareTo("")==0)
+            return "";
+        return appointmentlist;
+    }
+    //class functions
     public String getDetails()
     {
         String returnString="";
@@ -150,16 +150,42 @@ public class TestUser implements Serializable{
 
         return returnString;
     }
-    /*public String getFacebook_link() {
-        return facebook_link;
+    private static String getSecurePassword(String passwordToHash, byte[] salt)
+    {
+        String generatedPassword = null;
+        try {
+            // Create MessageDigest instance for MD5
+            MessageDigest md = MessageDigest.getInstance("MD5");
+            //Add password bytes to digest
+            md.update(salt);
+            //Get the hash's bytes
+            byte[] bytes = md.digest(passwordToHash.getBytes());
+            //This bytes[] has bytes in decimal format;
+            //Convert it to hexadecimal format
+            StringBuilder sb = new StringBuilder();
+            for(int i=0; i< bytes.length ;i++)
+            {
+                sb.append(Integer.toString((bytes[i] & 0xff) + 0x100, 16).substring(1));
+            }
+            //Get complete hashed password in hex format
+            generatedPassword = sb.toString();
+        }
+        catch (NoSuchAlgorithmException e) {
+            e.printStackTrace();
+        }
+        return generatedPassword;
     }
 
-    public String getLinkedIn_link() {
-        return linkedIn_link;
+    //Add salt
+    private static byte[] getSalt() throws NoSuchAlgorithmException, NoSuchProviderException
+    {
+        //Always use a SecureRandom generator
+        SecureRandom sr = SecureRandom.getInstance("SHA1PRNG", "SUN");
+        //Create array for salt
+        byte[] salt = new byte[16];
+        //Get a random salt
+        sr.nextBytes(salt);
+        //return salt
+        return salt;
     }
-
-    public String getGoogleplus_link() {
-        return googleplus_link;
-    }*/
-    //class functions
 }

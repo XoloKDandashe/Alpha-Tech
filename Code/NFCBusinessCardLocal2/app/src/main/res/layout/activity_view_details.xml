@@ -96,8 +96,8 @@
             android:layout_height="35dp">
         <TextView
             android:id="@+id/company"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
             android:textSize="@dimen/fontsize"
             android:textStyle="bold"
             android:textColor="@color/black"
@@ -124,10 +124,10 @@
             android:id="@+id/personalnumber"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:textColor="@color/black"
             android:text="@string/personal"
             android:textSize="@dimen/fontsize"
-            android:textStyle="bold"
-            android:autoLink="phone"/>
+            android:textStyle="bold"/>
     </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
@@ -145,10 +145,10 @@
             android:id="@+id/officenumber"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:textColor="@color/black"
             android:textSize="@dimen/fontsize"
             android:textStyle="bold"
             android:text="@string/office"
-            android:autoLink="phone"
             />
     </LinearLayout>
     <LinearLayout
@@ -168,11 +168,11 @@
             android:layout_height="40dp">
         <TextView
             android:id="@+id/emailAddress"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:textColor="@color/black"
             android:textSize="@dimen/fontsize"
             android:textStyle="bold"
-            android:autoLink="email"
             android:text="@string/email"
             />
         </ScrollView>
@@ -194,8 +194,8 @@
             android:layout_height="110dp">
         <TextView
             android:id="@+id/physAddress"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
             android:textSize="@dimen/fontsize"
             android:textStyle="bold"
             android:textColor="@color/black"

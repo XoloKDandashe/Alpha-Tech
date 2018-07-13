@@ -2,6 +2,7 @@ package com.example.www.nfcbusinesscardlocal;
 
 import android.Manifest;
 import android.app.AlertDialog;
+import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -21,7 +22,17 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+
 import java.io.IOException;
+import java.security.NoSuchAlgorithmException;
+import java.security.NoSuchProviderException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
@@ -29,17 +40,24 @@ import java.util.Locale;
 public class updateDetails extends AppCompatActivity {
     TestUser person=null;
     String lattitude,longitude;
+    private DatabaseReference databaseReference;
+    private FirebaseAuth firebaseAuth;
+    private ProgressDialog mProgressDialog;
+    FirebaseUser firebaseUser;
     LocationManager locationManager;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_update_details);
-        Intent intent=getIntent();
-        if(intent.hasExtra("LoginUser")) {
-            person = (TestUser) intent.getSerializableExtra("LoginUser");
-        }
-        setDetails();
         final Button button = findViewById(R.id.update_button);
+        mProgressDialog=new ProgressDialog(this);
+        firebaseAuth= FirebaseAuth.getInstance();
+        if(firebaseAuth.getCurrentUser()==null){
+            finish();
+            startActivity(new Intent(this, LogIn.class));
+        }
+        firebaseUser=firebaseAuth.getCurrentUser();
+        databaseReference= FirebaseDatabase.getInstance().getReference("users").child(firebaseUser.getUid());
         button.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
 
@@ -51,6 +69,27 @@ public class updateDetails extends AppCompatActivity {
                 } else if (locationManager.isProviderEnabled(LocationManager.GPS_PROVIDER)) {
                     getLocation();
                 }
+            }
+        });
+    }
+    @Override
+    protected void onStart() {
+        super.onStart();
+        mProgressDialog.setMessage("Loading your details...");
+        mProgressDialog.show();
+        databaseReference.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                person=dataSnapshot.getValue(TestUser.class);
+                mProgressDialog.dismiss();
+                setDetails();
+            }
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+                mProgressDialog.dismiss();
+                Toast.makeText(getApplicationContext(),"Unable to load details, try again.",Toast.LENGTH_SHORT).show();
+                finish();
+                return;
             }
         });
     }
@@ -142,63 +181,58 @@ public class updateDetails extends AppCompatActivity {
         editText.setText(person.getJobTitle());
         editText=(EditText)findViewById(R.id.update_input_companyname);
         editText.setText(person.getCompanyName());
-        editText=(EditText)findViewById(R.id.update_input_email);
-        editText.setText(person.getEmailAddress());
+        /*editText=(EditText)findViewById(R.id.update_input_email);
+        editText.setText(viewUser.getEmailAddress());*/
         editText=(EditText)findViewById(R.id.update_input_mobile);
         editText.setText(person.getMobileNumber());
         editText=(EditText)findViewById(R.id.update_input_telephone);
         editText.setText(person.getWorkTelephone());
-        editText=(EditText)findViewById(R.id.update_input_password);
-        editText.setText(person.getPassword());
+        /*editText=(EditText)findViewById(R.id.update_input_password);
+        editText.setText(viewUser.getPassword());
         editText=(EditText)findViewById(R.id.update_input_confirmPassword);
-        editText.setText(person.getPassword());
+        editText.setText(viewUser.getPassword());*/
         editText=(EditText)findViewById(R.id.update_input_address);
         editText.setText(person.getWorkAddress());
     }
     public void updateUser(View view){
         EditText editText;
         String inputCheck,emailneedle,confirmpassword,password;
-
+        mProgressDialog.setMessage("Checking details...");
+        mProgressDialog.show();
         /*Check if name is entered*/
         editText=(EditText)findViewById(R.id.update_input_name);
         inputCheck=editText.getText().toString().trim();
         if(inputCheck.isEmpty() || inputCheck.length() == 0 || inputCheck.equals("") || inputCheck == null)
         {
+            mProgressDialog.dismiss();
             Toast.makeText(this, "Please Enter Your Full Name.", Toast.LENGTH_SHORT).show();
             return;
         }
-
         /*Check if email exists*/
-        editText=(EditText)findViewById(R.id.update_input_email);
+        /*editText=(EditText)findViewById(R.id.update_input_email);
         emailneedle=editText.getText().toString().trim();
         if(emailneedle.isEmpty() || emailneedle.length() == 0 || emailneedle.equals("") || emailneedle == null)
         {
+            mProgressDialog.dismiss();
             Toast.makeText(this, "Email must be given.", Toast.LENGTH_SHORT).show();
             return;
-        }
-        /*for(int i=0;i<userlist.size();i++)
-        {
-            if(emailneedle.compareTo(userlist.get(i).getEmailAddress())==0)
-            {
-                Toast.makeText(this, "Email already Exists.", Toast.LENGTH_SHORT).show();
-                return;
-            }
         }*/
-
         /*passwords are the same*/
-        editText=(EditText)findViewById(R.id.update_input_password);
+        /*editText=(EditText)findViewById(R.id.update_input_password);
         password=editText.getText().toString();
         if(password.isEmpty() || password.length() == 0 || password.equals("") || password == null)
         {
+            mProgressDialog.dismiss();
             Toast.makeText(this, "Password must be given.", Toast.LENGTH_SHORT).show();
             return;
         }
         editText=(EditText)findViewById(R.id.update_input_confirmPassword);
         confirmpassword=editText.getText().toString();
         if(password.compareTo(confirmpassword)!=0) {
+            mProgressDialog.dismiss();
             Toast.makeText(this, "Passwords do not match.", Toast.LENGTH_SHORT).show();
             return;
-        }
+        }*/
         editText=(EditText)findViewById(R.id.update_input_name);
         inputCheck=editText.getText().toString().trim();
         person.setFullname(inputCheck);
@@ -212,27 +246,29 @@ public class updateDetails extends AppCompatActivity {
         person.setWorkTelephone(editText.getText().toString());
         editText=(EditText)findViewById(R.id.update_input_address);
         person.setWorkAddress(editText.getText().toString());
-        editText=(EditText)findViewById(R.id.update_input_email);
+        /*editText=(EditText)findViewById(R.id.update_input_email);
         emailneedle=editText.getText().toString().trim();
-        person.setEmailAddress(emailneedle);
+        viewUser.setEmailAddress(emailneedle);*/
         /*passwords are the same*/
-        editText=(EditText)findViewById(R.id.update_input_password);
+        /*editText=(EditText)findViewById(R.id.update_input_password);
         password=editText.getText().toString();
         editText=(EditText)findViewById(R.id.update_input_confirmPassword);
         confirmpassword=editText.getText().toString();
-        person.setPassword(password);
+        viewUser.setPassword(password);*/
         /*If all checks out, add to arraylist*/
+        mProgressDialog.dismiss();
         Toast.makeText(this, "Profile Updated.", Toast.LENGTH_LONG).show();
-        Intent intent=new Intent(this,ViewDetails.class);
-        intent.putExtra("LoginUser",person);
-        startActivity(intent);
+        mProgressDialog.setMessage("Saving information...");
+        mProgressDialog.show();
+        saveupdate(person);
+        mProgressDialog.dismiss();
         finish();
     }
+    private void saveupdate(TestUser user){
+        databaseReference.setValue(user);
+    }
     public void backToViewDetails(View view){
-        Intent intent=new Intent(this,ViewDetails.class);
-        intent.putExtra("LoginUser",person);
-        startActivity(intent);
-        finish();
+        onBackPressed();
     }
     @Override
     public void onBackPressed() {

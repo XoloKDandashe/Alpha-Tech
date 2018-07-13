@@ -1,5 +1,6 @@
 package com.example.www.nfcbusinesscardlocal;
 
+import android.app.ProgressDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.content.Intent;
@@ -10,6 +11,13 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 import com.google.zxing.BarcodeFormat;
 import com.google.zxing.MultiFormatWriter;
 import com.google.zxing.WriterException;
@@ -19,45 +27,37 @@ import org.json.JSONException;
 import org.json.JSONObject;
 public class GenerateQRCode extends AppCompatActivity {
 
-    EditText FirstName;
-    EditText LastName;
     Button gen_btn;
     ImageView image;
-    String text2Qr;
-    String text3Qr;
-    private EditText mEditText;
+    private DatabaseReference databaseReference;
+    private FirebaseAuth firebaseAuth;
+    private ProgressDialog mProgressDialog;
+    FirebaseUser firebaseUser;
     TestUser person=null;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        //mEditText = (EditText) findViewById(R.id.edit_text_field);
         setContentView(R.layout.activity_generate_qrcode);
         Intent intent=getIntent();
         if(intent.hasExtra("LoginUser")) {
             person = (TestUser) intent.getSerializableExtra("LoginUser");
-            //mEditText.setText(person.getDetails());
-            //Toast.makeText(this, person.getDetails(), Toast.LENGTH_SHORT).show();
         }
-        //FirstName = (EditText) findViewById(R.id.firstname);
-        //FirstName.setText(person.getFullname());
-        //LastName = (EditText) findViewById(R.id.lastname);
-        //LastName.setText(person.getJobTitle());
-        //final String qrstring = FirstName.toString();
-
         gen_btn = (Button) findViewById(R.id.gen_btn);
         image = (ImageView) findViewById(R.id.image);
-
+        mProgressDialog=new ProgressDialog(this);
+        firebaseAuth= FirebaseAuth.getInstance();
+        if(firebaseAuth.getCurrentUser()==null){
+            finish();
+            startActivity(new Intent(this, LogIn.class));
+        }
+        firebaseUser=firebaseAuth.getCurrentUser();
+        databaseReference= FirebaseDatabase.getInstance().getReference("users").child(firebaseUser.getUid());
         gen_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //text2Qr = FirstName.getText().toString().trim();
-                //text3Qr = LastName.getText().toString().trim();
-
-                final String result = person.generateDetails();
-
+                final String result = QRresult();
                 MultiFormatWriter multiFormatWriter = new MultiFormatWriter();
                 try{
-
                     BitMatrix bitMatrix = multiFormatWriter.encode(result, BarcodeFormat.QR_CODE,200,200);
                     // BitMatrix bitMatrix2 = multiFormatWriter.encode(text3Qr, BarcodeFormat.QR_CODE,200,200);
                     BarcodeEncoder barcodeEncoder = new BarcodeEncoder();
@@ -72,6 +72,32 @@ public class GenerateQRCode extends AppCompatActivity {
             }
         });
 
+    }
+    @Override
+    protected void onStart() {
+        super.onStart();
+        mProgressDialog.setMessage("Loading your details...");
+        mProgressDialog.show();
+        databaseReference.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+
+                person = dataSnapshot.getValue(TestUser.class);
+                mProgressDialog.dismiss();
+                QRresult();
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+                mProgressDialog.dismiss();
+                Toast.makeText(getApplicationContext(), "Unable to load details, try again.", Toast.LENGTH_SHORT).show();
+                finish();
+                return;
+            }
+        });
+    }
+    private String QRresult(){
+        return person.generateDetails();
     }
     public void backMainActivity(View view){
         onBackPressed();

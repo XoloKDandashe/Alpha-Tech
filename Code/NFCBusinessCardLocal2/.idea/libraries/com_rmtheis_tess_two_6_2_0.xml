@@ -1,8 +1,8 @@
 <component name="libraryTable">
   <library name="com.rmtheis:tess-two-6.2.0">
     <CLASSES>
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/tess-two-6.2.0.aar/e217b74af3018bc63356f69565f4572b/res" />
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/tess-two-6.2.0.aar/e217b74af3018bc63356f69565f4572b/jars/classes.jar!/" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/tess-two-6.2.0.aar/f908019e52bfd47823254da4855cdd8c/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/tess-two-6.2.0.aar/f908019e52bfd47823254da4855cdd8c/res" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>
