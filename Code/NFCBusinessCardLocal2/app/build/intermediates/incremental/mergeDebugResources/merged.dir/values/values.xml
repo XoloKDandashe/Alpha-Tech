@@ -1,42 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:ns1="urn:oasis:names:tc:xliff:document:1.2">
-    <string-array name="list_preference_entries">
-        <item>Entry 1</item>
-        <item>Entry 2</item>
-        <item>Entry 3</item>
-    </string-array>
-    <string-array name="list_preference_entry_values">
-        <item>1</item>
-        <item>2</item>
-        <item>3</item>
-    </string-array>
-    <string-array name="multi_select_list_preference_default_value"/>
-    <string-array name="pref_example_list_titles">
-        <item>Always</item>
-        <item>When possible</item>
-        <item>Never</item>
-    </string-array>
-    <string-array name="pref_example_list_values">
-        <item>1</item>
-        <item>0</item>
-        <item>-1</item>
-    </string-array>
-    <string-array name="pref_sync_frequency_titles">
-        <item>15 minutes</item>
-        <item>30 minutes</item>
-        <item>1 hour</item>
-        <item>3 hours</item>
-        <item>6 hours</item>
-        <item>Never</item>
-    </string-array>
-    <string-array name="pref_sync_frequency_values">
-        <item>15</item>
-        <item>30</item>
-        <item>60</item>
-        <item>180</item>
-        <item>360</item>
-        <item>-1</item>
-    </string-array>
     <attr format="reference" name="constraintSet"/>
     <attr format="reference" name="drawerArrowStyle"/>
     <attr format="dimension" name="height"/>
@@ -610,7 +573,7 @@
     <integer name="abc_config_activityShortDur">150</integer>
     <integer name="cancel_button_image_alpha">127</integer>
     <integer name="config_tooltipAnimTime">150</integer>
-    <integer name="google_play_services_version">12211000</integer>
+    <integer name="google_play_services_version">11720000</integer>
     <integer name="status_bar_notification_info_maxnum">999</integer>
     <string name="abc_action_bar_home_description">Navigate home</string>
     <string name="abc_action_bar_home_description_format">%1$s, %2$s</string>
@@ -654,7 +617,6 @@
     <string msgid="7153882981874058840" name="common_google_play_services_install_button">Install</string>
     <string name="common_google_play_services_install_text"><ns1:g id="app_name">%1$s</ns1:g> won\'t run without Google Play services, which are missing from your device.</string>
     <string msgid="7215213145546190223" name="common_google_play_services_install_title">Get Google Play services</string>
-    <string name="common_google_play_services_notification_channel_name">Google Play services availability</string>
     <string name="common_google_play_services_notification_ticker">Google Play services error</string>
     <string name="common_google_play_services_unknown_issue"><ns1:g id="app_name">%1$s</ns1:g> is having trouble with Google Play services. Please try again.</string>
     <string name="common_google_play_services_unsupported_text"><ns1:g id="app_name">%1$s</ns1:g> won\'t run without Google Play services, which are not supported by your device.</string>
@@ -668,37 +630,37 @@
     <string name="common_signin_button_text_long">Sign in with Google</string>
     <string name="company">EPI-USE South Africa</string>
     <string name="create_account">Create Account</string>
+    <string name="default_web_client_id" translatable="false">1049508478027-m574cjhn98qcg3ee7v8cb7c91fqbmgac.apps.googleusercontent.com</string>
     <string name="defaultjob">Job Title</string>
     <string name="defaultname">User Fullname</string>
     <string name="deletecard">Delete Information</string>
     <string name="email">example@epiuse.com</string>
     <string name="enter">Log in</string>
+    <string name="firebase_database_url" translatable="false">https://nfcbusinesscardlocal2.firebaseio.com</string>
+    <string name="gcm_defaultSenderId" translatable="false">1049508478027</string>
+    <string name="google_api_key" translatable="false">AIzaSyCMJcRJmFak8N9W7PZbKu-FIvGV0Vk-0Nk</string>
+    <string name="google_app_id" translatable="false">1:1049508478027:android:6dd1b9e52c2729d5</string>
+    <string name="google_crash_reporting_api_key" translatable="false">AIzaSyCMJcRJmFak8N9W7PZbKu-FIvGV0Vk-0Nk</string>
+    <string name="google_storage_bucket" translatable="false">nfcbusinesscardlocal2.appspot.com</string>
     <string name="grbanner">Generate Code</string>
+    <string name="hint_message">Information to send</string>
     <string name="loginemail">user@epiuse.com</string>
     <string name="loginemailbanner">Please enter email:</string>
     <string name="loginpassword">*********</string>
     <string name="loginpasswordbanner">Please enter password:</string>
     <string name="managecards">Manage Cards</string>
+    <string name="message_read_tag">Read from NFC Card</string>
+    <string name="message_tag_detected">NFC Card Detected !</string>
+    <string name="message_tap_tag">Touch the NFC Card to your device !</string>
+    <string name="message_write_error">Error Writing Message !</string>
+    <string name="message_write_progress">Writing to Card..</string>
+    <string name="message_write_success">Successfully written to Card !</string>
+    <string name="message_write_tag">Write to NFC Card</string>
     <string name="nfcreceive">NFC</string>
     <string name="nfcsend">NFC</string>
     <string name="office">+27 14 225 1452</string>
     <string name="personal">+27 81 234 5678</string>
-    <string name="pref_default_display_name">John Smith</string>
-    <string name="pref_description_social_recommendations">Recommendations for people to contact
-        based on your message history
-    </string>
-    <string name="pref_header_data_sync">Data &amp; sync</string>
-    <string name="pref_header_general">General</string>
-    <string name="pref_header_notifications">Notifications</string>
-    <string name="pref_ringtone_silent">Silent</string>
-    <string name="pref_title_add_friends_to_messages">Add friends to messages</string>
-    <string name="pref_title_display_name">Display name</string>
-    <string name="pref_title_new_message_notifications">New message notifications</string>
-    <string name="pref_title_ringtone">Ringtone</string>
-    <string name="pref_title_social_recommendations">Enable social recommendations</string>
-    <string name="pref_title_sync_frequency">Sync frequency</string>
-    <string name="pref_title_system_sync_settings">System sync settings</string>
-    <string name="pref_title_vibrate">Vibrate</string>
+    <string name="project_id" translatable="false">nfcbusinesscardlocal2</string>
     <string name="qrreceive">QR Scanner</string>
     <string name="qrscan">Scan</string>
     <string name="qrscanbanner">Activate QR Scanner</string>

@@ -2,6 +2,7 @@ package com.example.www.nfcbusinesscardlocal;
 
 import android.Manifest;
 import android.app.Activity;
+import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -20,6 +21,13 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import com.google.zxing.integration.android.IntentIntegrator;
@@ -35,7 +43,11 @@ import java.util.List;
 import static com.example.www.nfcbusinesscardlocal.ViewCardDetails.READ_EXST;
 
 public class ReaderActivity extends AppCompatActivity {
-
+    private DatabaseReference databaseReference;
+    private FirebaseAuth firebaseAuth;
+    private ProgressDialog mProgressDialog;
+    FirebaseUser firebaseUser;
+    TestUser person=null;
     private Button scan_btn;
     private View view;
     public String etname, etpos, etphon,etmail,etOff,etWAddress;
@@ -62,6 +74,35 @@ public class ReaderActivity extends AppCompatActivity {
                 integrator.setBeepEnabled(false);
                 integrator.setBarcodeImageEnabled(false);
                 integrator.initiateScan();
+            }
+        });
+        mProgressDialog=new ProgressDialog(this);
+        firebaseAuth= FirebaseAuth.getInstance();
+        if(firebaseAuth.getCurrentUser()==null){
+            finish();
+            startActivity(new Intent(this, LogIn.class));
+        }
+        firebaseUser=firebaseAuth.getCurrentUser();
+        databaseReference= FirebaseDatabase.getInstance().getReference("users").child(firebaseUser.getUid());
+    }
+    @Override
+    protected void onStart() {
+        super.onStart();
+        mProgressDialog.setMessage("Preparing transfer...");
+        mProgressDialog.show();
+        databaseReference.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+
+                person=dataSnapshot.getValue(TestUser.class);
+                mProgressDialog.dismiss();
+            }
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+                mProgressDialog.dismiss();
+                Toast.makeText(getApplicationContext(),"Unable to load details, try again.",Toast.LENGTH_SHORT).show();
+                finish();
+                return;
             }
         });
     }
@@ -107,9 +148,8 @@ public class ReaderActivity extends AppCompatActivity {
             else {
                 details=result.getContents().split(",");
                 List<TestUser> arrayList=null;
-                SharedPreferences sharedPreferences=getApplication().getSharedPreferences("receivedlist", Context.MODE_PRIVATE);
                 Gson gson= new Gson();
-                String jsonConverter=sharedPreferences.getString("jsonreceivedlist","");
+                String jsonConverter=person.getRecievedCards();
                 if(jsonConverter.isEmpty())
                 {
                     arrayList=new ArrayList<>();
@@ -131,11 +171,9 @@ public class ReaderActivity extends AppCompatActivity {
                 //Toast.makeText(this,details[6],Toast.LENGTH_LONG).show();
 
                 arrayList.add(newCard);
-
-                SharedPreferences.Editor editor=sharedPreferences.edit();
                 String jsonEncode= gson.toJson(arrayList);
-                editor.putString("jsonreceivedlist",jsonEncode);
-                editor.commit();
+                person.setRecievedCards(jsonEncode);
+                saveupdate(person);
                 etname = details[0].toString();
                 if(details[2].compareTo("n/a")==0)
                     etpos=details[1];
@@ -203,7 +241,8 @@ public class ReaderActivity extends AppCompatActivity {
         else {
             super.onActivityResult(requestCode, resultCode, data);
         }
-
-
+    }
+    private void saveupdate(TestUser user){
+        databaseReference.setValue(user);
     }
 }

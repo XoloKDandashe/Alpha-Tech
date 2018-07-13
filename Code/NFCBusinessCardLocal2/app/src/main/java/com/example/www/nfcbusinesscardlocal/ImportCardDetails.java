@@ -14,6 +14,7 @@ import android.graphics.drawable.BitmapDrawable;
 import android.net.Uri;
 import android.os.Environment;
 import android.provider.MediaStore;
+import android.support.annotation.NonNull;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
 import android.support.v4.content.FileProvider;
@@ -34,6 +35,13 @@ import org.opencv.core.Mat;
 import org.opencv.core.Size;
 import org.opencv.imgproc.Imgproc;*/
 
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 import com.googlecode.tesseract.android.TessBaseAPI;
 
 import java.io.ByteArrayOutputStream;
@@ -43,12 +51,14 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
+import java.security.NoSuchAlgorithmException;
+import java.security.NoSuchProviderException;
 import java.util.ArrayList;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class ImportCardDetails extends AppCompatActivity {
-    ArrayList<TestUser> userlist=new ArrayList<>();
+    TestUser newUser;
     Button button ;
     ImageView imageView ;
     File photo;
@@ -69,12 +79,22 @@ public class ImportCardDetails extends AppCompatActivity {
     EditText displayName;
     EditText displayAddress;
     private ProgressDialog mProgressDialog;
+    private FirebaseAuth firebaseAuth;
+    private DatabaseReference databaseReference;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_import_card_details);
 
-        mProgressDialog = new ProgressDialog(this);
+        mProgressDialog=new ProgressDialog(this);
+        firebaseAuth= FirebaseAuth.getInstance();
+        if(firebaseAuth.getCurrentUser()!=null)
+        {
+            Intent intent= new Intent(getApplicationContext(),MainActivity.class);
+            finish();
+            startActivity(intent);
+        }
+        databaseReference= FirebaseDatabase.getInstance().getReference("users");
         button = (Button)findViewById(R.id.button);
         imageView = (ImageView)findViewById(R.id.imageView);
         runOCR=(Button) findViewById(R.id.scan_button);
@@ -457,19 +477,21 @@ public class ImportCardDetails extends AppCompatActivity {
         }
     }
     public void addUser(View view){
+        mProgressDialog.setMessage("Checking details...");
+        mProgressDialog.show();
         String emailneedle,password,confirmpassword,inputCheck;
         EditText editText;
-        TestUser newUser=new TestUser();
+        newUser=new TestUser();
         /*Check all neccessary fields have information */
         editText=(EditText)findViewById(R.id.import_name);
         inputCheck=editText.getText().toString().trim();
         if(inputCheck.isEmpty() || inputCheck.length() == 0 || inputCheck.equals("") || inputCheck == null)
         {
+            mProgressDialog.dismiss();
             Toast.makeText(this, "Please Enter Your Full Name.", Toast.LENGTH_SHORT).show();
             return;
         }
         newUser.setFullname(inputCheck);
-
         editText=(EditText)findViewById(R.id.import_jobtitle);
         newUser.setJobTitle(editText.getText().toString());
         editText=(EditText)findViewById(R.id.import_companyname);
@@ -478,23 +500,14 @@ public class ImportCardDetails extends AppCompatActivity {
         newUser.setWorkTelephone(editText.getText().toString());
         editText=(EditText)findViewById(R.id.import_address);
         newUser.setWorkAddress(editText.getText().toString());
-
-
         /*Check if email exists*/
         editText=(EditText)findViewById(R.id.import_email);
         emailneedle=editText.getText().toString().trim();
         if(emailneedle.isEmpty() || emailneedle.length() == 0 || emailneedle.equals("") || emailneedle == null)
         {
+            mProgressDialog.dismiss();
             Toast.makeText(this, "Email must be given.", Toast.LENGTH_SHORT).show();
             return;
-        }
-        for(int i=0;i<userlist.size();i++)
-        {
-            if(emailneedle.compareTo(userlist.get(i).getEmailAddress())==0)
-            {
-                Toast.makeText(this, "Email already Exists.", Toast.LENGTH_SHORT).show();
-                return;
-            }
         }
         newUser.setEmailAddress(emailneedle);
         /*passwords are the same*/
@@ -502,22 +515,62 @@ public class ImportCardDetails extends AppCompatActivity {
         password=editText.getText().toString();
         if(password.isEmpty() || password.length() == 0 || password.equals("") || password == null)
         {
+            mProgressDialog.dismiss();
             Toast.makeText(this, "Password must be given.", Toast.LENGTH_SHORT).show();
             return;
         }
         editText=(EditText)findViewById(R.id.import_confirmPassword);
         confirmpassword=editText.getText().toString();
         if(password.compareTo(confirmpassword)!=0) {
+            mProgressDialog.dismiss();
             Toast.makeText(this, "Passwords do not match.", Toast.LENGTH_SHORT).show();
             return;
         }
         newUser.setPassword(password);
         /*If all checks out, add to arraylist*/
-        //userlist.add(newUser);
-        Toast.makeText(this, "Profile Created. Please log in.", Toast.LENGTH_LONG).show();
-        Intent intent=new Intent(this,LogIn.class);
-        intent.putExtra("newUser",newUser);
-        startActivity(intent);
+        mProgressDialog.setMessage("Creating profile...");
+        mProgressDialog.show();
+        firebaseAuth.createUserWithEmailAndPassword(newUser.getEmailAddress(),newUser.getPassword())
+                .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
+                    @Override
+                    public void onComplete(@NonNull Task<AuthResult> task) {
+                        mProgressDialog.dismiss();
+                        if(task.isSuccessful()){
+                            Toast.makeText(ImportCardDetails.this, "Profile Created.", Toast.LENGTH_LONG).show();
+                        }else{
+                            Toast.makeText(getApplicationContext(), "Profile not Created. Please try again.", Toast.LENGTH_LONG).show();
+                            return;
+                        }
+
+                    }
+                });
+        mProgressDialog.setMessage("Saving information...");
+        mProgressDialog.show();
+        firebaseAuth.signInWithEmailAndPassword(newUser.getEmailAddress(),newUser.getPassword())
+                .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
+                    @Override
+                    public void onComplete(@NonNull Task<AuthResult> task) {
+                        mProgressDialog.dismiss();
+                        if(task.isSuccessful())
+                        {
+                            successfulRegistration(newUser);
+                            Intent intent=new Intent(getApplicationContext(),LogIn.class);
+                            finish();
+                            startActivity(intent);
+                        }
+                        else
+                        {
+                            Toast.makeText(getApplicationContext(), "Log in failed.", Toast.LENGTH_SHORT).show();
+                            Intent intent=new Intent(getApplicationContext(),LogIn.class);
+                            finish();
+                            startActivity(intent);
+                        }
+                    }
+                });
+    }
+    private void successfulRegistration(TestUser user){
+        FirebaseUser firebaseUser=firebaseAuth.getCurrentUser();
+        databaseReference.child(firebaseUser.getUid()).setValue(user);
     }
     public void backToLogin(View view){
         onBackPressed();

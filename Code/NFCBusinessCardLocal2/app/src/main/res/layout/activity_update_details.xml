@@ -6,6 +6,7 @@
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
     android:orientation="vertical"
+    android:padding="@dimen/padding"
     tools:context="com.example.www.nfcbusinesscardlocal.updateDetails">
 
     <LinearLayout
@@ -14,11 +15,16 @@
         android:layout_height="wrap_content"
         android:padding="@dimen/spacing">
 
-        <!--<ImageView android:src="@mipmap/clientlogo"
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:layout_gravity="center_horizontal"
-            android:contentDescription="" />-->
+            android:layout_height="wrap_content"
+            android:layout_gravity="top">
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/Logo"
+                android:src="@mipmap/clientlogo"
+                android:layout_marginBottom="@dimen/spacing"/>
+        </LinearLayout>
 
         <!-- Name Label -->
         <EditText android:id="@+id/update_input_name"
@@ -50,20 +56,21 @@
         <Button
             android:id="@+id/update_button"
             android:layout_width="wrap_content"
-            android:layout_height="33dp"
-            android:padding="8dp"
+            android:layout_height="40dp"
+            android:padding="10dp"
             android:textStyle="bold"
+            android:textSize="@dimen/padding"
             android:background="@color/epiuseblue"
             android:textColor="@color/white"
             android:drawableRight="@mipmap/location"
             android:text="Find me"
             />
         <!--  Email Label -->
-        <EditText android:id="@+id/update_input_email"
+        <!--<EditText android:id="@+id/update_input_email"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="textEmailAddress"
-            android:hint="Email" />
+            android:hint="Email" />-->
         <!--work number-->
         <EditText android:id="@+id/update_input_telephone"
             android:layout_width="match_parent"
@@ -78,18 +85,18 @@
             android:hint="Mobile Number" />
 
         <!-- Password Label -->
-        <EditText android:id="@+id/update_input_password"
+        <!--<EditText android:id="@+id/update_input_password"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="textPassword"
-            android:hint="Password"/>
+            android:hint="Password"/>-->
 
         <!-- Password Confirm Label -->
-        <EditText android:id="@+id/update_input_confirmPassword"
+        <!--<EditText android:id="@+id/update_input_confirmPassword"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="textPassword"
-            android:hint="Confirm Password"/>
+            android:hint="Confirm Password"/>-->
     </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
@@ -102,6 +109,7 @@
         <Button
         android:id="@+id/btn_signup"
         android:layout_width="wrap_content"
+            android:layout_marginTop="@dimen/padding"
         android:layout_height="50dp"
         android:padding="12dp"
         android:background="@color/epiuseblue"

@@ -4,7 +4,7 @@ import android.app.AlertDialog;
 import android.app.DatePickerDialog;
 import android.app.Dialog;
 import android.app.DialogFragment;
-import android.app.TimePickerDialog;
+import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -14,24 +14,30 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
-import android.widget.TextView;
-import android.widget.TimePicker;
 import android.widget.Toast;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 
 import java.lang.reflect.Type;
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
-import java.util.Date;
 import java.util.List;
-import java.util.Locale;
 
 public class Appointments extends AppCompatActivity {
-    TestUser person;
+    private DatabaseReference databaseReference;
+    private FirebaseAuth firebaseAuth;
+    private ProgressDialog mProgressDialog;
+    FirebaseUser firebaseUser;
+    TestUser person=null;
+    TestUser appointmentuser;
     EditText title,notes;
     Button setAppointment;
     Button datebutton;
@@ -43,7 +49,7 @@ public class Appointments extends AppCompatActivity {
         setContentView(R.layout.activity_appointments);
         Intent intent=getIntent();
         if(intent.hasExtra("ViewUser")) {
-            person = (TestUser) intent.getSerializableExtra("ViewUser");
+            appointmentuser = (TestUser) intent.getSerializableExtra("ViewUser");
         }
         title=(EditText) findViewById(R.id.meetingtitle);
         notes=(EditText) findViewById(R.id.meetingnotes);
@@ -78,6 +84,34 @@ public class Appointments extends AppCompatActivity {
                 saveAppointment();
             }
         });
+        mProgressDialog=new ProgressDialog(this);
+        firebaseAuth= FirebaseAuth.getInstance();
+        if(firebaseAuth.getCurrentUser()==null){
+            finish();
+            startActivity(new Intent(this, LogIn.class));
+        }
+        firebaseUser=firebaseAuth.getCurrentUser();
+        databaseReference= FirebaseDatabase.getInstance().getReference("users").child(firebaseUser.getUid());
+    }
+    @Override
+    protected void onStart() {
+        super.onStart();
+        mProgressDialog.setMessage("Retrieving Appointments...");
+        mProgressDialog.show();
+        databaseReference.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+
+                person=dataSnapshot.getValue(TestUser.class);
+                mProgressDialog.dismiss();            }
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+                mProgressDialog.dismiss();
+                Toast.makeText(getApplicationContext(),"Unable to load details, try again.",Toast.LENGTH_SHORT).show();
+                finish();
+                return;
+            }
+        });
     }
     public void goback(){
         onBackPressed();
@@ -100,9 +134,10 @@ public class Appointments extends AppCompatActivity {
             return;
         }
         List<Appointment> arrayList=null;
-        SharedPreferences sharedPreferences=getApplication().getSharedPreferences("appointmentList", Context.MODE_PRIVATE);
+        //SharedPreferences sharedPreferences=getApplication().getSharedPreferences("appointmentList", Context.MODE_PRIVATE);
         Gson gson= new Gson();
-        String jsonConverter=sharedPreferences.getString("jsonappointmentList","");
+        //String jsonConverter=sharedPreferences.getString("jsonappointmentList","");
+        String jsonConverter=person.getAppointmentlist();
         if(jsonConverter.isEmpty())
         {
             arrayList=new ArrayList<>();
@@ -113,19 +148,20 @@ public class Appointments extends AppCompatActivity {
             arrayList=gson.fromJson(jsonConverter,type);
         }
         Appointment appointment=new Appointment();
-        appointment.setName(title.getText().toString().trim()+"-"+person.getFullname());
+        appointment.setName(title.getText().toString().trim()+"-"+ appointmentuser.getFullname());
         appointment.setDate(datebutton.getText().toString());
         appointment.setTime(timebutton.getText().toString());
         appointment.setNotes(notes.getText().toString());
 
         arrayList.add(appointment);
-        SharedPreferences.Editor editor=sharedPreferences.edit();
         String jsonEncode= gson.toJson(arrayList);
-        editor.putString("jsonappointmentList",jsonEncode);
-        editor.commit();
-
+        person.setAppointmentlist(jsonEncode);
+        saveupdate(person);
         Toast.makeText(this, "Appointment has been set.", Toast.LENGTH_SHORT).show();
         finish();
+    }
+    private void saveupdate(TestUser user){
+        databaseReference.setValue(user);
     }
     @Override
     public void onBackPressed() {

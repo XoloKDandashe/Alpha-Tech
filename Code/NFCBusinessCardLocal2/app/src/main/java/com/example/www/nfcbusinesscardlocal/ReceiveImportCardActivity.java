@@ -25,6 +25,13 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import com.googlecode.tesseract.android.TessBaseAPI;
@@ -43,7 +50,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class ReceiveImportCardActivity extends AppCompatActivity {
-    ArrayList<TestUser> userlist=new ArrayList<>();
+    TestUser newUser;
     Button button ;
     Button backbutton,saveButton;
     ImageView imageView ;
@@ -65,11 +72,23 @@ public class ReceiveImportCardActivity extends AppCompatActivity {
     EditText displayMobileNumber;
     EditText displayName;
     EditText displayAddress;
+    private DatabaseReference databaseReference;
+    private FirebaseAuth firebaseAuth;
     private ProgressDialog mProgressDialog;
+    FirebaseUser firebaseUser;
+    TestUser person=null;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_receive_import_card);
+        mProgressDialog=new ProgressDialog(this);
+        firebaseAuth= FirebaseAuth.getInstance();
+        if(firebaseAuth.getCurrentUser()==null){
+            finish();
+            startActivity(new Intent(this, LogIn.class));
+        }
+        firebaseUser=firebaseAuth.getCurrentUser();
+        databaseReference= FirebaseDatabase.getInstance().getReference("users").child(firebaseUser.getUid());
         button = (Button)findViewById(R.id.rec_button);
         saveButton = (Button)findViewById(R.id.rec_import_btn_signup);
         imageView = (ImageView)findViewById(R.id.rec_imageView);
@@ -139,6 +158,27 @@ public class ReceiveImportCardActivity extends AppCompatActivity {
             }
         });
     }
+    @Override
+    protected void onStart() {
+        super.onStart();
+        mProgressDialog.setMessage("Preparing transfer...");
+        mProgressDialog.show();
+        databaseReference.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+
+                person=dataSnapshot.getValue(TestUser.class);
+                mProgressDialog.dismiss();
+            }
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+                mProgressDialog.dismiss();
+                Toast.makeText(getApplicationContext(),"Unable to load details, try again.",Toast.LENGTH_SHORT).show();
+                finish();
+                return;
+            }
+        });
+    }
     private void askForPermission(String permission, Integer requestCode) {
         if (ContextCompat.checkSelfPermission(this, permission) != PackageManager.PERMISSION_GRANTED) {
 
@@ -168,9 +208,6 @@ public class ReceiveImportCardActivity extends AppCompatActivity {
         extractAddress(OCRresult);
         extractUrl(OCRresult);
         mProgressDialog.dismiss();
-
-
-
     }
     public void extractUrl(String str){
         System.out.println("Getting the url");
@@ -463,7 +500,7 @@ public class ReceiveImportCardActivity extends AppCompatActivity {
     public void SaveCard(){
         String emailneedle,inputCheck;
         EditText editText;
-        TestUser newUser=new TestUser();
+        newUser=new TestUser();
         /*Check all neccessary fields have information */
         editText=(EditText)findViewById(R.id.rec_import_name);
         inputCheck=editText.getText().toString().trim();
@@ -494,20 +531,13 @@ public class ReceiveImportCardActivity extends AppCompatActivity {
             Toast.makeText(this, "Email must be given.", Toast.LENGTH_SHORT).show();
             return;
         }
-        for(int i=0;i<userlist.size();i++)
-        {
-            if(emailneedle.compareTo(userlist.get(i).getEmailAddress())==0)
-            {
-                Toast.makeText(this, "Email already Exists.", Toast.LENGTH_SHORT).show();
-                return;
-            }
-        }
         newUser.setEmailAddress(emailneedle);
 
         List<TestUser> arrayList=null;
-        SharedPreferences sharedPreferences=getApplication().getSharedPreferences("receivedlist", Context.MODE_PRIVATE);
+        //SharedPreferences sharedPreferences=getApplication().getSharedPreferences("receivedlist", Context.MODE_PRIVATE);
         Gson gson= new Gson();
-        String jsonConverter=sharedPreferences.getString("jsonreceivedlist","");
+        //String jsonConverter=sharedPreferences.getString("jsonreceivedlist","");
+        String jsonConverter=person.getRecievedCards();
         if(jsonConverter.isEmpty())
         {
             arrayList=new ArrayList<>();
@@ -518,13 +548,9 @@ public class ReceiveImportCardActivity extends AppCompatActivity {
             arrayList=gson.fromJson(jsonConverter,type);
         }
         arrayList.add(newUser);
-
-        SharedPreferences.Editor editor=sharedPreferences.edit();
         String jsonEncode= gson.toJson(arrayList);
-        editor.putString("jsonreceivedlist",jsonEncode);
-        editor.commit();
-        /*If all checks out, add to arraylist*/
-        //userlist.add(newUser);
+        person.setRecievedCards(jsonEncode);
+
         Toast.makeText(this,"Business card is saved.",Toast.LENGTH_LONG).show();
         finish();
     }
