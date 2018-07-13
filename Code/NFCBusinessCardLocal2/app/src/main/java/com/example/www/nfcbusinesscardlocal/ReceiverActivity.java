@@ -2,6 +2,7 @@ package com.example.www.nfcbusinesscardlocal;
 
 import android.Manifest;
 import android.app.PendingIntent;
+import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
@@ -25,6 +26,13 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 
@@ -37,7 +45,11 @@ import java.util.List;
 
 
 public class ReceiverActivity extends AppCompatActivity {
-
+    private DatabaseReference databaseReference;
+    private FirebaseAuth firebaseAuth;
+    private ProgressDialog mProgressDialog;
+    FirebaseUser firebaseUser;
+    TestUser person=null;
     public static final String MIME_TEXT_PLAIN = "text/plain";
     public String etname, etpos, etphon,etmail,etOff,etWAddress;
     private TextView tvIncomingMessage;
@@ -62,6 +74,14 @@ public class ReceiverActivity extends AppCompatActivity {
         }
 
         initViews();
+        mProgressDialog=new ProgressDialog(this);
+        firebaseAuth= FirebaseAuth.getInstance();
+        if(firebaseAuth.getCurrentUser()==null){
+            finish();
+            startActivity(new Intent(this, LogIn.class));
+        }
+        firebaseUser=firebaseAuth.getCurrentUser();
+        databaseReference= FirebaseDatabase.getInstance().getReference("users").child(firebaseUser.getUid());
     }
 
     // need to check NfcAdapter for nullability. Null means no NFC support on the device
@@ -80,7 +100,27 @@ public class ReceiverActivity extends AppCompatActivity {
         // not to start another instance of this activity
         receiveMessageFromDevice(intent);
     }
+    @Override
+    protected void onStart() {
+        super.onStart();
+        mProgressDialog.setMessage("Preparing transfer...");
+        mProgressDialog.show();
+        databaseReference.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
 
+                person=dataSnapshot.getValue(TestUser.class);
+                mProgressDialog.dismiss();
+            }
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+                mProgressDialog.dismiss();
+                Toast.makeText(getApplicationContext(),"Unable to load details, try again.",Toast.LENGTH_SHORT).show();
+                finish();
+                return;
+            }
+        });
+    }
     @Override
     protected void onResume() {
         super.onResume();
@@ -111,9 +151,8 @@ public class ReceiverActivity extends AppCompatActivity {
 
             String [] details=inMessage.split("\n");
             List<TestUser> arrayList=null;
-            SharedPreferences sharedPreferences=getApplication().getSharedPreferences("receivedlist", Context.MODE_PRIVATE);
             Gson gson= new Gson();
-            String jsonConverter=sharedPreferences.getString("jsonreceivedlist","");
+            String jsonConverter=person.getRecievedCards();
             if(jsonConverter.isEmpty())
             {
                 arrayList=new ArrayList<>();
@@ -135,11 +174,10 @@ public class ReceiverActivity extends AppCompatActivity {
 
 
             arrayList.add(newCard);
-
-            SharedPreferences.Editor editor=sharedPreferences.edit();
             String jsonEncode= gson.toJson(arrayList);
-            editor.putString("jsonreceivedlist",jsonEncode);
-            editor.commit();
+            person.setRecievedCards(jsonEncode);
+            saveupdate(person);
+
             etname = details[0].toString();
             if(details[2].compareTo("n/a")==0)
                 etpos=details[1];
@@ -264,6 +302,9 @@ public class ReceiverActivity extends AppCompatActivity {
 
     public void disableForegroundDispatch(final AppCompatActivity activity, NfcAdapter adapter) {
         adapter.disableForegroundDispatch(activity);
+    }
+    private void saveupdate(TestUser user){
+        databaseReference.setValue(user);
     }
     public void backMainActivity(View view){
         onBackPressed();

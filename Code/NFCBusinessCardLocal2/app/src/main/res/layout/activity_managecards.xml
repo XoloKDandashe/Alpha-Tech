@@ -34,6 +34,7 @@
         android:layout_height="wrap_content"
         android:orientation="vertical">
         <Button
+            android:id="@+id/viewcards"
             android:layout_width="match_parent"
             android:layout_height="@dimen/slabButtons"
             android:textSize="@dimen/heading"
@@ -44,6 +45,7 @@
             android:onClick="openViewCardsInterface"
             android:text="@string/recievedcards"/>
         <Button
+            android:id="@+id/readinfo"
             android:layout_width="match_parent"
             android:layout_height="@dimen/slabButtons"
             android:textSize="@dimen/heading"
@@ -51,8 +53,10 @@
             android:textColor="@color/white"
             android:drawableRight="@mipmap/files"
             android:layout_marginBottom="@dimen/spacing"
+            android:onClick="openCardReadInformation"
             android:text="@string/readcard"/>
         <Button
+            android:id="@+id/delinfo"
             android:layout_width="match_parent"
             android:layout_height="@dimen/slabButtons"
             android:textSize="@dimen/heading"
@@ -60,14 +64,17 @@
             android:textColor="@color/white"
             android:drawableRight="@mipmap/trashcan"
             android:layout_marginBottom="@dimen/spacing"
+            android:onClick="openCardDeleteInformation"
             android:text="@string/deletecard"/>
         <Button
+            android:id="@+id/writeinfo"
             android:layout_width="match_parent"
             android:layout_height="@dimen/slabButtons"
             android:textSize="@dimen/heading"
             android:background="@color/epiuseblue"
             android:textColor="@color/white"
             android:drawableRight="@mipmap/edittwo"
+            android:onClick="openCardWriteInformation"
             android:text="@string/updatecard"/>
     </LinearLayout>
     <!--Manage Card End-->

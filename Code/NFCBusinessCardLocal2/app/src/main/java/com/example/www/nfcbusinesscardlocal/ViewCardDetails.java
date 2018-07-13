@@ -1,6 +1,7 @@
 package com.example.www.nfcbusinesscardlocal;
 
 import android.Manifest;
+import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -20,21 +21,29 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
-
-import org.w3c.dom.Text;
 
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.lang.reflect.Array;
 import java.lang.reflect.Type;
 import java.util.List;
 
 public class ViewCardDetails extends AppCompatActivity {
-    TestUser person;
-    int ArrayIndex=-1;
+    private DatabaseReference databaseReference;
+    private FirebaseAuth firebaseAuth;
+    private ProgressDialog mProgressDialog;
+    FirebaseUser firebaseUser;
+    TestUser person=null;
+    TestUser viewUser;
     static final Integer LOCATION = 0x1;
     private File vcfFile;
     static final Integer WRITE_EXST = 0x3;
@@ -47,12 +56,12 @@ public class ViewCardDetails extends AppCompatActivity {
         setContentView(R.layout.activity_view_card_details);
         Intent intent=getIntent();
         if(intent.hasExtra("ViewUser")) {
-            person = (TestUser) intent.getSerializableExtra("ViewUser");
+            viewUser = (TestUser) intent.getSerializableExtra("ViewUser");
         }
         final Button button = findViewById(R.id.button);
         button.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                String m=person.getWorkAddress();
+                String m= viewUser.getWorkAddress();
                 if(m.isEmpty()||m.compareTo("n/a")==0)
                 {
                     Toast.makeText(ViewCardDetails.this, "No address given", Toast.LENGTH_SHORT).show();
@@ -93,29 +102,58 @@ public class ViewCardDetails extends AppCompatActivity {
                 setAppointment();
             }
         });
+        mProgressDialog=new ProgressDialog(this);
+        firebaseAuth= FirebaseAuth.getInstance();
+        if(firebaseAuth.getCurrentUser()==null){
+            finish();
+            startActivity(new Intent(this, LogIn.class));
+        }
+        firebaseUser=firebaseAuth.getCurrentUser();
+        databaseReference= FirebaseDatabase.getInstance().getReference("users").child(firebaseUser.getUid());
     }
     protected void onResume()
     {
         super.onResume();
         setDetails();
     }
+    @Override
+    protected void onStart() {
+        super.onStart();
+        mProgressDialog.setMessage("Loading contact...");
+        mProgressDialog.show();
+        databaseReference.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+
+                person=dataSnapshot.getValue(TestUser.class);
+                mProgressDialog.dismiss();
+            }
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+                mProgressDialog.dismiss();
+                Toast.makeText(getApplicationContext(),"Unable to load details, try again.",Toast.LENGTH_SHORT).show();
+                finish();
+                return;
+            }
+        });
+    }
     public void setDetails()
     {
         TextView textView=(TextView)findViewById(R.id.fullname_view_user);
-        textView.setText(person.getFullname());
+        textView.setText(viewUser.getFullname());
         textView=(TextView)findViewById(R.id.jobtitle_view_user);
-        textView.setText(person.getJobTitle());
+        textView.setText(viewUser.getJobTitle());
         textView=(TextView)findViewById(R.id.company_view_user);
-        textView.setText(person.getCompanyName());
+        textView.setText(viewUser.getCompanyName());
         textView=(TextView)findViewById(R.id.emailAddress_view_user);
-        textView.setText(person.getEmailAddress());
-      //  Toast.makeText(ViewCardDetails.this, person.getWorkAddress(), Toast.LENGTH_SHORT).show();
+        textView.setText(viewUser.getEmailAddress());
+      //  Toast.makeText(ViewCardDetails.this, viewUser.getWorkAddress(), Toast.LENGTH_SHORT).show();
         textView=(TextView)findViewById(R.id.physAddress_view_user);
-        textView.setText(person.getWorkAddress());
+        textView.setText(viewUser.getWorkAddress());
         textView=(TextView)findViewById(R.id.personalnumber_view_user);
-        textView.setText(person.getMobileNumber());
+        textView.setText(viewUser.getMobileNumber());
         textView=(TextView)findViewById(R.id.officenumber_view_user);
-        textView.setText(person.getWorkTelephone());
+        textView.setText(viewUser.getWorkTelephone());
     }
     private void askForPermission(String permission, Integer requestCode) {
         if (ContextCompat.checkSelfPermission(ViewCardDetails.this, permission) != PackageManager.PERMISSION_GRANTED) {
@@ -142,14 +180,14 @@ public class ViewCardDetails extends AppCompatActivity {
     }
     public void saveVCard(){
         String etname, etpos, etphon,etmail,etOff;
-                etname = person.getFullname();
-                if(person.getCompanyName().compareTo("n/a")==0)
-                    etpos = person.getJobTitle();
+                etname = viewUser.getFullname();
+                if(viewUser.getCompanyName().compareTo("n/a")==0)
+                    etpos = viewUser.getJobTitle();
                 else
-                    etpos = person.getCompanyName()+"-"+person.getJobTitle();
-                etmail = person.getEmailAddress();
-                etphon = person.getMobileNumber();
-                etOff = person.getWorkTelephone();
+                    etpos = viewUser.getCompanyName()+"-"+ viewUser.getJobTitle();
+                etmail = viewUser.getEmailAddress();
+                etphon = viewUser.getMobileNumber();
+                etOff = viewUser.getWorkTelephone();
                 try {
                     askForPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE,WRITE_EXST);
                             // File vcfFile = new File(this.getExternalFilesDir(null), "generated.vcf");
@@ -207,13 +245,15 @@ public class ViewCardDetails extends AppCompatActivity {
                     public void onClick(DialogInterface dialog, int which) {
                         // continue with delete
                         List<TestUser> arrayList=null;
-                        SharedPreferences sharedPreferences=getApplication().getSharedPreferences("receivedlist", Context.MODE_PRIVATE);
+                        //SharedPreferences sharedPreferences=getApplication().getSharedPreferences("receivedlist", Context.MODE_PRIVATE);
                         Gson gson= new Gson();
-                        String jsonConverter=sharedPreferences.getString("jsonreceivedlist","");
+                        //String jsonConverter=sharedPreferences.getString("jsonreceivedlist","");
+                        String jsonConverter=person.getRecievedCards();
                         if(jsonConverter.isEmpty())
                         {
                             Toast.makeText(ViewCardDetails.this,"You have no cards received.",Toast.LENGTH_LONG);
                             finish();
+                            return;
                         }
                         else
                         {
@@ -222,23 +262,23 @@ public class ViewCardDetails extends AppCompatActivity {
                         }
 
                         for (int i=0;i<arrayList.size();i++) {
-                            if(arrayList.get(i).getEmailAddress().trim().compareTo(person.getEmailAddress().trim())==0)
+                            if(arrayList.get(i).getEmailAddress().trim().compareTo(viewUser.getEmailAddress().trim())==0)
                             {
                                 arrayList.remove(i);
                                 File vdfdirectory = new File(
                                         Environment.getExternalStorageDirectory() + VCF_DIRECTORY);
-                                vcfFile = new File(vdfdirectory, person.getFullname()  + ".vcf");
+                                vcfFile = new File(vdfdirectory, viewUser.getFullname()  + ".vcf");
                                 if(vcfFile.exists())
                                 vcfFile.delete();
                             }
 
                         }
-                        SharedPreferences.Editor editor=sharedPreferences.edit();
                         String jsonEncode= gson.toJson(arrayList);
-                        editor.putString("jsonreceivedlist",jsonEncode);
-                        editor.commit();
+                        person.setRecievedCards(jsonEncode);
+                        saveupdate(person);
                         Toast.makeText(ViewCardDetails.this, "Delete Successful.", Toast.LENGTH_LONG).show();
                         finish();
+                        return;
                     }
                 })
                 .setNegativeButton(android.R.string.no, new DialogInterface.OnClickListener() {
@@ -258,12 +298,12 @@ public class ViewCardDetails extends AppCompatActivity {
             builder = new AlertDialog.Builder(this);
         }
         TextView textView=(TextView) findViewById(R.id.fullname_view_user);
-        builder.setTitle("Appointment: "+textView.getText())
+        builder.setTitle("About to set Appointment with: "+textView.getText())
                 .setMessage("Do you want to set an appointment?")
                 .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int which) {
                         Intent intent=new Intent(getApplicationContext(),Appointments.class);
-                        intent.putExtra("ViewUser",person);
+                        intent.putExtra("ViewUser", viewUser);
                         startActivity(intent);
 
                     }
@@ -276,6 +316,9 @@ public class ViewCardDetails extends AppCompatActivity {
                 })
                 .setIcon(android.R.drawable.ic_dialog_alert)
                 .show();
+    }
+    private void saveupdate(TestUser user){
+        databaseReference.setValue(user);
     }
     public void backToViewCardsInterface(){
         onBackPressed();

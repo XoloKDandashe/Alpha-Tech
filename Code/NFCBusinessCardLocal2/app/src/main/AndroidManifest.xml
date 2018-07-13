@@ -119,10 +119,18 @@
         </activity>
         <activity
             android:name=".ViewCardsInterface"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".ManageCards" />
+        </activity>
         <activity
             android:name=".ViewCardDetails"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".ViewCardsInterface" />
+        </activity>
 
         <provider
             android:name="android.support.v4.content.FileProvider"
@@ -136,13 +144,42 @@
 
         <activity
             android:name=".Appointments"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".ViewCardDetails" />
+        </activity>
         <activity
             android:name=".ViewAppointmentsInterface"
-            android:screenOrientation="portrait" />
-        <activity android:name=".ImportCardDetails" />
-        <activity android:name=".CardScannerActivity" />
-        <activity android:name=".ReceiveImportCardActivity"></activity>
+            android:screenOrientation="portrait" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".ViewDetails" />
+        </activity>
+        <activity android:name=".ImportCardDetails" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".Registration" />
+        </activity>
+        <activity android:name=".ReceiveImportCardActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".ReceiverInterface" />
+        </activity>
+        <activity android:name=".CardReadInformation" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".ManageCards" />
+        </activity>
+        <activity android:name=".CardWriteInformation" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".ManageCards" />
+        </activity>
+        <activity android:name=".CardDeleteInformation">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".ManageCards" />
+        </activity>
     </application>
-
 </manifest>

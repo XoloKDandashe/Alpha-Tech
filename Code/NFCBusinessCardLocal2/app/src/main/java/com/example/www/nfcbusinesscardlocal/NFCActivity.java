@@ -1,5 +1,6 @@
 package com.example.www.nfcbusinesscardlocal;
 
+import android.app.ProgressDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.app.Activity;
@@ -14,8 +15,19 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class NFCActivity extends Activity implements NfcAdapter.CreateNdefMessageCallback {
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
+public class NFCActivity extends Activity implements NfcAdapter.CreateNdefMessageCallback {
+    private DatabaseReference databaseReference;
+    private FirebaseAuth firebaseAuth;
+    private ProgressDialog mProgressDialog;
+    FirebaseUser firebaseUser;
     private TextView mTextView;
     TestUser person=null;
     @Override
@@ -34,14 +46,39 @@ public class NFCActivity extends Activity implements NfcAdapter.CreateNdefMessag
             Toast.makeText(this, "Please enable NFC via Settings.", Toast.LENGTH_LONG).show();
             startActivity(new Intent(Settings.ACTION_WIRELESS_SETTINGS));
         }
-        Intent intent=getIntent();
-        if(intent.hasExtra("LoginUser")) {
-            person = (TestUser) intent.getSerializableExtra("LoginUser");
-            mTextView.setText(person.getDetails());
+        mProgressDialog=new ProgressDialog(this);
+        firebaseAuth= FirebaseAuth.getInstance();
+        if(firebaseAuth.getCurrentUser()==null){
+            finish();
+            startActivity(new Intent(this, LogIn.class));
         }
+        firebaseUser=firebaseAuth.getCurrentUser();
+        databaseReference= FirebaseDatabase.getInstance().getReference("users").child(firebaseUser.getUid());
         mAdapter.setNdefPushMessageCallback(this, this);
     }
+    @Override
+    protected void onStart() {
+        super.onStart();
+        mProgressDialog.setMessage("Loading your details...");
+        mProgressDialog.show();
+        databaseReference.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
 
+                person = dataSnapshot.getValue(TestUser.class);
+                mProgressDialog.dismiss();
+                mTextView.setText(person.getDetails());
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+                mProgressDialog.dismiss();
+                Toast.makeText(getApplicationContext(), "Unable to load details, try again.", Toast.LENGTH_SHORT).show();
+                finish();
+                return;
+            }
+        });
+    }
     /**
      * Ndef Record that will be sent over via NFC
      * @param nfcEvent

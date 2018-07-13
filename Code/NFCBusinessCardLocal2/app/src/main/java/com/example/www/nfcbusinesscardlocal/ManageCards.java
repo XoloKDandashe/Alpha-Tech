@@ -3,6 +3,7 @@ package com.example.www.nfcbusinesscardlocal;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.pm.PackageManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -19,15 +20,37 @@ public class ManageCards extends AppCompatActivity {
     }
     public void openViewCardsInterface(View view)
     {
-        SharedPreferences sharedPreferences=getApplication().getSharedPreferences("receivedlist", Context.MODE_PRIVATE);
-        Gson gson= new Gson();
-        String jsonConverter=sharedPreferences.getString("jsonreceivedlist","");
-        if(jsonConverter.isEmpty())
+        Intent mov = new Intent(this, ViewCardsInterface.class);
+        startActivity(mov);
+    }
+    public void openCardReadInformation(View view)
+    {
+        if(!getPackageManager().hasSystemFeature(PackageManager.FEATURE_NFC))
         {
-            Toast.makeText(this,"You have no cards to view.",Toast.LENGTH_LONG).show();
+            Toast.makeText(this, "NFC is not available on device.", Toast.LENGTH_LONG).show();
             return;
         }
-        Intent mov = new Intent(this, ViewCardsInterface.class);
+        Intent mov = new Intent(this, CardReadInformation.class);
+        startActivity(mov);
+    }
+    public void openCardDeleteInformation(View view)
+    {
+        if(!getPackageManager().hasSystemFeature(PackageManager.FEATURE_NFC))
+        {
+            Toast.makeText(this, "NFC is not available on device.", Toast.LENGTH_LONG).show();
+            return;
+        }
+        Intent mov = new Intent(this, CardDeleteInformation.class);
+        startActivity(mov);
+    }
+    public void openCardWriteInformation(View view)
+    {
+        if(!getPackageManager().hasSystemFeature(PackageManager.FEATURE_NFC))
+        {
+            Toast.makeText(this, "NFC is not available on device.", Toast.LENGTH_LONG).show();
+            return;
+        }
+        Intent mov = new Intent(this, CardWriteInformation.class);
         startActivity(mov);
     }
     public void backManageCards(View view){
