@@ -196,12 +196,16 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".ReceiverInterface" />
         </activity>
-        <activity android:name="com.example.www.nfcbusinesscardlocal.CardReadInformation" >
+        <activity
+            android:name="com.example.www.nfcbusinesscardlocal.CardReadInformation"
+            android:noHistory="true" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".ManageCards" />
         </activity>
-        <activity android:name="com.example.www.nfcbusinesscardlocal.CardWriteInformation" >
+        <activity
+            android:name="com.example.www.nfcbusinesscardlocal.CardWriteInformation"
+            android:noHistory="true" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".ManageCards" />
