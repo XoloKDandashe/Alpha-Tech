@@ -189,8 +189,8 @@ public class CardWriteInformation extends AppCompatActivity implements Listener 
                     editText=findViewById(R.id.card_write_jobtitle);messageToWrite+=editText.getText()+"\n";
                     editText=findViewById(R.id.card_write_companyname);messageToWrite+=editText.getText()+"\n";
                     editText=findViewById(R.id.card_write_email);messageToWrite+=editText.getText()+"\n";
-                    editText=findViewById(R.id.card_write_telephone);messageToWrite+=editText.getText()+"\n";
                     editText=findViewById(R.id.card_write_mobile);messageToWrite+=editText.getText()+"\n";
+                    editText=findViewById(R.id.card_write_telephone);messageToWrite+=editText.getText()+"\n";
                     editText=findViewById(R.id.card_write_address);messageToWrite+=editText.getText();
 
                     cardWriteInformationFragment= (CardWriteInformationFragment) getFragmentManager().findFragmentByTag(CardWriteInformationFragment.TAG);
