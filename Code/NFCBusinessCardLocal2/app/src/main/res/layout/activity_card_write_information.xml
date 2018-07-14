@@ -57,17 +57,17 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
+            <EditText android:id="@+id/card_write_mobile"
+                android:layout_width="175dp"
+                android:layout_height="wrap_content"
+                android:inputType="phone"
+                android:hint="Mobile Number"/>
             <!--work number-->
             <EditText android:id="@+id/card_write_telephone"
                 android:layout_width="175dp"
                 android:layout_height="wrap_content"
                 android:inputType="phone"
                 android:hint="Work Telephone" />
-            <EditText android:id="@+id/card_write_mobile"
-                android:layout_width="175dp"
-                android:layout_height="wrap_content"
-                android:inputType="phone"
-                android:hint="Mobile Number"/>
         </LinearLayout>
         <LinearLayout
             android:layout_width="match_parent"
