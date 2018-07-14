@@ -361,10 +361,14 @@ ADDED from C:\Users\Xolo Kagiso Dandashe\AndroidStudioProjects\NFCBusinessCardLo
 		ADDED from C:\Users\Xolo Kagiso Dandashe\AndroidStudioProjects\NFCBusinessCardLocal2\app\src\main\AndroidManifest.xml:164:19-60
 activity#com.example.www.nfcbusinesscardlocal.CardReadInformation
 ADDED from C:\Users\Xolo Kagiso Dandashe\AndroidStudioProjects\NFCBusinessCardLocal2\app\src\main\AndroidManifest.xml:169:9-173:20
+	android:noHistory
+		ADDED from C:\Users\Xolo Kagiso Dandashe\AndroidStudioProjects\NFCBusinessCardLocal2\app\src\main\AndroidManifest.xml:169:55-79
 	android:name
 		ADDED from C:\Users\Xolo Kagiso Dandashe\AndroidStudioProjects\NFCBusinessCardLocal2\app\src\main\AndroidManifest.xml:169:19-54
 activity#com.example.www.nfcbusinesscardlocal.CardWriteInformation
 ADDED from C:\Users\Xolo Kagiso Dandashe\AndroidStudioProjects\NFCBusinessCardLocal2\app\src\main\AndroidManifest.xml:174:9-178:20
+	android:noHistory
+		ADDED from C:\Users\Xolo Kagiso Dandashe\AndroidStudioProjects\NFCBusinessCardLocal2\app\src\main\AndroidManifest.xml:174:56-80
 	android:name
 		ADDED from C:\Users\Xolo Kagiso Dandashe\AndroidStudioProjects\NFCBusinessCardLocal2\app\src\main\AndroidManifest.xml:174:19-55
 activity#com.example.www.nfcbusinesscardlocal.CardDeleteInformation

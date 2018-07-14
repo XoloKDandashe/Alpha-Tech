@@ -14,6 +14,7 @@ import android.nfc.NfcAdapter;
 import android.nfc.Tag;
 import android.nfc.tech.Ndef;
 import android.util.Log;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -44,6 +45,8 @@ public class CardWriteInformation extends AppCompatActivity implements Listener 
     //nfc
     public static final String TAG = CardWriteInformation.class.getSimpleName();
     private Button mBtWrite;
+    private Button mBtLoad;
+    private Button mBtBack;
     private CardWriteInformationFragment cardWriteInformationFragment;
     private boolean isDialogDisplayed = false;
     private boolean isWrite = false;
@@ -62,7 +65,11 @@ public class CardWriteInformation extends AppCompatActivity implements Listener 
         databaseReference= FirebaseDatabase.getInstance().getReference("users").child(firebaseUser.getUid());
 
         mBtWrite = (Button) findViewById(R.id.btn_write);
+        mBtLoad = (Button) findViewById(R.id.card_write_load_info);
+        mBtBack = (Button) findViewById(R.id.card_write_buttonback);
         mBtWrite.setOnClickListener(view -> showWriteFragment());
+        mBtLoad.setOnClickListener(view -> mydetails());
+        mBtBack.setOnClickListener(view -> previouspage());
         nfcAdapter = NfcAdapter.getDefaultAdapter(this);
     }
     @Override
@@ -76,7 +83,7 @@ public class CardWriteInformation extends AppCompatActivity implements Listener 
 
                 person=dataSnapshot.getValue(TestUser.class);
                 mProgressDialog.dismiss();
-                mydetails(person);
+                //mydetails(person);
             }
             @Override
             public void onCancelled(DatabaseError databaseError) {
@@ -87,12 +94,12 @@ public class CardWriteInformation extends AppCompatActivity implements Listener 
             }
         });
     }
-    private void mydetails(TestUser user){
+    private void mydetails(){
         android.support.v7.app.AlertDialog.Builder builder;
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-            builder = new android.support.v7.app.AlertDialog.Builder(this, android.R.style.Theme_Material_Dialog_Alert);
+            builder = new android.support.v7.app.AlertDialog.Builder(CardWriteInformation.this, android.R.style.Theme_Material_Dialog_Alert);
         } else {
-            builder = new android.support.v7.app.AlertDialog.Builder(this);
+            builder = new android.support.v7.app.AlertDialog.Builder(CardWriteInformation.this);
         }
         builder.setTitle("Writing to cards.")
                 .setMessage("Do you want to load your information?")
@@ -150,6 +157,7 @@ public class CardWriteInformation extends AppCompatActivity implements Listener 
     @Override
     protected void onResume() {
         super.onResume();
+
         IntentFilter tagDetected = new IntentFilter(NfcAdapter.ACTION_TAG_DISCOVERED);
         IntentFilter ndefDetected = new IntentFilter(NfcAdapter.ACTION_NDEF_DISCOVERED);
         IntentFilter techDetected = new IntentFilter(NfcAdapter.ACTION_TECH_DISCOVERED);
@@ -167,6 +175,13 @@ public class CardWriteInformation extends AppCompatActivity implements Listener 
         super.onPause();
         if(nfcAdapter!= null)
             nfcAdapter.disableForegroundDispatch(this);
+    }
+    private void previouspage(){
+        onBackPressed();
+    }
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
     }
 
     @Override

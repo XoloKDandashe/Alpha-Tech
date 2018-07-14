@@ -14,7 +14,7 @@ public final class R {
     public static final class id {
         public static final int any = 0x7f070020;
         public static final int back = 0x7f070029;
-        public static final int front = 0x7f07005d;
+        public static final int front = 0x7f07005f;
     }
     public static final class styleable {
         public static final int[] CameraBridgeViewBase = { 0x7f02004c, 0x7f0200fc };

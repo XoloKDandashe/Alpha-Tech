@@ -166,12 +166,12 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".ReceiverInterface" />
         </activity>
-        <activity android:name=".CardReadInformation" >
+        <activity android:name=".CardReadInformation" android:noHistory="true">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".ManageCards" />
         </activity>
-        <activity android:name=".CardWriteInformation" >
+        <activity android:name=".CardWriteInformation" android:noHistory="true">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".ManageCards" />
