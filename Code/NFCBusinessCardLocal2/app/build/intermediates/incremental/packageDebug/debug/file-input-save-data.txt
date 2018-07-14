@@ -1,5 +1,5 @@
 #Internal package file, do not edit.
-#Fri Jul 13 21:25:12 CAT 2018
+#Sat Jul 14 11:14:49 CAT 2018
 17.baseType=DIRECTORY
 4.path=lib/mips/liblept.so
 25.base=C\:\\Users\\Xolo Kagiso Dandashe\\AndroidStudioProjects\\NFCBusinessCardLocal2\\app\\build\\intermediates\\transforms\\mergeJniLibs\\debug\\0
