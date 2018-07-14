@@ -67,7 +67,7 @@ public class CardReadInformationFragment extends DialogFragment {
             NdefMessage ndefMessage = ndef.getNdefMessage();
             String message = new String(ndefMessage.getRecords()[0].getPayload());
             Log.d(TAG, "readFromNFC: "+message);
-            mTvMessage.setText(message);
+            mTvMessage.setText("Read was successful");
             ndef.close();
             return message;
 

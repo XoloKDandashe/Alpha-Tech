@@ -78,21 +78,6 @@
                 android:inputType="textPostalAddress"
                 android:hint="Work Address" />
         </LinearLayout>
-        <!--<LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-            <Button
-                android:id="@+id/card_write_location"
-                android:layout_width="wrap_content"
-                android:layout_height="40dp"
-                android:padding="10dp"
-                android:textStyle="bold"
-                android:textSize="@dimen/padding"
-                android:background="@color/epiuseblue"
-                android:textColor="@color/white"
-                android:drawableRight="@mipmap/location"
-                android:text="Find me"/>
-        </LinearLayout>-->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -110,5 +95,33 @@
                 android:drawableRight="@mipmap/sendingphone"
                 android:text="@string/message_write_tag"/>
         </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:padding="@dimen/padding">
+            <Button
+                android:id="@+id/card_write_load_info"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/signoutbtn"
+                android:padding="@dimen/padding"
+                android:textStyle="bold"
+                android:textSize="@dimen/padding"
+                android:background="@color/epiuseblue"
+                android:textColor="@color/white"
+                android:drawableRight="@mipmap/send"
+                android:text="Load My Details"/>
+        </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <Button
+            android:id="@+id/card_write_buttonback"
+            android:layout_width="@dimen/signoutbtn"
+            android:layout_height="@dimen/signoutbtn"
+            android:layout_marginLeft="15dp"
+            android:background="@mipmap/backarrow" />
+    </LinearLayout>
     </LinearLayout>
 </RelativeLayout>
