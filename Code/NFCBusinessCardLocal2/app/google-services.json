@@ -23,6 +23,14 @@
           }
         },
         {
+          "client_id": "1049508478027-8cplj8v0h5meo8enfi45jc48dcrrpm1c.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.www.nfcbusinesscardlocal",
+            "certificate_hash": "740910dee3e2ae301ee1c48da6a12be332c559d5"
+          }
+        },
+        {
           "client_id": "1049508478027-m574cjhn98qcg3ee7v8cb7c91fqbmgac.apps.googleusercontent.com",
           "client_type": 3
         }
