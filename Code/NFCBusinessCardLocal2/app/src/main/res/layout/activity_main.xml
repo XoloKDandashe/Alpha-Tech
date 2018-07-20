@@ -68,7 +68,7 @@
             android:layout_marginRight="@dimen/spacing"
             android:layout_marginBottom="@dimen/spacing"
             android:textColor="@color/white"
-            android:drawableRight="@mipmap/edittwo"/>
+            android:drawableRight="@mipmap/viewprofile"/>
         <Button
             android:layout_width="@dimen/buttons"
             android:layout_height="@dimen/buttons"

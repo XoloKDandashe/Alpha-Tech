@@ -77,6 +77,8 @@ public class ViewCardsInterface extends AppCompatActivity implements SearchView.
                 viewUser.setMobileNumber(details[4]);
                 viewUser.setWorkTelephone(details[5]);
                 viewUser.setWorkAddress(details[6]);
+                if(details.length>7)
+                viewUser.setImageUrl(details[7]);
                 intent.putExtra("ViewUser",viewUser);
                 startActivity(intent);
             }
@@ -117,7 +119,7 @@ public class ViewCardsInterface extends AppCompatActivity implements SearchView.
         //SharedPreferences sharedPreferences=getApplication().getSharedPreferences("receivedlist", Context.MODE_PRIVATE);
         Gson gson= new Gson();
         //String jsonConverter=sharedPreferences.getString("jsonreceivedlist","");
-        if(cardlist.isEmpty()||cardlist.compareTo("")==0)
+        if(cardlist.isEmpty()||cardlist.compareTo("")==0||cardlist.compareTo("[]")==0)
         {
             Toast.makeText(ViewCardsInterface.this,"You have no cards received.",Toast.LENGTH_LONG).show();
             finish();

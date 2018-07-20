@@ -11,7 +11,8 @@
     <dimen name="fontsize">20sp</dimen>
     <dimen name="maketop">25dp</dimen>
     <!--View Details Dimensions-->
-    <dimen name="profilepic">80dp</dimen>
+    <dimen name="profilepic">100dp</dimen>
+    <dimen name="profilePicture">150dp</dimen>
     <dimen name="heading">25sp</dimen>
     <dimen name="editbox">40dp</dimen>
     <!--Manage Cards Dimensions-->

@@ -18,12 +18,19 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="top">
+            android:gravity="center">
             <ImageView
-                android:layout_width="match_parent"
-                android:layout_height="@dimen/Logo"
-                android:src="@mipmap/clientlogo"
-                android:layout_marginBottom="@dimen/spacing"/>
+                android:id="@+id/avatarpic"
+                android:layout_width="@dimen/profilePicture"
+                android:layout_height="@dimen/profilepic"
+                android:src="@mipmap/avatar"/>
+            <Button
+                android:id="@+id/btn_open_upload"
+                android:layout_marginTop="25dp"
+                android:layout_width="@dimen/signoutbtn"
+                android:layout_height="@dimen/signoutbtn"
+                android:background="@mipmap/imagesblue"
+                />
         </LinearLayout>
 
         <!-- Name Label -->
@@ -109,7 +116,6 @@
         <Button
         android:id="@+id/btn_signup"
         android:layout_width="wrap_content"
-            android:layout_marginTop="@dimen/padding"
         android:layout_height="50dp"
         android:padding="12dp"
         android:background="@color/epiuseblue"

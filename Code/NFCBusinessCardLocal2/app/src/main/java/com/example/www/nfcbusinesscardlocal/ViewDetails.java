@@ -2,13 +2,18 @@ package com.example.www.nfcbusinesscardlocal;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
+import android.media.Image;
 import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.signature.StringSignature;
+import com.firebase.ui.storage.images.FirebaseImageLoader;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
@@ -16,6 +21,8 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
 
 import java.util.ArrayList;
 
@@ -23,8 +30,9 @@ public class ViewDetails extends AppCompatActivity {
     private DatabaseReference databaseReference;
     private FirebaseAuth firebaseAuth;
     private ProgressDialog mProgressDialog;
-    FirebaseUser firebaseUser;
-    TestUser person=null;
+    private FirebaseUser firebaseUser;
+    private ImageView imageView;
+    private TestUser person=null;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -37,11 +45,11 @@ public class ViewDetails extends AppCompatActivity {
         }
         firebaseUser=firebaseAuth.getCurrentUser();
         databaseReference= FirebaseDatabase.getInstance().getReference("users").child(firebaseUser.getUid());
-
+        imageView=(ImageView) findViewById(R.id.profilePicture);
     }
     @Override
-    protected void onStart() {
-        super.onStart();
+    protected void onResume() {
+        super.onResume();
         mProgressDialog.setMessage("Loading your details...");
         mProgressDialog.show();
         databaseReference.addValueEventListener(new ValueEventListener() {
@@ -68,7 +76,7 @@ public class ViewDetails extends AppCompatActivity {
     }
     public void setDetails()
     {
-
+        loadPicture(person);
         TextView textView=(TextView)findViewById(R.id.fullname);
         textView.setText(person.getFullname());
         textView=(TextView)findViewById(R.id.jobtitle);
@@ -83,6 +91,17 @@ public class ViewDetails extends AppCompatActivity {
         textView.setText(person.getMobileNumber());
         textView=(TextView)findViewById(R.id.officenumber);
         textView.setText(person.getWorkTelephone());
+    }
+    private void loadPicture(TestUser user){
+
+        if(user.getImageUrl()!=""){
+            StorageReference httpRef= FirebaseStorage.getInstance().getReferenceFromUrl(user.getImageUrl());
+            Glide.with(ViewDetails.this)
+                    .using(new FirebaseImageLoader())
+                    .load(httpRef)
+                    .signature(new StringSignature(String.valueOf(System.currentTimeMillis())))
+                    .into(imageView);
+        }
     }
     public void backViewDetails(View view){
         onBackPressed();

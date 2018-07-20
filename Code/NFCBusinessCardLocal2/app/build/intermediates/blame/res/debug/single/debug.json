@@ -120,6 +120,10 @@
         "source": "C:\\Users\\Xolo Kagiso Dandashe\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-26.1.0.aar\\687182da6d6ec0cc06429939d59fed76\\res\\drawable\\abc_switch_thumb_material.xml"
     },
     {
+        "merged": "C:\\Users\\Xolo Kagiso Dandashe\\AndroidStudioProjects\\NFCBusinessCardLocal2\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi_ic_trash_can.png.flat",
+        "source": "C:\\Users\\Xolo Kagiso Dandashe\\AndroidStudioProjects\\NFCBusinessCardLocal2\\app\\src\\main\\res\\drawable-xxhdpi\\ic_trash_can.png"
+    },
+    {
         "merged": "C:\\Users\\Xolo Kagiso Dandashe\\AndroidStudioProjects\\NFCBusinessCardLocal2\\app\\build\\intermediates\\res\\merged\\debug\\drawable_abc_ratingbar_material.xml.flat",
         "source": "C:\\Users\\Xolo Kagiso Dandashe\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-26.1.0.aar\\687182da6d6ec0cc06429939d59fed76\\res\\drawable\\abc_ratingbar_material.xml"
     },
@@ -672,6 +676,10 @@
         "source": "C:\\Users\\Xolo Kagiso Dandashe\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-26.1.0.aar\\687182da6d6ec0cc06429939d59fed76\\res\\drawable-xxxhdpi-v4\\abc_btn_switch_to_on_mtrl_00001.9.png"
     },
     {
+        "merged": "C:\\Users\\Xolo Kagiso Dandashe\\AndroidStudioProjects\\NFCBusinessCardLocal2\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_update_picture.xml.flat",
+        "source": "C:\\Users\\Xolo Kagiso Dandashe\\AndroidStudioProjects\\NFCBusinessCardLocal2\\app\\src\\main\\res\\layout\\activity_update_picture.xml"
+    },
+    {
         "merged": "C:\\Users\\Xolo Kagiso Dandashe\\AndroidStudioProjects\\NFCBusinessCardLocal2\\app\\build\\intermediates\\res\\merged\\debug\\drawable_common_google_signin_btn_icon_light_focused.xml.flat",
         "source": "C:\\Users\\Xolo Kagiso Dandashe\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-base-11.6.2.aar\\e2f9bd3c8bbde9d0bc8a53daf06b372a\\res\\drawable\\common_google_signin_btn_icon_light_focused.xml"
     },
@@ -960,6 +968,10 @@
         "source": "C:\\Users\\Xolo Kagiso Dandashe\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-base-11.6.2.aar\\e2f9bd3c8bbde9d0bc8a53daf06b372a\\res\\drawable-mdpi-v4\\common_google_signin_btn_icon_light_normal_background.9.png"
     },
     {
+        "merged": "C:\\Users\\Xolo Kagiso Dandashe\\AndroidStudioProjects\\NFCBusinessCardLocal2\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi_ic_trash_can.png.flat",
+        "source": "C:\\Users\\Xolo Kagiso Dandashe\\AndroidStudioProjects\\NFCBusinessCardLocal2\\app\\src\\main\\res\\drawable-xhdpi\\ic_trash_can.png"
+    },
+    {
         "merged": "C:\\Users\\Xolo Kagiso Dandashe\\AndroidStudioProjects\\NFCBusinessCardLocal2\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4_abc_ic_commit_search_api_mtrl_alpha.png.flat",
         "source": "C:\\Users\\Xolo Kagiso Dandashe\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-26.1.0.aar\\687182da6d6ec0cc06429939d59fed76\\res\\drawable-mdpi-v4\\abc_ic_commit_search_api_mtrl_alpha.png"
     },
@@ -996,12 +1008,12 @@
         "source": "C:\\Users\\Xolo Kagiso Dandashe\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-26.1.0.aar\\687182da6d6ec0cc06429939d59fed76\\res\\drawable-mdpi-v4\\abc_list_pressed_holo_dark.9.png"
     },
     {
-        "merged": "C:\\Users\\Xolo Kagiso Dandashe\\AndroidStudioProjects\\NFCBusinessCardLocal2\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4_abc_list_divider_mtrl_alpha.9.png.flat",
-        "source": "C:\\Users\\Xolo Kagiso Dandashe\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-26.1.0.aar\\687182da6d6ec0cc06429939d59fed76\\res\\drawable-xxhdpi-v4\\abc_list_divider_mtrl_alpha.9.png"
-    },
-    {
         "merged": "C:\\Users\\Xolo Kagiso Dandashe\\AndroidStudioProjects\\NFCBusinessCardLocal2\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_abc_cab_background_top_mtrl_alpha.9.png.flat",
         "source": "C:\\Users\\Xolo Kagiso Dandashe\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-26.1.0.aar\\687182da6d6ec0cc06429939d59fed76\\res\\drawable-xhdpi-v4\\abc_cab_background_top_mtrl_alpha.9.png"
+    },
+    {
+        "merged": "C:\\Users\\Xolo Kagiso Dandashe\\AndroidStudioProjects\\NFCBusinessCardLocal2\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4_abc_list_divider_mtrl_alpha.9.png.flat",
+        "source": "C:\\Users\\Xolo Kagiso Dandashe\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-26.1.0.aar\\687182da6d6ec0cc06429939d59fed76\\res\\drawable-xxhdpi-v4\\abc_list_divider_mtrl_alpha.9.png"
     },
     {
         "merged": "C:\\Users\\Xolo Kagiso Dandashe\\AndroidStudioProjects\\NFCBusinessCardLocal2\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4_abc_ic_menu_selectall_mtrl_alpha.png.flat",
@@ -1074,6 +1086,10 @@
     {
         "merged": "C:\\Users\\Xolo Kagiso Dandashe\\AndroidStudioProjects\\NFCBusinessCardLocal2\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v21_abc_action_bar_item_background_material.xml.flat",
         "source": "C:\\Users\\Xolo Kagiso Dandashe\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-26.1.0.aar\\687182da6d6ec0cc06429939d59fed76\\res\\drawable-v21\\abc_action_bar_item_background_material.xml"
+    },
+    {
+        "merged": "C:\\Users\\Xolo Kagiso Dandashe\\AndroidStudioProjects\\NFCBusinessCardLocal2\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_ic_trash_can.png.flat",
+        "source": "C:\\Users\\Xolo Kagiso Dandashe\\AndroidStudioProjects\\NFCBusinessCardLocal2\\app\\src\\main\\res\\drawable-hdpi\\ic_trash_can.png"
     },
     {
         "merged": "C:\\Users\\Xolo Kagiso Dandashe\\AndroidStudioProjects\\NFCBusinessCardLocal2\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4_notify_panel_notification_icon_bg.png.flat",
@@ -1312,6 +1328,10 @@
         "source": "C:\\Users\\Xolo Kagiso Dandashe\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-26.1.0.aar\\687182da6d6ec0cc06429939d59fed76\\res\\drawable-mdpi-v4\\abc_popup_background_mtrl_mult.9.png"
     },
     {
+        "merged": "C:\\Users\\Xolo Kagiso Dandashe\\AndroidStudioProjects\\NFCBusinessCardLocal2\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi_imagesblue.png.flat",
+        "source": "C:\\Users\\Xolo Kagiso Dandashe\\AndroidStudioProjects\\NFCBusinessCardLocal2\\app\\src\\main\\res\\mipmap-xhdpi\\imagesblue.png"
+    },
+    {
         "merged": "C:\\Users\\Xolo Kagiso Dandashe\\AndroidStudioProjects\\NFCBusinessCardLocal2\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4_abc_btn_check_to_on_mtrl_015.png.flat",
         "source": "C:\\Users\\Xolo Kagiso Dandashe\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-26.1.0.aar\\687182da6d6ec0cc06429939d59fed76\\res\\drawable-mdpi-v4\\abc_btn_check_to_on_mtrl_015.png"
     },
@@ -1516,6 +1536,10 @@
         "source": "C:\\Users\\Xolo Kagiso Dandashe\\AndroidStudioProjects\\NFCBusinessCardLocal2\\app\\src\\main\\res\\mipmap-xhdpi\\ic_launcher_round.png"
     },
     {
+        "merged": "C:\\Users\\Xolo Kagiso Dandashe\\AndroidStudioProjects\\NFCBusinessCardLocal2\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi_images.png.flat",
+        "source": "C:\\Users\\Xolo Kagiso Dandashe\\AndroidStudioProjects\\NFCBusinessCardLocal2\\app\\src\\main\\res\\mipmap-xhdpi\\images.png"
+    },
+    {
         "merged": "C:\\Users\\Xolo Kagiso Dandashe\\AndroidStudioProjects\\NFCBusinessCardLocal2\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_googleg_disabled_color_18.png.flat",
         "source": "C:\\Users\\Xolo Kagiso Dandashe\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-base-11.6.2.aar\\e2f9bd3c8bbde9d0bc8a53daf06b372a\\res\\drawable-xhdpi-v4\\googleg_disabled_color_18.png"
     },
@@ -1542,6 +1566,10 @@
     {
         "merged": "C:\\Users\\Xolo Kagiso Dandashe\\AndroidStudioProjects\\NFCBusinessCardLocal2\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi_location.png.flat",
         "source": "C:\\Users\\Xolo Kagiso Dandashe\\AndroidStudioProjects\\NFCBusinessCardLocal2\\app\\src\\main\\res\\mipmap-hdpi\\location.png"
+    },
+    {
+        "merged": "C:\\Users\\Xolo Kagiso Dandashe\\AndroidStudioProjects\\NFCBusinessCardLocal2\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi_viewprofile.png.flat",
+        "source": "C:\\Users\\Xolo Kagiso Dandashe\\AndroidStudioProjects\\NFCBusinessCardLocal2\\app\\src\\main\\res\\mipmap-xhdpi\\viewprofile.png"
     },
     {
         "merged": "C:\\Users\\Xolo Kagiso Dandashe\\AndroidStudioProjects\\NFCBusinessCardLocal2\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi-v4_abc_btn_radio_to_on_mtrl_015.png.flat",
@@ -1702,6 +1730,10 @@
     {
         "merged": "C:\\Users\\Xolo Kagiso Dandashe\\AndroidStudioProjects\\NFCBusinessCardLocal2\\app\\build\\intermediates\\res\\merged\\debug\\anim_tooltip_exit.xml.flat",
         "source": "C:\\Users\\Xolo Kagiso Dandashe\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-26.1.0.aar\\687182da6d6ec0cc06429939d59fed76\\res\\anim\\tooltip_exit.xml"
+    },
+    {
+        "merged": "C:\\Users\\Xolo Kagiso Dandashe\\AndroidStudioProjects\\NFCBusinessCardLocal2\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi_internet.png.flat",
+        "source": "C:\\Users\\Xolo Kagiso Dandashe\\AndroidStudioProjects\\NFCBusinessCardLocal2\\app\\src\\main\\res\\mipmap-xhdpi\\internet.png"
     },
     {
         "merged": "C:\\Users\\Xolo Kagiso Dandashe\\AndroidStudioProjects\\NFCBusinessCardLocal2\\app\\build\\intermediates\\res\\merged\\debug\\color_abc_primary_text_disable_only_material_dark.xml.flat",
@@ -1910,6 +1942,10 @@
     {
         "merged": "C:\\Users\\Xolo Kagiso Dandashe\\AndroidStudioProjects\\NFCBusinessCardLocal2\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_abc_btn_radio_to_on_mtrl_000.png.flat",
         "source": "C:\\Users\\Xolo Kagiso Dandashe\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-26.1.0.aar\\687182da6d6ec0cc06429939d59fed76\\res\\drawable-xhdpi-v4\\abc_btn_radio_to_on_mtrl_000.png"
+    },
+    {
+        "merged": "C:\\Users\\Xolo Kagiso Dandashe\\AndroidStudioProjects\\NFCBusinessCardLocal2\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_ic_trash_can.png.flat",
+        "source": "C:\\Users\\Xolo Kagiso Dandashe\\AndroidStudioProjects\\NFCBusinessCardLocal2\\app\\src\\main\\res\\drawable-mdpi\\ic_trash_can.png"
     },
     {
         "merged": "C:\\Users\\Xolo Kagiso Dandashe\\AndroidStudioProjects\\NFCBusinessCardLocal2\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_abc_btn_switch_to_on_mtrl_00001.9.png.flat",
