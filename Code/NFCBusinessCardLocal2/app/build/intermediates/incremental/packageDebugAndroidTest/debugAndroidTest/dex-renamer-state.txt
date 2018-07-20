@@ -1,0 +1,4 @@
+#Fri Jul 20 10:39:13 CAT 2018
+base.0=C\:\\Users\\User\\Documents\\GitHub\\Alpha-Tech\\Code\\NFCBusinessCardLocal2\\app\\build\\intermediates\\transforms\\dexMerger\\androidTest\\debug\\0
+path.0=classes.dex
+renamed.0=classes.dex

@@ -1,67 +1,87 @@
 package com.example.www.nfcbusinesscardlocal;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
+import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
+
 import junit.framework.Test;
 
+import java.security.NoSuchAlgorithmException;
+import java.security.NoSuchProviderException;
 import java.util.ArrayList;
 import java.util.List;
 
 public class LogIn extends AppCompatActivity {
-
-    ArrayList<TestUser> UserList=new ArrayList<>();
-    TestUser tu;
-    int user=-1;
+    ProgressDialog progressDialog;
+    FirebaseAuth firebaseAuth;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_log_in);
-        Intent intent=getIntent();
-        if(intent.hasExtra("newUser")) {
-            tu = (TestUser) intent.getSerializableExtra("newUser");
-            TestUser newUser= new TestUser(tu);
-            UserList.add(newUser);
+        progressDialog=new ProgressDialog(this);
+        firebaseAuth=FirebaseAuth.getInstance();
+        if(firebaseAuth.getCurrentUser()!=null)
+        {
+            Intent intent= new Intent(getApplicationContext(),MainActivity.class);
+            finish();
+            startActivity(intent);
         }
-        TestUser admin=new TestUser();
-        admin.setFullname("Admin");
-        admin.setJobTitle("Manager");
-        admin.setMobileNumber("+27 74 935 9620");
-        admin.setWorkTelephone("+27 14 935 9620");
-        admin.setEmailAddress("admin@info.com");
-        admin.setPassword("admin");
-        UserList.add(admin);
     }
     public void openMainMenu(View view){
+        progressDialog.setMessage("Logging in...");
+        progressDialog.show();
         String email,password;
         EditText editText=(EditText)findViewById(R.id.emaillogin);
-        email=editText.getText().toString();
+        email=editText.getText().toString().trim();
         editText=(EditText)findViewById(R.id.passwordlogin);
-        password=editText.getText().toString();
+        password=editText.getText().toString().trim();
 
-        for(int i=0;i<UserList.size();i++)
+        if(TextUtils.isEmpty(email))
         {
-            if(UserList.get(i).getEmailAddress().compareTo(email)==0&&UserList.get(i).getPassword().compareTo(password)==0)
-            {
-                user=i;
-            }
-        }
-        if(user==-1)
-        {
-            Toast.makeText(this, "Account does not exist.", Toast.LENGTH_SHORT).show();
+            progressDialog.dismiss();
+            Toast.makeText(this,"Please enter email.",Toast.LENGTH_SHORT).show();
             return;
         }
-        Intent intent= new Intent(this,MainActivity.class);
-        intent.putExtra("LoginUser",UserList.get(user));
-        startActivity(intent);
+        if(TextUtils.isEmpty(password))
+        {
+            progressDialog.dismiss();
+            Toast.makeText(this,"Please enter password.",Toast.LENGTH_SHORT).show();
+            return;
+        }
+        firebaseAuth.signInWithEmailAndPassword(email,password)
+        .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
+            @Override
+            public void onComplete(@NonNull Task<AuthResult> task) {
+                progressDialog.dismiss();
+                if(task.isSuccessful()){
+                    Intent intent= new Intent(getApplicationContext(),MainActivity.class);
+                    finish();
+                    startActivity(intent);
+                }
+                else{
+                    Toast.makeText(LogIn.this,"Unable to log in. Please try again.",Toast.LENGTH_SHORT).show();
+                    return;
+                }
+            }
+        });
     }
     public void openRegistration(View view){
         Intent intent = new Intent(this,Registration.class);
-        intent.putExtra("userlist",UserList);
+        startActivity(intent);
+    }
+    public void openImportCard(View view){
+        Intent intent = new Intent(this,ImportCardDetails.class);
         startActivity(intent);
     }
 }
