@@ -1,6 +1,10 @@
 /*
  * This file is auto-generated.  DO NOT MODIFY.
+<<<<<<< HEAD
  * Original file: C:\\Users\\User\\Documents\\GitHub\\Alpha-Tech\\Code\\NFCBusinessCardLocal2\\openCVLibrary\\src\\main\\aidl\\org\\opencv\\engine\\OpenCVEngineInterface.aidl
+=======
+ * Original file: C:\\Users\\Xolo Kagiso Dandashe\\Documents\\GitHub\\Alpha-Tech\\Code\\NFCBusinessCardLocal2\\openCVLibrary\\src\\main\\aidl\\org\\opencv\\engine\\OpenCVEngineInterface.aidl
+>>>>>>> XKDandashe
  */
 package org.opencv.engine;
 /**

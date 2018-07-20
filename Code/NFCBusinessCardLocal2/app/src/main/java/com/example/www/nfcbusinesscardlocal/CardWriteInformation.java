@@ -106,19 +106,19 @@ public class CardWriteInformation extends AppCompatActivity implements Listener 
                 .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int which) {
                         EditText editText;
-                        editText=findViewById(R.id.card_write_name);
+                        editText=(EditText) findViewById(R.id.card_write_name);
                         editText.setText(person.getFullname());
-                        editText=findViewById(R.id.card_write_jobtitle);
+                        editText=(EditText)findViewById(R.id.card_write_jobtitle);
                         editText.setText(person.getJobTitle());
-                        editText=findViewById(R.id.card_write_companyname);
+                        editText=(EditText)findViewById(R.id.card_write_companyname);
                         editText.setText(person.getCompanyName());
-                        editText=findViewById(R.id.card_write_email);
+                        editText=(EditText)findViewById(R.id.card_write_email);
                         editText.setText(person.getEmailAddress());
-                        editText=findViewById(R.id.card_write_telephone);
+                        editText=(EditText)findViewById(R.id.card_write_telephone);
                         editText.setText(person.getWorkTelephone());
-                        editText=findViewById(R.id.card_write_mobile);
+                        editText=(EditText)findViewById(R.id.card_write_mobile);
                         editText.setText(person.getMobileNumber());
-                        editText=findViewById(R.id.card_write_address);
+                        editText=(EditText)findViewById(R.id.card_write_address);
                         editText.setText(person.getWorkAddress());
                     }
                 })
@@ -200,14 +200,17 @@ public class CardWriteInformation extends AppCompatActivity implements Listener 
 
                     String messageToWrite = "";
                     EditText editText;
-                    editText=findViewById(R.id.card_write_name);messageToWrite+=editText.getText()+"\n";
-                    editText=findViewById(R.id.card_write_jobtitle);messageToWrite+=editText.getText()+"\n";
-                    editText=findViewById(R.id.card_write_companyname);messageToWrite+=editText.getText()+"\n";
-                    editText=findViewById(R.id.card_write_email);messageToWrite+=editText.getText()+"\n";
-                    editText=findViewById(R.id.card_write_mobile);messageToWrite+=editText.getText()+"\n";
-                    editText=findViewById(R.id.card_write_telephone);messageToWrite+=editText.getText()+"\n";
-                    editText=findViewById(R.id.card_write_address);messageToWrite+=editText.getText();
-
+                    editText=(EditText)findViewById(R.id.card_write_name);messageToWrite+=editText.getText()+"\n";
+                    editText=(EditText)findViewById(R.id.card_write_jobtitle);messageToWrite+=editText.getText()+"\n";
+                    editText=(EditText)findViewById(R.id.card_write_companyname);messageToWrite+=editText.getText()+"\n";
+                    editText=(EditText)findViewById(R.id.card_write_email);messageToWrite+=editText.getText()+"\n";
+                    editText=(EditText)findViewById(R.id.card_write_mobile);messageToWrite+=editText.getText()+"\n";
+                    editText=(EditText)findViewById(R.id.card_write_telephone);messageToWrite+=editText.getText()+"\n";
+                    editText=(EditText)findViewById(R.id.card_write_address);messageToWrite+=editText.getText();
+                    if(messageToWrite.contains(person.getEmailAddress()))
+                    {
+                        messageToWrite+="\n"+person.getImageUrl();
+                    }
                     cardWriteInformationFragment= (CardWriteInformationFragment) getFragmentManager().findFragmentByTag(CardWriteInformationFragment.TAG);
                     cardWriteInformationFragment.onNfcDetected(ndef,messageToWrite);
 

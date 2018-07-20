@@ -15,7 +15,7 @@ public class TestUser implements Serializable{
     //Attributes
     private String fullname, jobTitle, password;
     private String companyName,mobileNumber,workTelephone,emailAddress,workAddress;
-    private String recievedCards,appointmentlist;
+    private String recievedCards="",appointmentlist="",imageUrl="";
     //String facebook_link,linkedIn_link,googleplus_link;
     public TestUser(){
     }
@@ -60,9 +60,10 @@ public class TestUser implements Serializable{
     public void setRecievedCards(String recievedCards){
         this.recievedCards=recievedCards;
     }
-    public void setAppointmentlist (String appointmentlist){
-        this.appointmentlist=appointmentlist;
-    }
+
+    public void setAppointmentlist (String appointmentlist){this.appointmentlist=appointmentlist;}
+
+    public void setImageUrl(String imageUrl){this.imageUrl=imageUrl;}
     //getters
 
     public String getFullname() {
@@ -122,6 +123,11 @@ public class TestUser implements Serializable{
             return "";
         return appointmentlist;
     }
+    public String getImageUrl(){
+        if(imageUrl.isEmpty()||imageUrl.compareTo("")==0)
+            return "";
+        return imageUrl;
+    }
     //class functions
     public String getDetails()
     {
@@ -132,21 +138,22 @@ public class TestUser implements Serializable{
             returnString+=getEmailAddress()+"\n";
             returnString+=getMobileNumber()+"\n";
             returnString+=getWorkTelephone()+"\n";
-            returnString+=getWorkAddress()+"";
+            returnString+=getWorkAddress()+" \n";
+            returnString+=getImageUrl();
 
         return returnString;
     }
     public String generateDetails()
     {
         String returnString="";
-            returnString+=getFullname()+",";
-            returnString+=getJobTitle()+",";
-            returnString+=getCompanyName()+",";
-            returnString+=getEmailAddress()+",";
-            returnString+=getMobileNumber()+",";
-            returnString+=getWorkTelephone()+",";
-            returnString+=getWorkAddress()+"";
-
+            returnString+=getFullname()+"%";
+            returnString+=getJobTitle()+"%";
+            returnString+=getCompanyName()+"%";
+            returnString+=getEmailAddress()+"%";
+            returnString+=getMobileNumber()+"%";
+            returnString+=getWorkTelephone()+"%";
+            returnString+=getWorkAddress()+"%";
+            returnString+=getImageUrl();
 
         return returnString;
     }

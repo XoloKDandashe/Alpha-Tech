@@ -65,6 +65,7 @@ public class AppointmentListAdapter extends BaseAdapter {
             newAppointment.setName(details[0]);
             newAppointment.setDate(details[1]);
             newAppointment.setTime(details[2]);
+            if(details.length>3)
             newAppointment.setNotes(details[3]);
 
     TextView text = (TextView) vi.findViewById(R.id.appointment_name);

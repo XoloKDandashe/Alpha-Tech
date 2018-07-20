@@ -65,7 +65,6 @@
         </activity>
         <activity
             android:name=".updateDetails"
-            android:noHistory="true"
             android:screenOrientation="portrait">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
@@ -119,7 +118,7 @@
         </activity>
         <activity
             android:name=".ViewCardsInterface"
-            android:screenOrientation="portrait" >
+            android:screenOrientation="portrait">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".ManageCards" />
@@ -144,34 +143,38 @@
 
         <activity
             android:name=".Appointments"
-            android:screenOrientation="portrait" >
+            android:screenOrientation="portrait">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".ViewCardDetails" />
         </activity>
         <activity
             android:name=".ViewAppointmentsInterface"
-            android:screenOrientation="portrait" >
+            android:screenOrientation="portrait">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".ViewDetails" />
         </activity>
-        <activity android:name=".ImportCardDetails" >
+        <activity android:name=".ImportCardDetails">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".Registration" />
         </activity>
-        <activity android:name=".ReceiveImportCardActivity" >
+        <activity android:name=".ReceiveImportCardActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".ReceiverInterface" />
         </activity>
-        <activity android:name=".CardReadInformation" android:noHistory="true">
+        <activity
+            android:name=".CardReadInformation"
+            android:noHistory="true">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".ManageCards" />
         </activity>
-        <activity android:name=".CardWriteInformation" android:noHistory="true">
+        <activity
+            android:name=".CardWriteInformation"
+            android:noHistory="true">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".ManageCards" />
@@ -181,5 +184,11 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".ManageCards" />
         </activity>
+        <activity android:name=".updatePicture">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".updateDetails" />
+        </activity>
     </application>
+
 </manifest>

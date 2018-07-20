@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="@dimen/padding"
+    tools:context="com.example.www.nfcbusinesscardlocal.updatePicture">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center">
+            <Button
+                android:id="@+id/btn_select_image"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="Select Image"
+                android:textColor="@color/white"
+                android:background="@color/epiuseblue"
+                android:textStyle="bold"
+                android:padding="@dimen/lesspadding"
+                android:textSize="@dimen/padding"
+                android:layout_marginRight="@dimen/padding"
+                android:drawableRight="@mipmap/images"/>
+            <Button
+                android:id="@+id/btn_upload_image"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="Upload"
+                android:padding="@dimen/lesspadding"
+                android:textColor="@color/white"
+                android:background="@color/epiuseblue"
+                android:textStyle="bold"
+                android:textSize="@dimen/padding"
+                android:drawableRight="@mipmap/internet"/>
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/image_selected"
+            android:layout_width="match_parent"
+            android:layout_height="380dp"
+            android:src="@mipmap/imagesblue"
+            android:padding="@dimen/padding"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <Button
+                android:id="@+id/btn_UpdateBack"
+                android:layout_width="@dimen/signoutbtn"
+                android:layout_height="@dimen/signoutbtn"
+                android:background="@mipmap/backarrow" />
+        </LinearLayout>
+    </LinearLayout>
+</RelativeLayout>
