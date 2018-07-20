@@ -63,5 +63,7 @@
     <string name="message_write_tag">Write to NFC Card</string>
     <string name="message_tap_tag">Touch the NFC Card to your device !</string>
     <string name="hint_message">Information to send</string>
-
+    <!--Strings for datetime-->
+    <string name="date">Date: </string>
+    <string name="time">Time: </string>
 </resources>

@@ -91,7 +91,7 @@ public class ReceiverActivity extends AppCompatActivity {
     }
 
     private void initViews() {
-        this.tvIncomingMessage = findViewById(R.id.tv_in_message);
+        this.tvIncomingMessage = (TextView) findViewById(R.id.tv_in_message);
     }
 
     @Override
@@ -147,7 +147,17 @@ public class ReceiverActivity extends AppCompatActivity {
             NdefRecord ndefRecord_0 = inNdefRecords[0];
 
             String inMessage = new String(ndefRecord_0.getPayload());
-            this.tvIncomingMessage.setText(inMessage);
+            String[] shred=inMessage.split("\n");
+            String payload="";
+            int length=shred.length;
+            if(length>7)
+                length--;
+            for(int i=0;i<length;i++) {
+                payload += shred[i];
+                if((i+1)<length)
+                    payload+="\n";
+            }
+            this.tvIncomingMessage.setText(payload);
 
             String [] details=inMessage.split("\n");
             List<TestUser> arrayList=null;
@@ -171,7 +181,7 @@ public class ReceiverActivity extends AppCompatActivity {
             newCard.setMobileNumber(details[4]);
             newCard.setWorkTelephone(details[5]);
             newCard.setWorkAddress(details[6]);
-
+            newCard.setImageUrl(details[7]);
 
             arrayList.add(newCard);
             String jsonEncode= gson.toJson(arrayList);

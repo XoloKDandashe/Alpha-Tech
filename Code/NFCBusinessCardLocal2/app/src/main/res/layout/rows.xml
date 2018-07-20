@@ -8,25 +8,26 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
-        <TextView
-            android:id="@+id/row_fullname"
-            android:layout_width="150dp"
-            android:layout_height="wrap_content"
-            android:textColor="@color/black"
-            android:textStyle="bold"
-            android:textSize="15sp"
-            android:text="Xolo Kagiso Dandashe"
+        <ImageView
+            android:id="@+id/row_picture"
+            android:layout_width="85dp"
+            android:layout_height="85dp"
+            android:src="@mipmap/avatar"
+            android:layout_marginRight="@dimen/lesspadding"
+            android:padding="@dimen/lesspadding"
             />
         <TextView
-            android:id="@+id/row_company"
-            android:layout_width="140dp"
+            android:id="@+id/row_fullname"
+            android:layout_width="200dp"
             android:layout_height="wrap_content"
             android:textColor="@color/black"
             android:textStyle="bold"
-            android:textSize="15sp"
-            android:text="Lotshephe Development Engineers"/>
+            android:textSize="@dimen/fontsize"
+            android:padding="@dimen/lesspadding"
+            android:text="Kagiso Katametsi"
+            />
     </LinearLayout>
-    <LinearLayout
+    <!--<LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
         <TextView
@@ -37,28 +38,23 @@
             android:textSize="15sp"
             android:text="xkdee22@gmail.com"/>
 
-    </LinearLayout>
+    </LinearLayout>-->
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-        <TextView
-            android:id="@+id/row_phonenumber"
-            android:layout_width="150dp"
-            android:layout_height="wrap_content"
-            android:textColor="@color/black"
-            android:textSize="15sp"
-            android:text="0749359620"/>
+        android:layout_height="wrap_content"
+        >
         <TextView
             android:id="@+id/row_jobtitle"
-            android:layout_width="140dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textColor="@color/black"
             android:textStyle="bold"
-            android:textSize="15sp"
+            android:gravity="right"
+            android:textSize="@dimen/fontsize"
             android:text="Software Developer"
             />
     </LinearLayout>
-    <LinearLayout
+    <!--<LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
         <TextView
@@ -68,5 +64,5 @@
             android:textColor="@color/black"
             android:textSize="15sp"
             android:text="0749359620"/>
-    </LinearLayout>
+    </LinearLayout>-->
 </LinearLayout>

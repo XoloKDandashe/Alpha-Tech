@@ -1,5 +1,6 @@
 -- Merging decision tree log ---
 provider#android.support.v4.content.FileProvider
+<<<<<<< HEAD
 INJECTED from C:\Users\User\Documents\GitHub\Alpha-Tech\Code\NFCBusinessCardLocal2\app\src\main\AndroidManifest.xml:135:9-143:20
 	android:grantUriPermissions
 		ADDED from C:\Users\User\Documents\GitHub\Alpha-Tech\Code\NFCBusinessCardLocal2\app\src\main\AndroidManifest.xml:139:13-47
@@ -455,9 +456,496 @@ MERGED from [com.google.firebase:firebase-iid-license:11.6.2] C:\Users\User\.gra
 MERGED from [com.google.firebase:firebase-iid-license:11.6.2] C:\Users\User\.gradle\caches\transforms-1\files-1.1\firebase-iid-license-11.6.2.aar\d6592b7efa5bae4825effb385d5e1644\AndroidManifest.xml:4:5-43
 INJECTED from C:\Users\User\Documents\GitHub\Alpha-Tech\Code\NFCBusinessCardLocal2\app\src\main\AndroidManifest.xml
 INJECTED from C:\Users\User\Documents\GitHub\Alpha-Tech\Code\NFCBusinessCardLocal2\app\src\main\AndroidManifest.xml
+=======
+INJECTED from C:\Users\Xolo Kagiso Dandashe\Documents\GitHub\Alpha-Tech\Code\NFCBusinessCardLocal2\app\src\main\AndroidManifest.xml:134:9-142:20
+	android:grantUriPermissions
+		ADDED from C:\Users\Xolo Kagiso Dandashe\Documents\GitHub\Alpha-Tech\Code\NFCBusinessCardLocal2\app\src\main\AndroidManifest.xml:138:13-47
+	android:authorities
+		INJECTED from C:\Users\Xolo Kagiso Dandashe\Documents\GitHub\Alpha-Tech\Code\NFCBusinessCardLocal2\app\src\main\AndroidManifest.xml
+		ADDED from C:\Users\Xolo Kagiso Dandashe\Documents\GitHub\Alpha-Tech\Code\NFCBusinessCardLocal2\app\src\main\AndroidManifest.xml:136:13-60
+	android:exported
+		ADDED from C:\Users\Xolo Kagiso Dandashe\Documents\GitHub\Alpha-Tech\Code\NFCBusinessCardLocal2\app\src\main\AndroidManifest.xml:137:13-37
+	android:name
+		ADDED from C:\Users\Xolo Kagiso Dandashe\Documents\GitHub\Alpha-Tech\Code\NFCBusinessCardLocal2\app\src\main\AndroidManifest.xml:135:13-67
+manifest
+ADDED from C:\Users\Xolo Kagiso Dandashe\Documents\GitHub\Alpha-Tech\Code\NFCBusinessCardLocal2\app\src\main\AndroidManifest.xml:2:1-194:12
+INJECTED from C:\Users\Xolo Kagiso Dandashe\Documents\GitHub\Alpha-Tech\Code\NFCBusinessCardLocal2\app\src\main\AndroidManifest.xml:2:1-194:12
+INJECTED from C:\Users\Xolo Kagiso Dandashe\Documents\GitHub\Alpha-Tech\Code\NFCBusinessCardLocal2\app\src\main\AndroidManifest.xml:2:1-194:12
+INJECTED from C:\Users\Xolo Kagiso Dandashe\Documents\GitHub\Alpha-Tech\Code\NFCBusinessCardLocal2\app\src\main\AndroidManifest.xml:2:1-194:12
+MERGED from [com.journeyapps:zxing-android-embedded:3.2.0] C:\Users\Xolo Kagiso Dandashe\.gradle\caches\transforms-1\files-1.1\zxing-android-embedded-3.2.0.aar\c549af3a052de10b0ec8729c0528e998\AndroidManifest.xml:17:1-55:12
+MERGED from [com.google.firebase:firebase-core:11.6.2] C:\Users\Xolo Kagiso Dandashe\.gradle\caches\transforms-1\files-1.1\firebase-core-11.6.2.aar\91e49032e82f6930d169e63ebbe1943c\AndroidManifest.xml:2:1-6:12
+MERGED from [com.rmtheis:tess-two:6.2.0] C:\Users\Xolo Kagiso Dandashe\.gradle\caches\transforms-1\files-1.1\tess-two-6.2.0.aar\f908019e52bfd47823254da4855cdd8c\AndroidManifest.xml:17:1-26:12
+MERGED from [com.google.firebase:firebase-auth:11.6.2] C:\Users\Xolo Kagiso Dandashe\.gradle\caches\transforms-1\files-1.1\firebase-auth-11.6.2.aar\4f979e972252c4ed5b3efd25bae5f815\AndroidManifest.xml:16:1-21:12
+MERGED from [com.google.firebase:firebase-database:11.6.2] C:\Users\Xolo Kagiso Dandashe\.gradle\caches\transforms-1\files-1.1\firebase-database-11.6.2.aar\e1fc58b4f29cea7eac8ac0d05a6393dd\AndroidManifest.xml:2:1-4:12
+MERGED from [com.baoyz.swipemenulistview:library:1.3.0] C:\Users\Xolo Kagiso Dandashe\.gradle\caches\transforms-1\files-1.1\library-1.3.0.aar\c50a65a58b908d792ce784d1a6b55023\AndroidManifest.xml:2:1-11:12
+MERGED from [:openCVLibrary] C:\Users\Xolo Kagiso Dandashe\Documents\GitHub\Alpha-Tech\Code\NFCBusinessCardLocal2\openCVLibrary\build\intermediates\manifests\full\debug\AndroidManifest.xml:2:1-11:12
+MERGED from [com.firebaseui:firebase-ui-storage:0.6.0] C:\Users\Xolo Kagiso Dandashe\.gradle\caches\transforms-1\files-1.1\firebase-ui-storage-0.6.0.aar\4f3b619a436048501e8d92ce90c0b7fd\AndroidManifest.xml:2:1-11:12
+MERGED from [com.android.support:appcompat-v7:26.1.0] C:\Users\Xolo Kagiso Dandashe\.gradle\caches\transforms-1\files-1.1\appcompat-v7-26.1.0.aar\687182da6d6ec0cc06429939d59fed76\AndroidManifest.xml:17:1-31:12
+MERGED from [com.android.support.constraint:constraint-layout:1.0.2] C:\Users\Xolo Kagiso Dandashe\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.0.2.aar\602e27b05e3fdf876fe3f31ebd725868\AndroidManifest.xml:2:1-11:12
+MERGED from [com.google.android.gms:play-services-maps:11.6.2] C:\Users\Xolo Kagiso Dandashe\.gradle\caches\transforms-1\files-1.1\play-services-maps-11.6.2.aar\029b51c27b4d7a52745a3e5b4ae834b7\AndroidManifest.xml:16:1-25:12
+MERGED from [com.google.firebase:firebase-analytics:11.6.2] C:\Users\Xolo Kagiso Dandashe\.gradle\caches\transforms-1\files-1.1\firebase-analytics-11.6.2.aar\1b14896322afec1efae45729760e6bc2\AndroidManifest.xml:16:1-35:12
+MERGED from [com.google.android.gms:play-services-base:11.6.2] C:\Users\Xolo Kagiso Dandashe\.gradle\caches\transforms-1\files-1.1\play-services-base-11.6.2.aar\e2f9bd3c8bbde9d0bc8a53daf06b372a\AndroidManifest.xml:16:1-21:12
+MERGED from [com.google.firebase:firebase-database-connection:11.6.2] C:\Users\Xolo Kagiso Dandashe\.gradle\caches\transforms-1\files-1.1\firebase-database-connection-11.6.2.aar\6a4869de6870b174985a8c7baec8732b\AndroidManifest.xml:2:1-4:12
+MERGED from [com.google.firebase:firebase-analytics-impl:11.6.2] C:\Users\Xolo Kagiso Dandashe\.gradle\caches\transforms-1\files-1.1\firebase-analytics-impl-11.6.2.aar\6fea9d2d4229694ef03305d26bab2c38\AndroidManifest.xml:16:1-29:12
+MERGED from [com.google.firebase:firebase-iid:11.6.2] C:\Users\Xolo Kagiso Dandashe\.gradle\caches\transforms-1\files-1.1\firebase-iid-11.6.2.aar\2d873b7b22bc462189c01b5affa1b2bb\AndroidManifest.xml:16:1-47:12
+MERGED from [com.google.firebase:firebase-storage:11.6.2] C:\Users\Xolo Kagiso Dandashe\.gradle\caches\transforms-1\files-1.1\firebase-storage-11.6.2.aar\03372469cb78feb18b0db5c54a1d0f24\AndroidManifest.xml:2:1-4:12
+MERGED from [com.google.firebase:firebase-common:11.6.2] C:\Users\Xolo Kagiso Dandashe\.gradle\caches\transforms-1\files-1.1\firebase-common-11.6.2.aar\91ada9a9fa44592c19ce32f939176e8a\AndroidManifest.xml:2:1-8:12
+MERGED from [com.google.android.gms:play-services-tasks:11.6.2] C:\Users\Xolo Kagiso Dandashe\.gradle\caches\transforms-1\files-1.1\play-services-tasks-11.6.2.aar\bb133d735b569d1ccd37e4cb0f8f6e1b\AndroidManifest.xml:2:1-5:12
+MERGED from [com.google.firebase:firebase-storage-common:11.6.2] C:\Users\Xolo Kagiso Dandashe\.gradle\caches\transforms-1\files-1.1\firebase-storage-common-11.6.2.aar\5a2f6151312ceb3d8b45a1dfde2d786a\AndroidManifest.xml:2:1-4:12
+MERGED from [com.google.android.gms:play-services-basement:11.6.2] C:\Users\Xolo Kagiso Dandashe\.gradle\caches\transforms-1\files-1.1\play-services-basement-11.6.2.aar\d70c89b9f1e48afc38ef3710ab4e13ae\AndroidManifest.xml:16:1-23:12
+MERGED from [com.android.support:palette-v7:23.4.0] C:\Users\Xolo Kagiso Dandashe\.gradle\caches\transforms-1\files-1.1\palette-v7-23.4.0.aar\6270f7fcdc158b3823421a88d7723c34\AndroidManifest.xml:17:1-25:12
+MERGED from [com.android.support:support-v4:26.1.0] C:\Users\Xolo Kagiso Dandashe\.gradle\caches\transforms-1\files-1.1\support-v4-26.1.0.aar\c92203136e573fb64bb0a85b5161e27c\AndroidManifest.xml:17:1-31:12
+MERGED from [com.android.support:animated-vector-drawable:26.1.0] C:\Users\Xolo Kagiso Dandashe\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-26.1.0.aar\7901d827e64ac36d1e34cf2c5c3a5e2c\AndroidManifest.xml:17:1-28:12
+MERGED from [com.android.support:support-vector-drawable:26.1.0] C:\Users\Xolo Kagiso Dandashe\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-26.1.0.aar\852a5a50f832bfb9450410e18418ca5b\AndroidManifest.xml:17:1-28:12
+MERGED from [com.google.firebase:firebase-auth-license:11.6.2] C:\Users\Xolo Kagiso Dandashe\.gradle\caches\transforms-1\files-1.1\firebase-auth-license-11.6.2.aar\a9221acd8206f3e7cfb4a58a4494c5c0\AndroidManifest.xml:2:1-6:12
+MERGED from [com.google.firebase:firebase-database-license:11.6.2] C:\Users\Xolo Kagiso Dandashe\.gradle\caches\transforms-1\files-1.1\firebase-database-license-11.6.2.aar\9cdd18d2122eca50fb68d14c60ece2b4\AndroidManifest.xml:2:1-6:12
+MERGED from [com.android.support:support-media-compat:26.1.0] C:\Users\Xolo Kagiso Dandashe\.gradle\caches\transforms-1\files-1.1\support-media-compat-26.1.0.aar\636bda63a5f41f843c5b3d51fd657816\AndroidManifest.xml:17:1-31:12
+MERGED from [com.android.support:support-fragment:26.1.0] C:\Users\Xolo Kagiso Dandashe\.gradle\caches\transforms-1\files-1.1\support-fragment-26.1.0.aar\208e8c9f5cd6b02232f00dc90836a87a\AndroidManifest.xml:17:1-31:12
+MERGED from [com.android.support:support-core-utils:26.1.0] C:\Users\Xolo Kagiso Dandashe\.gradle\caches\transforms-1\files-1.1\support-core-utils-26.1.0.aar\6f71f2e6c55162b7657d89d1b72b0d14\AndroidManifest.xml:17:1-31:12
+MERGED from [com.android.support:support-core-ui:26.1.0] C:\Users\Xolo Kagiso Dandashe\.gradle\caches\transforms-1\files-1.1\support-core-ui-26.1.0.aar\2ccc1f393ccab8498388c7035ba252b5\AndroidManifest.xml:17:1-31:12
+MERGED from [com.android.support:support-compat:26.1.0] C:\Users\Xolo Kagiso Dandashe\.gradle\caches\transforms-1\files-1.1\support-compat-26.1.0.aar\c3874068355baa8bde26fca9b62292ac\AndroidManifest.xml:17:1-31:12
+MERGED from [com.google.android.gms:play-services-maps-license:11.6.2] C:\Users\Xolo Kagiso Dandashe\.gradle\caches\transforms-1\files-1.1\play-services-maps-license-11.6.2.aar\f27476deb4ded40864b00b6c22a57db6\AndroidManifest.xml:2:1-6:12
+MERGED from [com.google.firebase:firebase-storage-license:11.6.2] C:\Users\Xolo Kagiso Dandashe\.gradle\caches\transforms-1\files-1.1\firebase-storage-license-11.6.2.aar\daebe30c492ba662c84bbfbd8b3f4e02\AndroidManifest.xml:2:1-6:12
+MERGED from [com.google.firebase:firebase-analytics-license:11.6.2] C:\Users\Xolo Kagiso Dandashe\.gradle\caches\transforms-1\files-1.1\firebase-analytics-license-11.6.2.aar\0b156b937aa787bebe5c74335156336f\AndroidManifest.xml:2:1-6:12
+MERGED from [com.google.android.gms:play-services-base-license:11.6.2] C:\Users\Xolo Kagiso Dandashe\.gradle\caches\transforms-1\files-1.1\play-services-base-license-11.6.2.aar\1b0106e4ed8c588b4d3383b4b314faf5\AndroidManifest.xml:2:1-6:12
+MERGED from [com.google.android.gms:play-services-basement-license:11.6.2] C:\Users\Xolo Kagiso Dandashe\.gradle\caches\transforms-1\files-1.1\play-services-basement-license-11.6.2.aar\272968af4ee3009adda760f69d6b4a30\AndroidManifest.xml:2:1-6:12
+MERGED from [com.google.firebase:firebase-common-license:11.6.2] C:\Users\Xolo Kagiso Dandashe\.gradle\caches\transforms-1\files-1.1\firebase-common-license-11.6.2.aar\544952dac7a4a94265ce21bb3950dfa8\AndroidManifest.xml:2:1-6:12
+MERGED from [com.google.android.gms:play-services-tasks-license:11.6.2] C:\Users\Xolo Kagiso Dandashe\.gradle\caches\transforms-1\files-1.1\play-services-tasks-license-11.6.2.aar\57180a183fc8e8361a94ff75798cf1f1\AndroidManifest.xml:2:1-6:12
+MERGED from [com.google.firebase:firebase-database-connection-license:11.6.2] C:\Users\Xolo Kagiso Dandashe\.gradle\caches\transforms-1\files-1.1\firebase-database-connection-license-11.6.2.aar\e751744ec42a3d357b1b273446ac92a8\AndroidManifest.xml:2:1-6:12
+MERGED from [android.arch.lifecycle:runtime:1.0.0] C:\Users\Xolo Kagiso Dandashe\.gradle\caches\transforms-1\files-1.1\runtime-1.0.0.aar\55442d0a58970bf2efbfc928bd10306b\AndroidManifest.xml:17:1-30:12
+MERGED from [com.google.firebase:firebase-analytics-impl-license:11.6.2] C:\Users\Xolo Kagiso Dandashe\.gradle\caches\transforms-1\files-1.1\firebase-analytics-impl-license-11.6.2.aar\77f84853aab836b7b5778d6e65316477\AndroidManifest.xml:2:1-6:12
+MERGED from [com.google.firebase:firebase-iid-license:11.6.2] C:\Users\Xolo Kagiso Dandashe\.gradle\caches\transforms-1\files-1.1\firebase-iid-license-11.6.2.aar\e2a5092471691ea9f02aedd0946325e1\AndroidManifest.xml:2:1-6:12
+MERGED from [com.google.firebase:firebase-storage-common-license:11.6.2] C:\Users\Xolo Kagiso Dandashe\.gradle\caches\transforms-1\files-1.1\firebase-storage-common-license-11.6.2.aar\f2cfa3e7d5bde4c4854269e9e5a0e547\AndroidManifest.xml:2:1-6:12
+INJECTED from C:\Users\Xolo Kagiso Dandashe\Documents\GitHub\Alpha-Tech\Code\NFCBusinessCardLocal2\app\src\main\AndroidManifest.xml:2:1-194:12
+INJECTED from C:\Users\Xolo Kagiso Dandashe\Documents\GitHub\Alpha-Tech\Code\NFCBusinessCardLocal2\app\src\main\AndroidManifest.xml:2:1-194:12
+INJECTED from C:\Users\Xolo Kagiso Dandashe\Documents\GitHub\Alpha-Tech\Code\NFCBusinessCardLocal2\app\src\main\AndroidManifest.xml:2:1-194:12
+	package
+		ADDED from C:\Users\Xolo Kagiso Dandashe\Documents\GitHub\Alpha-Tech\Code\NFCBusinessCardLocal2\app\src\main\AndroidManifest.xml:3:5-51
+		INJECTED from C:\Users\Xolo Kagiso Dandashe\Documents\GitHub\Alpha-Tech\Code\NFCBusinessCardLocal2\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\Xolo Kagiso Dandashe\Documents\GitHub\Alpha-Tech\Code\NFCBusinessCardLocal2\app\src\main\AndroidManifest.xml
+	android:versionName
+		INJECTED from C:\Users\Xolo Kagiso Dandashe\Documents\GitHub\Alpha-Tech\Code\NFCBusinessCardLocal2\app\src\main\AndroidManifest.xml
+		ADDED from C:\Users\Xolo Kagiso Dandashe\Documents\GitHub\Alpha-Tech\Code\NFCBusinessCardLocal2\app\src\main\AndroidManifest.xml:2:1-194:12
+		INJECTED from C:\Users\Xolo Kagiso Dandashe\Documents\GitHub\Alpha-Tech\Code\NFCBusinessCardLocal2\app\src\main\AndroidManifest.xml
+	android:versionCode
+		INJECTED from C:\Users\Xolo Kagiso Dandashe\Documents\GitHub\Alpha-Tech\Code\NFCBusinessCardLocal2\app\src\main\AndroidManifest.xml
+		ADDED from C:\Users\Xolo Kagiso Dandashe\Documents\GitHub\Alpha-Tech\Code\NFCBusinessCardLocal2\app\src\main\AndroidManifest.xml:2:1-194:12
+		INJECTED from C:\Users\Xolo Kagiso Dandashe\Documents\GitHub\Alpha-Tech\Code\NFCBusinessCardLocal2\app\src\main\AndroidManifest.xml
+	xmlns:android
+		ADDED from C:\Users\Xolo Kagiso Dandashe\Documents\GitHub\Alpha-Tech\Code\NFCBusinessCardLocal2\app\src\main\AndroidManifest.xml:2:11-69
+uses-permission#android.permission.NFC
+ADDED from C:\Users\Xolo Kagiso Dandashe\Documents\GitHub\Alpha-Tech\Code\NFCBusinessCardLocal2\app\src\main\AndroidManifest.xml:5:5-62
+	android:name
+		ADDED from C:\Users\Xolo Kagiso Dandashe\Documents\GitHub\Alpha-Tech\Code\NFCBusinessCardLocal2\app\src\main\AndroidManifest.xml:5:22-59
+uses-permission#android.permission.CALL_PHONE
+ADDED from C:\Users\Xolo Kagiso Dandashe\Documents\GitHub\Alpha-Tech\Code\NFCBusinessCardLocal2\app\src\main\AndroidManifest.xml:6:5-69
+	android:name
+		ADDED from C:\Users\Xolo Kagiso Dandashe\Documents\GitHub\Alpha-Tech\Code\NFCBusinessCardLocal2\app\src\main\AndroidManifest.xml:6:22-66
+uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
+ADDED from C:\Users\Xolo Kagiso Dandashe\Documents\GitHub\Alpha-Tech\Code\NFCBusinessCardLocal2\app\src\main\AndroidManifest.xml:7:5-81
+	android:name
+		ADDED from C:\Users\Xolo Kagiso Dandashe\Documents\GitHub\Alpha-Tech\Code\NFCBusinessCardLocal2\app\src\main\AndroidManifest.xml:7:22-78
+uses-permission#android.permission.READ_EXTERNAL_STORAGE
+ADDED from C:\Users\Xolo Kagiso Dandashe\Documents\GitHub\Alpha-Tech\Code\NFCBusinessCardLocal2\app\src\main\AndroidManifest.xml:8:5-80
+	android:name
+		ADDED from C:\Users\Xolo Kagiso Dandashe\Documents\GitHub\Alpha-Tech\Code\NFCBusinessCardLocal2\app\src\main\AndroidManifest.xml:8:22-77
+uses-permission#android.permission.INTERNET
+ADDED from C:\Users\Xolo Kagiso Dandashe\Documents\GitHub\Alpha-Tech\Code\NFCBusinessCardLocal2\app\src\main\AndroidManifest.xml:9:5-67
+MERGED from [com.google.android.gms:play-services-maps:11.6.2] C:\Users\Xolo Kagiso Dandashe\.gradle\caches\transforms-1\files-1.1\play-services-maps-11.6.2.aar\029b51c27b4d7a52745a3e5b4ae834b7\AndroidManifest.xml:20:5-66
+MERGED from [com.google.android.gms:play-services-maps:11.6.2] C:\Users\Xolo Kagiso Dandashe\.gradle\caches\transforms-1\files-1.1\play-services-maps-11.6.2.aar\029b51c27b4d7a52745a3e5b4ae834b7\AndroidManifest.xml:20:5-66
+MERGED from [com.google.firebase:firebase-analytics:11.6.2] C:\Users\Xolo Kagiso Dandashe\.gradle\caches\transforms-1\files-1.1\firebase-analytics-11.6.2.aar\1b14896322afec1efae45729760e6bc2\AndroidManifest.xml:20:5-66
+MERGED from [com.google.firebase:firebase-analytics:11.6.2] C:\Users\Xolo Kagiso Dandashe\.gradle\caches\transforms-1\files-1.1\firebase-analytics-11.6.2.aar\1b14896322afec1efae45729760e6bc2\AndroidManifest.xml:20:5-66
+MERGED from [com.google.firebase:firebase-analytics-impl:11.6.2] C:\Users\Xolo Kagiso Dandashe\.gradle\caches\transforms-1\files-1.1\firebase-analytics-impl-11.6.2.aar\6fea9d2d4229694ef03305d26bab2c38\AndroidManifest.xml:20:5-66
+MERGED from [com.google.firebase:firebase-analytics-impl:11.6.2] C:\Users\Xolo Kagiso Dandashe\.gradle\caches\transforms-1\files-1.1\firebase-analytics-impl-11.6.2.aar\6fea9d2d4229694ef03305d26bab2c38\AndroidManifest.xml:20:5-66
+MERGED from [com.google.firebase:firebase-iid:11.6.2] C:\Users\Xolo Kagiso Dandashe\.gradle\caches\transforms-1\files-1.1\firebase-iid-11.6.2.aar\2d873b7b22bc462189c01b5affa1b2bb\AndroidManifest.xml:20:5-66
+MERGED from [com.google.firebase:firebase-iid:11.6.2] C:\Users\Xolo Kagiso Dandashe\.gradle\caches\transforms-1\files-1.1\firebase-iid-11.6.2.aar\2d873b7b22bc462189c01b5affa1b2bb\AndroidManifest.xml:20:5-66
+	android:name
+		ADDED from C:\Users\Xolo Kagiso Dandashe\Documents\GitHub\Alpha-Tech\Code\NFCBusinessCardLocal2\app\src\main\AndroidManifest.xml:9:22-64
+uses-permission#android.permission.ACCESS_FINE_LOCATION
+ADDED from C:\Users\Xolo Kagiso Dandashe\Documents\GitHub\Alpha-Tech\Code\NFCBusinessCardLocal2\app\src\main\AndroidManifest.xml:10:5-79
+	android:name
+		ADDED from C:\Users\Xolo Kagiso Dandashe\Documents\GitHub\Alpha-Tech\Code\NFCBusinessCardLocal2\app\src\main\AndroidManifest.xml:10:22-76
+uses-permission#android.permission.ACCESS_COARSE_LOCATION
+ADDED from C:\Users\Xolo Kagiso Dandashe\Documents\GitHub\Alpha-Tech\Code\NFCBusinessCardLocal2\app\src\main\AndroidManifest.xml:11:5-81
+	android:name
+		ADDED from C:\Users\Xolo Kagiso Dandashe\Documents\GitHub\Alpha-Tech\Code\NFCBusinessCardLocal2\app\src\main\AndroidManifest.xml:11:22-78
+uses-permission#android.permission.CAMERA
+ADDED from C:\Users\Xolo Kagiso Dandashe\Documents\GitHub\Alpha-Tech\Code\NFCBusinessCardLocal2\app\src\main\AndroidManifest.xml:12:5-65
+MERGED from [com.journeyapps:zxing-android-embedded:3.2.0] C:\Users\Xolo Kagiso Dandashe\.gradle\caches\transforms-1\files-1.1\zxing-android-embedded-3.2.0.aar\c549af3a052de10b0ec8729c0528e998\AndroidManifest.xml:21:5-65
+MERGED from [com.journeyapps:zxing-android-embedded:3.2.0] C:\Users\Xolo Kagiso Dandashe\.gradle\caches\transforms-1\files-1.1\zxing-android-embedded-3.2.0.aar\c549af3a052de10b0ec8729c0528e998\AndroidManifest.xml:21:5-65
+	android:name
+		ADDED from C:\Users\Xolo Kagiso Dandashe\Documents\GitHub\Alpha-Tech\Code\NFCBusinessCardLocal2\app\src\main\AndroidManifest.xml:12:22-62
+uses-feature#android.hardware.camera.autofocus
+ADDED from C:\Users\Xolo Kagiso Dandashe\Documents\GitHub\Alpha-Tech\Code\NFCBusinessCardLocal2\app\src\main\AndroidManifest.xml:14:5-70
+MERGED from [com.journeyapps:zxing-android-embedded:3.2.0] C:\Users\Xolo Kagiso Dandashe\.gradle\caches\transforms-1\files-1.1\zxing-android-embedded-3.2.0.aar\c549af3a052de10b0ec8729c0528e998\AndroidManifest.xml:32:5-34:36
+MERGED from [com.journeyapps:zxing-android-embedded:3.2.0] C:\Users\Xolo Kagiso Dandashe\.gradle\caches\transforms-1\files-1.1\zxing-android-embedded-3.2.0.aar\c549af3a052de10b0ec8729c0528e998\AndroidManifest.xml:32:5-34:36
+	android:name
+		ADDED from C:\Users\Xolo Kagiso Dandashe\Documents\GitHub\Alpha-Tech\Code\NFCBusinessCardLocal2\app\src\main\AndroidManifest.xml:14:19-67
+uses-feature#android.hardware.camera.flash
+ADDED from C:\Users\Xolo Kagiso Dandashe\Documents\GitHub\Alpha-Tech\Code\NFCBusinessCardLocal2\app\src\main\AndroidManifest.xml:15:5-17:36
+MERGED from [com.journeyapps:zxing-android-embedded:3.2.0] C:\Users\Xolo Kagiso Dandashe\.gradle\caches\transforms-1\files-1.1\zxing-android-embedded-3.2.0.aar\c549af3a052de10b0ec8729c0528e998\AndroidManifest.xml:35:5-37:36
+MERGED from [com.journeyapps:zxing-android-embedded:3.2.0] C:\Users\Xolo Kagiso Dandashe\.gradle\caches\transforms-1\files-1.1\zxing-android-embedded-3.2.0.aar\c549af3a052de10b0ec8729c0528e998\AndroidManifest.xml:35:5-37:36
+	android:required
+		ADDED from C:\Users\Xolo Kagiso Dandashe\Documents\GitHub\Alpha-Tech\Code\NFCBusinessCardLocal2\app\src\main\AndroidManifest.xml:17:9-33
+	android:name
+		ADDED from C:\Users\Xolo Kagiso Dandashe\Documents\GitHub\Alpha-Tech\Code\NFCBusinessCardLocal2\app\src\main\AndroidManifest.xml:16:9-53
+uses-feature#android.hardware.camera
+ADDED from C:\Users\Xolo Kagiso Dandashe\Documents\GitHub\Alpha-Tech\Code\NFCBusinessCardLocal2\app\src\main\AndroidManifest.xml:18:5-60
+MERGED from [com.journeyapps:zxing-android-embedded:3.2.0] C:\Users\Xolo Kagiso Dandashe\.gradle\caches\transforms-1\files-1.1\zxing-android-embedded-3.2.0.aar\c549af3a052de10b0ec8729c0528e998\AndroidManifest.xml:24:5-26:36
+MERGED from [com.journeyapps:zxing-android-embedded:3.2.0] C:\Users\Xolo Kagiso Dandashe\.gradle\caches\transforms-1\files-1.1\zxing-android-embedded-3.2.0.aar\c549af3a052de10b0ec8729c0528e998\AndroidManifest.xml:24:5-26:36
+	android:name
+		ADDED from C:\Users\Xolo Kagiso Dandashe\Documents\GitHub\Alpha-Tech\Code\NFCBusinessCardLocal2\app\src\main\AndroidManifest.xml:18:19-57
+uses-feature#android.hardware.nfc
+ADDED from C:\Users\Xolo Kagiso Dandashe\Documents\GitHub\Alpha-Tech\Code\NFCBusinessCardLocal2\app\src\main\AndroidManifest.xml:19:5-21:35
+	android:required
+		ADDED from C:\Users\Xolo Kagiso Dandashe\Documents\GitHub\Alpha-Tech\Code\NFCBusinessCardLocal2\app\src\main\AndroidManifest.xml:21:9-32
+	android:name
+		ADDED from C:\Users\Xolo Kagiso Dandashe\Documents\GitHub\Alpha-Tech\Code\NFCBusinessCardLocal2\app\src\main\AndroidManifest.xml:20:9-44
+application
+ADDED from C:\Users\Xolo Kagiso Dandashe\Documents\GitHub\Alpha-Tech\Code\NFCBusinessCardLocal2\app\src\main\AndroidManifest.xml:23:5-192:19
+MERGED from [com.journeyapps:zxing-android-embedded:3.2.0] C:\Users\Xolo Kagiso Dandashe\.gradle\caches\transforms-1\files-1.1\zxing-android-embedded-3.2.0.aar\c549af3a052de10b0ec8729c0528e998\AndroidManifest.xml:45:5-53:19
+MERGED from [com.journeyapps:zxing-android-embedded:3.2.0] C:\Users\Xolo Kagiso Dandashe\.gradle\caches\transforms-1\files-1.1\zxing-android-embedded-3.2.0.aar\c549af3a052de10b0ec8729c0528e998\AndroidManifest.xml:45:5-53:19
+MERGED from [com.google.firebase:firebase-core:11.6.2] C:\Users\Xolo Kagiso Dandashe\.gradle\caches\transforms-1\files-1.1\firebase-core-11.6.2.aar\91e49032e82f6930d169e63ebbe1943c\AndroidManifest.xml:5:5-20
+MERGED from [com.google.firebase:firebase-core:11.6.2] C:\Users\Xolo Kagiso Dandashe\.gradle\caches\transforms-1\files-1.1\firebase-core-11.6.2.aar\91e49032e82f6930d169e63ebbe1943c\AndroidManifest.xml:5:5-20
+MERGED from [com.google.firebase:firebase-auth:11.6.2] C:\Users\Xolo Kagiso Dandashe\.gradle\caches\transforms-1\files-1.1\firebase-auth-11.6.2.aar\4f979e972252c4ed5b3efd25bae5f815\AndroidManifest.xml:19:5-20:19
+MERGED from [com.google.firebase:firebase-auth:11.6.2] C:\Users\Xolo Kagiso Dandashe\.gradle\caches\transforms-1\files-1.1\firebase-auth-11.6.2.aar\4f979e972252c4ed5b3efd25bae5f815\AndroidManifest.xml:19:5-20:19
+MERGED from [com.android.support:appcompat-v7:26.1.0] C:\Users\Xolo Kagiso Dandashe\.gradle\caches\transforms-1\files-1.1\appcompat-v7-26.1.0.aar\687182da6d6ec0cc06429939d59fed76\AndroidManifest.xml:25:5-29:19
+MERGED from [com.android.support:appcompat-v7:26.1.0] C:\Users\Xolo Kagiso Dandashe\.gradle\caches\transforms-1\files-1.1\appcompat-v7-26.1.0.aar\687182da6d6ec0cc06429939d59fed76\AndroidManifest.xml:25:5-29:19
+MERGED from [com.android.support.constraint:constraint-layout:1.0.2] C:\Users\Xolo Kagiso Dandashe\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.0.2.aar\602e27b05e3fdf876fe3f31ebd725868\AndroidManifest.xml:9:5-20
+MERGED from [com.android.support.constraint:constraint-layout:1.0.2] C:\Users\Xolo Kagiso Dandashe\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.0.2.aar\602e27b05e3fdf876fe3f31ebd725868\AndroidManifest.xml:9:5-20
+MERGED from [com.google.android.gms:play-services-maps:11.6.2] C:\Users\Xolo Kagiso Dandashe\.gradle\caches\transforms-1\files-1.1\play-services-maps-11.6.2.aar\029b51c27b4d7a52745a3e5b4ae834b7\AndroidManifest.xml:24:5-19
+MERGED from [com.google.android.gms:play-services-maps:11.6.2] C:\Users\Xolo Kagiso Dandashe\.gradle\caches\transforms-1\files-1.1\play-services-maps-11.6.2.aar\029b51c27b4d7a52745a3e5b4ae834b7\AndroidManifest.xml:24:5-19
+MERGED from [com.google.firebase:firebase-analytics:11.6.2] C:\Users\Xolo Kagiso Dandashe\.gradle\caches\transforms-1\files-1.1\firebase-analytics-11.6.2.aar\1b14896322afec1efae45729760e6bc2\AndroidManifest.xml:24:5-34:19
+MERGED from [com.google.firebase:firebase-analytics:11.6.2] C:\Users\Xolo Kagiso Dandashe\.gradle\caches\transforms-1\files-1.1\firebase-analytics-11.6.2.aar\1b14896322afec1efae45729760e6bc2\AndroidManifest.xml:24:5-34:19
+MERGED from [com.google.android.gms:play-services-base:11.6.2] C:\Users\Xolo Kagiso Dandashe\.gradle\caches\transforms-1\files-1.1\play-services-base-11.6.2.aar\e2f9bd3c8bbde9d0bc8a53daf06b372a\AndroidManifest.xml:18:5-20:19
+MERGED from [com.google.android.gms:play-services-base:11.6.2] C:\Users\Xolo Kagiso Dandashe\.gradle\caches\transforms-1\files-1.1\play-services-base-11.6.2.aar\e2f9bd3c8bbde9d0bc8a53daf06b372a\AndroidManifest.xml:18:5-20:19
+MERGED from [com.google.firebase:firebase-analytics-impl:11.6.2] C:\Users\Xolo Kagiso Dandashe\.gradle\caches\transforms-1\files-1.1\firebase-analytics-impl-11.6.2.aar\6fea9d2d4229694ef03305d26bab2c38\AndroidManifest.xml:24:5-28:19
+MERGED from [com.google.firebase:firebase-analytics-impl:11.6.2] C:\Users\Xolo Kagiso Dandashe\.gradle\caches\transforms-1\files-1.1\firebase-analytics-impl-11.6.2.aar\6fea9d2d4229694ef03305d26bab2c38\AndroidManifest.xml:24:5-28:19
+MERGED from [com.google.firebase:firebase-iid:11.6.2] C:\Users\Xolo Kagiso Dandashe\.gradle\caches\transforms-1\files-1.1\firebase-iid-11.6.2.aar\2d873b7b22bc462189c01b5affa1b2bb\AndroidManifest.xml:29:5-46:19
+MERGED from [com.google.firebase:firebase-iid:11.6.2] C:\Users\Xolo Kagiso Dandashe\.gradle\caches\transforms-1\files-1.1\firebase-iid-11.6.2.aar\2d873b7b22bc462189c01b5affa1b2bb\AndroidManifest.xml:29:5-46:19
+MERGED from [com.google.firebase:firebase-common:11.6.2] C:\Users\Xolo Kagiso Dandashe\.gradle\caches\transforms-1\files-1.1\firebase-common-11.6.2.aar\91ada9a9fa44592c19ce32f939176e8a\AndroidManifest.xml:4:5-7:19
+MERGED from [com.google.firebase:firebase-common:11.6.2] C:\Users\Xolo Kagiso Dandashe\.gradle\caches\transforms-1\files-1.1\firebase-common-11.6.2.aar\91ada9a9fa44592c19ce32f939176e8a\AndroidManifest.xml:4:5-7:19
+MERGED from [com.google.android.gms:play-services-tasks:11.6.2] C:\Users\Xolo Kagiso Dandashe\.gradle\caches\transforms-1\files-1.1\play-services-tasks-11.6.2.aar\bb133d735b569d1ccd37e4cb0f8f6e1b\AndroidManifest.xml:4:5-19
+MERGED from [com.google.android.gms:play-services-tasks:11.6.2] C:\Users\Xolo Kagiso Dandashe\.gradle\caches\transforms-1\files-1.1\play-services-tasks-11.6.2.aar\bb133d735b569d1ccd37e4cb0f8f6e1b\AndroidManifest.xml:4:5-19
+MERGED from [com.google.android.gms:play-services-basement:11.6.2] C:\Users\Xolo Kagiso Dandashe\.gradle\caches\transforms-1\files-1.1\play-services-basement-11.6.2.aar\d70c89b9f1e48afc38ef3710ab4e13ae\AndroidManifest.xml:19:5-21:19
+MERGED from [com.google.android.gms:play-services-basement:11.6.2] C:\Users\Xolo Kagiso Dandashe\.gradle\caches\transforms-1\files-1.1\play-services-basement-11.6.2.aar\d70c89b9f1e48afc38ef3710ab4e13ae\AndroidManifest.xml:19:5-21:19
+MERGED from [com.android.support:palette-v7:23.4.0] C:\Users\Xolo Kagiso Dandashe\.gradle\caches\transforms-1\files-1.1\palette-v7-23.4.0.aar\6270f7fcdc158b3823421a88d7723c34\AndroidManifest.xml:22:5-23:19
+MERGED from [com.android.support:palette-v7:23.4.0] C:\Users\Xolo Kagiso Dandashe\.gradle\caches\transforms-1\files-1.1\palette-v7-23.4.0.aar\6270f7fcdc158b3823421a88d7723c34\AndroidManifest.xml:22:5-23:19
+MERGED from [com.android.support:support-v4:26.1.0] C:\Users\Xolo Kagiso Dandashe\.gradle\caches\transforms-1\files-1.1\support-v4-26.1.0.aar\c92203136e573fb64bb0a85b5161e27c\AndroidManifest.xml:25:5-29:19
+MERGED from [com.android.support:support-v4:26.1.0] C:\Users\Xolo Kagiso Dandashe\.gradle\caches\transforms-1\files-1.1\support-v4-26.1.0.aar\c92203136e573fb64bb0a85b5161e27c\AndroidManifest.xml:25:5-29:19
+MERGED from [com.android.support:animated-vector-drawable:26.1.0] C:\Users\Xolo Kagiso Dandashe\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-26.1.0.aar\7901d827e64ac36d1e34cf2c5c3a5e2c\AndroidManifest.xml:22:5-26:19
+MERGED from [com.android.support:animated-vector-drawable:26.1.0] C:\Users\Xolo Kagiso Dandashe\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-26.1.0.aar\7901d827e64ac36d1e34cf2c5c3a5e2c\AndroidManifest.xml:22:5-26:19
+MERGED from [com.android.support:support-vector-drawable:26.1.0] C:\Users\Xolo Kagiso Dandashe\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-26.1.0.aar\852a5a50f832bfb9450410e18418ca5b\AndroidManifest.xml:22:5-26:19
+MERGED from [com.android.support:support-vector-drawable:26.1.0] C:\Users\Xolo Kagiso Dandashe\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-26.1.0.aar\852a5a50f832bfb9450410e18418ca5b\AndroidManifest.xml:22:5-26:19
+MERGED from [com.google.firebase:firebase-auth-license:11.6.2] C:\Users\Xolo Kagiso Dandashe\.gradle\caches\transforms-1\files-1.1\firebase-auth-license-11.6.2.aar\a9221acd8206f3e7cfb4a58a4494c5c0\AndroidManifest.xml:5:5-20
+MERGED from [com.google.firebase:firebase-auth-license:11.6.2] C:\Users\Xolo Kagiso Dandashe\.gradle\caches\transforms-1\files-1.1\firebase-auth-license-11.6.2.aar\a9221acd8206f3e7cfb4a58a4494c5c0\AndroidManifest.xml:5:5-20
+MERGED from [com.google.firebase:firebase-database-license:11.6.2] C:\Users\Xolo Kagiso Dandashe\.gradle\caches\transforms-1\files-1.1\firebase-database-license-11.6.2.aar\9cdd18d2122eca50fb68d14c60ece2b4\AndroidManifest.xml:5:5-20
+MERGED from [com.google.firebase:firebase-database-license:11.6.2] C:\Users\Xolo Kagiso Dandashe\.gradle\caches\transforms-1\files-1.1\firebase-database-license-11.6.2.aar\9cdd18d2122eca50fb68d14c60ece2b4\AndroidManifest.xml:5:5-20
+MERGED from [com.android.support:support-media-compat:26.1.0] C:\Users\Xolo Kagiso Dandashe\.gradle\caches\transforms-1\files-1.1\support-media-compat-26.1.0.aar\636bda63a5f41f843c5b3d51fd657816\AndroidManifest.xml:25:5-29:19
+MERGED from [com.android.support:support-media-compat:26.1.0] C:\Users\Xolo Kagiso Dandashe\.gradle\caches\transforms-1\files-1.1\support-media-compat-26.1.0.aar\636bda63a5f41f843c5b3d51fd657816\AndroidManifest.xml:25:5-29:19
+MERGED from [com.android.support:support-fragment:26.1.0] C:\Users\Xolo Kagiso Dandashe\.gradle\caches\transforms-1\files-1.1\support-fragment-26.1.0.aar\208e8c9f5cd6b02232f00dc90836a87a\AndroidManifest.xml:25:5-29:19
+MERGED from [com.android.support:support-fragment:26.1.0] C:\Users\Xolo Kagiso Dandashe\.gradle\caches\transforms-1\files-1.1\support-fragment-26.1.0.aar\208e8c9f5cd6b02232f00dc90836a87a\AndroidManifest.xml:25:5-29:19
+MERGED from [com.android.support:support-core-utils:26.1.0] C:\Users\Xolo Kagiso Dandashe\.gradle\caches\transforms-1\files-1.1\support-core-utils-26.1.0.aar\6f71f2e6c55162b7657d89d1b72b0d14\AndroidManifest.xml:25:5-29:19
+MERGED from [com.android.support:support-core-utils:26.1.0] C:\Users\Xolo Kagiso Dandashe\.gradle\caches\transforms-1\files-1.1\support-core-utils-26.1.0.aar\6f71f2e6c55162b7657d89d1b72b0d14\AndroidManifest.xml:25:5-29:19
+MERGED from [com.android.support:support-core-ui:26.1.0] C:\Users\Xolo Kagiso Dandashe\.gradle\caches\transforms-1\files-1.1\support-core-ui-26.1.0.aar\2ccc1f393ccab8498388c7035ba252b5\AndroidManifest.xml:25:5-29:19
+MERGED from [com.android.support:support-core-ui:26.1.0] C:\Users\Xolo Kagiso Dandashe\.gradle\caches\transforms-1\files-1.1\support-core-ui-26.1.0.aar\2ccc1f393ccab8498388c7035ba252b5\AndroidManifest.xml:25:5-29:19
+MERGED from [com.android.support:support-compat:26.1.0] C:\Users\Xolo Kagiso Dandashe\.gradle\caches\transforms-1\files-1.1\support-compat-26.1.0.aar\c3874068355baa8bde26fca9b62292ac\AndroidManifest.xml:25:5-29:19
+MERGED from [com.android.support:support-compat:26.1.0] C:\Users\Xolo Kagiso Dandashe\.gradle\caches\transforms-1\files-1.1\support-compat-26.1.0.aar\c3874068355baa8bde26fca9b62292ac\AndroidManifest.xml:25:5-29:19
+MERGED from [com.google.android.gms:play-services-maps-license:11.6.2] C:\Users\Xolo Kagiso Dandashe\.gradle\caches\transforms-1\files-1.1\play-services-maps-license-11.6.2.aar\f27476deb4ded40864b00b6c22a57db6\AndroidManifest.xml:5:5-20
+MERGED from [com.google.android.gms:play-services-maps-license:11.6.2] C:\Users\Xolo Kagiso Dandashe\.gradle\caches\transforms-1\files-1.1\play-services-maps-license-11.6.2.aar\f27476deb4ded40864b00b6c22a57db6\AndroidManifest.xml:5:5-20
+MERGED from [com.google.firebase:firebase-storage-license:11.6.2] C:\Users\Xolo Kagiso Dandashe\.gradle\caches\transforms-1\files-1.1\firebase-storage-license-11.6.2.aar\daebe30c492ba662c84bbfbd8b3f4e02\AndroidManifest.xml:5:5-20
+MERGED from [com.google.firebase:firebase-storage-license:11.6.2] C:\Users\Xolo Kagiso Dandashe\.gradle\caches\transforms-1\files-1.1\firebase-storage-license-11.6.2.aar\daebe30c492ba662c84bbfbd8b3f4e02\AndroidManifest.xml:5:5-20
+MERGED from [com.google.firebase:firebase-analytics-license:11.6.2] C:\Users\Xolo Kagiso Dandashe\.gradle\caches\transforms-1\files-1.1\firebase-analytics-license-11.6.2.aar\0b156b937aa787bebe5c74335156336f\AndroidManifest.xml:5:5-20
+MERGED from [com.google.firebase:firebase-analytics-license:11.6.2] C:\Users\Xolo Kagiso Dandashe\.gradle\caches\transforms-1\files-1.1\firebase-analytics-license-11.6.2.aar\0b156b937aa787bebe5c74335156336f\AndroidManifest.xml:5:5-20
+MERGED from [com.google.android.gms:play-services-base-license:11.6.2] C:\Users\Xolo Kagiso Dandashe\.gradle\caches\transforms-1\files-1.1\play-services-base-license-11.6.2.aar\1b0106e4ed8c588b4d3383b4b314faf5\AndroidManifest.xml:5:5-20
+MERGED from [com.google.android.gms:play-services-base-license:11.6.2] C:\Users\Xolo Kagiso Dandashe\.gradle\caches\transforms-1\files-1.1\play-services-base-license-11.6.2.aar\1b0106e4ed8c588b4d3383b4b314faf5\AndroidManifest.xml:5:5-20
+MERGED from [com.google.android.gms:play-services-basement-license:11.6.2] C:\Users\Xolo Kagiso Dandashe\.gradle\caches\transforms-1\files-1.1\play-services-basement-license-11.6.2.aar\272968af4ee3009adda760f69d6b4a30\AndroidManifest.xml:5:5-20
+MERGED from [com.google.android.gms:play-services-basement-license:11.6.2] C:\Users\Xolo Kagiso Dandashe\.gradle\caches\transforms-1\files-1.1\play-services-basement-license-11.6.2.aar\272968af4ee3009adda760f69d6b4a30\AndroidManifest.xml:5:5-20
+MERGED from [com.google.firebase:firebase-common-license:11.6.2] C:\Users\Xolo Kagiso Dandashe\.gradle\caches\transforms-1\files-1.1\firebase-common-license-11.6.2.aar\544952dac7a4a94265ce21bb3950dfa8\AndroidManifest.xml:5:5-20
+MERGED from [com.google.firebase:firebase-common-license:11.6.2] C:\Users\Xolo Kagiso Dandashe\.gradle\caches\transforms-1\files-1.1\firebase-common-license-11.6.2.aar\544952dac7a4a94265ce21bb3950dfa8\AndroidManifest.xml:5:5-20
+MERGED from [com.google.android.gms:play-services-tasks-license:11.6.2] C:\Users\Xolo Kagiso Dandashe\.gradle\caches\transforms-1\files-1.1\play-services-tasks-license-11.6.2.aar\57180a183fc8e8361a94ff75798cf1f1\AndroidManifest.xml:5:5-20
+MERGED from [com.google.android.gms:play-services-tasks-license:11.6.2] C:\Users\Xolo Kagiso Dandashe\.gradle\caches\transforms-1\files-1.1\play-services-tasks-license-11.6.2.aar\57180a183fc8e8361a94ff75798cf1f1\AndroidManifest.xml:5:5-20
+MERGED from [com.google.firebase:firebase-database-connection-license:11.6.2] C:\Users\Xolo Kagiso Dandashe\.gradle\caches\transforms-1\files-1.1\firebase-database-connection-license-11.6.2.aar\e751744ec42a3d357b1b273446ac92a8\AndroidManifest.xml:5:5-20
+MERGED from [com.google.firebase:firebase-database-connection-license:11.6.2] C:\Users\Xolo Kagiso Dandashe\.gradle\caches\transforms-1\files-1.1\firebase-database-connection-license-11.6.2.aar\e751744ec42a3d357b1b273446ac92a8\AndroidManifest.xml:5:5-20
+MERGED from [android.arch.lifecycle:runtime:1.0.0] C:\Users\Xolo Kagiso Dandashe\.gradle\caches\transforms-1\files-1.1\runtime-1.0.0.aar\55442d0a58970bf2efbfc928bd10306b\AndroidManifest.xml:24:5-28:19
+MERGED from [android.arch.lifecycle:runtime:1.0.0] C:\Users\Xolo Kagiso Dandashe\.gradle\caches\transforms-1\files-1.1\runtime-1.0.0.aar\55442d0a58970bf2efbfc928bd10306b\AndroidManifest.xml:24:5-28:19
+MERGED from [com.google.firebase:firebase-analytics-impl-license:11.6.2] C:\Users\Xolo Kagiso Dandashe\.gradle\caches\transforms-1\files-1.1\firebase-analytics-impl-license-11.6.2.aar\77f84853aab836b7b5778d6e65316477\AndroidManifest.xml:5:5-20
+MERGED from [com.google.firebase:firebase-analytics-impl-license:11.6.2] C:\Users\Xolo Kagiso Dandashe\.gradle\caches\transforms-1\files-1.1\firebase-analytics-impl-license-11.6.2.aar\77f84853aab836b7b5778d6e65316477\AndroidManifest.xml:5:5-20
+MERGED from [com.google.firebase:firebase-iid-license:11.6.2] C:\Users\Xolo Kagiso Dandashe\.gradle\caches\transforms-1\files-1.1\firebase-iid-license-11.6.2.aar\e2a5092471691ea9f02aedd0946325e1\AndroidManifest.xml:5:5-20
+MERGED from [com.google.firebase:firebase-iid-license:11.6.2] C:\Users\Xolo Kagiso Dandashe\.gradle\caches\transforms-1\files-1.1\firebase-iid-license-11.6.2.aar\e2a5092471691ea9f02aedd0946325e1\AndroidManifest.xml:5:5-20
+MERGED from [com.google.firebase:firebase-storage-common-license:11.6.2] C:\Users\Xolo Kagiso Dandashe\.gradle\caches\transforms-1\files-1.1\firebase-storage-common-license-11.6.2.aar\f2cfa3e7d5bde4c4854269e9e5a0e547\AndroidManifest.xml:5:5-20
+MERGED from [com.google.firebase:firebase-storage-common-license:11.6.2] C:\Users\Xolo Kagiso Dandashe\.gradle\caches\transforms-1\files-1.1\firebase-storage-common-license-11.6.2.aar\f2cfa3e7d5bde4c4854269e9e5a0e547\AndroidManifest.xml:5:5-20
+	android:supportsRtl
+		ADDED from C:\Users\Xolo Kagiso Dandashe\Documents\GitHub\Alpha-Tech\Code\NFCBusinessCardLocal2\app\src\main\AndroidManifest.xml:28:9-35
+	android:label
+		ADDED from C:\Users\Xolo Kagiso Dandashe\Documents\GitHub\Alpha-Tech\Code\NFCBusinessCardLocal2\app\src\main\AndroidManifest.xml:26:9-41
+	android:roundIcon
+		ADDED from C:\Users\Xolo Kagiso Dandashe\Documents\GitHub\Alpha-Tech\Code\NFCBusinessCardLocal2\app\src\main\AndroidManifest.xml:27:9-47
+	android:icon
+		ADDED from C:\Users\Xolo Kagiso Dandashe\Documents\GitHub\Alpha-Tech\Code\NFCBusinessCardLocal2\app\src\main\AndroidManifest.xml:25:9-42
+	android:allowBackup
+		ADDED from C:\Users\Xolo Kagiso Dandashe\Documents\GitHub\Alpha-Tech\Code\NFCBusinessCardLocal2\app\src\main\AndroidManifest.xml:24:9-35
+	android:theme
+		ADDED from C:\Users\Xolo Kagiso Dandashe\Documents\GitHub\Alpha-Tech\Code\NFCBusinessCardLocal2\app\src\main\AndroidManifest.xml:29:9-40
+activity#com.example.www.nfcbusinesscardlocal.MainActivity
+ADDED from C:\Users\Xolo Kagiso Dandashe\Documents\GitHub\Alpha-Tech\Code\NFCBusinessCardLocal2\app\src\main\AndroidManifest.xml:30:9-32:52
+	android:screenOrientation
+		ADDED from C:\Users\Xolo Kagiso Dandashe\Documents\GitHub\Alpha-Tech\Code\NFCBusinessCardLocal2\app\src\main\AndroidManifest.xml:32:13-49
+	android:name
+		ADDED from C:\Users\Xolo Kagiso Dandashe\Documents\GitHub\Alpha-Tech\Code\NFCBusinessCardLocal2\app\src\main\AndroidManifest.xml:31:13-41
+activity#com.example.www.nfcbusinesscardlocal.ViewDetails
+ADDED from C:\Users\Xolo Kagiso Dandashe\Documents\GitHub\Alpha-Tech\Code\NFCBusinessCardLocal2\app\src\main\AndroidManifest.xml:33:9-39:20
+	android:screenOrientation
+		ADDED from C:\Users\Xolo Kagiso Dandashe\Documents\GitHub\Alpha-Tech\Code\NFCBusinessCardLocal2\app\src\main\AndroidManifest.xml:35:13-49
+	android:name
+		ADDED from C:\Users\Xolo Kagiso Dandashe\Documents\GitHub\Alpha-Tech\Code\NFCBusinessCardLocal2\app\src\main\AndroidManifest.xml:34:13-40
+meta-data#android.support.PARENT_ACTIVITY
+ADDED from C:\Users\Xolo Kagiso Dandashe\Documents\GitHub\Alpha-Tech\Code\NFCBusinessCardLocal2\app\src\main\AndroidManifest.xml:36:13-38:49
+	android:value
+		ADDED from C:\Users\Xolo Kagiso Dandashe\Documents\GitHub\Alpha-Tech\Code\NFCBusinessCardLocal2\app\src\main\AndroidManifest.xml:38:17-46
+	android:name
+		ADDED from C:\Users\Xolo Kagiso Dandashe\Documents\GitHub\Alpha-Tech\Code\NFCBusinessCardLocal2\app\src\main\AndroidManifest.xml:37:17-63
+activity#com.example.www.nfcbusinesscardlocal.ManageCards
+ADDED from C:\Users\Xolo Kagiso Dandashe\Documents\GitHub\Alpha-Tech\Code\NFCBusinessCardLocal2\app\src\main\AndroidManifest.xml:40:9-46:20
+	android:screenOrientation
+		ADDED from C:\Users\Xolo Kagiso Dandashe\Documents\GitHub\Alpha-Tech\Code\NFCBusinessCardLocal2\app\src\main\AndroidManifest.xml:42:13-49
+	android:name
+		ADDED from C:\Users\Xolo Kagiso Dandashe\Documents\GitHub\Alpha-Tech\Code\NFCBusinessCardLocal2\app\src\main\AndroidManifest.xml:41:13-40
+activity#com.example.www.nfcbusinesscardlocal.LogIn
+ADDED from C:\Users\Xolo Kagiso Dandashe\Documents\GitHub\Alpha-Tech\Code\NFCBusinessCardLocal2\app\src\main\AndroidManifest.xml:47:9-55:20
+	android:screenOrientation
+		ADDED from C:\Users\Xolo Kagiso Dandashe\Documents\GitHub\Alpha-Tech\Code\NFCBusinessCardLocal2\app\src\main\AndroidManifest.xml:49:13-49
+	android:name
+		ADDED from C:\Users\Xolo Kagiso Dandashe\Documents\GitHub\Alpha-Tech\Code\NFCBusinessCardLocal2\app\src\main\AndroidManifest.xml:48:13-34
+intent-filter#android.intent.action.MAIN+android.intent.category.LAUNCHER
+ADDED from C:\Users\Xolo Kagiso Dandashe\Documents\GitHub\Alpha-Tech\Code\NFCBusinessCardLocal2\app\src\main\AndroidManifest.xml:50:13-54:29
+action#android.intent.action.MAIN
+ADDED from C:\Users\Xolo Kagiso Dandashe\Documents\GitHub\Alpha-Tech\Code\NFCBusinessCardLocal2\app\src\main\AndroidManifest.xml:51:17-69
+	android:name
+		ADDED from C:\Users\Xolo Kagiso Dandashe\Documents\GitHub\Alpha-Tech\Code\NFCBusinessCardLocal2\app\src\main\AndroidManifest.xml:51:25-66
+category#android.intent.category.LAUNCHER
+ADDED from C:\Users\Xolo Kagiso Dandashe\Documents\GitHub\Alpha-Tech\Code\NFCBusinessCardLocal2\app\src\main\AndroidManifest.xml:53:17-77
+	android:name
+		ADDED from C:\Users\Xolo Kagiso Dandashe\Documents\GitHub\Alpha-Tech\Code\NFCBusinessCardLocal2\app\src\main\AndroidManifest.xml:53:27-74
+activity#com.example.www.nfcbusinesscardlocal.Registration
+ADDED from C:\Users\Xolo Kagiso Dandashe\Documents\GitHub\Alpha-Tech\Code\NFCBusinessCardLocal2\app\src\main\AndroidManifest.xml:56:9-58:52
+	android:screenOrientation
+		ADDED from C:\Users\Xolo Kagiso Dandashe\Documents\GitHub\Alpha-Tech\Code\NFCBusinessCardLocal2\app\src\main\AndroidManifest.xml:58:13-49
+	android:name
+		ADDED from C:\Users\Xolo Kagiso Dandashe\Documents\GitHub\Alpha-Tech\Code\NFCBusinessCardLocal2\app\src\main\AndroidManifest.xml:57:13-41
+activity#com.example.www.nfcbusinesscardlocal.SendInterface
+ADDED from C:\Users\Xolo Kagiso Dandashe\Documents\GitHub\Alpha-Tech\Code\NFCBusinessCardLocal2\app\src\main\AndroidManifest.xml:59:9-65:20
+	android:screenOrientation
+		ADDED from C:\Users\Xolo Kagiso Dandashe\Documents\GitHub\Alpha-Tech\Code\NFCBusinessCardLocal2\app\src\main\AndroidManifest.xml:61:13-49
+	android:name
+		ADDED from C:\Users\Xolo Kagiso Dandashe\Documents\GitHub\Alpha-Tech\Code\NFCBusinessCardLocal2\app\src\main\AndroidManifest.xml:60:13-42
+activity#com.example.www.nfcbusinesscardlocal.updateDetails
+ADDED from C:\Users\Xolo Kagiso Dandashe\Documents\GitHub\Alpha-Tech\Code\NFCBusinessCardLocal2\app\src\main\AndroidManifest.xml:66:9-72:20
+	android:screenOrientation
+		ADDED from C:\Users\Xolo Kagiso Dandashe\Documents\GitHub\Alpha-Tech\Code\NFCBusinessCardLocal2\app\src\main\AndroidManifest.xml:68:13-49
+	android:name
+		ADDED from C:\Users\Xolo Kagiso Dandashe\Documents\GitHub\Alpha-Tech\Code\NFCBusinessCardLocal2\app\src\main\AndroidManifest.xml:67:13-42
+activity#com.example.www.nfcbusinesscardlocal.NFCActivity
+ADDED from C:\Users\Xolo Kagiso Dandashe\Documents\GitHub\Alpha-Tech\Code\NFCBusinessCardLocal2\app\src\main\AndroidManifest.xml:73:9-79:20
+	android:screenOrientation
+		ADDED from C:\Users\Xolo Kagiso Dandashe\Documents\GitHub\Alpha-Tech\Code\NFCBusinessCardLocal2\app\src\main\AndroidManifest.xml:75:13-49
+	android:name
+		ADDED from C:\Users\Xolo Kagiso Dandashe\Documents\GitHub\Alpha-Tech\Code\NFCBusinessCardLocal2\app\src\main\AndroidManifest.xml:74:13-40
+activity#com.example.www.nfcbusinesscardlocal.NFCDisplayActivity
+ADDED from C:\Users\Xolo Kagiso Dandashe\Documents\GitHub\Alpha-Tech\Code\NFCBusinessCardLocal2\app\src\main\AndroidManifest.xml:80:9-82:52
+	android:screenOrientation
+		ADDED from C:\Users\Xolo Kagiso Dandashe\Documents\GitHub\Alpha-Tech\Code\NFCBusinessCardLocal2\app\src\main\AndroidManifest.xml:82:13-49
+	android:name
+		ADDED from C:\Users\Xolo Kagiso Dandashe\Documents\GitHub\Alpha-Tech\Code\NFCBusinessCardLocal2\app\src\main\AndroidManifest.xml:81:13-47
+activity#com.example.www.nfcbusinesscardlocal.GenerateQRCode
+ADDED from C:\Users\Xolo Kagiso Dandashe\Documents\GitHub\Alpha-Tech\Code\NFCBusinessCardLocal2\app\src\main\AndroidManifest.xml:83:9-89:20
+	android:screenOrientation
+		ADDED from C:\Users\Xolo Kagiso Dandashe\Documents\GitHub\Alpha-Tech\Code\NFCBusinessCardLocal2\app\src\main\AndroidManifest.xml:85:13-49
+	android:name
+		ADDED from C:\Users\Xolo Kagiso Dandashe\Documents\GitHub\Alpha-Tech\Code\NFCBusinessCardLocal2\app\src\main\AndroidManifest.xml:84:13-43
+activity#com.example.www.nfcbusinesscardlocal.ReceiverActivity
+ADDED from C:\Users\Xolo Kagiso Dandashe\Documents\GitHub\Alpha-Tech\Code\NFCBusinessCardLocal2\app\src\main\AndroidManifest.xml:90:9-104:20
+	android:screenOrientation
+		ADDED from C:\Users\Xolo Kagiso Dandashe\Documents\GitHub\Alpha-Tech\Code\NFCBusinessCardLocal2\app\src\main\AndroidManifest.xml:92:13-49
+	android:name
+		ADDED from C:\Users\Xolo Kagiso Dandashe\Documents\GitHub\Alpha-Tech\Code\NFCBusinessCardLocal2\app\src\main\AndroidManifest.xml:91:13-45
+intent-filter#android.intent.category.DEFAULT+android.nfc.action.NDEF_DISCOVERED
+ADDED from C:\Users\Xolo Kagiso Dandashe\Documents\GitHub\Alpha-Tech\Code\NFCBusinessCardLocal2\app\src\main\AndroidManifest.xml:93:13-99:29
+action#android.nfc.action.NDEF_DISCOVERED
+ADDED from C:\Users\Xolo Kagiso Dandashe\Documents\GitHub\Alpha-Tech\Code\NFCBusinessCardLocal2\app\src\main\AndroidManifest.xml:94:17-77
+	android:name
+		ADDED from C:\Users\Xolo Kagiso Dandashe\Documents\GitHub\Alpha-Tech\Code\NFCBusinessCardLocal2\app\src\main\AndroidManifest.xml:94:25-74
+category#android.intent.category.DEFAULT
+ADDED from C:\Users\Xolo Kagiso Dandashe\Documents\GitHub\Alpha-Tech\Code\NFCBusinessCardLocal2\app\src\main\AndroidManifest.xml:96:17-76
+	android:name
+		ADDED from C:\Users\Xolo Kagiso Dandashe\Documents\GitHub\Alpha-Tech\Code\NFCBusinessCardLocal2\app\src\main\AndroidManifest.xml:96:27-73
+data
+ADDED from C:\Users\Xolo Kagiso Dandashe\Documents\GitHub\Alpha-Tech\Code\NFCBusinessCardLocal2\app\src\main\AndroidManifest.xml:98:17-55
+	android:mimeType
+		ADDED from C:\Users\Xolo Kagiso Dandashe\Documents\GitHub\Alpha-Tech\Code\NFCBusinessCardLocal2\app\src\main\AndroidManifest.xml:98:23-52
+activity#com.example.www.nfcbusinesscardlocal.ReceiverInterface
+ADDED from C:\Users\Xolo Kagiso Dandashe\Documents\GitHub\Alpha-Tech\Code\NFCBusinessCardLocal2\app\src\main\AndroidManifest.xml:105:9-111:20
+	android:screenOrientation
+		ADDED from C:\Users\Xolo Kagiso Dandashe\Documents\GitHub\Alpha-Tech\Code\NFCBusinessCardLocal2\app\src\main\AndroidManifest.xml:107:13-49
+	android:name
+		ADDED from C:\Users\Xolo Kagiso Dandashe\Documents\GitHub\Alpha-Tech\Code\NFCBusinessCardLocal2\app\src\main\AndroidManifest.xml:106:13-46
+activity#com.example.www.nfcbusinesscardlocal.ReaderActivity
+ADDED from C:\Users\Xolo Kagiso Dandashe\Documents\GitHub\Alpha-Tech\Code\NFCBusinessCardLocal2\app\src\main\AndroidManifest.xml:112:9-118:20
+	android:screenOrientation
+		ADDED from C:\Users\Xolo Kagiso Dandashe\Documents\GitHub\Alpha-Tech\Code\NFCBusinessCardLocal2\app\src\main\AndroidManifest.xml:114:13-49
+	android:name
+		ADDED from C:\Users\Xolo Kagiso Dandashe\Documents\GitHub\Alpha-Tech\Code\NFCBusinessCardLocal2\app\src\main\AndroidManifest.xml:113:13-43
+activity#com.example.www.nfcbusinesscardlocal.ViewCardsInterface
+ADDED from C:\Users\Xolo Kagiso Dandashe\Documents\GitHub\Alpha-Tech\Code\NFCBusinessCardLocal2\app\src\main\AndroidManifest.xml:119:9-125:20
+	android:screenOrientation
+		ADDED from C:\Users\Xolo Kagiso Dandashe\Documents\GitHub\Alpha-Tech\Code\NFCBusinessCardLocal2\app\src\main\AndroidManifest.xml:121:13-49
+	android:name
+		ADDED from C:\Users\Xolo Kagiso Dandashe\Documents\GitHub\Alpha-Tech\Code\NFCBusinessCardLocal2\app\src\main\AndroidManifest.xml:120:13-47
+activity#com.example.www.nfcbusinesscardlocal.ViewCardDetails
+ADDED from C:\Users\Xolo Kagiso Dandashe\Documents\GitHub\Alpha-Tech\Code\NFCBusinessCardLocal2\app\src\main\AndroidManifest.xml:126:9-132:20
+	android:screenOrientation
+		ADDED from C:\Users\Xolo Kagiso Dandashe\Documents\GitHub\Alpha-Tech\Code\NFCBusinessCardLocal2\app\src\main\AndroidManifest.xml:128:13-49
+	android:name
+		ADDED from C:\Users\Xolo Kagiso Dandashe\Documents\GitHub\Alpha-Tech\Code\NFCBusinessCardLocal2\app\src\main\AndroidManifest.xml:127:13-44
+activity#com.example.www.nfcbusinesscardlocal.Appointments
+ADDED from C:\Users\Xolo Kagiso Dandashe\Documents\GitHub\Alpha-Tech\Code\NFCBusinessCardLocal2\app\src\main\AndroidManifest.xml:144:9-150:20
+	android:screenOrientation
+		ADDED from C:\Users\Xolo Kagiso Dandashe\Documents\GitHub\Alpha-Tech\Code\NFCBusinessCardLocal2\app\src\main\AndroidManifest.xml:146:13-49
+	android:name
+		ADDED from C:\Users\Xolo Kagiso Dandashe\Documents\GitHub\Alpha-Tech\Code\NFCBusinessCardLocal2\app\src\main\AndroidManifest.xml:145:13-41
+activity#com.example.www.nfcbusinesscardlocal.ViewAppointmentsInterface
+ADDED from C:\Users\Xolo Kagiso Dandashe\Documents\GitHub\Alpha-Tech\Code\NFCBusinessCardLocal2\app\src\main\AndroidManifest.xml:151:9-157:20
+	android:screenOrientation
+		ADDED from C:\Users\Xolo Kagiso Dandashe\Documents\GitHub\Alpha-Tech\Code\NFCBusinessCardLocal2\app\src\main\AndroidManifest.xml:153:13-49
+	android:name
+		ADDED from C:\Users\Xolo Kagiso Dandashe\Documents\GitHub\Alpha-Tech\Code\NFCBusinessCardLocal2\app\src\main\AndroidManifest.xml:152:13-54
+activity#com.example.www.nfcbusinesscardlocal.ImportCardDetails
+ADDED from C:\Users\Xolo Kagiso Dandashe\Documents\GitHub\Alpha-Tech\Code\NFCBusinessCardLocal2\app\src\main\AndroidManifest.xml:158:9-162:20
+	android:name
+		ADDED from C:\Users\Xolo Kagiso Dandashe\Documents\GitHub\Alpha-Tech\Code\NFCBusinessCardLocal2\app\src\main\AndroidManifest.xml:158:19-52
+activity#com.example.www.nfcbusinesscardlocal.ReceiveImportCardActivity
+ADDED from C:\Users\Xolo Kagiso Dandashe\Documents\GitHub\Alpha-Tech\Code\NFCBusinessCardLocal2\app\src\main\AndroidManifest.xml:163:9-167:20
+	android:name
+		ADDED from C:\Users\Xolo Kagiso Dandashe\Documents\GitHub\Alpha-Tech\Code\NFCBusinessCardLocal2\app\src\main\AndroidManifest.xml:163:19-60
+activity#com.example.www.nfcbusinesscardlocal.CardReadInformation
+ADDED from C:\Users\Xolo Kagiso Dandashe\Documents\GitHub\Alpha-Tech\Code\NFCBusinessCardLocal2\app\src\main\AndroidManifest.xml:168:9-174:20
+	android:noHistory
+		ADDED from C:\Users\Xolo Kagiso Dandashe\Documents\GitHub\Alpha-Tech\Code\NFCBusinessCardLocal2\app\src\main\AndroidManifest.xml:170:13-37
+	android:name
+		ADDED from C:\Users\Xolo Kagiso Dandashe\Documents\GitHub\Alpha-Tech\Code\NFCBusinessCardLocal2\app\src\main\AndroidManifest.xml:169:13-48
+activity#com.example.www.nfcbusinesscardlocal.CardWriteInformation
+ADDED from C:\Users\Xolo Kagiso Dandashe\Documents\GitHub\Alpha-Tech\Code\NFCBusinessCardLocal2\app\src\main\AndroidManifest.xml:175:9-181:20
+	android:noHistory
+		ADDED from C:\Users\Xolo Kagiso Dandashe\Documents\GitHub\Alpha-Tech\Code\NFCBusinessCardLocal2\app\src\main\AndroidManifest.xml:177:13-37
+	android:name
+		ADDED from C:\Users\Xolo Kagiso Dandashe\Documents\GitHub\Alpha-Tech\Code\NFCBusinessCardLocal2\app\src\main\AndroidManifest.xml:176:13-49
+activity#com.example.www.nfcbusinesscardlocal.CardDeleteInformation
+ADDED from C:\Users\Xolo Kagiso Dandashe\Documents\GitHub\Alpha-Tech\Code\NFCBusinessCardLocal2\app\src\main\AndroidManifest.xml:182:9-186:20
+	android:name
+		ADDED from C:\Users\Xolo Kagiso Dandashe\Documents\GitHub\Alpha-Tech\Code\NFCBusinessCardLocal2\app\src\main\AndroidManifest.xml:182:19-56
+activity#com.example.www.nfcbusinesscardlocal.updatePicture
+ADDED from C:\Users\Xolo Kagiso Dandashe\Documents\GitHub\Alpha-Tech\Code\NFCBusinessCardLocal2\app\src\main\AndroidManifest.xml:187:9-191:20
+	android:name
+		ADDED from C:\Users\Xolo Kagiso Dandashe\Documents\GitHub\Alpha-Tech\Code\NFCBusinessCardLocal2\app\src\main\AndroidManifest.xml:187:19-48
+uses-sdk
+INJECTED from C:\Users\Xolo Kagiso Dandashe\Documents\GitHub\Alpha-Tech\Code\NFCBusinessCardLocal2\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from C:\Users\Xolo Kagiso Dandashe\Documents\GitHub\Alpha-Tech\Code\NFCBusinessCardLocal2\app\src\main\AndroidManifest.xml
+INJECTED from C:\Users\Xolo Kagiso Dandashe\Documents\GitHub\Alpha-Tech\Code\NFCBusinessCardLocal2\app\src\main\AndroidManifest.xml
+MERGED from [com.journeyapps:zxing-android-embedded:3.2.0] C:\Users\Xolo Kagiso Dandashe\.gradle\caches\transforms-1\files-1.1\zxing-android-embedded-3.2.0.aar\c549af3a052de10b0ec8729c0528e998\AndroidManifest.xml:19:5-43
+MERGED from [com.journeyapps:zxing-android-embedded:3.2.0] C:\Users\Xolo Kagiso Dandashe\.gradle\caches\transforms-1\files-1.1\zxing-android-embedded-3.2.0.aar\c549af3a052de10b0ec8729c0528e998\AndroidManifest.xml:19:5-43
+MERGED from [com.google.firebase:firebase-core:11.6.2] C:\Users\Xolo Kagiso Dandashe\.gradle\caches\transforms-1\files-1.1\firebase-core-11.6.2.aar\91e49032e82f6930d169e63ebbe1943c\AndroidManifest.xml:4:5-43
+MERGED from [com.google.firebase:firebase-core:11.6.2] C:\Users\Xolo Kagiso Dandashe\.gradle\caches\transforms-1\files-1.1\firebase-core-11.6.2.aar\91e49032e82f6930d169e63ebbe1943c\AndroidManifest.xml:4:5-43
+MERGED from [com.rmtheis:tess-two:6.2.0] C:\Users\Xolo Kagiso Dandashe\.gradle\caches\transforms-1\files-1.1\tess-two-6.2.0.aar\f908019e52bfd47823254da4855cdd8c\AndroidManifest.xml:22:5-24:41
+MERGED from [com.rmtheis:tess-two:6.2.0] C:\Users\Xolo Kagiso Dandashe\.gradle\caches\transforms-1\files-1.1\tess-two-6.2.0.aar\f908019e52bfd47823254da4855cdd8c\AndroidManifest.xml:22:5-24:41
+MERGED from [com.google.firebase:firebase-auth:11.6.2] C:\Users\Xolo Kagiso Dandashe\.gradle\caches\transforms-1\files-1.1\firebase-auth-11.6.2.aar\4f979e972252c4ed5b3efd25bae5f815\AndroidManifest.xml:17:5-43
+MERGED from [com.google.firebase:firebase-auth:11.6.2] C:\Users\Xolo Kagiso Dandashe\.gradle\caches\transforms-1\files-1.1\firebase-auth-11.6.2.aar\4f979e972252c4ed5b3efd25bae5f815\AndroidManifest.xml:17:5-43
+MERGED from [com.google.firebase:firebase-database:11.6.2] C:\Users\Xolo Kagiso Dandashe\.gradle\caches\transforms-1\files-1.1\firebase-database-11.6.2.aar\e1fc58b4f29cea7eac8ac0d05a6393dd\AndroidManifest.xml:3:5-43
+MERGED from [com.google.firebase:firebase-database:11.6.2] C:\Users\Xolo Kagiso Dandashe\.gradle\caches\transforms-1\files-1.1\firebase-database-11.6.2.aar\e1fc58b4f29cea7eac8ac0d05a6393dd\AndroidManifest.xml:3:5-43
+MERGED from [com.baoyz.swipemenulistview:library:1.3.0] C:\Users\Xolo Kagiso Dandashe\.gradle\caches\transforms-1\files-1.1\library-1.3.0.aar\c50a65a58b908d792ce784d1a6b55023\AndroidManifest.xml:7:5-9:41
+MERGED from [com.baoyz.swipemenulistview:library:1.3.0] C:\Users\Xolo Kagiso Dandashe\.gradle\caches\transforms-1\files-1.1\library-1.3.0.aar\c50a65a58b908d792ce784d1a6b55023\AndroidManifest.xml:7:5-9:41
+MERGED from [:openCVLibrary] C:\Users\Xolo Kagiso Dandashe\Documents\GitHub\Alpha-Tech\Code\NFCBusinessCardLocal2\openCVLibrary\build\intermediates\manifests\full\debug\AndroidManifest.xml:7:5-9:41
+MERGED from [:openCVLibrary] C:\Users\Xolo Kagiso Dandashe\Documents\GitHub\Alpha-Tech\Code\NFCBusinessCardLocal2\openCVLibrary\build\intermediates\manifests\full\debug\AndroidManifest.xml:7:5-9:41
+MERGED from [com.firebaseui:firebase-ui-storage:0.6.0] C:\Users\Xolo Kagiso Dandashe\.gradle\caches\transforms-1\files-1.1\firebase-ui-storage-0.6.0.aar\4f3b619a436048501e8d92ce90c0b7fd\AndroidManifest.xml:7:5-9:41
+MERGED from [com.firebaseui:firebase-ui-storage:0.6.0] C:\Users\Xolo Kagiso Dandashe\.gradle\caches\transforms-1\files-1.1\firebase-ui-storage-0.6.0.aar\4f3b619a436048501e8d92ce90c0b7fd\AndroidManifest.xml:7:5-9:41
+MERGED from [com.android.support:appcompat-v7:26.1.0] C:\Users\Xolo Kagiso Dandashe\.gradle\caches\transforms-1\files-1.1\appcompat-v7-26.1.0.aar\687182da6d6ec0cc06429939d59fed76\AndroidManifest.xml:21:5-23:78
+MERGED from [com.android.support:appcompat-v7:26.1.0] C:\Users\Xolo Kagiso Dandashe\.gradle\caches\transforms-1\files-1.1\appcompat-v7-26.1.0.aar\687182da6d6ec0cc06429939d59fed76\AndroidManifest.xml:21:5-23:78
+MERGED from [com.android.support.constraint:constraint-layout:1.0.2] C:\Users\Xolo Kagiso Dandashe\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.0.2.aar\602e27b05e3fdf876fe3f31ebd725868\AndroidManifest.xml:5:5-7:41
+MERGED from [com.android.support.constraint:constraint-layout:1.0.2] C:\Users\Xolo Kagiso Dandashe\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.0.2.aar\602e27b05e3fdf876fe3f31ebd725868\AndroidManifest.xml:5:5-7:41
+MERGED from [com.google.android.gms:play-services-maps:11.6.2] C:\Users\Xolo Kagiso Dandashe\.gradle\caches\transforms-1\files-1.1\play-services-maps-11.6.2.aar\029b51c27b4d7a52745a3e5b4ae834b7\AndroidManifest.xml:23:5-43
+MERGED from [com.google.android.gms:play-services-maps:11.6.2] C:\Users\Xolo Kagiso Dandashe\.gradle\caches\transforms-1\files-1.1\play-services-maps-11.6.2.aar\029b51c27b4d7a52745a3e5b4ae834b7\AndroidManifest.xml:23:5-43
+MERGED from [com.google.firebase:firebase-analytics:11.6.2] C:\Users\Xolo Kagiso Dandashe\.gradle\caches\transforms-1\files-1.1\firebase-analytics-11.6.2.aar\1b14896322afec1efae45729760e6bc2\AndroidManifest.xml:17:5-43
+MERGED from [com.google.firebase:firebase-analytics:11.6.2] C:\Users\Xolo Kagiso Dandashe\.gradle\caches\transforms-1\files-1.1\firebase-analytics-11.6.2.aar\1b14896322afec1efae45729760e6bc2\AndroidManifest.xml:17:5-43
+MERGED from [com.google.android.gms:play-services-base:11.6.2] C:\Users\Xolo Kagiso Dandashe\.gradle\caches\transforms-1\files-1.1\play-services-base-11.6.2.aar\e2f9bd3c8bbde9d0bc8a53daf06b372a\AndroidManifest.xml:17:5-43
+MERGED from [com.google.android.gms:play-services-base:11.6.2] C:\Users\Xolo Kagiso Dandashe\.gradle\caches\transforms-1\files-1.1\play-services-base-11.6.2.aar\e2f9bd3c8bbde9d0bc8a53daf06b372a\AndroidManifest.xml:17:5-43
+MERGED from [com.google.firebase:firebase-database-connection:11.6.2] C:\Users\Xolo Kagiso Dandashe\.gradle\caches\transforms-1\files-1.1\firebase-database-connection-11.6.2.aar\6a4869de6870b174985a8c7baec8732b\AndroidManifest.xml:3:5-43
+MERGED from [com.google.firebase:firebase-database-connection:11.6.2] C:\Users\Xolo Kagiso Dandashe\.gradle\caches\transforms-1\files-1.1\firebase-database-connection-11.6.2.aar\6a4869de6870b174985a8c7baec8732b\AndroidManifest.xml:3:5-43
+MERGED from [com.google.firebase:firebase-analytics-impl:11.6.2] C:\Users\Xolo Kagiso Dandashe\.gradle\caches\transforms-1\files-1.1\firebase-analytics-impl-11.6.2.aar\6fea9d2d4229694ef03305d26bab2c38\AndroidManifest.xml:17:5-43
+MERGED from [com.google.firebase:firebase-analytics-impl:11.6.2] C:\Users\Xolo Kagiso Dandashe\.gradle\caches\transforms-1\files-1.1\firebase-analytics-impl-11.6.2.aar\6fea9d2d4229694ef03305d26bab2c38\AndroidManifest.xml:17:5-43
+MERGED from [com.google.firebase:firebase-iid:11.6.2] C:\Users\Xolo Kagiso Dandashe\.gradle\caches\transforms-1\files-1.1\firebase-iid-11.6.2.aar\2d873b7b22bc462189c01b5affa1b2bb\AndroidManifest.xml:17:5-43
+MERGED from [com.google.firebase:firebase-iid:11.6.2] C:\Users\Xolo Kagiso Dandashe\.gradle\caches\transforms-1\files-1.1\firebase-iid-11.6.2.aar\2d873b7b22bc462189c01b5affa1b2bb\AndroidManifest.xml:17:5-43
+MERGED from [com.google.firebase:firebase-storage:11.6.2] C:\Users\Xolo Kagiso Dandashe\.gradle\caches\transforms-1\files-1.1\firebase-storage-11.6.2.aar\03372469cb78feb18b0db5c54a1d0f24\AndroidManifest.xml:3:5-43
+MERGED from [com.google.firebase:firebase-storage:11.6.2] C:\Users\Xolo Kagiso Dandashe\.gradle\caches\transforms-1\files-1.1\firebase-storage-11.6.2.aar\03372469cb78feb18b0db5c54a1d0f24\AndroidManifest.xml:3:5-43
+MERGED from [com.google.firebase:firebase-common:11.6.2] C:\Users\Xolo Kagiso Dandashe\.gradle\caches\transforms-1\files-1.1\firebase-common-11.6.2.aar\91ada9a9fa44592c19ce32f939176e8a\AndroidManifest.xml:3:5-43
+MERGED from [com.google.firebase:firebase-common:11.6.2] C:\Users\Xolo Kagiso Dandashe\.gradle\caches\transforms-1\files-1.1\firebase-common-11.6.2.aar\91ada9a9fa44592c19ce32f939176e8a\AndroidManifest.xml:3:5-43
+MERGED from [com.google.android.gms:play-services-tasks:11.6.2] C:\Users\Xolo Kagiso Dandashe\.gradle\caches\transforms-1\files-1.1\play-services-tasks-11.6.2.aar\bb133d735b569d1ccd37e4cb0f8f6e1b\AndroidManifest.xml:3:5-43
+MERGED from [com.google.android.gms:play-services-tasks:11.6.2] C:\Users\Xolo Kagiso Dandashe\.gradle\caches\transforms-1\files-1.1\play-services-tasks-11.6.2.aar\bb133d735b569d1ccd37e4cb0f8f6e1b\AndroidManifest.xml:3:5-43
+MERGED from [com.google.firebase:firebase-storage-common:11.6.2] C:\Users\Xolo Kagiso Dandashe\.gradle\caches\transforms-1\files-1.1\firebase-storage-common-11.6.2.aar\5a2f6151312ceb3d8b45a1dfde2d786a\AndroidManifest.xml:3:5-43
+MERGED from [com.google.firebase:firebase-storage-common:11.6.2] C:\Users\Xolo Kagiso Dandashe\.gradle\caches\transforms-1\files-1.1\firebase-storage-common-11.6.2.aar\5a2f6151312ceb3d8b45a1dfde2d786a\AndroidManifest.xml:3:5-43
+MERGED from [com.google.android.gms:play-services-basement:11.6.2] C:\Users\Xolo Kagiso Dandashe\.gradle\caches\transforms-1\files-1.1\play-services-basement-11.6.2.aar\d70c89b9f1e48afc38ef3710ab4e13ae\AndroidManifest.xml:17:5-43
+MERGED from [com.google.android.gms:play-services-basement:11.6.2] C:\Users\Xolo Kagiso Dandashe\.gradle\caches\transforms-1\files-1.1\play-services-basement-11.6.2.aar\d70c89b9f1e48afc38ef3710ab4e13ae\AndroidManifest.xml:17:5-43
+MERGED from [com.android.support:palette-v7:23.4.0] C:\Users\Xolo Kagiso Dandashe\.gradle\caches\transforms-1\files-1.1\palette-v7-23.4.0.aar\6270f7fcdc158b3823421a88d7723c34\AndroidManifest.xml:20:5-43
+MERGED from [com.android.support:palette-v7:23.4.0] C:\Users\Xolo Kagiso Dandashe\.gradle\caches\transforms-1\files-1.1\palette-v7-23.4.0.aar\6270f7fcdc158b3823421a88d7723c34\AndroidManifest.xml:20:5-43
+MERGED from [com.android.support:support-v4:26.1.0] C:\Users\Xolo Kagiso Dandashe\.gradle\caches\transforms-1\files-1.1\support-v4-26.1.0.aar\c92203136e573fb64bb0a85b5161e27c\AndroidManifest.xml:21:5-23:54
+MERGED from [com.android.support:support-v4:26.1.0] C:\Users\Xolo Kagiso Dandashe\.gradle\caches\transforms-1\files-1.1\support-v4-26.1.0.aar\c92203136e573fb64bb0a85b5161e27c\AndroidManifest.xml:21:5-23:54
+MERGED from [com.android.support:animated-vector-drawable:26.1.0] C:\Users\Xolo Kagiso Dandashe\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-26.1.0.aar\7901d827e64ac36d1e34cf2c5c3a5e2c\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:animated-vector-drawable:26.1.0] C:\Users\Xolo Kagiso Dandashe\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-26.1.0.aar\7901d827e64ac36d1e34cf2c5c3a5e2c\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:26.1.0] C:\Users\Xolo Kagiso Dandashe\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-26.1.0.aar\852a5a50f832bfb9450410e18418ca5b\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:26.1.0] C:\Users\Xolo Kagiso Dandashe\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-26.1.0.aar\852a5a50f832bfb9450410e18418ca5b\AndroidManifest.xml:20:5-44
+MERGED from [com.google.firebase:firebase-auth-license:11.6.2] C:\Users\Xolo Kagiso Dandashe\.gradle\caches\transforms-1\files-1.1\firebase-auth-license-11.6.2.aar\a9221acd8206f3e7cfb4a58a4494c5c0\AndroidManifest.xml:4:5-43
+MERGED from [com.google.firebase:firebase-auth-license:11.6.2] C:\Users\Xolo Kagiso Dandashe\.gradle\caches\transforms-1\files-1.1\firebase-auth-license-11.6.2.aar\a9221acd8206f3e7cfb4a58a4494c5c0\AndroidManifest.xml:4:5-43
+MERGED from [com.google.firebase:firebase-database-license:11.6.2] C:\Users\Xolo Kagiso Dandashe\.gradle\caches\transforms-1\files-1.1\firebase-database-license-11.6.2.aar\9cdd18d2122eca50fb68d14c60ece2b4\AndroidManifest.xml:4:5-43
+MERGED from [com.google.firebase:firebase-database-license:11.6.2] C:\Users\Xolo Kagiso Dandashe\.gradle\caches\transforms-1\files-1.1\firebase-database-license-11.6.2.aar\9cdd18d2122eca50fb68d14c60ece2b4\AndroidManifest.xml:4:5-43
+MERGED from [com.android.support:support-media-compat:26.1.0] C:\Users\Xolo Kagiso Dandashe\.gradle\caches\transforms-1\files-1.1\support-media-compat-26.1.0.aar\636bda63a5f41f843c5b3d51fd657816\AndroidManifest.xml:21:5-23:63
+MERGED from [com.android.support:support-media-compat:26.1.0] C:\Users\Xolo Kagiso Dandashe\.gradle\caches\transforms-1\files-1.1\support-media-compat-26.1.0.aar\636bda63a5f41f843c5b3d51fd657816\AndroidManifest.xml:21:5-23:63
+MERGED from [com.android.support:support-fragment:26.1.0] C:\Users\Xolo Kagiso Dandashe\.gradle\caches\transforms-1\files-1.1\support-fragment-26.1.0.aar\208e8c9f5cd6b02232f00dc90836a87a\AndroidManifest.xml:21:5-23:60
+MERGED from [com.android.support:support-fragment:26.1.0] C:\Users\Xolo Kagiso Dandashe\.gradle\caches\transforms-1\files-1.1\support-fragment-26.1.0.aar\208e8c9f5cd6b02232f00dc90836a87a\AndroidManifest.xml:21:5-23:60
+MERGED from [com.android.support:support-core-utils:26.1.0] C:\Users\Xolo Kagiso Dandashe\.gradle\caches\transforms-1\files-1.1\support-core-utils-26.1.0.aar\6f71f2e6c55162b7657d89d1b72b0d14\AndroidManifest.xml:21:5-23:61
+MERGED from [com.android.support:support-core-utils:26.1.0] C:\Users\Xolo Kagiso Dandashe\.gradle\caches\transforms-1\files-1.1\support-core-utils-26.1.0.aar\6f71f2e6c55162b7657d89d1b72b0d14\AndroidManifest.xml:21:5-23:61
+MERGED from [com.android.support:support-core-ui:26.1.0] C:\Users\Xolo Kagiso Dandashe\.gradle\caches\transforms-1\files-1.1\support-core-ui-26.1.0.aar\2ccc1f393ccab8498388c7035ba252b5\AndroidManifest.xml:21:5-23:58
+MERGED from [com.android.support:support-core-ui:26.1.0] C:\Users\Xolo Kagiso Dandashe\.gradle\caches\transforms-1\files-1.1\support-core-ui-26.1.0.aar\2ccc1f393ccab8498388c7035ba252b5\AndroidManifest.xml:21:5-23:58
+MERGED from [com.android.support:support-compat:26.1.0] C:\Users\Xolo Kagiso Dandashe\.gradle\caches\transforms-1\files-1.1\support-compat-26.1.0.aar\c3874068355baa8bde26fca9b62292ac\AndroidManifest.xml:21:5-23:58
+MERGED from [com.android.support:support-compat:26.1.0] C:\Users\Xolo Kagiso Dandashe\.gradle\caches\transforms-1\files-1.1\support-compat-26.1.0.aar\c3874068355baa8bde26fca9b62292ac\AndroidManifest.xml:21:5-23:58
+MERGED from [com.google.android.gms:play-services-maps-license:11.6.2] C:\Users\Xolo Kagiso Dandashe\.gradle\caches\transforms-1\files-1.1\play-services-maps-license-11.6.2.aar\f27476deb4ded40864b00b6c22a57db6\AndroidManifest.xml:4:5-43
+MERGED from [com.google.android.gms:play-services-maps-license:11.6.2] C:\Users\Xolo Kagiso Dandashe\.gradle\caches\transforms-1\files-1.1\play-services-maps-license-11.6.2.aar\f27476deb4ded40864b00b6c22a57db6\AndroidManifest.xml:4:5-43
+MERGED from [com.google.firebase:firebase-storage-license:11.6.2] C:\Users\Xolo Kagiso Dandashe\.gradle\caches\transforms-1\files-1.1\firebase-storage-license-11.6.2.aar\daebe30c492ba662c84bbfbd8b3f4e02\AndroidManifest.xml:4:5-43
+MERGED from [com.google.firebase:firebase-storage-license:11.6.2] C:\Users\Xolo Kagiso Dandashe\.gradle\caches\transforms-1\files-1.1\firebase-storage-license-11.6.2.aar\daebe30c492ba662c84bbfbd8b3f4e02\AndroidManifest.xml:4:5-43
+MERGED from [com.google.firebase:firebase-analytics-license:11.6.2] C:\Users\Xolo Kagiso Dandashe\.gradle\caches\transforms-1\files-1.1\firebase-analytics-license-11.6.2.aar\0b156b937aa787bebe5c74335156336f\AndroidManifest.xml:4:5-43
+MERGED from [com.google.firebase:firebase-analytics-license:11.6.2] C:\Users\Xolo Kagiso Dandashe\.gradle\caches\transforms-1\files-1.1\firebase-analytics-license-11.6.2.aar\0b156b937aa787bebe5c74335156336f\AndroidManifest.xml:4:5-43
+MERGED from [com.google.android.gms:play-services-base-license:11.6.2] C:\Users\Xolo Kagiso Dandashe\.gradle\caches\transforms-1\files-1.1\play-services-base-license-11.6.2.aar\1b0106e4ed8c588b4d3383b4b314faf5\AndroidManifest.xml:4:5-43
+MERGED from [com.google.android.gms:play-services-base-license:11.6.2] C:\Users\Xolo Kagiso Dandashe\.gradle\caches\transforms-1\files-1.1\play-services-base-license-11.6.2.aar\1b0106e4ed8c588b4d3383b4b314faf5\AndroidManifest.xml:4:5-43
+MERGED from [com.google.android.gms:play-services-basement-license:11.6.2] C:\Users\Xolo Kagiso Dandashe\.gradle\caches\transforms-1\files-1.1\play-services-basement-license-11.6.2.aar\272968af4ee3009adda760f69d6b4a30\AndroidManifest.xml:4:5-43
+MERGED from [com.google.android.gms:play-services-basement-license:11.6.2] C:\Users\Xolo Kagiso Dandashe\.gradle\caches\transforms-1\files-1.1\play-services-basement-license-11.6.2.aar\272968af4ee3009adda760f69d6b4a30\AndroidManifest.xml:4:5-43
+MERGED from [com.google.firebase:firebase-common-license:11.6.2] C:\Users\Xolo Kagiso Dandashe\.gradle\caches\transforms-1\files-1.1\firebase-common-license-11.6.2.aar\544952dac7a4a94265ce21bb3950dfa8\AndroidManifest.xml:4:5-43
+MERGED from [com.google.firebase:firebase-common-license:11.6.2] C:\Users\Xolo Kagiso Dandashe\.gradle\caches\transforms-1\files-1.1\firebase-common-license-11.6.2.aar\544952dac7a4a94265ce21bb3950dfa8\AndroidManifest.xml:4:5-43
+MERGED from [com.google.android.gms:play-services-tasks-license:11.6.2] C:\Users\Xolo Kagiso Dandashe\.gradle\caches\transforms-1\files-1.1\play-services-tasks-license-11.6.2.aar\57180a183fc8e8361a94ff75798cf1f1\AndroidManifest.xml:4:5-43
+MERGED from [com.google.android.gms:play-services-tasks-license:11.6.2] C:\Users\Xolo Kagiso Dandashe\.gradle\caches\transforms-1\files-1.1\play-services-tasks-license-11.6.2.aar\57180a183fc8e8361a94ff75798cf1f1\AndroidManifest.xml:4:5-43
+MERGED from [com.google.firebase:firebase-database-connection-license:11.6.2] C:\Users\Xolo Kagiso Dandashe\.gradle\caches\transforms-1\files-1.1\firebase-database-connection-license-11.6.2.aar\e751744ec42a3d357b1b273446ac92a8\AndroidManifest.xml:4:5-43
+MERGED from [com.google.firebase:firebase-database-connection-license:11.6.2] C:\Users\Xolo Kagiso Dandashe\.gradle\caches\transforms-1\files-1.1\firebase-database-connection-license-11.6.2.aar\e751744ec42a3d357b1b273446ac92a8\AndroidManifest.xml:4:5-43
+MERGED from [android.arch.lifecycle:runtime:1.0.0] C:\Users\Xolo Kagiso Dandashe\.gradle\caches\transforms-1\files-1.1\runtime-1.0.0.aar\55442d0a58970bf2efbfc928bd10306b\AndroidManifest.xml:20:5-22:41
+MERGED from [android.arch.lifecycle:runtime:1.0.0] C:\Users\Xolo Kagiso Dandashe\.gradle\caches\transforms-1\files-1.1\runtime-1.0.0.aar\55442d0a58970bf2efbfc928bd10306b\AndroidManifest.xml:20:5-22:41
+MERGED from [com.google.firebase:firebase-analytics-impl-license:11.6.2] C:\Users\Xolo Kagiso Dandashe\.gradle\caches\transforms-1\files-1.1\firebase-analytics-impl-license-11.6.2.aar\77f84853aab836b7b5778d6e65316477\AndroidManifest.xml:4:5-43
+MERGED from [com.google.firebase:firebase-analytics-impl-license:11.6.2] C:\Users\Xolo Kagiso Dandashe\.gradle\caches\transforms-1\files-1.1\firebase-analytics-impl-license-11.6.2.aar\77f84853aab836b7b5778d6e65316477\AndroidManifest.xml:4:5-43
+MERGED from [com.google.firebase:firebase-iid-license:11.6.2] C:\Users\Xolo Kagiso Dandashe\.gradle\caches\transforms-1\files-1.1\firebase-iid-license-11.6.2.aar\e2a5092471691ea9f02aedd0946325e1\AndroidManifest.xml:4:5-43
+MERGED from [com.google.firebase:firebase-iid-license:11.6.2] C:\Users\Xolo Kagiso Dandashe\.gradle\caches\transforms-1\files-1.1\firebase-iid-license-11.6.2.aar\e2a5092471691ea9f02aedd0946325e1\AndroidManifest.xml:4:5-43
+MERGED from [com.google.firebase:firebase-storage-common-license:11.6.2] C:\Users\Xolo Kagiso Dandashe\.gradle\caches\transforms-1\files-1.1\firebase-storage-common-license-11.6.2.aar\f2cfa3e7d5bde4c4854269e9e5a0e547\AndroidManifest.xml:4:5-43
+MERGED from [com.google.firebase:firebase-storage-common-license:11.6.2] C:\Users\Xolo Kagiso Dandashe\.gradle\caches\transforms-1\files-1.1\firebase-storage-common-license-11.6.2.aar\f2cfa3e7d5bde4c4854269e9e5a0e547\AndroidManifest.xml:4:5-43
+INJECTED from C:\Users\Xolo Kagiso Dandashe\Documents\GitHub\Alpha-Tech\Code\NFCBusinessCardLocal2\app\src\main\AndroidManifest.xml
+INJECTED from C:\Users\Xolo Kagiso Dandashe\Documents\GitHub\Alpha-Tech\Code\NFCBusinessCardLocal2\app\src\main\AndroidManifest.xml
+>>>>>>> XKDandashe
 	tools:overrideLibrary
 		ADDED from [com.android.support:appcompat-v7:26.1.0] C:\Users\User\.gradle\caches\transforms-1\files-1.1\appcompat-v7-26.1.0.aar\90e24905ac58e08d662f315b51ad344c\AndroidManifest.xml:23:9-75
 	android:targetSdkVersion
+<<<<<<< HEAD
 		INJECTED from C:\Users\User\Documents\GitHub\Alpha-Tech\Code\NFCBusinessCardLocal2\app\src\main\AndroidManifest.xml
 		ADDED from C:\Users\User\Documents\GitHub\Alpha-Tech\Code\NFCBusinessCardLocal2\app\src\main\AndroidManifest.xml
 		INJECTED from C:\Users\User\Documents\GitHub\Alpha-Tech\Code\NFCBusinessCardLocal2\app\src\main\AndroidManifest.xml
@@ -471,6 +959,21 @@ ADDED from C:\Users\User\Documents\GitHub\Alpha-Tech\Code\NFCBusinessCardLocal2\
 		ADDED from C:\Users\User\Documents\GitHub\Alpha-Tech\Code\NFCBusinessCardLocal2\app\src\main\AndroidManifest.xml:142:17-55
 	android:name
 		ADDED from C:\Users\User\Documents\GitHub\Alpha-Tech\Code\NFCBusinessCardLocal2\app\src\main\AndroidManifest.xml:141:17-67
+=======
+		INJECTED from C:\Users\Xolo Kagiso Dandashe\Documents\GitHub\Alpha-Tech\Code\NFCBusinessCardLocal2\app\src\main\AndroidManifest.xml
+		ADDED from C:\Users\Xolo Kagiso Dandashe\Documents\GitHub\Alpha-Tech\Code\NFCBusinessCardLocal2\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\Xolo Kagiso Dandashe\Documents\GitHub\Alpha-Tech\Code\NFCBusinessCardLocal2\app\src\main\AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from C:\Users\Xolo Kagiso Dandashe\Documents\GitHub\Alpha-Tech\Code\NFCBusinessCardLocal2\app\src\main\AndroidManifest.xml
+		ADDED from C:\Users\Xolo Kagiso Dandashe\Documents\GitHub\Alpha-Tech\Code\NFCBusinessCardLocal2\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\Xolo Kagiso Dandashe\Documents\GitHub\Alpha-Tech\Code\NFCBusinessCardLocal2\app\src\main\AndroidManifest.xml
+meta-data#android.support.FILE_PROVIDER_PATHS
+ADDED from C:\Users\Xolo Kagiso Dandashe\Documents\GitHub\Alpha-Tech\Code\NFCBusinessCardLocal2\app\src\main\AndroidManifest.xml:139:13-141:58
+	android:resource
+		ADDED from C:\Users\Xolo Kagiso Dandashe\Documents\GitHub\Alpha-Tech\Code\NFCBusinessCardLocal2\app\src\main\AndroidManifest.xml:141:17-55
+	android:name
+		ADDED from C:\Users\Xolo Kagiso Dandashe\Documents\GitHub\Alpha-Tech\Code\NFCBusinessCardLocal2\app\src\main\AndroidManifest.xml:140:17-67
+>>>>>>> XKDandashe
 uses-feature#android.hardware.camera.front
 ADDED from [com.journeyapps:zxing-android-embedded:3.2.0] C:\Users\User\.gradle\caches\transforms-1\files-1.1\zxing-android-embedded-3.2.0.aar\68e481266962f4e9a5b41c7c083e020c\AndroidManifest.xml:27:5-29:36
 	android:required
@@ -504,6 +1007,7 @@ ADDED from [com.journeyapps:zxing-android-embedded:3.2.0] C:\Users\User\.gradle\
 	android:name
 		ADDED from [com.journeyapps:zxing-android-embedded:3.2.0] C:\Users\User\.gradle\caches\transforms-1\files-1.1\zxing-android-embedded-3.2.0.aar\68e481266962f4e9a5b41c7c083e020c\AndroidManifest.xml:47:13-74
 meta-data#android.support.VERSION
+<<<<<<< HEAD
 ADDED from [com.android.support:appcompat-v7:26.1.0] C:\Users\User\.gradle\caches\transforms-1\files-1.1\appcompat-v7-26.1.0.aar\90e24905ac58e08d662f315b51ad344c\AndroidManifest.xml:26:9-28:38
 MERGED from [com.android.support:support-v4:26.1.0] C:\Users\User\.gradle\caches\transforms-1\files-1.1\support-v4-26.1.0.aar\9aa2158c96307fe8596e855f81b5c63e\AndroidManifest.xml:26:9-28:38
 MERGED from [com.android.support:support-v4:26.1.0] C:\Users\User\.gradle\caches\transforms-1\files-1.1\support-v4-26.1.0.aar\9aa2158c96307fe8596e855f81b5c63e\AndroidManifest.xml:26:9-28:38
@@ -521,6 +1025,25 @@ MERGED from [com.android.support:support-core-utils:26.1.0] C:\Users\User\.gradl
 MERGED from [com.android.support:support-core-utils:26.1.0] C:\Users\User\.gradle\caches\transforms-1\files-1.1\support-core-utils-26.1.0.aar\3c737ef2d6b8c624640090ad915bc150\AndroidManifest.xml:26:9-28:38
 MERGED from [com.android.support:support-compat:26.1.0] C:\Users\User\.gradle\caches\transforms-1\files-1.1\support-compat-26.1.0.aar\b427fdb3b282c7fef9f8b0afd137465f\AndroidManifest.xml:26:9-28:38
 MERGED from [com.android.support:support-compat:26.1.0] C:\Users\User\.gradle\caches\transforms-1\files-1.1\support-compat-26.1.0.aar\b427fdb3b282c7fef9f8b0afd137465f\AndroidManifest.xml:26:9-28:38
+=======
+ADDED from [com.android.support:appcompat-v7:26.1.0] C:\Users\Xolo Kagiso Dandashe\.gradle\caches\transforms-1\files-1.1\appcompat-v7-26.1.0.aar\687182da6d6ec0cc06429939d59fed76\AndroidManifest.xml:26:9-28:38
+MERGED from [com.android.support:support-v4:26.1.0] C:\Users\Xolo Kagiso Dandashe\.gradle\caches\transforms-1\files-1.1\support-v4-26.1.0.aar\c92203136e573fb64bb0a85b5161e27c\AndroidManifest.xml:26:9-28:38
+MERGED from [com.android.support:support-v4:26.1.0] C:\Users\Xolo Kagiso Dandashe\.gradle\caches\transforms-1\files-1.1\support-v4-26.1.0.aar\c92203136e573fb64bb0a85b5161e27c\AndroidManifest.xml:26:9-28:38
+MERGED from [com.android.support:animated-vector-drawable:26.1.0] C:\Users\Xolo Kagiso Dandashe\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-26.1.0.aar\7901d827e64ac36d1e34cf2c5c3a5e2c\AndroidManifest.xml:23:9-25:38
+MERGED from [com.android.support:animated-vector-drawable:26.1.0] C:\Users\Xolo Kagiso Dandashe\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-26.1.0.aar\7901d827e64ac36d1e34cf2c5c3a5e2c\AndroidManifest.xml:23:9-25:38
+MERGED from [com.android.support:support-vector-drawable:26.1.0] C:\Users\Xolo Kagiso Dandashe\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-26.1.0.aar\852a5a50f832bfb9450410e18418ca5b\AndroidManifest.xml:23:9-25:38
+MERGED from [com.android.support:support-vector-drawable:26.1.0] C:\Users\Xolo Kagiso Dandashe\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-26.1.0.aar\852a5a50f832bfb9450410e18418ca5b\AndroidManifest.xml:23:9-25:38
+MERGED from [com.android.support:support-media-compat:26.1.0] C:\Users\Xolo Kagiso Dandashe\.gradle\caches\transforms-1\files-1.1\support-media-compat-26.1.0.aar\636bda63a5f41f843c5b3d51fd657816\AndroidManifest.xml:26:9-28:38
+MERGED from [com.android.support:support-media-compat:26.1.0] C:\Users\Xolo Kagiso Dandashe\.gradle\caches\transforms-1\files-1.1\support-media-compat-26.1.0.aar\636bda63a5f41f843c5b3d51fd657816\AndroidManifest.xml:26:9-28:38
+MERGED from [com.android.support:support-fragment:26.1.0] C:\Users\Xolo Kagiso Dandashe\.gradle\caches\transforms-1\files-1.1\support-fragment-26.1.0.aar\208e8c9f5cd6b02232f00dc90836a87a\AndroidManifest.xml:26:9-28:38
+MERGED from [com.android.support:support-fragment:26.1.0] C:\Users\Xolo Kagiso Dandashe\.gradle\caches\transforms-1\files-1.1\support-fragment-26.1.0.aar\208e8c9f5cd6b02232f00dc90836a87a\AndroidManifest.xml:26:9-28:38
+MERGED from [com.android.support:support-core-utils:26.1.0] C:\Users\Xolo Kagiso Dandashe\.gradle\caches\transforms-1\files-1.1\support-core-utils-26.1.0.aar\6f71f2e6c55162b7657d89d1b72b0d14\AndroidManifest.xml:26:9-28:38
+MERGED from [com.android.support:support-core-utils:26.1.0] C:\Users\Xolo Kagiso Dandashe\.gradle\caches\transforms-1\files-1.1\support-core-utils-26.1.0.aar\6f71f2e6c55162b7657d89d1b72b0d14\AndroidManifest.xml:26:9-28:38
+MERGED from [com.android.support:support-core-ui:26.1.0] C:\Users\Xolo Kagiso Dandashe\.gradle\caches\transforms-1\files-1.1\support-core-ui-26.1.0.aar\2ccc1f393ccab8498388c7035ba252b5\AndroidManifest.xml:26:9-28:38
+MERGED from [com.android.support:support-core-ui:26.1.0] C:\Users\Xolo Kagiso Dandashe\.gradle\caches\transforms-1\files-1.1\support-core-ui-26.1.0.aar\2ccc1f393ccab8498388c7035ba252b5\AndroidManifest.xml:26:9-28:38
+MERGED from [com.android.support:support-compat:26.1.0] C:\Users\Xolo Kagiso Dandashe\.gradle\caches\transforms-1\files-1.1\support-compat-26.1.0.aar\c3874068355baa8bde26fca9b62292ac\AndroidManifest.xml:26:9-28:38
+MERGED from [com.android.support:support-compat:26.1.0] C:\Users\Xolo Kagiso Dandashe\.gradle\caches\transforms-1\files-1.1\support-compat-26.1.0.aar\c3874068355baa8bde26fca9b62292ac\AndroidManifest.xml:26:9-28:38
+>>>>>>> XKDandashe
 	android:value
 		ADDED from [com.android.support:appcompat-v7:26.1.0] C:\Users\User\.gradle\caches\transforms-1\files-1.1\appcompat-v7-26.1.0.aar\90e24905ac58e08d662f315b51ad344c\AndroidManifest.xml:28:13-35
 	android:name

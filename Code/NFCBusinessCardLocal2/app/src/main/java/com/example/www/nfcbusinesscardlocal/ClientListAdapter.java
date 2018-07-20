@@ -5,7 +5,14 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.signature.StringSignature;
+import com.firebase.ui.storage.images.FirebaseImageLoader;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -22,6 +29,7 @@ public class ClientListAdapter extends BaseAdapter {
     ArrayList<String> arrayList;
     ArrayList<String> original;
     private static LayoutInflater inflater = null;
+    private ImageView imageView;
 
     public ClientListAdapter(Context context,ArrayList<String> arrayList){
         this.context = context;
@@ -68,21 +76,36 @@ public class ClientListAdapter extends BaseAdapter {
             newCard.setEmailAddress(details[3]);
             newCard.setMobileNumber(details[4]);
             newCard.setWorkTelephone(details[5]);
-
+            if(details.length>7) {
+                newCard.setImageUrl(details[7]);
+                imageView = (ImageView) vi.findViewById(R.id.row_picture);
+                loadPicture(newCard, vi);
+            }
             TextView text = (TextView) vi.findViewById(R.id.row_fullname);
             text.setText(newCard.getFullname());
-            text = (TextView) vi.findViewById(R.id.row_company);
-            text.setText(newCard.getCompanyName());
+            /*text = (TextView) vi.findViewById(R.id.row_company);
+            text.setText(newCard.getCompanyName());*/
             text = (TextView) vi.findViewById(R.id.row_jobtitle);
             text.setText(newCard.getJobTitle());
-            text = (TextView) vi.findViewById(R.id.row_emailaddress);
+            /*text = (TextView) vi.findViewById(R.id.row_emailaddress);
             text.setText(newCard.getEmailAddress());
             text = (TextView) vi.findViewById(R.id.row_phonenumber);
             text.setText(newCard.getMobileNumber());
             text = (TextView) vi.findViewById(R.id.row_worknumber);
-            text.setText(newCard.getWorkTelephone());
+            text.setText(newCard.getWorkTelephone());*/
 
-        return vi;
+            return vi;
+    }
+    private void loadPicture(TestUser user,View view){
+        imageView.setImageURI(null);
+        if(user.getImageUrl()!=""){
+            StorageReference httpRef= FirebaseStorage.getInstance().getReferenceFromUrl(user.getImageUrl());
+            Glide.with(view.getContext())
+                    .using(new FirebaseImageLoader())
+                    .load(httpRef)
+                    .signature(new StringSignature(String.valueOf(System.currentTimeMillis())))
+                    .into(imageView);
+        }
     }
     public void filter(String string){
         ArrayList <String> filterlist=new ArrayList<>();

@@ -98,7 +98,7 @@
             android:id="@+id/company"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:textSize="@dimen/fontsize"
+            android:textSize="@dimen/heading"
             android:textStyle="bold"
             android:textColor="@color/black"
             android:text="@string/company"
@@ -126,7 +126,7 @@
             android:layout_height="wrap_content"
             android:textColor="@color/black"
             android:text="@string/personal"
-            android:textSize="@dimen/fontsize"
+            android:textSize="@dimen/heading"
             android:textStyle="bold"/>
     </LinearLayout>
     <LinearLayout
@@ -146,7 +146,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="@color/black"
-            android:textSize="@dimen/fontsize"
+            android:textSize="@dimen/heading"
             android:textStyle="bold"
             android:text="@string/office"
             />
@@ -171,7 +171,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:textColor="@color/black"
-            android:textSize="@dimen/fontsize"
+            android:textSize="@dimen/heading"
             android:textStyle="bold"
             android:text="@string/email"
             />
@@ -191,7 +191,7 @@
             />
         <ScrollView
             android:layout_width="150dp"
-            android:layout_height="110dp">
+            android:layout_height="100dp">
         <TextView
             android:id="@+id/physAddress"
             android:layout_width="match_parent"

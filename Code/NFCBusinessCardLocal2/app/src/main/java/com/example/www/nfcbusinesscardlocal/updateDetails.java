@@ -7,11 +7,16 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.location.Address;
 import android.location.Geocoder;
 import android.location.Location;
 import android.location.LocationManager;
+import android.net.Uri;
+import android.provider.MediaStore;
 import android.provider.Settings;
+import android.support.annotation.NonNull;
 import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -19,9 +24,15 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.signature.StringSignature;
+import com.firebase.ui.storage.images.FirebaseImageLoader;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
@@ -29,7 +40,15 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.OnProgressListener;
+import com.google.firebase.storage.StorageReference;
+import com.google.firebase.storage.UploadTask;
+import com.squareup.picasso.Picasso;
 
+import java.io.ByteArrayInputStream;
+import java.io.ByteArrayOutputStream;
+import java.io.File;
 import java.io.IOException;
 import java.security.NoSuchAlgorithmException;
 import java.security.NoSuchProviderException;
@@ -37,19 +56,38 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
 
+import static java.lang.System.out;
+
 public class updateDetails extends AppCompatActivity {
+    private final int PICK_IMAGE_REQUEST = 234;
     TestUser person=null;
     String lattitude,longitude;
     private DatabaseReference databaseReference;
     private FirebaseAuth firebaseAuth;
+    private StorageReference storageReference;
     private ProgressDialog mProgressDialog;
-    FirebaseUser firebaseUser;
+    private FirebaseUser firebaseUser;
+    private Button btnOpenUpload;
+    private Uri photo;
+    private Uri filepath;
+    private ImageView imageView;
+    private Intent intent;
     LocationManager locationManager;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_update_details);
-        final Button button = findViewById(R.id.update_button);
+        final Button button =(Button) findViewById(R.id.update_button);
+        btnOpenUpload=(Button)findViewById(R.id.btn_open_upload);
+        btnOpenUpload.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent=new Intent(updateDetails.this,updatePicture.class);
+                startActivity(intent);
+            }
+        });
+        imageView=(ImageView) findViewById(R.id.avatarpic);
+        //firebase
         mProgressDialog=new ProgressDialog(this);
         firebaseAuth= FirebaseAuth.getInstance();
         if(firebaseAuth.getCurrentUser()==null){
@@ -58,10 +96,11 @@ public class updateDetails extends AppCompatActivity {
         }
         firebaseUser=firebaseAuth.getCurrentUser();
         databaseReference= FirebaseDatabase.getInstance().getReference("users").child(firebaseUser.getUid());
+        storageReference= FirebaseStorage.getInstance().getReference();
+        //firebase
+
         button.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-
-
                 locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
                 if (!locationManager.isProviderEnabled(LocationManager.GPS_PROVIDER)) {
                     buildAlertMessageNoGps();
@@ -73,10 +112,12 @@ public class updateDetails extends AppCompatActivity {
         });
     }
     @Override
-    protected void onStart() {
-        super.onStart();
+    protected void onResume() {
+        super.onResume();
         mProgressDialog.setMessage("Loading your details...");
         mProgressDialog.show();
+        if(person!=null)
+            loadPicture(person);
         databaseReference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
@@ -175,22 +216,17 @@ public class updateDetails extends AppCompatActivity {
         alert.show();
     }
     public void setDetails(){
+        loadPicture(person);
         EditText editText=(EditText)findViewById(R.id.update_input_name);
         editText.setText(person.getFullname());
         editText=(EditText)findViewById(R.id.update_input_jobtitle);
         editText.setText(person.getJobTitle());
         editText=(EditText)findViewById(R.id.update_input_companyname);
         editText.setText(person.getCompanyName());
-        /*editText=(EditText)findViewById(R.id.update_input_email);
-        editText.setText(viewUser.getEmailAddress());*/
         editText=(EditText)findViewById(R.id.update_input_mobile);
         editText.setText(person.getMobileNumber());
         editText=(EditText)findViewById(R.id.update_input_telephone);
         editText.setText(person.getWorkTelephone());
-        /*editText=(EditText)findViewById(R.id.update_input_password);
-        editText.setText(viewUser.getPassword());
-        editText=(EditText)findViewById(R.id.update_input_confirmPassword);
-        editText.setText(viewUser.getPassword());*/
         editText=(EditText)findViewById(R.id.update_input_address);
         editText.setText(person.getWorkAddress());
     }
@@ -208,31 +244,7 @@ public class updateDetails extends AppCompatActivity {
             Toast.makeText(this, "Please Enter Your Full Name.", Toast.LENGTH_SHORT).show();
             return;
         }
-        /*Check if email exists*/
-        /*editText=(EditText)findViewById(R.id.update_input_email);
-        emailneedle=editText.getText().toString().trim();
-        if(emailneedle.isEmpty() || emailneedle.length() == 0 || emailneedle.equals("") || emailneedle == null)
-        {
-            mProgressDialog.dismiss();
-            Toast.makeText(this, "Email must be given.", Toast.LENGTH_SHORT).show();
-            return;
-        }*/
-        /*passwords are the same*/
-        /*editText=(EditText)findViewById(R.id.update_input_password);
-        password=editText.getText().toString();
-        if(password.isEmpty() || password.length() == 0 || password.equals("") || password == null)
-        {
-            mProgressDialog.dismiss();
-            Toast.makeText(this, "Password must be given.", Toast.LENGTH_SHORT).show();
-            return;
-        }
-        editText=(EditText)findViewById(R.id.update_input_confirmPassword);
-        confirmpassword=editText.getText().toString();
-        if(password.compareTo(confirmpassword)!=0) {
-            mProgressDialog.dismiss();
-            Toast.makeText(this, "Passwords do not match.", Toast.LENGTH_SHORT).show();
-            return;
-        }*/
+
         editText=(EditText)findViewById(R.id.update_input_name);
         inputCheck=editText.getText().toString().trim();
         person.setFullname(inputCheck);
@@ -246,16 +258,7 @@ public class updateDetails extends AppCompatActivity {
         person.setWorkTelephone(editText.getText().toString());
         editText=(EditText)findViewById(R.id.update_input_address);
         person.setWorkAddress(editText.getText().toString());
-        /*editText=(EditText)findViewById(R.id.update_input_email);
-        emailneedle=editText.getText().toString().trim();
-        viewUser.setEmailAddress(emailneedle);*/
-        /*passwords are the same*/
-        /*editText=(EditText)findViewById(R.id.update_input_password);
-        password=editText.getText().toString();
-        editText=(EditText)findViewById(R.id.update_input_confirmPassword);
-        confirmpassword=editText.getText().toString();
-        viewUser.setPassword(password);*/
-        /*If all checks out, add to arraylist*/
+
         mProgressDialog.dismiss();
         Toast.makeText(this, "Profile Updated.", Toast.LENGTH_LONG).show();
         mProgressDialog.setMessage("Saving information...");
@@ -263,6 +266,18 @@ public class updateDetails extends AppCompatActivity {
         saveupdate(person);
         mProgressDialog.dismiss();
         finish();
+    }
+
+    private void loadPicture(TestUser user){
+        imageView.setImageURI(null);
+        if(user.getImageUrl()!=""){
+            StorageReference httpRef=FirebaseStorage.getInstance().getReferenceFromUrl(user.getImageUrl());
+            Glide.with(updateDetails.this)
+                    .using(new FirebaseImageLoader())
+                    .load(httpRef)
+                    .signature(new StringSignature(String.valueOf(System.currentTimeMillis())))
+                    .into(imageView);
+        }
     }
     private void saveupdate(TestUser user){
         databaseReference.setValue(user);
