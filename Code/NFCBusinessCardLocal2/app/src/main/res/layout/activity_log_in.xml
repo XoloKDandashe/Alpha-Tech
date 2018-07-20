@@ -69,27 +69,31 @@
         android:padding="@dimen/spacing"
         android:gravity="center"
         android:orientation="vertical">
+
         <Button
-            android:layout_marginTop="@dimen/signoutbtn"
+            android:id="@+id/login"
             android:layout_width="@dimen/loginbtn"
             android:layout_height="@dimen/signoutbtn"
+            android:layout_marginTop="@dimen/signoutbtn"
             android:background="@color/epiuseblue"
-            android:textSize="@dimen/heading"
             android:drawableRight="@mipmap/signin"
-            android:textColor="@color/white"
             android:onClick="openMainMenu"
-            android:text="@string/enter"/>
+            android:text="@string/enter"
+            android:textColor="@color/white"
+            android:textSize="@dimen/heading" />
     </LinearLayout>
+
     <TextView
+
+        android:id="@+id/NoAccount"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textSize="@dimen/fontsize"
-        android:textStyle="bold"
-        android:textColor="@color/epiuseblue"
-        android:text="@string/register"
-        android:onClick="openRegistration"
         android:gravity="center"
-        />
+        android:onClick="openRegistration"
+        android:text="@string/register"
+        android:textColor="@color/epiuseblue"
+        android:textSize="@dimen/fontsize"
+        android:textStyle="bold" />
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
