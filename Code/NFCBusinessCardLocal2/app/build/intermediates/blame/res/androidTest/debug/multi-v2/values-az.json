@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "C:\\Users\\User\\Documents\\GitHub\\Alpha-Tech\\Code\\NFCBusinessCardLocal2\\app\\build\\intermediates\\incremental\\mergeDebugAndroidTestResources\\merged.dir\\values-az\\values-az.xml",
+            "outputFile": "C:\\Users\\Xolo Kagiso Dandashe\\AndroidStudioProjects\\NFCBusinessCardLocal2\\app\\build\\intermediates\\incremental\\mergeDebugAndroidTestResources\\merged.dir\\values-az\\values-az.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\User\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-base-11.6.2.aar\\2c5f275559abfda6bdfcccf09eb2cdac\\res\\values-az\\values.xml",
+                    "source": "C:\\Users\\Xolo Kagiso Dandashe\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-base-11.6.2.aar\\e2f9bd3c8bbde9d0bc8a53daf06b372a\\res\\values-az\\values.xml",
                     "from": {
                         "startLines": "4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19",
                         "startColumns": "0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0",
@@ -21,7 +21,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\User\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-26.1.0.aar\\90e24905ac58e08d662f315b51ad344c\\res\\values-az\\values-az.xml",
+                    "source": "C:\\Users\\Xolo Kagiso Dandashe\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-26.1.0.aar\\687182da6d6ec0cc06429939d59fed76\\res\\values-az\\values-az.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
@@ -38,7 +38,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\User\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-basement-11.6.2.aar\\cb7a6b01f7834553de9e1474db20c19c\\res\\values-az\\values.xml",
+                    "source": "C:\\Users\\Xolo Kagiso Dandashe\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-basement-11.6.2.aar\\d70c89b9f1e48afc38ef3710ab4e13ae\\res\\values-az\\values.xml",
                     "from": {
                         "startLines": "4",
                         "startColumns": "0",

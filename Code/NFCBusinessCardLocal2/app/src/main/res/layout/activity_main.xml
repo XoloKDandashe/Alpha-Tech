@@ -27,7 +27,6 @@
         android:layout_marginTop="@dimen/maketop"
         android:orientation="horizontal">
         <Button
-            android:id = "@+id/openSendCard"
             android:layout_width="@dimen/buttons"
             android:layout_height="@dimen/buttons"
             android:background="@color/epiuseblue"
@@ -41,7 +40,6 @@
             android:layout_marginBottom="@dimen/spacing"
             />
         <Button
-            android:id ="@+id/openReceiveCard"
             android:layout_width="@dimen/buttons"
             android:layout_height="@dimen/buttons"
             android:background="@color/epiuseblue"
@@ -70,9 +68,8 @@
             android:layout_marginRight="@dimen/spacing"
             android:layout_marginBottom="@dimen/spacing"
             android:textColor="@color/white"
-            android:drawableRight="@mipmap/edittwo"/>
+            android:drawableRight="@mipmap/viewprofile"/>
         <Button
-            android:id = "@+id/openManageCards"
             android:layout_width="@dimen/buttons"
             android:layout_height="@dimen/buttons"
             android:background="@color/epiuseblue"

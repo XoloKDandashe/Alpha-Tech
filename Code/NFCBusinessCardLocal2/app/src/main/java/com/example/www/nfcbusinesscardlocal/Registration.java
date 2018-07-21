@@ -59,7 +59,7 @@ public class Registration extends AppCompatActivity {
         }
         databaseReference= FirebaseDatabase.getInstance().getReference("users");
 
-        final Button button = findViewById(R.id.button);
+        final Button button = (Button) findViewById(R.id.button);
         button.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
 
