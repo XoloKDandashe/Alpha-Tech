@@ -66,6 +66,11 @@ $\bullet$\ Should begin with the prefix “get” or “set” followed by the n
 		$\bullet$\ Blocks that are nested more should be indented more. \par
 		
 $\bullet$\ Lines should be kept to a sensible length to make the code easier to read and print.\par	
+\begin{wrapfigure}{r}{5.5cm}
+	\caption{Indentations and Bracketing.}
+	\label{wrap-fig:2}
+	\includegraphics[width=5.5cm]{images/indetation.png}
+\end{wrapfigure} 
 	$\bullet$\ Single blank lines should be used to separate methods and to emphasise blocks of code.\par	
 		
 				\subsection{Bracketing}
@@ -76,7 +81,7 @@ $\bullet$\ Curly brackets should always be used for if-, while- and for-, even w
 \subsection{Exceptions}
 \begin{wrapfigure}{r}{5.5cm}
 	\caption{Exception handling feedback.}
-	\label{wrap-fig:2}
+	\label{wrap-fig:3}
 	\includegraphics[width=5.5cm]{images/exception.png}
 \end{wrapfigure} 
 $\bullet$\ Exceptions should be used where necessary.\par
@@ -89,7 +94,7 @@ $\bullet$\ Appropriate “catch” statements should be put in place to allow th
 \subsection{Imports}
 \begin{wrapfigure}{r}{5.5cm}
 	\caption{Expected import use.}
-	\label{wrap-fig:3}
+	\label{wrap-fig:4}
 	\includegraphics[width=5.5cm]{images/imports.png}
 \end{wrapfigure} 
 $\bullet$\ Should avoid using import *(importing every package), rather each class should be specifically imported as required.\par
@@ -122,25 +127,25 @@ $\bullet$\ Self closing tags should be used when an XML element doesn't have any
 
 \subsection{Layout XML ID Naming / Java Class Widget Declaration Variable}
 				
-This section provides a guide on how to use elements and prefixes.
+This section provides a guide on how to link xml elements with java variables.
 				\\
 				\begin{tabular}{ |p{3cm}|p{9cm}|  }
 				\hline
-				\textbf{Element} & \textbf{Prefix And Example}  \\
+				\textbf{Element} & \textbf{Example}  \\
 				\hline
-				TextView &	tv	e.g tvText\\
+				TextView &	TextView textView\\
 				\hline
-				ImageView &	iv	e.g ivImage\\
+				ImageView &	ImageView imageView\\
 				\hline
-				Button &	btn	e.g btnSubmit\\
+				Button &	Button button\\
 				\hline
-				EditText &	et	e.g etWords \\
+				EditText &	EditText editText \\
 				\hline
 				\end{tabular}
-
 \section{Documentation}
 
 \subsection{Comments}
+It is expected that the code written should be structured in a way that all members can understand it without comments but here are some guides to placing comments:\\
 $\bullet$\ Use in-line commenting to help the next developer who might be editing your code.\par
 $\bullet$\ Inline comments should appear on the line above the code you are commenting.\par
 $\bullet$\ Comment XML View elements using  \texttt{<! -- Comment -->}.\par
@@ -153,9 +158,14 @@ $\bullet$\ Resources file names should be written in  \texttt{lowercase\_undersc
 
 
 \subsection{Layout Files}
-
+\begin{wrapfigure}{r}{5.5cm}
+	\caption{Layout files.}
+	\label{wrap-fig:5}
+	\includegraphics[width=5.5cm]{images/layouts.png}
+\end{wrapfigure} 
 $\bullet$\ Layout files should match the name of the Android components that they are intended for but moving the top level component name to the beginning. \par
 $\bullet$\ Example, if you are creating a layout for the SignInActivity, the name of the layout file should be \texttt{activity\_sign\_in.xml} \par
+
 
 
 \subsection{Version control}
@@ -163,13 +173,18 @@ $\bullet$\ No commented out code must be committed unless you have a very good r
 
 
 \subsection{Repository definitions}
-$\bullet$\ All the pictures should be in a folder called Pictures,mipmap or images. \par
+\begin{wrapfigure}{r}{5.5cm}
+	\caption{Java files.}
+	\label{wrap-fig:6}
+	\includegraphics[width=5.5cm]{images/javafiles.png}
+\end{wrapfigure} 
+$\bullet$\ All the pictures should be in a folder called images. \par
 $\bullet$\ All the files should belong to a specific folder. \par
 $\bullet$\ Folder names should be descriptive enough to show what they contain. \par
 
 \section{Code quality}
 \subsection{To ensure code quality:}
-$\bullet$\ Android Studio code style will be used. \par
+$\bullet$\ Android Studio will be used for development which uses Java for backend functions and XML for layout presentation. \par
 $\bullet$\ Coding standard rules mentioned above will be used for resources naming conventions, formatting and also to ensure version control.
  \par
 $\bullet$\ Testing will be conducted using JUnit to run unit tests. \par
@@ -180,24 +195,24 @@ $\bullet$\ FindBugs tool will be used to spot issues related to performance and 
 
 \subsection{Branching}		
 
-\begin{figure}[!htb]
-\minipage{0.5\textwidth}
-  \includegraphics[width=\linewidth]{images/Branching.png}
-  \caption{Branching}\label{Branching}
-\endminipage\hfill
-\minipage{0.4\textwidth}
-  \includegraphics[width=\linewidth]{images/GitStructure.png}
-  \caption{Git structure}\label{Git structure}
-\endminipage\hfill
-\end{figure}
+\begin{wrapfigure}{r}{5.5cm}
+	\caption{Branching Structure.}
+	\label{wrap-fig:7}
+	\includegraphics[width=5.5cm]{images/Branching.png}
+\end{wrapfigure} 
+\begin{wrapfigure}{r}{5.5cm}
+	\caption{Git Structure.}
+	\label{wrap-fig:8}
+	\includegraphics[width=5.5cm]{images/GitStructure.png}
+\end{wrapfigure} 
+
 
 \subsection{Merging}
-
-\begin{figure}[ht!]
-\centering
-\includegraphics[width=90mm]{images/merging.png}
-\caption{Merging }
-\end{figure}	
+\begin{wrapfigure}{r}{5.5cm}
+	\caption{Merging branches.}
+	\label{wrap-fig:9}
+	\includegraphics[width=5.5cm]{images/merging.png}
+\end{wrapfigure} 
 
 		
 
