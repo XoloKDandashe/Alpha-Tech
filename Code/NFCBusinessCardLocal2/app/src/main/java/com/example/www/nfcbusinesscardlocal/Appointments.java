@@ -185,8 +185,9 @@ public class Appointments extends AppCompatActivity {
         public void onDateSet(DatePicker view, int year, int month, int day){
             // Do something with the chosen date
             Button btn=(Button)getActivity().findViewById(R.id.meetingdate);
-            btn.setText(day+"/"+month+"/"+year);
-            int actualMonth = month+1; // Because month index start from zero
+            // Because month index start from zero
+            int actualMonth = month+1;
+            btn.setText(day+"/"+actualMonth+"/"+year);
             Toast.makeText(getActivity(), "Date has been set.", Toast.LENGTH_LONG).show();
         }
     }

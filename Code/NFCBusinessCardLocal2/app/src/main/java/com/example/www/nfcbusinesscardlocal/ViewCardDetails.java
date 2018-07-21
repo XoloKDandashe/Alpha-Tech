@@ -18,9 +18,13 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.signature.StringSignature;
+import com.firebase.ui.storage.images.FirebaseImageLoader;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
@@ -28,6 +32,8 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 
@@ -41,6 +47,7 @@ public class ViewCardDetails extends AppCompatActivity {
     private DatabaseReference databaseReference;
     private FirebaseAuth firebaseAuth;
     private ProgressDialog mProgressDialog;
+    private ImageView imageView;
     FirebaseUser firebaseUser;
     TestUser person=null;
     TestUser viewUser;
@@ -58,7 +65,7 @@ public class ViewCardDetails extends AppCompatActivity {
         if(intent.hasExtra("ViewUser")) {
             viewUser = (TestUser) intent.getSerializableExtra("ViewUser");
         }
-        final Button button = findViewById(R.id.button);
+        final Button button =(Button) findViewById(R.id.button);
         button.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 String m= viewUser.getWorkAddress();
@@ -74,6 +81,7 @@ public class ViewCardDetails extends AppCompatActivity {
                 startActivity(mapIntent);
             }
         });
+        imageView=(ImageView) findViewById(R.id.profilePicture_view_user);
         saveButton= (Button) findViewById(R.id.save_view_user);
         saveButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -137,8 +145,19 @@ public class ViewCardDetails extends AppCompatActivity {
             }
         });
     }
+    private void loadPicture(TestUser user){
+        if(user.getImageUrl()!=""){
+            StorageReference httpRef= FirebaseStorage.getInstance().getReferenceFromUrl(user.getImageUrl());
+            Glide.with(ViewCardDetails.this)
+                    .using(new FirebaseImageLoader())
+                    .load(httpRef)
+                    .signature(new StringSignature(String.valueOf(System.currentTimeMillis())))
+                    .into(imageView);
+        }
+    }
     public void setDetails()
     {
+        loadPicture(viewUser);
         TextView textView=(TextView)findViewById(R.id.fullname_view_user);
         textView.setText(viewUser.getFullname());
         textView=(TextView)findViewById(R.id.jobtitle_view_user);
@@ -147,7 +166,6 @@ public class ViewCardDetails extends AppCompatActivity {
         textView.setText(viewUser.getCompanyName());
         textView=(TextView)findViewById(R.id.emailAddress_view_user);
         textView.setText(viewUser.getEmailAddress());
-      //  Toast.makeText(ViewCardDetails.this, viewUser.getWorkAddress(), Toast.LENGTH_SHORT).show();
         textView=(TextView)findViewById(R.id.physAddress_view_user);
         textView.setText(viewUser.getWorkAddress());
         textView=(TextView)findViewById(R.id.personalnumber_view_user);

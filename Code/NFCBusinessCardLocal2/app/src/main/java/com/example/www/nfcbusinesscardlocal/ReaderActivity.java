@@ -146,7 +146,7 @@ public class ReaderActivity extends AppCompatActivity {
                 Toast.makeText(this, "You cancelled the scanning", Toast.LENGTH_LONG).show();
             }
             else {
-                details=result.getContents().split(",");
+                details=result.getContents().split("%");
                 List<TestUser> arrayList=null;
                 Gson gson= new Gson();
                 String jsonConverter=person.getRecievedCards();
@@ -168,6 +168,7 @@ public class ReaderActivity extends AppCompatActivity {
                 newCard.setMobileNumber(details[4]);
                 newCard.setWorkTelephone(details[5]);
                 newCard.setWorkAddress(details[6]);
+                newCard.setImageUrl(details[7]);
                 //Toast.makeText(this,details[6],Toast.LENGTH_LONG).show();
 
                 arrayList.add(newCard);
@@ -183,6 +184,7 @@ public class ReaderActivity extends AppCompatActivity {
                 etOff = details[4];
                 etmail = details[3];
                 etWAddress = details[6];
+
                 btn = (Button) findViewById(R.id.qrbtn);
                 btn.setVisibility(View.VISIBLE);
                 btn.setOnClickListener(new View.OnClickListener() {

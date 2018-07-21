@@ -49,7 +49,7 @@ public class Appointment {
     }
 
     public String getNotes() {
-        if(notes.compareTo("")==0)return "n/a"; return notes;
+        if(notes.compareTo("")==0)return ""; return notes;
     }
     public String getAppointmentDetails()
     {
