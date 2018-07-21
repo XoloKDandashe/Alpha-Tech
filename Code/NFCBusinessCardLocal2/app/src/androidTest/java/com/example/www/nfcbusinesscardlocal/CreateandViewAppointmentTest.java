@@ -121,7 +121,7 @@ public class CreateandViewAppointmentTest {
         // The recommended way to handle such scenarios is to use Espresso idling resources:
         // https://google.github.io/android-testing-support-library/docs/espresso/idling-resource/index.html
         try {
-            Thread.sleep(34);
+            Thread.sleep(3400);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
@@ -140,7 +140,7 @@ public class CreateandViewAppointmentTest {
         // The recommended way to handle such scenarios is to use Espresso idling resources:
         // https://google.github.io/android-testing-support-library/docs/espresso/idling-resource/index.html
         try {
-            Thread.sleep(35);
+            Thread.sleep(3500);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
@@ -159,7 +159,7 @@ public class CreateandViewAppointmentTest {
         // The recommended way to handle such scenarios is to use Espresso idling resources:
         // https://google.github.io/android-testing-support-library/docs/espresso/idling-resource/index.html
         try {
-            Thread.sleep(359);
+            Thread.sleep(3590);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
@@ -220,7 +220,7 @@ public class CreateandViewAppointmentTest {
         // The recommended way to handle such scenarios is to use Espresso idling resources:
         // https://google.github.io/android-testing-support-library/docs/espresso/idling-resource/index.html
         try {
-            Thread.sleep(35);
+            Thread.sleep(3500);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
@@ -248,7 +248,7 @@ public class CreateandViewAppointmentTest {
         // The recommended way to handle such scenarios is to use Espresso idling resources:
         // https://google.github.io/android-testing-support-library/docs/espresso/idling-resource/index.html
         try {
-            Thread.sleep(35);
+            Thread.sleep(350);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
@@ -272,7 +272,11 @@ public class CreateandViewAppointmentTest {
                                 1),
                         isDisplayed()));
         appCompatEditText7.perform(replaceText("Meeting with management "), closeSoftKeyboard());
-
+        try {
+            Thread.sleep(350);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         ViewInteraction appCompatButton6 = onView(
                 allOf(withId(R.id.meetingdate), withText("Click to Set Date"),
                         childAtPosition(
@@ -282,7 +286,11 @@ public class CreateandViewAppointmentTest {
                                 1),
                         isDisplayed()));
         appCompatButton6.perform(click());
-
+        try {
+            Thread.sleep(350);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         ViewInteraction appCompatButton7 = onView(
                 allOf(withId(android.R.id.button1), withText("OK"),
                         childAtPosition(
@@ -292,7 +300,11 @@ public class CreateandViewAppointmentTest {
                                 2),
                         isDisplayed()));
         appCompatButton7.perform(click());
-
+        try {
+            Thread.sleep(350);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         ViewInteraction appCompatButton8 = onView(
                 allOf(withId(R.id.meetingtime), withText("Click to Set Time"),
                         childAtPosition(
@@ -302,7 +314,11 @@ public class CreateandViewAppointmentTest {
                                 1),
                         isDisplayed()));
         appCompatButton8.perform(click());
-
+        try {
+            Thread.sleep(350);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         ViewInteraction appCompatButton9 = onView(
                 allOf(withId(android.R.id.button1), withText("OK"),
                         childAtPosition(
@@ -313,7 +329,11 @@ public class CreateandViewAppointmentTest {
                                 3),
                         isDisplayed()));
         appCompatButton9.perform(click());
-
+        try {
+            Thread.sleep(350);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         ViewInteraction appCompatButton10 = onView(
                 allOf(withId(R.id.saveappointment), withText("Save Appointment"),
                         childAtPosition(
@@ -329,7 +349,7 @@ public class CreateandViewAppointmentTest {
         // The recommended way to handle such scenarios is to use Espresso idling resources:
         // https://google.github.io/android-testing-support-library/docs/espresso/idling-resource/index.html
         try {
-            Thread.sleep(35);
+            Thread.sleep(3500);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
@@ -340,7 +360,7 @@ public class CreateandViewAppointmentTest {
         // The recommended way to handle such scenarios is to use Espresso idling resources:
         // https://google.github.io/android-testing-support-library/docs/espresso/idling-resource/index.html
         try {
-            Thread.sleep(35);
+            Thread.sleep(350);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
@@ -351,7 +371,7 @@ public class CreateandViewAppointmentTest {
         // The recommended way to handle such scenarios is to use Espresso idling resources:
         // https://google.github.io/android-testing-support-library/docs/espresso/idling-resource/index.html
         try {
-            Thread.sleep(35);
+            Thread.sleep(350);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
@@ -363,7 +383,7 @@ public class CreateandViewAppointmentTest {
         // The recommended way to handle such scenarios is to use Espresso idling resources:
         // https://google.github.io/android-testing-support-library/docs/espresso/idling-resource/index.html
         try {
-            Thread.sleep(35);
+            Thread.sleep(3500);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
@@ -382,7 +402,7 @@ public class CreateandViewAppointmentTest {
         // The recommended way to handle such scenarios is to use Espresso idling resources:
         // https://google.github.io/android-testing-support-library/docs/espresso/idling-resource/index.html
         try {
-            Thread.sleep(35);
+            Thread.sleep(350);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
@@ -401,11 +421,11 @@ public class CreateandViewAppointmentTest {
         // The recommended way to handle such scenarios is to use Espresso idling resources:
         // https://google.github.io/android-testing-support-library/docs/espresso/idling-resource/index.html
         try {
-            Thread.sleep(35);
+            Thread.sleep(3500);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-
+/*
         DataInteraction linearLayout2 = onData(anything())
                 .inAdapterView(allOf(withId(R.id.scrollappointments),
                         childAtPosition(
@@ -413,7 +433,7 @@ public class CreateandViewAppointmentTest {
                                 1)))
                 .atPosition(6);
         linearLayout2.perform(click());
-
+*/
         try {
             Thread.sleep(3500);
         } catch (InterruptedException e) {
