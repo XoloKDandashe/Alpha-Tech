@@ -42,7 +42,7 @@ public class RegisterNewUserAndLogInTest {
         // The recommended way to handle such scenarios is to use Espresso idling resources:
         // https://google.github.io/android-testing-support-library/docs/espresso/idling-resource/index.html
         try {
-            Thread.sleep(60);
+            Thread.sleep(100);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
@@ -71,7 +71,7 @@ public class RegisterNewUserAndLogInTest {
         // The recommended way to handle such scenarios is to use Espresso idling resources:
         // https://google.github.io/android-testing-support-library/docs/espresso/idling-resource/index.html
         try {
-            Thread.sleep(60);
+            Thread.sleep(100);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
@@ -113,7 +113,7 @@ public class RegisterNewUserAndLogInTest {
         // The recommended way to handle such scenarios is to use Espresso idling resources:
         // https://google.github.io/android-testing-support-library/docs/espresso/idling-resource/index.html
         try {
-            Thread.sleep(35);
+            Thread.sleep(350);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
@@ -145,7 +145,7 @@ public class RegisterNewUserAndLogInTest {
                                 1)));
         appCompatEditText6.perform(scrollTo(), replaceText("senior dev"), closeSoftKeyboard());
         try {
-            Thread.sleep(340);
+            Thread.sleep(640);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
@@ -164,7 +164,7 @@ public class RegisterNewUserAndLogInTest {
         // The recommended way to handle such scenarios is to use Espresso idling resources:
         // https://google.github.io/android-testing-support-library/docs/espresso/idling-resource/index.html
         try {
-            Thread.sleep(340);
+            Thread.sleep(1000);
     } catch (InterruptedException e) {
         e.printStackTrace();
     }
@@ -180,7 +180,7 @@ public class RegisterNewUserAndLogInTest {
                                 3)));
         appCompatEditText8.perform(scrollTo(), replaceText("Hatfield "), closeSoftKeyboard());
         try {
-            Thread.sleep(350);
+            Thread.sleep(1000);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
@@ -194,7 +194,7 @@ public class RegisterNewUserAndLogInTest {
                                 5)));
         appCompatEditText9.perform(scrollTo(), replaceText("una@gmail.com"), closeSoftKeyboard());
         try {
-            Thread.sleep(550);
+            Thread.sleep(1550);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
@@ -208,7 +208,7 @@ public class RegisterNewUserAndLogInTest {
                                 6)));
         appCompatEditText10.perform(scrollTo(), replaceText("0159632022"), closeSoftKeyboard());
         try {
-            Thread.sleep(550);
+            Thread.sleep(1550);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
@@ -231,7 +231,7 @@ public class RegisterNewUserAndLogInTest {
                                 7)));
         appCompatEditText12.perform(scrollTo(), replaceText("0715532217"), closeSoftKeyboard());
         try {
-            Thread.sleep(550);
+            Thread.sleep(1550);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
@@ -245,7 +245,7 @@ public class RegisterNewUserAndLogInTest {
                                 8)));
         appCompatEditText13.perform(scrollTo(), replaceText("password"), closeSoftKeyboard());
         try {
-            Thread.sleep(940);
+            Thread.sleep(1440);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
@@ -269,7 +269,7 @@ public class RegisterNewUserAndLogInTest {
                                 10)));
         appCompatButton4.perform(scrollTo(), click());
         try {
-            Thread.sleep(2000);
+            Thread.sleep(2800);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
@@ -313,7 +313,7 @@ public class RegisterNewUserAndLogInTest {
                                 10)));
         appCompatButton5.perform(scrollTo(), click());
         try {
-            Thread.sleep(850);
+            Thread.sleep(1050);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
@@ -322,7 +322,7 @@ public class RegisterNewUserAndLogInTest {
         // The recommended way to handle such scenarios is to use Espresso idling resources:
         // https://google.github.io/android-testing-support-library/docs/espresso/idling-resource/index.html
         try {
-            Thread.sleep(340);
+            Thread.sleep(1340);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
@@ -349,7 +349,7 @@ public class RegisterNewUserAndLogInTest {
         // The recommended way to handle such scenarios is to use Espresso idling resources:
         // https://google.github.io/android-testing-support-library/docs/espresso/idling-resource/index.html
         try {
-            Thread.sleep(35);
+            Thread.sleep(135);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
@@ -375,7 +375,11 @@ public class RegisterNewUserAndLogInTest {
         appCompatEditText19.perform(replaceText("una@gmail.com"), closeSoftKeyboard());
 
 
-
+        try {
+            Thread.sleep(596);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         ViewInteraction appCompatEditText20 = onView(
                 allOf(withId(R.id.passwordlogin),
                         childAtPosition(
@@ -402,7 +406,7 @@ public class RegisterNewUserAndLogInTest {
         // The recommended way to handle such scenarios is to use Espresso idling resources:
         // https://google.github.io/android-testing-support-library/docs/espresso/idling-resource/index.html
         try {
-            Thread.sleep(100);
+            Thread.sleep(1000);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }

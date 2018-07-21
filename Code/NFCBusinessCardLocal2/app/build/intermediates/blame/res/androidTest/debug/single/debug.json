@@ -1756,6 +1756,13 @@
         "source": "C:\\Users\\Xolo Kagiso Dandashe\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-26.1.0.aar\\687182da6d6ec0cc06429939d59fed76\\res\\drawable-xhdpi-v4\\abc_list_selector_disabled_holo_dark.9.png"
     },
     {
+<<<<<<< HEAD
+        "merged": "C:\\Users\\User\\Documents\\GitHub\\Alpha-Tech\\Code\\NFCBusinessCardLocal2\\app\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xxhdpi-v4_common_google_signin_btn_text_dark_normal_background.9.png.flat",
+        "source": "C:\\Users\\User\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-base-11.6.2.aar\\2c5f275559abfda6bdfcccf09eb2cdac\\res\\drawable-xxhdpi-v4\\common_google_signin_btn_text_dark_normal_background.9.png"
+    },
+    {
+=======
+>>>>>>> WIP
         "merged": "C:\\Users\\User\\Documents\\GitHub\\Alpha-Tech\\Code\\NFCBusinessCardLocal2\\app\\build\\intermediates\\res\\merged\\androidTest\\debug\\color-v23_abc_tint_default.xml.flat",
         "source": "C:\\Users\\User\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-26.1.0.aar\\90e24905ac58e08d662f315b51ad344c\\res\\color-v23\\abc_tint_default.xml"
     },
@@ -1828,8 +1835,21 @@
         "source": "C:\\Users\\User\\.gradle\\caches\\transforms-1\\files-1.1\\support-media-compat-26.1.0.aar\\fa86be2b299cc79e531b6a1ed08dab6b\\res\\layout\\notification_template_big_media_narrow_custom.xml"
     },
     {
+<<<<<<< HEAD
+        "merged": "C:\\Users\\User\\Documents\\GitHub\\Alpha-Tech\\Code\\NFCBusinessCardLocal2\\app\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-mdpi-v4_abc_scrubber_control_to_pressed_mtrl_005.png.flat",
+        "source": "C:\\Users\\User\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-26.1.0.aar\\90e24905ac58e08d662f315b51ad344c\\res\\drawable-mdpi-v4\\abc_scrubber_control_to_pressed_mtrl_005.png"
+    },
+    {
+        "merged": "C:\\Users\\User\\Documents\\GitHub\\Alpha-Tech\\Code\\NFCBusinessCardLocal2\\app\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-ldrtl-hdpi-v17_abc_ic_menu_cut_mtrl_alpha.png.flat",
+        "source": "C:\\Users\\User\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-26.1.0.aar\\90e24905ac58e08d662f315b51ad344c\\res\\drawable-ldrtl-hdpi-v17\\abc_ic_menu_cut_mtrl_alpha.png"
+=======
         "merged": "C:\\Users\\Xolo Kagiso Dandashe\\Documents\\GitHub\\Alpha-Tech\\Code\\NFCBusinessCardLocal2\\app\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout_notification_action.xml.flat",
         "source": "C:\\Users\\Xolo Kagiso Dandashe\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-26.1.0.aar\\c3874068355baa8bde26fca9b62292ac\\res\\layout\\notification_action.xml"
+>>>>>>> WIP
+    },
+    {
+        "merged": "C:\\Users\\User\\Documents\\GitHub\\Alpha-Tech\\Code\\NFCBusinessCardLocal2\\app\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable_common_google_signin_btn_icon_dark_focused.xml.flat",
+        "source": "C:\\Users\\User\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-base-11.6.2.aar\\2c5f275559abfda6bdfcccf09eb2cdac\\res\\drawable\\common_google_signin_btn_icon_dark_focused.xml"
     },
     {
         "merged": "C:\\Users\\User\\Documents\\GitHub\\Alpha-Tech\\Code\\NFCBusinessCardLocal2\\app\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout_notification_action_tombstone.xml.flat",
@@ -1844,8 +1864,29 @@
         "source": "C:\\Users\\User\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-26.1.0.aar\\90e24905ac58e08d662f315b51ad344c\\res\\drawable-mdpi-v4\\abc_tab_indicator_mtrl_alpha.9.png"
     },
     {
+<<<<<<< HEAD
+        "merged": "C:\\Users\\User\\Documents\\GitHub\\Alpha-Tech\\Code\\NFCBusinessCardLocal2\\app\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-hdpi-v4_abc_ic_star_black_48dp.png.flat",
+        "source": "C:\\Users\\User\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-26.1.0.aar\\90e24905ac58e08d662f315b51ad344c\\res\\drawable-hdpi-v4\\abc_ic_star_black_48dp.png"
+    },
+    {
+        "merged": "C:\\Users\\User\\Documents\\GitHub\\Alpha-Tech\\Code\\NFCBusinessCardLocal2\\app\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xxxhdpi-v4_abc_ic_menu_paste_mtrl_am_alpha.png.flat",
+        "source": "C:\\Users\\User\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-26.1.0.aar\\90e24905ac58e08d662f315b51ad344c\\res\\drawable-xxxhdpi-v4\\abc_ic_menu_paste_mtrl_am_alpha.png"
+    },
+    {
         "merged": "C:\\Users\\User\\Documents\\GitHub\\Alpha-Tech\\Code\\NFCBusinessCardLocal2\\app\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-mdpi-v4_abc_ic_menu_share_mtrl_alpha.png.flat",
         "source": "C:\\Users\\User\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-26.1.0.aar\\90e24905ac58e08d662f315b51ad344c\\res\\drawable-mdpi-v4\\abc_ic_menu_share_mtrl_alpha.png"
+    },
+    {
+        "merged": "C:\\Users\\User\\Documents\\GitHub\\Alpha-Tech\\Code\\NFCBusinessCardLocal2\\app\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xxhdpi-v4_abc_menu_hardkey_panel_mtrl_mult.9.png.flat",
+        "source": "C:\\Users\\User\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-26.1.0.aar\\90e24905ac58e08d662f315b51ad344c\\res\\drawable-xxhdpi-v4\\abc_menu_hardkey_panel_mtrl_mult.9.png"
+    },
+    {
+        "merged": "C:\\Users\\User\\Documents\\GitHub\\Alpha-Tech\\Code\\NFCBusinessCardLocal2\\app\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xxhdpi-v4_abc_list_focused_holo.9.png.flat",
+        "source": "C:\\Users\\User\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-26.1.0.aar\\90e24905ac58e08d662f315b51ad344c\\res\\drawable-xxhdpi-v4\\abc_list_focused_holo.9.png"
+=======
+        "merged": "C:\\Users\\User\\Documents\\GitHub\\Alpha-Tech\\Code\\NFCBusinessCardLocal2\\app\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-mdpi-v4_abc_ic_menu_share_mtrl_alpha.png.flat",
+        "source": "C:\\Users\\User\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-26.1.0.aar\\90e24905ac58e08d662f315b51ad344c\\res\\drawable-mdpi-v4\\abc_ic_menu_share_mtrl_alpha.png"
+>>>>>>> WIP
     },
     {
         "merged": "C:\\Users\\Xolo Kagiso Dandashe\\Documents\\GitHub\\Alpha-Tech\\Code\\NFCBusinessCardLocal2\\app\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xxhdpi-v4_abc_scrubber_control_to_pressed_mtrl_000.png.flat",
@@ -1964,6 +2005,17 @@
         "source": "C:\\Users\\User\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-26.1.0.aar\\90e24905ac58e08d662f315b51ad344c\\res\\drawable-mdpi-v4\\abc_spinner_mtrl_am_alpha.9.png"
     },
     {
+<<<<<<< HEAD
+        "merged": "C:\\Users\\User\\Documents\\GitHub\\Alpha-Tech\\Code\\NFCBusinessCardLocal2\\app\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xxhdpi-v4_abc_list_pressed_holo_light.9.png.flat",
+        "source": "C:\\Users\\User\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-26.1.0.aar\\90e24905ac58e08d662f315b51ad344c\\res\\drawable-xxhdpi-v4\\abc_list_pressed_holo_light.9.png"
+    },
+    {
+        "merged": "C:\\Users\\User\\Documents\\GitHub\\Alpha-Tech\\Code\\NFCBusinessCardLocal2\\app\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-hdpi-v4_abc_ic_menu_cut_mtrl_alpha.png.flat",
+        "source": "C:\\Users\\User\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-26.1.0.aar\\90e24905ac58e08d662f315b51ad344c\\res\\drawable-hdpi-v4\\abc_ic_menu_cut_mtrl_alpha.png"
+    },
+    {
+=======
+>>>>>>> WIP
         "merged": "C:\\Users\\User\\Documents\\GitHub\\Alpha-Tech\\Code\\NFCBusinessCardLocal2\\app\\build\\intermediates\\res\\merged\\androidTest\\debug\\color_abc_secondary_text_material_dark.xml.flat",
         "source": "C:\\Users\\User\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-26.1.0.aar\\90e24905ac58e08d662f315b51ad344c\\res\\color\\abc_secondary_text_material_dark.xml"
     },
@@ -1978,6 +2030,8 @@
     {
         "merged": "C:\\Users\\User\\Documents\\GitHub\\Alpha-Tech\\Code\\NFCBusinessCardLocal2\\app\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-ldrtl-xxxhdpi-v17_abc_ic_menu_cut_mtrl_alpha.png.flat",
         "source": "C:\\Users\\User\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-26.1.0.aar\\90e24905ac58e08d662f315b51ad344c\\res\\drawable-ldrtl-xxxhdpi-v17\\abc_ic_menu_cut_mtrl_alpha.png"
+<<<<<<< HEAD
+=======
     },
     {
         "merged": "C:\\Users\\User\\Documents\\GitHub\\Alpha-Tech\\Code\\NFCBusinessCardLocal2\\app\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4_abc_ic_menu_paste_mtrl_am_alpha.png.flat",
@@ -1986,6 +2040,11 @@
     {
         "merged": "C:\\Users\\Xolo Kagiso Dandashe\\Documents\\GitHub\\Alpha-Tech\\Code\\NFCBusinessCardLocal2\\app\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout_abc_screen_content_include.xml.flat",
         "source": "C:\\Users\\Xolo Kagiso Dandashe\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-26.1.0.aar\\687182da6d6ec0cc06429939d59fed76\\res\\layout\\abc_screen_content_include.xml"
+>>>>>>> WIP
+    },
+    {
+        "merged": "C:\\Users\\User\\Documents\\GitHub\\Alpha-Tech\\Code\\NFCBusinessCardLocal2\\app\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4_abc_ic_menu_paste_mtrl_am_alpha.png.flat",
+        "source": "C:\\Users\\User\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-26.1.0.aar\\90e24905ac58e08d662f315b51ad344c\\res\\drawable-xhdpi-v4\\abc_ic_menu_paste_mtrl_am_alpha.png"
     },
     {
         "merged": "C:\\Users\\User\\Documents\\GitHub\\Alpha-Tech\\Code\\NFCBusinessCardLocal2\\app\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xxhdpi-v4_abc_scrubber_control_to_pressed_mtrl_005.png.flat",
@@ -2000,16 +2059,24 @@
         "source": "C:\\Users\\Xolo Kagiso Dandashe\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-26.1.0.aar\\687182da6d6ec0cc06429939d59fed76\\res\\drawable-mdpi-v4\\abc_btn_switch_to_on_mtrl_00012.9.png"
     },
     {
+<<<<<<< HEAD
+=======
         "merged": "C:\\Users\\Xolo Kagiso Dandashe\\Documents\\GitHub\\Alpha-Tech\\Code\\NFCBusinessCardLocal2\\app\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4_googleg_disabled_color_18.png.flat",
         "source": "C:\\Users\\Xolo Kagiso Dandashe\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-base-11.6.2.aar\\e2f9bd3c8bbde9d0bc8a53daf06b372a\\res\\drawable-xhdpi-v4\\googleg_disabled_color_18.png"
     },
     {
+>>>>>>> WIP
         "merged": "C:\\Users\\User\\Documents\\GitHub\\Alpha-Tech\\Code\\NFCBusinessCardLocal2\\app\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout-v16_notification_template_custom_big.xml.flat",
         "source": "C:\\Users\\User\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-26.1.0.aar\\b427fdb3b282c7fef9f8b0afd137465f\\res\\layout-v16\\notification_template_custom_big.xml"
     },
     {
+<<<<<<< HEAD
+        "merged": "C:\\Users\\User\\Documents\\GitHub\\Alpha-Tech\\Code\\NFCBusinessCardLocal2\\app\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout_notification_template_icon_group.xml.flat",
+        "source": "C:\\Users\\User\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-26.1.0.aar\\b427fdb3b282c7fef9f8b0afd137465f\\res\\layout\\notification_template_icon_group.xml"
+=======
         "merged": "C:\\Users\\Xolo Kagiso Dandashe\\Documents\\GitHub\\Alpha-Tech\\Code\\NFCBusinessCardLocal2\\app\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4_common_full_open_on_phone.png.flat",
         "source": "C:\\Users\\Xolo Kagiso Dandashe\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-base-11.6.2.aar\\e2f9bd3c8bbde9d0bc8a53daf06b372a\\res\\drawable-xhdpi-v4\\common_full_open_on_phone.png"
+>>>>>>> WIP
     },
     {
         "merged": "C:\\Users\\User\\Documents\\GitHub\\Alpha-Tech\\Code\\NFCBusinessCardLocal2\\app\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xxhdpi-v4_abc_btn_radio_to_on_mtrl_000.png.flat",
@@ -2096,8 +2163,21 @@
         "source": "C:\\Users\\User\\.gradle\\caches\\transforms-1\\files-1.1\\support-media-compat-26.1.0.aar\\fa86be2b299cc79e531b6a1ed08dab6b\\res\\layout\\notification_media_action.xml"
     },
     {
+<<<<<<< HEAD
+        "merged": "C:\\Users\\User\\Documents\\GitHub\\Alpha-Tech\\Code\\NFCBusinessCardLocal2\\app\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable_abc_switch_thumb_material.xml.flat",
+        "source": "C:\\Users\\User\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-26.1.0.aar\\90e24905ac58e08d662f315b51ad344c\\res\\drawable\\abc_switch_thumb_material.xml"
+    },
+    {
+        "merged": "C:\\Users\\User\\Documents\\GitHub\\Alpha-Tech\\Code\\NFCBusinessCardLocal2\\app\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-hdpi-v4_abc_ic_menu_share_mtrl_alpha.png.flat",
+        "source": "C:\\Users\\User\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-26.1.0.aar\\90e24905ac58e08d662f315b51ad344c\\res\\drawable-hdpi-v4\\abc_ic_menu_share_mtrl_alpha.png"
+    },
+    {
+        "merged": "C:\\Users\\User\\Documents\\GitHub\\Alpha-Tech\\Code\\NFCBusinessCardLocal2\\app\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable_abc_ic_ab_back_material.xml.flat",
+        "source": "C:\\Users\\User\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-26.1.0.aar\\90e24905ac58e08d662f315b51ad344c\\res\\drawable\\abc_ic_ab_back_material.xml"
+=======
         "merged": "C:\\Users\\Xolo Kagiso Dandashe\\Documents\\GitHub\\Alpha-Tech\\Code\\NFCBusinessCardLocal2\\app\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xxhdpi-v4_abc_scrubber_track_mtrl_alpha.9.png.flat",
         "source": "C:\\Users\\Xolo Kagiso Dandashe\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-26.1.0.aar\\687182da6d6ec0cc06429939d59fed76\\res\\drawable-xxhdpi-v4\\abc_scrubber_track_mtrl_alpha.9.png"
+>>>>>>> WIP
     },
     {
         "merged": "C:\\Users\\User\\Documents\\GitHub\\Alpha-Tech\\Code\\NFCBusinessCardLocal2\\app\\build\\intermediates\\res\\merged\\androidTest\\debug\\anim_abc_slide_out_top.xml.flat",
@@ -2112,32 +2192,51 @@
         "source": "C:\\Users\\User\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-26.1.0.aar\\90e24905ac58e08d662f315b51ad344c\\res\\drawable-xxxhdpi-v4\\abc_btn_check_to_on_mtrl_000.png"
     },
     {
+<<<<<<< HEAD
+        "merged": "C:\\Users\\User\\Documents\\GitHub\\Alpha-Tech\\Code\\NFCBusinessCardLocal2\\app\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xxxhdpi-v4_abc_btn_check_to_on_mtrl_000.png.flat",
+        "source": "C:\\Users\\User\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-26.1.0.aar\\90e24905ac58e08d662f315b51ad344c\\res\\drawable-xxxhdpi-v4\\abc_btn_check_to_on_mtrl_000.png"
+=======
         "merged": "C:\\Users\\User\\Documents\\GitHub\\Alpha-Tech\\Code\\NFCBusinessCardLocal2\\app\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable_common_google_signin_btn_text_dark_focused.xml.flat",
         "source": "C:\\Users\\User\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-base-11.6.2.aar\\2c5f275559abfda6bdfcccf09eb2cdac\\res\\drawable\\common_google_signin_btn_text_dark_focused.xml"
     },
     {
         "merged": "C:\\Users\\Xolo Kagiso Dandashe\\Documents\\GitHub\\Alpha-Tech\\Code\\NFCBusinessCardLocal2\\app\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xxhdpi-v4_abc_ic_menu_copy_mtrl_am_alpha.png.flat",
         "source": "C:\\Users\\Xolo Kagiso Dandashe\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-26.1.0.aar\\687182da6d6ec0cc06429939d59fed76\\res\\drawable-xxhdpi-v4\\abc_ic_menu_copy_mtrl_am_alpha.png"
+>>>>>>> WIP
     },
     {
+        "merged": "C:\\Users\\User\\Documents\\GitHub\\Alpha-Tech\\Code\\NFCBusinessCardLocal2\\app\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable_common_google_signin_btn_text_dark_focused.xml.flat",
+        "source": "C:\\Users\\User\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-base-11.6.2.aar\\2c5f275559abfda6bdfcccf09eb2cdac\\res\\drawable\\common_google_signin_btn_text_dark_focused.xml"
+    },
+    {
+<<<<<<< HEAD
         "merged": "C:\\Users\\User\\Documents\\GitHub\\Alpha-Tech\\Code\\NFCBusinessCardLocal2\\app\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-hdpi-v4_abc_list_focused_holo.9.png.flat",
         "source": "C:\\Users\\User\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-26.1.0.aar\\90e24905ac58e08d662f315b51ad344c\\res\\drawable-hdpi-v4\\abc_list_focused_holo.9.png"
-    },
-    {
+=======
         "merged": "C:\\Users\\Xolo Kagiso Dandashe\\Documents\\GitHub\\Alpha-Tech\\Code\\NFCBusinessCardLocal2\\app\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-mdpi-v4_abc_textfield_default_mtrl_alpha.9.png.flat",
         "source": "C:\\Users\\Xolo Kagiso Dandashe\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-26.1.0.aar\\687182da6d6ec0cc06429939d59fed76\\res\\drawable-mdpi-v4\\abc_textfield_default_mtrl_alpha.9.png"
+>>>>>>> WIP
     },
     {
         "merged": "C:\\Users\\User\\Documents\\GitHub\\Alpha-Tech\\Code\\NFCBusinessCardLocal2\\app\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4_notification_bg_low_pressed.9.png.flat",
         "source": "C:\\Users\\User\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-26.1.0.aar\\b427fdb3b282c7fef9f8b0afd137465f\\res\\drawable-xhdpi-v4\\notification_bg_low_pressed.9.png"
     },
     {
+<<<<<<< HEAD
+        "merged": "C:\\Users\\User\\Documents\\GitHub\\Alpha-Tech\\Code\\NFCBusinessCardLocal2\\app\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-hdpi-v4_abc_list_selector_disabled_holo_dark.9.png.flat",
+        "source": "C:\\Users\\User\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-26.1.0.aar\\90e24905ac58e08d662f315b51ad344c\\res\\drawable-hdpi-v4\\abc_list_selector_disabled_holo_dark.9.png"
+    },
+    {
+        "merged": "C:\\Users\\User\\Documents\\GitHub\\Alpha-Tech\\Code\\NFCBusinessCardLocal2\\app\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-hdpi-v4_abc_scrubber_primary_mtrl_alpha.9.png.flat",
+        "source": "C:\\Users\\User\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-26.1.0.aar\\90e24905ac58e08d662f315b51ad344c\\res\\drawable-hdpi-v4\\abc_scrubber_primary_mtrl_alpha.9.png"
+=======
         "merged": "C:\\Users\\Xolo Kagiso Dandashe\\Documents\\GitHub\\Alpha-Tech\\Code\\NFCBusinessCardLocal2\\app\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-hdpi-v4_abc_ab_share_pack_mtrl_alpha.9.png.flat",
         "source": "C:\\Users\\Xolo Kagiso Dandashe\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-26.1.0.aar\\687182da6d6ec0cc06429939d59fed76\\res\\drawable-hdpi-v4\\abc_ab_share_pack_mtrl_alpha.9.png"
     },
     {
         "merged": "C:\\Users\\Xolo Kagiso Dandashe\\Documents\\GitHub\\Alpha-Tech\\Code\\NFCBusinessCardLocal2\\app\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-hdpi-v4_notification_bg_normal.9.png.flat",
         "source": "C:\\Users\\Xolo Kagiso Dandashe\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-26.1.0.aar\\c3874068355baa8bde26fca9b62292ac\\res\\drawable-hdpi-v4\\notification_bg_normal.9.png"
+>>>>>>> WIP
     },
     {
         "merged": "C:\\Users\\User\\Documents\\GitHub\\Alpha-Tech\\Code\\NFCBusinessCardLocal2\\app\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xxxhdpi-v4_abc_ic_star_half_black_16dp.png.flat",
@@ -2308,6 +2407,8 @@
         "source": "C:\\Users\\Xolo Kagiso Dandashe\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-26.1.0.aar\\687182da6d6ec0cc06429939d59fed76\\res\\drawable-xhdpi-v4\\abc_textfield_search_activated_mtrl_alpha.9.png"
     },
     {
+<<<<<<< HEAD
+=======
         "merged": "C:\\Users\\User\\Documents\\GitHub\\Alpha-Tech\\Code\\NFCBusinessCardLocal2\\app\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xxxhdpi-v4_abc_ic_menu_copy_mtrl_am_alpha.png.flat",
         "source": "C:\\Users\\User\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-26.1.0.aar\\90e24905ac58e08d662f315b51ad344c\\res\\drawable-xxxhdpi-v4\\abc_ic_menu_copy_mtrl_am_alpha.png"
     },
@@ -2316,12 +2417,20 @@
         "source": "C:\\Users\\User\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-26.1.0.aar\\90e24905ac58e08d662f315b51ad344c\\res\\color\\abc_tint_spinner.xml"
     },
     {
+>>>>>>> WIP
         "merged": "C:\\Users\\User\\Documents\\GitHub\\Alpha-Tech\\Code\\NFCBusinessCardLocal2\\app\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable_abc_vector_test.xml.flat",
         "source": "C:\\Users\\User\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-26.1.0.aar\\90e24905ac58e08d662f315b51ad344c\\res\\drawable\\abc_vector_test.xml"
     },
     {
         "merged": "C:\\Users\\User\\Documents\\GitHub\\Alpha-Tech\\Code\\NFCBusinessCardLocal2\\app\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-hdpi-v4_abc_btn_radio_to_on_mtrl_000.png.flat",
         "source": "C:\\Users\\User\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-26.1.0.aar\\90e24905ac58e08d662f315b51ad344c\\res\\drawable-hdpi-v4\\abc_btn_radio_to_on_mtrl_000.png"
+<<<<<<< HEAD
+    },
+    {
+        "merged": "C:\\Users\\User\\Documents\\GitHub\\Alpha-Tech\\Code\\NFCBusinessCardLocal2\\app\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4_abc_textfield_default_mtrl_alpha.9.png.flat",
+        "source": "C:\\Users\\User\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-26.1.0.aar\\90e24905ac58e08d662f315b51ad344c\\res\\drawable-xhdpi-v4\\abc_textfield_default_mtrl_alpha.9.png"
+=======
+>>>>>>> WIP
     },
     {
         "merged": "C:\\Users\\Xolo Kagiso Dandashe\\Documents\\GitHub\\Alpha-Tech\\Code\\NFCBusinessCardLocal2\\app\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xxxhdpi-v4_abc_scrubber_control_to_pressed_mtrl_005.png.flat",
