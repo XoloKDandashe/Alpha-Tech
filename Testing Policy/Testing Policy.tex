@@ -70,9 +70,9 @@
 	We include three categories of tests:
 	
 		\begin{itemize} 
-			\item Small tests are unit tests that you can run in isolation from production systems. They typically mock every major component and should run 				quickly on your machine.
-			\item Medium tests are integration tests that sit in between small tests and large tests. They integrate several components, and they run on 						emulators or real devices.
-			\item Large tests are integration and UI tests that run by completing a UI workflow. They ensure that key end-user tasks work as expected on 						emulators or real devices.
+			\item Small tests which are unit tests that you can run in isolation from production systems. They typically mock every major component and should run 				quickly on your machine.
+			\item Medium tests which are integration tests that sit in between small tests and large tests. They integrate several components, and they run on 						emulators or real devices.
+			\item Large tests which are integration and UI tests that run by completing a UI workflow. They ensure that key end-user tasks work as expected on 						emulators or real devices.
 		\end{itemize}
 		Our Testing process will be divided into two sections. Unit testing and Automated testing. 
 		\begin{itemize} 
@@ -80,6 +80,7 @@
 			\item Automated testing is done using Espresso
 		
 		\end{itemize}
+	We choose to use Espresso because it is free and easily intergratable or comes built in with android studio which is the platform we are using to develop our app ,and it also works hand-in-hand with jUnit so we can simply automate our junit unit tests to automated tests with a small configuration or change to the test code.
 			
 
 	
@@ -112,7 +113,7 @@
 		\begin{itemize} 
 			\item tests if a Registered User can login to the app
 			\item tests if a user can logout after a successful login
-			\item teste if the App displays a message to warn the user that they are about to log out
+			\item tests if the App displays a message to warn the user that they are about to log out
 			\\
 			\href{url}{https://github.com/XoloKDandashe/Alpha-Tech/blob/master/Code/NFCBusinessCardLocal2/app/src/androidTest/java/com/example/www/nfcbusinesscardlocal/CorrectLogInandLogOutTest.java}
 		\end{itemize}
@@ -141,21 +142,21 @@
 				\item Checks if the Scan QR code button opens the camera intent
 				\item Checks if the Qr code is scanned and the user information is displayed and saved
 \\
-					\href{url}{}
+					\href{url}{https://github.com/XoloKDandashe/Alpha-Tech/blob/master/Code/NFCBusinessCardLocal2/app/src/androidTest/java/com/example/www/nfcbusinesscardlocal/QrScannerTest.java}
 			\end{itemize}
 		\subsubsection{View Details functionality}
 			\begin{itemize} 
 				\item Checks if the view details button works
 				\item Checks if the view details activity displays the current user information
 \\
-					\href{url}{}
+					\href{url}{https://github.com/XoloKDandashe/Alpha-Tech/blob/master/Code/NFCBusinessCardLocal2/app/src/androidTest/java/com/example/www/nfcbusinesscardlocal/ViewUserDetailsTest.java}
 			\end{itemize}
 		\subsubsection{Update user details functionality}
 			\begin{itemize} 
 				\item Checks if the update user details button works
 				\item tests if the user can update thier information
 \\
-					\href{url}{}
+					\href{url}{https://github.com/XoloKDandashe/Alpha-Tech/blob/master/Code/NFCBusinessCardLocal2/app/src/androidTest/java/com/example/www/nfcbusinesscardlocal/UpdateUserDetailsTest.java}
 			\end{itemize}
 		\subsubsection{NFC functionality}
 		\begin{itemize} 
@@ -172,7 +173,7 @@
 			\item Tests if a user can delete a saved card
 			\item Tests if a user can view the details of a saved card
 \\
-					\href{url}{}
+					\href{url}{https://github.com/XoloKDandashe/Alpha-Tech/blob/master/Code/NFCBusinessCardLocal2/app/src/androidTest/java/com/example/www/nfcbusinesscardlocal/ViewCardsTest.java}
 		\end{itemize}
 		\subsubsection{NFC Send functionality}
 		\begin{itemize} 
@@ -210,8 +211,8 @@
 
 	\section{Test Evaluation}
 	
-	We will use JUnit and  Travis-CI to ensure that implementations have been functions as it should.
-	Travis-CI is a continuous integration, hosted service,  JUnit is a testing framework for Android and Java applications.
+	We will use JUnit and  Espresso to ensure that implementations have been functions as it should.
+	Espresso automates tests ,  JUnit is a testing framework for Android and Java applications.
 	\section{Quality level to be achieved}
 	We aim to have no outstanding faults prior to product release.
 	
@@ -222,6 +223,7 @@
 	
 	 
 	\section{Git test cases  }
+	link to the github test cases folder
 
 					\href{url}{https://github.com/XoloKDandashe/Alpha-Tech/tree/master/Code/NFCBusinessCardLocal2/app/src/androidTest/java/com/example/www/nfcbusinesscardlocal}
 	\section{History}
