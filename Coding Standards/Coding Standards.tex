@@ -196,13 +196,17 @@ $\bullet$\ Coding standard rules mentioned above will be used for resources nami
 \section{Repository}
 Our Github repository is Alpha-Tech. We use the team name so that members can identify the repository easier in the case of a member having multiple repositories that they are working on. 
 \subsection{Branching}		
-
+Our repository has a tree like logic-representation where each member is expected to have a branch of their own, a work-in-progress (WIP) branch and the master at the top:\\
+$\bullet$\ The structure of how the work will be presented is created in the master branch.\par
+$\bullet$\ Once we have set up the master branch, a work-in-progress (WIP) branch is created then clones the master to have the same file structure and layout.\par
 \begin{wrapfigure}{r}{5.5cm}
 	\caption{Branching Structure.}
 	\label{wrap-fig:7}
 	\includegraphics[width=5.5cm]{images/Branching.png}
 \end{wrapfigure} 
-
+$\bullet$\ The WIP branch is the hub where all members can pull and push their work that has not been reviewed but has been completed.\par
+$\bullet$\ Once the work completed is reviewed by other members, then it is pushed to the master.\par
+$\bullet$\ No member may commit directly into the master branch or are allowed to push and/or pull from the master due to how it contains ready to be deployed work.\par
 \begin{wrapfigure}{r}{5.5cm}
 	\caption{Git Structure.}
 	\label{wrap-fig:8}
