@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "C:\\Users\\Xolo Kagiso Dandashe\\Documents\\GitHub\\Alpha-Tech\\Code\\NFCBusinessCardLocal2\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v13\\values-v13.xml",
+            "outputFile": "C:\\Users\\User\\Desktop\\Latest code\\NFCBusinessCardLocal2\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v13\\values-v13.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\Xolo Kagiso Dandashe\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-26.1.0.aar\\687182da6d6ec0cc06429939d59fed76\\res\\values-v13\\values-v13.xml",
+                    "source": "C:\\Users\\User\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-26.1.0.aar\\90e24905ac58e08d662f315b51ad344c\\res\\values-v13\\values-v13.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
@@ -16,10 +16,10 @@
             ]
         },
         {
-            "outputFile": "C:\\Users\\User\\Documents\\GitHub\\Alpha-Tech\\Code\\NFCBusinessCardLocal2\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v13\\values-v13.xml",
+            "outputFile": "C:\\Users\\Xolo Kagiso Dandashe\\AndroidStudioProjects\\NFCBusinessCardLocal2\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v13\\values-v13.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\User\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-26.1.0.aar\\90e24905ac58e08d662f315b51ad344c\\res\\values-v13\\values-v13.xml",
+                    "source": "C:\\Users\\Xolo Kagiso Dandashe\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-26.1.0.aar\\687182da6d6ec0cc06429939d59fed76\\res\\values-v13\\values-v13.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",

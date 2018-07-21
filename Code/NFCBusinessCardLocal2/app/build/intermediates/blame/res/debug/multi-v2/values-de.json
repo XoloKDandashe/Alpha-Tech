@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "C:\\Users\\User\\Documents\\GitHub\\Alpha-Tech\\Code\\NFCBusinessCardLocal2\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-de\\values-de.xml",
+            "outputFile": "C:\\Users\\User\\Desktop\\Latest code\\NFCBusinessCardLocal2\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-de\\values-de.xml",
             "map": [
                 {
                     "source": "C:\\Users\\User\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-basement-11.6.2.aar\\cb7a6b01f7834553de9e1474db20c19c\\res\\values-de\\values.xml",
@@ -74,7 +74,7 @@
             ]
         },
         {
-            "outputFile": "C:\\Users\\Xolo Kagiso Dandashe\\Documents\\GitHub\\Alpha-Tech\\Code\\NFCBusinessCardLocal2\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-de\\values-de.xml",
+            "outputFile": "C:\\Users\\Xolo Kagiso Dandashe\\AndroidStudioProjects\\NFCBusinessCardLocal2\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-de\\values-de.xml",
             "map": [
                 {
                     "source": "C:\\Users\\Xolo Kagiso Dandashe\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-base-11.6.2.aar\\e2f9bd3c8bbde9d0bc8a53daf06b372a\\res\\values-de\\values.xml",
