@@ -65,7 +65,23 @@
 
 
 	\section{Test Description}
-	Our Testing process will be divided into two sections. Unit testing and manual testing. 
+	
+	We include three categories of tests:
+	
+		\begin{itemize} 
+			\item Small tests are unit tests that you can run in isolation from production systems. They typically mock every major component and should run 				quickly on your machine.
+			\item Medium tests are integration tests that sit in between small tests and large tests. They integrate several components, and they run on 						emulators or real devices.
+			\item Large tests are integration and UI tests that run by completing a UI workflow. They ensure that key end-user tasks work as expected on 						emulators or real devices.
+		\end{itemize}
+		Our Testing process will be divided into two sections. Unit testing and Automated testing. 
+		\begin{itemize} 
+			\item Unit testing is done using Junit
+			\item Automated testing is done using Espresso
+		
+		\end{itemize}
+			
+
+	
 	\subsection {Unit testing}
 			\subsubsection{Storage}
 		\begin{itemize} 
@@ -79,25 +95,84 @@
 				\item Ensure that a user can be created
 			\end{itemize}
 	
-	\subsection {Manual testing}
-	In manual testing the test cases will be excuted manually as the name suggests(by a human being that is). 
-		\subsubsection{QR Code functionality}
+	\subsection {Test Cases}
+	Below are our tests which are grouped by Large Automated tests which consist of the listed Unit tests within them
+		\subsubsection{Incorrect Log In functionality}
 		\begin{itemize} 
-			\item Check if the QR code generates correct information
-			\item Check the scanner scans properly
-			\item Check that the information transmitted to another device is accurate. 
+			\item test for when No input is entered to the email and and password field
+			\item test for when only the email is provided 
+			\item test for when the email and password  are both incorrect
+			\item test for when correct email is provided and incorrect password
+			
 		\end{itemize}
-		
+		\subsubsection{Correct Log In And functionality}
+		\begin{itemize} 
+			\item tests if a Registered User can login to the app
+			\item tests if a user can logout after a successful login
+			\item teste if the App displays a message to warn the user that they are about to log out
+			
+		\end{itemize}
+
+		\subsubsection{Register And LogIn functionality}
+		\begin{itemize} 
+			\item Checks if a new user can register an account
+			\item Checks if passwords match when confirming password when registering
+			\item Checks if a new user can Log in with their details 
+			
+		\end{itemize}
+		\subsubsection{Generate QR Code functionality}
+			\begin{itemize} 
+				\item Checks if the generate Qr Code button works
+				\item Check if the QR code generates correct information
+			\end{itemize}
+	\subsubsection{Scan QR Code functionality}
+			\begin{itemize} 
+				\item Checks if the Scan QR code button works
+				\item Checks if the Scan QR code button opens the camera intent
+				\item Checks if the Qr code is scanned and the user information is displayed and saved
+			\end{itemize}
+		\subsubsection{View Details functionality}
+			\begin{itemize} 
+				\item Checks if the view details button works
+				\item Checks if the view details activity displays the current user information
+			\end{itemize}
+		\subsubsection{Update user details functionality}
+			\begin{itemize} 
+				\item Checks if the update user details button works
+				\item tests if the user can update thier information
+			\end{itemize}
 		\subsubsection{NFC functionality}
 		\begin{itemize} 
-			\item Check if the App notifies the user if the NFC technology is not switched on.
-			\item ensure that the device sends information
-			\item ensure that the information transmitted is accurate
+			\item Tests if the App notifies the user if the NFC technology is not switched on.
+			\item Tests if the App notifies users that do not have NFC
+			
 		\end{itemize}
-		\subsubsection{Import Card}
+		\subsubsection{View Cards Functionality}
 		\begin{itemize}
-			\item Ensure that a physical card can be scanned
-			\item Ensure that the information that extracted is as accurate as possible.tent...
+			\item Tests whether a user can view thier saved cards
+			\item Tests the functionality of the search tool that searches for saved card
+			\item Tests if a user can delete a saved card
+			\item Tests if a user can view the details of a saved card
+		\end{itemize}
+		\subsubsection{NFC Send functionality}
+		\begin{itemize} 
+			\item Tests the Nfc send function and if it sends correct information
+		\end{itemize}
+
+		\subsubsection{Import Card Functionality}
+		\begin{itemize}
+			\item Tests whether the import card button works
+			\item Tests whether the capture card button opens the camera intent
+		\end{itemize}
+		\subsubsection{Create and View Appointment Functionality}
+		\begin{itemize}
+			\item Tests whether a user can Create an Appointment
+			\item Tests whether a user can view saved Appointments
+		\end{itemize}
+		\subsubsection{Navigation Functionality}
+		\begin{itemize}
+			\item Tests if the navigate me button opens the google maps API
+			\item Tests if the find me button returns the current locaton or an error message if it couldnt find the location
 		\end{itemize}
 		
 			
