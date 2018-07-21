@@ -534,7 +534,8 @@
     <dimen name="notification_top_pad">10dp</dimen>
     <dimen name="notification_top_pad_large_text">5dp</dimen>
     <dimen name="padding">15dp</dimen>
-    <dimen name="profilepic">80dp</dimen>
+    <dimen name="profilePicture">150dp</dimen>
+    <dimen name="profilepic">100dp</dimen>
     <dimen name="signoutbtn">50dp</dimen>
     <dimen name="slabButtons">70dp</dimen>
     <dimen name="spacing">10dp</dimen>
@@ -630,6 +631,7 @@
     <string name="common_signin_button_text_long">Sign in with Google</string>
     <string name="company">EPI-USE South Africa</string>
     <string name="create_account">Create Account</string>
+    <string name="date">Date: </string>
     <string name="default_web_client_id" translatable="false">1049508478027-m574cjhn98qcg3ee7v8cb7c91fqbmgac.apps.googleusercontent.com</string>
     <string name="defaultjob">Job Title</string>
     <string name="defaultname">User Fullname</string>
@@ -677,6 +679,7 @@
     <string name="sendnotify">Touch to Send Details</string>
     <string name="status_bar_notification_info_overflow">999+</string>
     <string name="tapreceive">Touch to Receive Details</string>
+    <string name="time">Time: </string>
     <string name="title_activity_maps">Map</string>
     <string name="title_activity_settings">Settings</string>
     <string name="update_account">Update Details</string>
