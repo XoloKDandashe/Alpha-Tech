@@ -10,6 +10,7 @@
 \usepackage{grffile}
 \usepackage{babel}
 \usepackage{parskip}
+\usepackage{hyperref}
 \textwidth = 426pt
 \oddsidemargin = 17pt
 
@@ -103,14 +104,17 @@
 			\item test for when only the email is provided 
 			\item test for when the email and password  are both incorrect
 			\item test for when correct email is provided and incorrect password
-			
+			\\
+			\href{url}{https://github.com/XoloKDandashe/Alpha-Tech/blob/master/Code/NFCBusinessCardLocal2/app/src/androidTest/java/com/example/www/nfcbusinesscardlocal/LogInIncorrectDetails.java}
+
 		\end{itemize}
 		\subsubsection{Correct Log In And functionality}
 		\begin{itemize} 
 			\item tests if a Registered User can login to the app
 			\item tests if a user can logout after a successful login
 			\item teste if the App displays a message to warn the user that they are about to log out
-			
+			\\
+			\href{url}{https://github.com/XoloKDandashe/Alpha-Tech/blob/master/Code/NFCBusinessCardLocal2/app/src/androidTest/java/com/example/www/nfcbusinesscardlocal/CorrectLogInandLogOutTest.java}
 		\end{itemize}
 
 		\subsubsection{Register And LogIn functionality}
@@ -118,33 +122,47 @@
 			\item Checks if a new user can register an account
 			\item Checks if passwords match when confirming password when registering
 			\item Checks if a new user can Log in with their details 
+			\\
+	\href{url}{https://github.com/XoloKDandashe/Alpha-Tech/blob/master/Code/NFCBusinessCardLocal2/app/src/androidTest/java/com/example/www/nfcbusinesscardlocal/RegisterNewUserAndLogInTest.java}
+
 			
 		\end{itemize}
 		\subsubsection{Generate QR Code functionality}
 			\begin{itemize} 
 				\item Checks if the generate Qr Code button works
 				\item Check if the QR code generates correct information
+				\\
+					\href{url}{https://github.com/XoloKDandashe/Alpha-Tech/blob/master/Code/NFCBusinessCardLocal2/app/src/androidTest/java/com/example/www/nfcbusinesscardlocal/GenerateQRCodeTest.java}
+
 			\end{itemize}
 	\subsubsection{Scan QR Code functionality}
 			\begin{itemize} 
 				\item Checks if the Scan QR code button works
 				\item Checks if the Scan QR code button opens the camera intent
 				\item Checks if the Qr code is scanned and the user information is displayed and saved
+\\
+					\href{url}{}
 			\end{itemize}
 		\subsubsection{View Details functionality}
 			\begin{itemize} 
 				\item Checks if the view details button works
 				\item Checks if the view details activity displays the current user information
+\\
+					\href{url}{}
 			\end{itemize}
 		\subsubsection{Update user details functionality}
 			\begin{itemize} 
 				\item Checks if the update user details button works
 				\item tests if the user can update thier information
+\\
+					\href{url}{}
 			\end{itemize}
 		\subsubsection{NFC functionality}
 		\begin{itemize} 
 			\item Tests if the App notifies the user if the NFC technology is not switched on.
 			\item Tests if the App notifies users that do not have NFC
+\\
+					\href{url}{}
 			
 		\end{itemize}
 		\subsubsection{View Cards Functionality}
@@ -153,26 +171,37 @@
 			\item Tests the functionality of the search tool that searches for saved card
 			\item Tests if a user can delete a saved card
 			\item Tests if a user can view the details of a saved card
+\\
+					\href{url}{}
 		\end{itemize}
 		\subsubsection{NFC Send functionality}
 		\begin{itemize} 
 			\item Tests the Nfc send function and if it sends correct information
+\\
+					\href{url}{}
 		\end{itemize}
 
 		\subsubsection{Import Card Functionality}
 		\begin{itemize}
 			\item Tests whether the import card button works
 			\item Tests whether the capture card button opens the camera intent
+\\
+					\href{url}{}
 		\end{itemize}
 		\subsubsection{Create and View Appointment Functionality}
 		\begin{itemize}
 			\item Tests whether a user can Create an Appointment
 			\item Tests whether a user can view saved Appointments
+			\item Tests whether a user can delete an appointment
+\\
+					\href{url}{}
 		\end{itemize}
 		\subsubsection{Navigation Functionality}
 		\begin{itemize}
 			\item Tests if the navigate me button opens the google maps API
 			\item Tests if the find me button returns the current locaton or an error message if it couldnt find the location
+\\
+					\href{url}{}
 		\end{itemize}
 		
 			
@@ -190,30 +219,37 @@
 	
 	Project review meetings are held in regards to improving the project.
 	
+	
 	 
+	\section{Git test cases  }
+
+					\href{url}{https://github.com/XoloKDandashe/Alpha-Tech/tree/master/Code/NFCBusinessCardLocal2/app/src/androidTest/java/com/example/www/nfcbusinesscardlocal}
+	\section{History}
+	snapshot of some test cases
+\begin{figure}[h!]
+				\centering
+			\includegraphics[scale=0.7]{Capture.jpg}
+				\caption{GenerateQr test pass}
+				\label{figure: 1}
+			\end{figure}
+			%\includegraphics[scale=0.7]{Capture.jpg}
+\begin{figure}
+				\centering
+			\includegraphics[scale=0.7]{QrscanFail.jpg}
+				\caption{Qrscan test fail}
+				\label{figure: 1}
+			\end{figure}
+			%\includegraphics[scale=0.7]{QrscanFail.jpg}
+\begin{figure}
+				\centering
+			\includegraphics[scale=0.7]{RegisterTest.jpg}
+				\caption{Register new user And login test pass}
+				\label{figure: 1}
+			\end{figure}
+			%\includegraphics[scale=0.7]{RegisterTest.jpg}
+
+
 	
-	\section{Travis-CI yml file}
-	language: android
 	
-	android:
-	components:
-	- platform-tools
-	- tools
-	
-	
-	//The SDK version we used to compile our project:
-	 android-26
-	
-	//The BuildTools version used in our project: 
-	 build-tools-26.0.2
-	
-	//Other additional components:  extra-google-google-play-services
-	
-	//The emulator that we will be using:
-	 sys-img-armeabi-v7a-android-17	
-	 
-	\section{Testing Scripts}
-	
-	RegTest.java
 		
 \end{document}

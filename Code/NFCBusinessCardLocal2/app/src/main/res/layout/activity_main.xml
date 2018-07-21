@@ -26,31 +26,34 @@
         android:gravity="center"
         android:layout_marginTop="@dimen/maketop"
         android:orientation="horizontal">
+
         <Button
+            android:id="@+id/openSendCard"
             android:layout_width="@dimen/buttons"
             android:layout_height="@dimen/buttons"
+            android:layout_marginBottom="@dimen/spacing"
+            android:layout_marginRight="@dimen/spacing"
             android:background="@color/epiuseblue"
-            android:textColor="@color/white"
-            android:text="@string/sendcard"
-            android:textSize="@dimen/fontsize"
-            android:onClick="openSendCard"
             android:drawableRight="@mipmap/send"
-            android:textStyle="bold"
-            android:layout_marginRight="@dimen/spacing"
-            android:layout_marginBottom="@dimen/spacing"
-            />
+            android:onClick="openSendCard"
+            android:text="@string/sendcard"
+            android:textColor="@color/white"
+            android:textSize="@dimen/fontsize"
+            android:textStyle="bold" />
+
         <Button
+            android:id="@+id/openManageCards"
             android:layout_width="@dimen/buttons"
             android:layout_height="@dimen/buttons"
-            android:background="@color/epiuseblue"
-            android:text="@string/receivecard"
-            android:textSize="@dimen/fontsize"
-            android:textStyle="bold"
-            android:onClick="openReceiveCard"
-            android:layout_marginRight="@dimen/spacing"
             android:layout_marginBottom="@dimen/spacing"
+            android:layout_marginRight="@dimen/spacing"
+            android:background="@color/epiuseblue"
             android:drawableRight="@mipmap/recieve"
-            android:textColor="@color/white"/>
+            android:onClick="openReceiveCard"
+            android:text="@string/receivecard"
+            android:textColor="@color/white"
+            android:textSize="@dimen/fontsize"
+            android:textStyle="bold" />
     </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
