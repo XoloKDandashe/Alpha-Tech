@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="default_web_client_id" translatable="false">1049508478027-m574cjhn98qcg3ee7v8cb7c91fqbmgac.apps.googleusercontent.com</string>
+    <string name="firebase_database_url" translatable="false">https://nfcbusinesscardlocal2.firebaseio.com</string>
+    <string name="gcm_defaultSenderId" translatable="false">1049508478027</string>
+    <string name="google_api_key" translatable="false">AIzaSyCMJcRJmFak8N9W7PZbKu-FIvGV0Vk-0Nk</string>
+    <string name="google_app_id" translatable="false">1:1049508478027:android:6dd1b9e52c2729d5</string>
+    <string name="google_crash_reporting_api_key" translatable="false">AIzaSyCMJcRJmFak8N9W7PZbKu-FIvGV0Vk-0Nk</string>
+    <string name="google_storage_bucket" translatable="false">nfcbusinesscardlocal2.appspot.com</string>
+    <string name="project_id" translatable="false">nfcbusinesscardlocal2</string>
+</resources>

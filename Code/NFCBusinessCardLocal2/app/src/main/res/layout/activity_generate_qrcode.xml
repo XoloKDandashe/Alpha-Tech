@@ -34,11 +34,9 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent" />
     </LinearLayout>
-
     <Button
-        android:id="@+id/back"
         android:layout_width="@dimen/signoutbtn"
         android:layout_height="@dimen/signoutbtn"
-        android:background="@mipmap/backarrow"
-        android:onClick="backMainActivity" />
+        android:onClick="backMainActivity"
+        android:background="@mipmap/backarrow"/>
 </LinearLayout>

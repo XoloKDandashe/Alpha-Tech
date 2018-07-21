@@ -55,7 +55,6 @@ public class GenerateQRCode extends AppCompatActivity {
         gen_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
                 final String result = QRresult();
                 MultiFormatWriter multiFormatWriter = new MultiFormatWriter();
                 try{
@@ -98,13 +97,8 @@ public class GenerateQRCode extends AppCompatActivity {
         });
     }
     private String QRresult(){
-        if(person == null){
-            return "khodani mufamadi";
-        }
-        else{
-        return person.generateDetails();}
+        return person.generateDetails();
     }
-
     public void backMainActivity(View view){
         onBackPressed();
     }
