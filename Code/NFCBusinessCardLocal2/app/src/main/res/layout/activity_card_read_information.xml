@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="@dimen/padding"
+    android:orientation="vertical"
+    android:background="@mipmap/backgrounda"
+    tools:context="com.example.www.nfcbusinesscardlocal.CardReadInformation">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:layout_height="match_parent">
+
+        <Button
+            android:id="@+id/btn_read"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/et_message"
+            android:textSize="@dimen/fontsize"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            android:layout_marginTop="@dimen/activity_horizontal_margin"
+            android:text="@string/message_read_tag"
+            android:layout_marginBottom="@dimen/spacing"
+            android:background="@color/lightblue"/>
+        <TextView
+            android:id="@+id/tv_read_message"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textSize="@dimen/heading"
+            android:textColor="@color/white"/>
+    </LinearLayout>
+</RelativeLayout>
