@@ -221,7 +221,6 @@ public class Registration extends AppCompatActivity {
         editText=(EditText)findViewById(R.id.input_address);
         newUser.setWorkAddress(editText.getText().toString().trim());
         newUser.setRecievedCards("");
-        newUser.setAppointmentlist("");
         progressDialog.dismiss();
 
         progressDialog.setMessage("Creating profile...");

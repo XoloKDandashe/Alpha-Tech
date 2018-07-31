@@ -8,6 +8,8 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.net.Uri;
 import android.os.Environment;
 import android.support.v4.app.ActivityCompat;
@@ -97,6 +99,8 @@ public class ViewCardsInterface extends AppCompatActivity implements SearchView.
         super.onStart();
         mProgressDialog.setMessage("Retrieving Appointments...");
         mProgressDialog.show();
+        mProgressDialog.setCancelable(false);
+        mProgressDialog.setCanceledOnTouchOutside(false);
         databaseReference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
@@ -115,6 +119,13 @@ public class ViewCardsInterface extends AppCompatActivity implements SearchView.
     }
     public void setViews(String cardlist)
     {
+        ConnectivityManager connectivityManager=(ConnectivityManager) getApplicationContext().getSystemService(Context.CONNECTIVITY_SERVICE);
+        NetworkInfo activeNetwork=connectivityManager.getActiveNetworkInfo();
+        boolean isConnected=activeNetwork!=null && activeNetwork.isConnectedOrConnecting();
+        if(!isConnected)
+        {
+            Toast.makeText(getApplicationContext(), "Internet connection needed for this action.", Toast.LENGTH_SHORT).show();
+        }
         List<TestUser> arrayList=null;
         //SharedPreferences sharedPreferences=getApplication().getSharedPreferences("receivedlist", Context.MODE_PRIVATE);
         Gson gson= new Gson();

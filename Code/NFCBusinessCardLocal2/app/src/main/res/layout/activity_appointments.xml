@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="@dimen/padding"
+    android:padding="@dimen/lesspadding"
     android:orientation="vertical"
     tools:context="com.example.www.nfcbusinesscardlocal.Appointments">
     <LinearLayout
@@ -80,7 +80,28 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="@dimen/lesspadding"
+        android:paddingLeft="@dimen/lesspadding"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/fontsize"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:layout_marginRight="@dimen/spacing"
+            android:text="Duration(in hours):"
+             />
+        <EditText
+            android:id="@+id/etlengthOfTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="number" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="@dimen/lesspadding"
         android:orientation="vertical">
         <TextView
             android:layout_width="wrap_content"

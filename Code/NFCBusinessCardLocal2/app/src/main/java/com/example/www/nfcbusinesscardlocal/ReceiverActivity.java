@@ -105,6 +105,8 @@ public class ReceiverActivity extends AppCompatActivity {
         super.onStart();
         mProgressDialog.setMessage("Preparing transfer...");
         mProgressDialog.show();
+        mProgressDialog.setCancelable(false);
+        mProgressDialog.setCanceledOnTouchOutside(false);
         databaseReference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
@@ -141,13 +143,36 @@ public class ReceiverActivity extends AppCompatActivity {
         String action = intent.getAction();
         if (NfcAdapter.ACTION_NDEF_DISCOVERED.equals(action)) {
             Parcelable[] parcelables = intent.getParcelableArrayExtra(NfcAdapter.EXTRA_NDEF_MESSAGES);
-
+            if(parcelables==null)
+            {
+                Toast.makeText(this, "No information read.", Toast.LENGTH_SHORT).show();
+                return ;
+            }
             NdefMessage inNdefMessage = (NdefMessage) parcelables[0];
+            if(inNdefMessage==null)
+            {
+                Toast.makeText(this, "No information available.", Toast.LENGTH_SHORT).show();
+                return ;
+            }
             NdefRecord[] inNdefRecords = inNdefMessage.getRecords();
             NdefRecord ndefRecord_0 = inNdefRecords[0];
 
             String inMessage = new String(ndefRecord_0.getPayload());
+            if(inMessage.trim().compareTo("")==0||inMessage.trim().length()==0)
+            {
+                Toast.makeText(this, "No information available.", Toast.LENGTH_SHORT).show();
+                return ;
+            }
             String[] shred=inMessage.split("\n");
+            if(shred.length==0)
+            {
+                Toast.makeText(ReceiverActivity.this, "No information read.", Toast.LENGTH_SHORT).show();
+                return;
+            }
+            else if(shred.length<6){
+                Toast.makeText(ReceiverActivity.this, "Information is not for our application.", Toast.LENGTH_SHORT).show();
+                return;
+            }
             String payload="";
             int length=shred.length;
             if(length>7)

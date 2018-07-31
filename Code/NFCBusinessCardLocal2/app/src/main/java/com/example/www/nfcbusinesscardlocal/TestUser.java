@@ -15,7 +15,7 @@ public class TestUser implements Serializable{
     //Attributes
     private String fullname, jobTitle, password;
     private String companyName,mobileNumber,workTelephone,emailAddress,workAddress;
-    private String recievedCards="",appointmentlist="",imageUrl="";
+    private String recievedCards="",imageUrl="";
     //String facebook_link,linkedIn_link,googleplus_link;
     public TestUser(){
     }
@@ -24,7 +24,7 @@ public class TestUser implements Serializable{
         fullname=copy.getFullname(); jobTitle=copy.getJobTitle();password=copy.getPassword();
         companyName=copy.getCompanyName();mobileNumber=copy.getMobileNumber();workTelephone=copy.getWorkTelephone();
         emailAddress=copy.getEmailAddress();workAddress=copy.getWorkAddress();
-        recievedCards=getRecievedCards();appointmentlist=getAppointmentlist();
+        recievedCards=getRecievedCards();
     }
     //setters
     public void setFullname(String fullname) {
@@ -60,8 +60,6 @@ public class TestUser implements Serializable{
     public void setRecievedCards(String recievedCards){
         this.recievedCards=recievedCards;
     }
-
-    public void setAppointmentlist (String appointmentlist){this.appointmentlist=appointmentlist;}
 
     public void setImageUrl(String imageUrl){this.imageUrl=imageUrl;}
     //getters
@@ -117,11 +115,6 @@ public class TestUser implements Serializable{
         if(recievedCards.isEmpty()||workAddress.compareTo("")==0)
             return "";
         return recievedCards;
-    }
-    public String getAppointmentlist(){
-        if(appointmentlist.isEmpty()||appointmentlist.compareTo("")==0)
-            return "";
-        return appointmentlist;
     }
     public String getImageUrl(){
         if(imageUrl.isEmpty()||imageUrl.compareTo("")==0)

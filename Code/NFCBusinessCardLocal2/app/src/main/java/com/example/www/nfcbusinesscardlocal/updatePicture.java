@@ -115,6 +115,8 @@ public class updatePicture extends AppCompatActivity {
         super.onResume();
         mProgressDialog.setMessage("Loading your details...");
         mProgressDialog.show();
+        mProgressDialog.setCancelable(false);
+        mProgressDialog.setCanceledOnTouchOutside(false);
         databaseReference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
@@ -172,7 +174,7 @@ public class updatePicture extends AppCompatActivity {
                             progressDialog.dismiss();
                             Toast.makeText(updatePicture.this,"Photo uploaded",Toast.LENGTH_SHORT).show();
                             databaseReference.setValue(person);
-
+                            finish();
                         }
                     })
                     .addOnFailureListener(new OnFailureListener() {

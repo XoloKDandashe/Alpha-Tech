@@ -14,6 +14,7 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.FirebaseDatabase;
 
 import junit.framework.Test;
 
@@ -23,6 +24,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class LogIn extends AppCompatActivity {
+
     ProgressDialog progressDialog;
     FirebaseAuth firebaseAuth;
     @Override

@@ -39,12 +39,12 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
                 <ScrollView
-                    android:layout_width="170dp"
+                    android:layout_width="220dp"
                     android:layout_height="40dp">
                 <TextView
                     android:id="@+id/fullname"
                     android:textColor="@color/black"
-                    android:layout_width="170dp"
+                    android:layout_width="220dp"
                     android:layout_height="wrap_content"
                     android:textSize="@dimen/heading"
                     android:textStyle="bold"
@@ -53,7 +53,7 @@
                 <TextView
                     android:id="@+id/jobtitle"
                     android:textColor="@color/black"
-                    android:layout_width="170dp"
+                    android:layout_width="200dp"
                     android:layout_height="wrap_content"
                     android:textSize="@dimen/fontsize"
                     android:textStyle="bold"
@@ -69,12 +69,6 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:padding="@dimen/lesspadding">
-                <Button
-                    android:id="@+id/appointmentlist"
-                    android:layout_width="@dimen/signoutbtn"
-                    android:layout_height="@dimen/signoutbtn"
-                    android:onClick="viewAppointments"
-                    android:background="@mipmap/appointmenticon"/>
             </LinearLayout>
         </LinearLayout>
     </LinearLayout>

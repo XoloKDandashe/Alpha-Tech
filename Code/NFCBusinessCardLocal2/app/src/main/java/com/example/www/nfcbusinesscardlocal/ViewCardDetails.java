@@ -129,6 +129,8 @@ public class ViewCardDetails extends AppCompatActivity {
         super.onStart();
         mProgressDialog.setMessage("Loading contact...");
         mProgressDialog.show();
+        mProgressDialog.setCancelable(false);
+        mProgressDialog.setCanceledOnTouchOutside(false);
         databaseReference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
@@ -148,7 +150,7 @@ public class ViewCardDetails extends AppCompatActivity {
     private void loadPicture(TestUser user){
         if(user.getImageUrl()!=""){
             StorageReference httpRef= FirebaseStorage.getInstance().getReferenceFromUrl(user.getImageUrl());
-            Glide.with(ViewCardDetails.this)
+            Glide.with(getApplicationContext())
                     .using(new FirebaseImageLoader())
                     .load(httpRef)
                     .signature(new StringSignature(String.valueOf(System.currentTimeMillis())))

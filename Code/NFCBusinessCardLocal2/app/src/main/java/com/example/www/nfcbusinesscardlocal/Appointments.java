@@ -8,6 +8,7 @@ import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.provider.CalendarContract;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -38,7 +39,7 @@ public class Appointments extends AppCompatActivity {
     FirebaseUser firebaseUser;
     TestUser person=null;
     TestUser appointmentuser;
-    EditText title,notes;
+    EditText title,notes,lengthOfMeeting;
     Button setAppointment;
     Button datebutton;
     Button timebutton;
@@ -54,6 +55,7 @@ public class Appointments extends AppCompatActivity {
         title=(EditText) findViewById(R.id.meetingtitle);
         notes=(EditText) findViewById(R.id.meetingnotes);
         setAppointment=(Button) findViewById(R.id.saveappointment);
+        lengthOfMeeting=(EditText) findViewById(R.id.etlengthOfTime);
         datebutton=(Button) findViewById(R.id.meetingdate);
         timebutton=(Button) findViewById(R.id.meetingtime);
         backbutton=(Button) findViewById(R.id.meetingback);
@@ -98,6 +100,8 @@ public class Appointments extends AppCompatActivity {
         super.onStart();
         mProgressDialog.setMessage("Retrieving Appointments...");
         mProgressDialog.show();
+        mProgressDialog.setCancelable(false);
+        mProgressDialog.setCanceledOnTouchOutside(false);
         databaseReference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
@@ -125,43 +129,49 @@ public class Appointments extends AppCompatActivity {
         }
         if(datebutton.getText().toString().compareTo("Click to Set Date")==0)
         {
-            Toast.makeText(getApplicationContext(), "Select Date", Toast.LENGTH_LONG).show();
+            Toast.makeText(getApplicationContext(), "Please select Date", Toast.LENGTH_LONG).show();
             return;
         }
         if(timebutton.getText().toString().compareTo("Click to Set Time")==0)
         {
-            Toast.makeText(getApplicationContext(), "Set Time", Toast.LENGTH_LONG).show();
+            Toast.makeText(getApplicationContext(), "Please set the Time", Toast.LENGTH_LONG).show();
             return;
-        }
-        List<Appointment> arrayList=null;
-        //SharedPreferences sharedPreferences=getApplication().getSharedPreferences("appointmentList", Context.MODE_PRIVATE);
-        Gson gson= new Gson();
-        //String jsonConverter=sharedPreferences.getString("jsonappointmentList","");
-        String jsonConverter=person.getAppointmentlist();
-        if(jsonConverter.isEmpty())
-        {
-            arrayList=new ArrayList<>();
-        }
-        else
-        {
-            Type type= new TypeToken<List<Appointment>>(){}.getType();
-            arrayList=gson.fromJson(jsonConverter,type);
         }
         Appointment appointment=new Appointment();
         appointment.setName(title.getText().toString().trim()+"-"+ appointmentuser.getFullname());
         appointment.setDate(datebutton.getText().toString());
         appointment.setTime(timebutton.getText().toString());
         appointment.setNotes(notes.getText().toString());
-
-        arrayList.add(appointment);
-        String jsonEncode= gson.toJson(arrayList);
-        person.setAppointmentlist(jsonEncode);
-        saveupdate(person);
-        Toast.makeText(this, "Appointment has been set.", Toast.LENGTH_SHORT).show();
+        appointment.setLengthOfAppointment(Integer.parseInt(lengthOfMeeting.getText().toString()));
+        appointment.setClientEmail(appointmentuser.getEmailAddress());
+        Toast.makeText(this, "Appointment is ready.", Toast.LENGTH_SHORT).show();
+        addToCalendar(appointment);
         finish();
     }
-    private void saveupdate(TestUser user){
-        databaseReference.setValue(user);
+    private void addToCalendar(Appointment appointment)
+    {
+        Calendar beginTime=Calendar.getInstance();
+        Calendar endTime=Calendar.getInstance();
+        String[] dateDetails=appointment.breakdownDate();
+        String[] timeDetails=appointment.breakdownTime();
+        int year=Integer.parseInt(dateDetails[2]),
+                month=Integer.parseInt(dateDetails[1])-1,
+                day=Integer.parseInt(dateDetails[0]),
+                hours=Integer.parseInt(timeDetails[0]),
+                minutes=Integer.parseInt(timeDetails[1]);
+
+        beginTime.set(year,month,day,hours,minutes);
+        endTime.set(year,month,day,(hours+appointment.getLengthOfAppointment()),minutes);
+
+        Intent intent = new Intent(Intent.ACTION_INSERT)
+                .setData(CalendarContract.Events.CONTENT_URI)
+                .putExtra(CalendarContract.EXTRA_EVENT_BEGIN_TIME,beginTime.getTimeInMillis())
+                .putExtra(CalendarContract.EXTRA_EVENT_END_TIME,endTime.getTimeInMillis())
+                .putExtra(CalendarContract.Events.TITLE,appointment.getName())
+                .putExtra(CalendarContract.Events.DESCRIPTION,appointment.getNotes())
+                .putExtra(Intent.EXTRA_EMAIL,appointment.getClientEmail());
+
+        startActivity(intent);
     }
     @Override
     public void onBackPressed() {

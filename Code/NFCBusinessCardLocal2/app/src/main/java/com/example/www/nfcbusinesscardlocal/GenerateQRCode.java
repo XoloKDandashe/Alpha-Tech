@@ -78,6 +78,8 @@ public class GenerateQRCode extends AppCompatActivity {
         super.onStart();
         mProgressDialog.setMessage("Loading your details...");
         mProgressDialog.show();
+        mProgressDialog.setCancelable(false);
+        mProgressDialog.setCanceledOnTouchOutside(false);
         databaseReference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {

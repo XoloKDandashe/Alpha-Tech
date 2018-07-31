@@ -67,9 +67,24 @@ public class CardWriteInformation extends AppCompatActivity implements Listener 
         mBtWrite = (Button) findViewById(R.id.btn_write);
         mBtLoad = (Button) findViewById(R.id.card_write_load_info);
         mBtBack = (Button) findViewById(R.id.card_write_buttonback);
-        mBtWrite.setOnClickListener(view -> showWriteFragment());
-        mBtLoad.setOnClickListener(view -> mydetails());
-        mBtBack.setOnClickListener(view -> previouspage());
+        mBtWrite.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                showWriteFragment();
+            }
+        });
+        mBtLoad.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                mydetails();
+            }
+        });
+        mBtBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                previouspage();
+            }
+        });
         nfcAdapter = NfcAdapter.getDefaultAdapter(this);
     }
     @Override
@@ -77,13 +92,14 @@ public class CardWriteInformation extends AppCompatActivity implements Listener 
         super.onStart();
         mProgressDialog.setMessage("Loading your details...");
         mProgressDialog.show();
+        mProgressDialog.setCancelable(false);
+        mProgressDialog.setCanceledOnTouchOutside(false);
         databaseReference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
 
                 person=dataSnapshot.getValue(TestUser.class);
                 mProgressDialog.dismiss();
-                //mydetails(person);
             }
             @Override
             public void onCancelled(DatabaseError databaseError) {
@@ -200,13 +216,48 @@ public class CardWriteInformation extends AppCompatActivity implements Listener 
 
                     String messageToWrite = "";
                     EditText editText;
-                    editText=(EditText)findViewById(R.id.card_write_name);messageToWrite+=editText.getText()+"\n";
-                    editText=(EditText)findViewById(R.id.card_write_jobtitle);messageToWrite+=editText.getText()+"\n";
-                    editText=(EditText)findViewById(R.id.card_write_companyname);messageToWrite+=editText.getText()+"\n";
-                    editText=(EditText)findViewById(R.id.card_write_email);messageToWrite+=editText.getText()+"\n";
-                    editText=(EditText)findViewById(R.id.card_write_mobile);messageToWrite+=editText.getText()+"\n";
-                    editText=(EditText)findViewById(R.id.card_write_telephone);messageToWrite+=editText.getText()+"\n";
-                    editText=(EditText)findViewById(R.id.card_write_address);messageToWrite+=editText.getText();
+                    editText=(EditText)findViewById(R.id.card_write_name);
+                    if(editText.getText().toString().isEmpty()){
+                        Toast.makeText(this, "Please enter your name", Toast.LENGTH_SHORT).show();
+                        return;
+                    }
+                    messageToWrite+=editText.getText()+"\n";
+                    editText=(EditText)findViewById(R.id.card_write_jobtitle);
+                    if(editText.getText().toString().isEmpty()){
+                        Toast.makeText(this, "Please enter your job title", Toast.LENGTH_SHORT).show();
+                        return;
+                    }
+                    messageToWrite+=editText.getText()+"\n";
+                    editText=(EditText)findViewById(R.id.card_write_companyname);
+                    if(editText.getText().toString().isEmpty()){
+                        Toast.makeText(this, "Please enter your company name", Toast.LENGTH_SHORT).show();
+                        return;
+                    }
+                    messageToWrite+=editText.getText()+"\n";
+                    editText=(EditText)findViewById(R.id.card_write_email);
+                    if(editText.getText().toString().isEmpty()){
+                        Toast.makeText(this, "Please enter your email", Toast.LENGTH_SHORT).show();
+                        return;
+                    }
+                    messageToWrite+=editText.getText()+"\n";
+                    editText=(EditText)findViewById(R.id.card_write_mobile);
+                    if(editText.getText().toString().isEmpty()){
+                        Toast.makeText(this, "Please enter your mobile number", Toast.LENGTH_SHORT).show();
+                        return;
+                    }
+                    messageToWrite+=editText.getText()+"\n";
+                    editText=(EditText)findViewById(R.id.card_write_telephone);
+                    if(editText.getText().toString().isEmpty()){
+                        Toast.makeText(this, "Please enter your telephone/alternative number", Toast.LENGTH_SHORT).show();
+                        return;
+                    }
+                    messageToWrite+=editText.getText()+"\n";
+                    editText=(EditText)findViewById(R.id.card_write_address);
+                    if(editText.getText().toString().isEmpty()){
+                        Toast.makeText(this, "Please enter your work address", Toast.LENGTH_SHORT).show();
+                        return;
+                    }
+                    messageToWrite+=editText.getText();
                     if(messageToWrite.contains(person.getEmailAddress()))
                     {
                         messageToWrite+="\n"+person.getImageUrl();

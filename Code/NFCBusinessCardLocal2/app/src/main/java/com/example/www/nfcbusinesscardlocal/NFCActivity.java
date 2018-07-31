@@ -39,12 +39,14 @@ public class NFCActivity extends Activity implements NfcAdapter.CreateNdefMessag
         NfcAdapter mAdapter = NfcAdapter.getDefaultAdapter(this);
         if (mAdapter == null) {
             mTextView.setText("Sorry this device does not have NFC.");
+            finish();
             return;
         }
 
         if (!mAdapter.isEnabled()) {
             Toast.makeText(this, "Please enable NFC via Settings.", Toast.LENGTH_LONG).show();
             startActivity(new Intent(Settings.ACTION_WIRELESS_SETTINGS));
+            finish();
         }
         mProgressDialog=new ProgressDialog(this);
         firebaseAuth= FirebaseAuth.getInstance();
@@ -61,13 +63,15 @@ public class NFCActivity extends Activity implements NfcAdapter.CreateNdefMessag
         super.onStart();
         mProgressDialog.setMessage("Loading your details...");
         mProgressDialog.show();
+        mProgressDialog.setCancelable(false);
+        mProgressDialog.setCanceledOnTouchOutside(false);
         databaseReference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
 
                 person = dataSnapshot.getValue(TestUser.class);
                 mProgressDialog.dismiss();
-                mTextView.setText(person.getDetails());
+                mTextView.setText(setDetails());
             }
 
             @Override
@@ -86,7 +90,7 @@ public class NFCActivity extends Activity implements NfcAdapter.CreateNdefMessag
      */
     @Override
     public NdefMessage createNdefMessage(NfcEvent nfcEvent) {
-        String message = mTextView.getText().toString();
+        String message = person.getDetails().toString();
         NdefRecord ndefRecord = NdefRecord.createMime("text/plain", message.getBytes());
         NdefMessage ndefMessage = new NdefMessage(ndefRecord);
         return ndefMessage;
@@ -97,6 +101,19 @@ public class NFCActivity extends Activity implements NfcAdapter.CreateNdefMessag
     @Override
     public void onBackPressed() {
         super.onBackPressed();
+    }
+    private String setDetails(){
+        String[] details=person.getDetails().split("\n");
+        String payload="";
+        int length=details.length;
+        if(length>7)
+            length--;
+        for(int i=0;i<length;i++) {
+            payload += details[i];
+            if((i+1)<length)
+                payload+="\n";
+        }
+        return payload;
     }
 }
 

@@ -14,6 +14,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.io.IOException;
 
@@ -65,14 +66,32 @@ public class CardReadInformationFragment extends DialogFragment {
         try {
             ndef.connect();
             NdefMessage ndefMessage = ndef.getNdefMessage();
-            String message = new String(ndefMessage.getRecords()[0].getPayload());
-            Log.d(TAG, "readFromNFC: "+message);
             mTvMessage.setText("Read was successful");
+            if(ndefMessage==null)
+            {
+
+                return "No information available on card.";
+
+            }
+            String message = new String(ndefMessage.getRecords()[0].getPayload());
+
 
             ndef.close();
+            if(message.trim().compareTo("")==0||message.trim().length()==0)
+            {
+                return "No information available.";
+
+            }
             String[] details=message.split("\n");
             String payload="";
             int length=details.length;
+            if(details.length==0)
+            {
+                return "No information available.";
+            }
+            else if(details.length<6){
+                return "Information is not for our application.";
+            }
             if(length>7)
                 length--;
             for(int i=0;i<length;i++) {

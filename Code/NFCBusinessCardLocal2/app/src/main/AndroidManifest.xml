@@ -46,13 +46,7 @@
         </activity>
         <activity
             android:name=".LogIn"
-            android:screenOrientation="portrait">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".Registration"
             android:screenOrientation="portrait" />
@@ -148,13 +142,6 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".ViewCardDetails" />
         </activity>
-        <activity
-            android:name=".ViewAppointmentsInterface"
-            android:screenOrientation="portrait">
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value=".ViewDetails" />
-        </activity>
         <activity android:name=".ImportCardDetails">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
@@ -188,6 +175,13 @@
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".updateDetails" />
+        </activity>
+        <activity android:name=".FirebaseConfig">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
     </application>
 
