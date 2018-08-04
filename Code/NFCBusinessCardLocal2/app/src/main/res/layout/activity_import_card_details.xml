@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="@dimen/lesspadding"
+    android:orientation="vertical"
+    tools:context="com.example.www.nfcbusinesscardlocal.ImportCardDetails">
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:id="@+id/imageView" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <Button
+            android:text="Capture Card"
+            android:layout_width="175dp"
+            android:layout_height="wrap_content"
+            android:background="@color/epiuseblue"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            android:layout_marginRight="5dp"
+            android:textSize="@dimen/fontsize"
+            android:id="@+id/button" />
+        <Button
+            android:text="Scan Card"
+            android:layout_width="175dp"
+            android:layout_height="wrap_content"
+            android:background="@color/epiuseblue"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            android:textSize="@dimen/fontsize"
+            android:id="@+id/scan_button" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <EditText android:id="@+id/import_name"
+            android:layout_width="175dp"
+            android:layout_height="wrap_content"
+            android:inputType="textPersonName"
+            android:textColor="@color/black"
+            android:hint="Full Name" />
+        <EditText android:id="@+id/import_jobtitle"
+            android:layout_width="175dp"
+            android:layout_height="wrap_content"
+            android:inputType="text"
+            android:textColor="@color/black"
+            android:hint="Job Title" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <EditText android:id="@+id/import_companyname"
+            android:layout_width="175dp"
+            android:layout_height="wrap_content"
+            android:inputType="textPersonName"
+            android:textColor="@color/black"
+            android:hint="Company Name" />
+        <EditText android:id="@+id/import_address"
+            android:layout_width="175dp"
+            android:layout_height="wrap_content"
+            android:inputType="textPostalAddress"
+            android:hint="Work Address" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <EditText android:id="@+id/import_email"
+            android:layout_width="175dp"
+            android:layout_height="wrap_content"
+            android:inputType="textEmailAddress"
+            android:hint="Email" />
+        <!--work number-->
+        <EditText android:id="@+id/import_telephone"
+            android:layout_width="175dp"
+            android:layout_height="wrap_content"
+            android:inputType="phone"
+            android:hint="Work Telephone" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <EditText android:id="@+id/import_password"
+            android:layout_width="175dp"
+            android:layout_height="wrap_content"
+            android:inputType="textPassword"
+            android:hint="Password"/>
+        <!--work number-->
+        <EditText android:id="@+id/import_confirmPassword"
+            android:layout_width="175dp"
+            android:layout_height="wrap_content"
+            android:inputType="textPassword"
+            android:hint="Confirm Password"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <Button
+            android:layout_width="@dimen/signoutbtn"
+            android:layout_height="@dimen/signoutbtn"
+            android:layout_marginLeft="15dp"
+            android:background="@mipmap/backarrow"
+            android:onClick="backToLogin" />
+        <Button
+            android:id="@+id/import_btn_signup"
+            android:layout_width="250dp"
+            android:layout_height="50dp"
+            android:padding="12dp"
+            android:background="@color/epiuseblue"
+            android:textColor="@color/white"
+            android:layout_marginBottom="@dimen/spacing"
+            android:textSize="@dimen/fontsize"
+            android:onClick="addUser"
+            android:drawableRight="@mipmap/addme"
+            android:text="@string/create_account"/>
+    </LinearLayout>
+</LinearLayout>
