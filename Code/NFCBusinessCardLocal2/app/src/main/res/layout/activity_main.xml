@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.example.www.nfcbusinesscardlocal.MainActivity"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:padding="@dimen/padding"
+    >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/Logo"
+            android:src="@mipmap/clientlogo"
+            android:layout_marginBottom="@dimen/spacing"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_marginTop="@dimen/maketop"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/openSendCard"
+            android:layout_width="@dimen/buttons"
+            android:layout_height="@dimen/buttons"
+            android:layout_marginBottom="@dimen/spacing"
+            android:layout_marginRight="@dimen/spacing"
+            android:background="@color/epiuseblue"
+            android:drawableRight="@mipmap/send"
+            android:onClick="openSendCard"
+            android:text="@string/sendcard"
+            android:textColor="@color/white"
+            android:textSize="@dimen/fontsize"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/openManageCards"
+            android:layout_width="@dimen/buttons"
+            android:layout_height="@dimen/buttons"
+            android:layout_marginBottom="@dimen/spacing"
+            android:layout_marginRight="@dimen/spacing"
+            android:background="@color/epiuseblue"
+            android:drawableRight="@mipmap/recieve"
+            android:onClick="openReceiveCard"
+            android:text="@string/receivecard"
+            android:textColor="@color/white"
+            android:textSize="@dimen/fontsize"
+            android:textStyle="bold" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal">
+        <Button
+            android:layout_width="@dimen/buttons"
+            android:layout_height="@dimen/buttons"
+            android:onClick="openViewDetails"
+            android:background="@color/epiuseblue"
+            android:text="@string/updateinfo"
+            android:textSize="@dimen/fontsize"
+            android:textStyle="bold"
+            android:layout_marginRight="@dimen/spacing"
+            android:layout_marginBottom="@dimen/spacing"
+            android:textColor="@color/white"
+            android:drawableRight="@mipmap/viewprofile"/>
+        <Button
+            android:layout_width="@dimen/buttons"
+            android:layout_height="@dimen/buttons"
+            android:background="@color/epiuseblue"
+            android:text="@string/managecards"
+            android:textSize="@dimen/fontsize"
+            android:textStyle="bold"
+            android:drawableRight="@mipmap/managecard"
+            android:layout_marginRight="@dimen/spacing"
+            android:layout_marginBottom="@dimen/spacing"
+            android:onClick="openManageCards"
+            android:textColor="@color/white"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <Button
+            android:layout_width="@dimen/signoutbtn"
+            android:layout_height="@dimen/signoutbtn"
+            android:layout_marginLeft="15dp"
+            android:onClick="backMainActivity"
+            android:background="@mipmap/signout" />
+    </LinearLayout>
+</LinearLayout>
