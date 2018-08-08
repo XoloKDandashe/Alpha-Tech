@@ -179,7 +179,7 @@ public class ReaderActivity extends AppCompatActivity {
                 newCard.setMobileNumber(details[4]);
                 newCard.setWorkTelephone(details[5]);
                 newCard.setWorkAddress(details[6]);
-                if(details.Length==8)
+                if(details.length==8)
                 newCard.setImageUrl(details[7]);
 
                 arrayList.add(newCard);

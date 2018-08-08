@@ -7,6 +7,77 @@
     <TextView
         android:id="@+id/reciever_tv"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="200dp"
+        android:textIsSelectable="true"
         android:text="TextView" />
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+    <EditText
+        android:id="@+id/import_Name"
+        android:layout_width="175dp"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Name"
+        android:inputType="textPersonName" />
+        <EditText
+            android:id="@+id/importCompanyName"
+            android:layout_width="175dp"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="CompanyName"
+            android:inputType="textPersonName" />
+
+
+    </LinearLayout>
+    <EditText
+        android:id="@+id/import_Adress"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Address"
+        android:inputType="textPersonName" />
+
+    <EditText
+        android:id="@+id/importWorkNumber"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Work Telephone"
+        android:inputType="phone" />
+
+    <EditText
+        android:id="@+id/importMobileNumber"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Mobile number"
+        android:inputType="phone" />
+
+    <EditText
+        android:id="@+id/importEmail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Email"
+        android:inputType="textEmailAddress" />
+
+
+
+    <Button
+
+            android:id="@+id/rec_import_btn_signup"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="12dp"
+            android:background="@color/epiuseblue"
+            android:textColor="@color/white"
+            android:layout_marginBottom="@dimen/spacing"
+            android:textSize="@dimen/fontsize"
+            android:drawableRight="@mipmap/addme"
+            android:text="Save Contact"/>
+
+
 </LinearLayout>
