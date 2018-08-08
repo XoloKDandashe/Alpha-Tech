@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="@dimen/lesspadding"
+    android:orientation="vertical"
+    android:background="@mipmap/backgrounda"
+    tools:context="com.example.www.nfcbusinesscardlocal.CardWriteInformation">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="75dp">
+            <EditText android:id="@+id/card_write_name"
+                android:layout_width="175dp"
+                android:layout_height="wrap_content"
+                android:inputType="textPersonName"
+                android:textColor="@color/white"
+                android:textColorHint="@color/white"
+                android:hint="Full Name" />
+            <EditText android:id="@+id/card_write_jobtitle"
+                android:layout_width="175dp"
+                android:layout_height="wrap_content"
+                android:inputType="text"
+                android:textColor="@color/white"
+                android:textColorHint="@color/white"
+                android:hint="Job Title" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <EditText android:id="@+id/card_write_companyname"
+                android:layout_width="175dp"
+                android:layout_height="wrap_content"
+                android:inputType="textPersonName"
+                android:textColor="@color/white"
+                android:textColorHint="@color/white"
+                android:hint="Company Name" />
+            <EditText android:id="@+id/card_write_email"
+                android:layout_width="175dp"
+                android:layout_height="wrap_content"
+                android:inputType="textEmailAddress"
+                android:textColor="@color/white"
+                android:textColorHint="@color/white"
+                android:hint="Email" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <EditText android:id="@+id/card_write_mobile"
+                android:layout_width="175dp"
+                android:layout_height="wrap_content"
+                android:inputType="phone"
+                android:textColor="@color/white"
+                android:textColorHint="@color/white"
+                android:hint="Mobile Number"/>
+            <!--work number-->
+            <EditText android:id="@+id/card_write_telephone"
+                android:layout_width="175dp"
+                android:layout_height="wrap_content"
+                android:inputType="phone"
+                android:textColor="@color/white"
+                android:textColorHint="@color/white"
+                android:hint="Work Telephone" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <EditText android:id="@+id/card_write_address"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"
+                android:textColorHint="@color/white"
+                android:inputType="textPostalAddress"
+                android:hint="Work Address" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:padding="@dimen/padding">
+            <Button
+                android:id="@+id/btn_write"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                android:textStyle="bold"
+                android:textSize="@dimen/fontsize"
+                android:background="@drawable/textview_border"
+                android:textColor="@color/white"
+                android:drawableRight="@mipmap/sendingphone"
+                android:text="@string/message_write_tag"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:padding="@dimen/padding">
+            <Button
+                android:id="@+id/card_write_load_info"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/signoutbtn"
+                android:padding="@dimen/padding"
+                android:textStyle="bold"
+                android:textSize="@dimen/padding"
+                android:background="@drawable/textview_border"
+                android:textColor="@color/white"
+                android:drawableRight="@mipmap/send"
+                android:text="Load My Details"/>
+        </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <Button
+            android:id="@+id/card_write_buttonback"
+            android:layout_width="@dimen/signoutbtn"
+            android:layout_height="@dimen/signoutbtn"
+            android:layout_marginLeft="15dp"
+            android:background="@mipmap/backarrow" />
+    </LinearLayout>
+    </LinearLayout>
+</RelativeLayout>
