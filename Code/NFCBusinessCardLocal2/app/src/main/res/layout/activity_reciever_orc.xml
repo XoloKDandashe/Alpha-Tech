@@ -8,65 +8,65 @@
         android:id="@+id/reciever_tv"
         android:layout_width="match_parent"
         android:layout_height="200dp"
+        android:textIsSelectable="true"
         android:text="TextView" />
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-        <EditText android:id="@+id/rec_import_name"
-            android:layout_width="175dp"
-            android:layout_height="wrap_content"
-            android:inputType="textPersonName"
-            android:textColor="@color/black"
-            android:hint="Full Name" />
-        <EditText android:id="@+id/rec_import_jobtitle"
-            android:layout_width="175dp"
-            android:layout_height="wrap_content"
-            android:inputType="text"
-            android:textColor="@color/black"
-            android:hint="Job Title" />
-    </LinearLayout>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-        <EditText android:id="@+id/rec_import_companyname"
-            android:layout_width="175dp"
-            android:layout_height="wrap_content"
-            android:inputType="textPersonName"
-            android:textColor="@color/black"
-            android:hint="Company Name" />
-        <EditText android:id="@+id/rec_import_address"
-            android:layout_width="175dp"
-            android:layout_height="wrap_content"
-            android:inputType="textPostalAddress"
-            android:hint="Work Address" />
-    </LinearLayout>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-        <EditText android:id="@+id/rec_import_email"
-            android:layout_width="175dp"
-            android:layout_height="wrap_content"
-            android:inputType="textEmailAddress"
-            android:hint="Email" />
-        <!--work number-->
-        <EditText android:id="@+id/rec_import_telephone"
-            android:layout_width="175dp"
-            android:layout_height="wrap_content"
-            android:inputType="phone"
-            android:hint="Work Telephone" />
-    </LinearLayout>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-        <EditText android:id="@+id/rec_import_mobile"
-            android:layout_width="175dp"
-            android:layout_height="wrap_content"
-            android:inputType="phone"
-            android:hint="Mobile Number"/>
-    </LinearLayout>
 
 
-        <Button
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+    <EditText
+        android:id="@+id/import_Name"
+        android:layout_width="175dp"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Name"
+        android:inputType="textPersonName" />
+        <EditText
+            android:id="@+id/importCompanyName"
+            android:layout_width="175dp"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="CompanyName"
+            android:inputType="textPersonName" />
+
+
+    </LinearLayout>
+    <EditText
+        android:id="@+id/import_Adress"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Address"
+        android:inputType="textPersonName" />
+
+    <EditText
+        android:id="@+id/importWorkNumber"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Work Telephone"
+        android:inputType="phone" />
+
+    <EditText
+        android:id="@+id/importMobileNumber"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Mobile number"
+        android:inputType="phone" />
+
+    <EditText
+        android:id="@+id/importEmail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Email"
+        android:inputType="textEmailAddress" />
+
+
+
+    <Button
 
             android:id="@+id/rec_import_btn_signup"
             android:layout_width="match_parent"
@@ -78,7 +78,6 @@
             android:textSize="@dimen/fontsize"
             android:drawableRight="@mipmap/addme"
             android:text="Save Contact"/>
-
 
 
 </LinearLayout>
