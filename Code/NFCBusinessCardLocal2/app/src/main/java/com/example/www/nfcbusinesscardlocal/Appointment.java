@@ -10,7 +10,15 @@ import java.util.Date;
  */
 
 public class Appointment {
-    String name,notes,date, time;
+    String name;
+    String notes;
+    String date;
+    String time;
+
+
+
+    String clientEmail;
+    int LengthOfAppointment;
 //DatePicker for updatedate|() for notification
     public Appointment()
     {
@@ -23,6 +31,10 @@ public class Appointment {
     public void setDate(String date) {
         this.date = date;
     }
+
+    public void setClientEmail(String clientEmail){this.clientEmail=clientEmail;}
+
+    public void setLengthOfAppointment(int Length){this.LengthOfAppointment=Length;}
 
     public void setName(String name) {
         this.name = name;
@@ -48,11 +60,27 @@ public class Appointment {
         return name;
     }
 
+    public String getClientEmail() {
+        return clientEmail;
+    }
+
+    public int getLengthOfAppointment() {
+        return LengthOfAppointment;
+    }
+
     public String getNotes() {
         if(notes.compareTo("")==0)return ""; return notes;
     }
     public String getAppointmentDetails()
     {
         return getName()+"\n"+getDate()+"\n"+getTime()+"\n"+getNotes();
+    }
+    public String [] breakdownDate(){
+
+        return getDate().split("/");
+    }
+    public String [] breakdownTime(){
+
+        return getTime().split(":");
     }
 }

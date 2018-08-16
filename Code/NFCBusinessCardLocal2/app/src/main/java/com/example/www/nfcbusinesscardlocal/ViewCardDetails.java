@@ -7,6 +7,8 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Environment;
@@ -56,7 +58,7 @@ public class ViewCardDetails extends AppCompatActivity {
     static final Integer WRITE_EXST = 0x3;
     static final Integer READ_EXST = 0x4;
     private static final String VCF_DIRECTORY = "/vcf_demonuts";
-    Button saveButton,backButton,deletebutton,appointmentbutton;
+    Button saveButton,deletebutton,appointmentbutton;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -87,13 +89,6 @@ public class ViewCardDetails extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 saveVCard();
-            }
-        });
-        backButton=(Button) findViewById(R.id.backbutton);
-        backButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                backToViewCardsInterface();
             }
         });
         deletebutton=(Button) findViewById(R.id.deletecontact);
@@ -129,6 +124,8 @@ public class ViewCardDetails extends AppCompatActivity {
         super.onStart();
         mProgressDialog.setMessage("Loading contact...");
         mProgressDialog.show();
+        mProgressDialog.setCancelable(false);
+        mProgressDialog.setCanceledOnTouchOutside(false);
         databaseReference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
@@ -146,9 +143,17 @@ public class ViewCardDetails extends AppCompatActivity {
         });
     }
     private void loadPicture(TestUser user){
+        ConnectivityManager connectivityManager=(ConnectivityManager) getApplicationContext().getSystemService(Context.CONNECTIVITY_SERVICE);
+        NetworkInfo activeNetwork=connectivityManager.getActiveNetworkInfo();
+        boolean isConnected=activeNetwork!=null && activeNetwork.isConnectedOrConnecting();
+        if(!isConnected)
+        {
+            Toast.makeText(getApplicationContext(), "Unable to get image, internet connection needed.", Toast.LENGTH_SHORT).show();
+            return;
+        }
         if(user.getImageUrl()!=""){
             StorageReference httpRef= FirebaseStorage.getInstance().getReferenceFromUrl(user.getImageUrl());
-            Glide.with(ViewCardDetails.this)
+            Glide.with(getApplicationContext())
                     .using(new FirebaseImageLoader())
                     .load(httpRef)
                     .signature(new StringSignature(String.valueOf(System.currentTimeMillis())))
@@ -337,12 +342,5 @@ public class ViewCardDetails extends AppCompatActivity {
     }
     private void saveupdate(TestUser user){
         databaseReference.setValue(user);
-    }
-    public void backToViewCardsInterface(){
-        onBackPressed();
-    }
-    @Override
-    public void onBackPressed() {
-        super.onBackPressed();
     }
 }

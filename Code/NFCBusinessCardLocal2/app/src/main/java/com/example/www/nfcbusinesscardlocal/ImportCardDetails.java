@@ -42,7 +42,6 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.googlecode.tesseract.android.TessBaseAPI;
 
 import java.io.ByteArrayOutputStream;
 import java.io.File;
@@ -70,7 +69,6 @@ public class ImportCardDetails extends AppCompatActivity {
     static final Integer READ_EXST = 0x4;
     final int CROP_PIC_REQUEST_CODE = 5;
     Bitmap image;
-    private TessBaseAPI mTess;
     String datapath = "";
     Button runOCR;
     EditText displayJobTitle;
@@ -109,11 +107,9 @@ public class ImportCardDetails extends AppCompatActivity {
         //initialize Tesseract API
         String language = "eng";
         datapath = getFilesDir()+ "/tesseract/";
-        mTess = new TessBaseAPI();
 
         checkFile(new File(datapath + "tessdata/"));
 
-        mTess.init(datapath, language);
         mProgressDialog.setMessage("Scanning Card");
         //run the OCR on the test_image...
         runOCR.setOnClickListener(new View.OnClickListener() {
@@ -177,8 +173,7 @@ public class ImportCardDetails extends AppCompatActivity {
     }
     public void processImage(){
         String OCRresult = null;
-        mTess.setImage(image);
-        OCRresult = mTess.getUTF8Text();
+
         //displayText.setText(OCRresult);
         extractName(OCRresult);
         extractEmail(OCRresult);

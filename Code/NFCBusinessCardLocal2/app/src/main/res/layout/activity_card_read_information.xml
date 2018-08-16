@@ -6,22 +6,13 @@
     android:layout_height="match_parent"
     android:padding="@dimen/padding"
     android:orientation="vertical"
+    android:background="@mipmap/backgrounda"
     tools:context="com.example.www.nfcbusinesscardlocal.CardReadInformation">
     <LinearLayout
         android:layout_width="match_parent"
         android:orientation="vertical"
         android:layout_height="match_parent">
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="top"
-            android:layout_marginBottom="@dimen/spacing">
-            <ImageView
 
-                android:layout_width="match_parent"
-                android:layout_height="@dimen/Logo"
-                android:src="@mipmap/clientlogo"/>
-        </LinearLayout>
         <Button
             android:id="@+id/btn_read"
             android:layout_width="match_parent"
@@ -33,13 +24,13 @@
             android:layout_marginTop="@dimen/activity_horizontal_margin"
             android:text="@string/message_read_tag"
             android:layout_marginBottom="@dimen/spacing"
-            android:background="@color/epiuseblue"/>
+            android:background="@drawable/textview_border"/>
         <TextView
             android:id="@+id/tv_read_message"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
             android:textSize="@dimen/heading"
-            android:textColor="@color/black"/>
+            android:textColor="@color/white"/>
     </LinearLayout>
 </RelativeLayout>

@@ -7,62 +7,45 @@
     android:background="@drawable/textview_border">
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:weightSum="3">
         <ImageView
             android:id="@+id/row_picture"
-            android:layout_width="85dp"
-            android:layout_height="85dp"
-            android:src="@mipmap/avatar"
-            android:layout_marginRight="@dimen/lesspadding"
-            android:padding="@dimen/lesspadding"
+            android:layout_width="0dp"
+            android:layout_height="100dp"
+            android:layout_weight="1"
             />
-        <TextView
-            android:id="@+id/row_fullname"
-            android:layout_width="200dp"
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_weight="2"
             android:layout_height="wrap_content"
-            android:textColor="@color/black"
-            android:textStyle="bold"
-            android:textSize="@dimen/fontsize"
-            android:padding="@dimen/lesspadding"
-            android:text="Kagiso Katametsi"
-            />
+            android:orientation="vertical"
+            android:weightSum="3"
+            >
+            <TextView
+                android:id="@+id/row_fullname"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="2"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                android:textSize="@dimen/heading"
+                android:padding="@dimen/lesspadding"
+                android:text="Kagiso Katametsi"
+                />
+            <TextView
+                android:id="@+id/row_jobtitle"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                android:gravity="right"
+                android:textSize="@dimen/fontsize"
+                android:text="Software Developer"
+                android:drawableRight="@drawable/ic_work_sort"
+                />
+        </LinearLayout>
     </LinearLayout>
-    <!--<LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-        <TextView
-            android:id="@+id/row_emailaddress"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textColor="@color/black"
-            android:textSize="15sp"
-            android:text="xkdee22@gmail.com"/>
 
-    </LinearLayout>-->
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        >
-        <TextView
-            android:id="@+id/row_jobtitle"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textColor="@color/black"
-            android:textStyle="bold"
-            android:gravity="right"
-            android:textSize="@dimen/fontsize"
-            android:text="Software Developer"
-            />
-    </LinearLayout>
-    <!--<LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-        <TextView
-            android:id="@+id/row_worknumber"
-            android:layout_width="150dp"
-            android:layout_height="wrap_content"
-            android:textColor="@color/black"
-            android:textSize="15sp"
-            android:text="0749359620"/>
-    </LinearLayout>-->
 </LinearLayout>

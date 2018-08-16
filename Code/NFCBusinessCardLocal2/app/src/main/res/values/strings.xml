@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Business Card</string>
+    <string name="app_name">Smart Biz Card</string>
     <!--Strings for main menu-->
     <string name="sendcard">Send Card</string>
     <string name="receivecard">Receive Card</string>
@@ -56,14 +56,23 @@
 
     <!-- Strings related to Fragments-->
     <string name="message_write_error">Error Writing Message !</string>
+    <string name="message_delete_error">Error deleting details !</string>
     <string name="message_write_success">Successfully written to Card !</string>
+    <string name="message_delete_success">Successfully deleted details!</string>
     <string name="message_write_progress">Writing to Card..</string>
+    <string name="message_delete_progress">deleting details..</string>
     <string name="message_tag_detected">NFC Card Detected !</string>
     <string name="message_read_tag">Read from NFC Card</string>
     <string name="message_write_tag">Write to NFC Card</string>
+    <string name="message_delete_tag">Delete details on NFC Card</string>
     <string name="message_tap_tag">Touch the NFC Card to your device !</string>
     <string name="hint_message">Information to send</string>
     <!--Strings for datetime-->
     <string name="date">Date: </string>
     <string name="time">Time: </string>
+    <!--ORC-->
+    <string name="photo">Photo</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

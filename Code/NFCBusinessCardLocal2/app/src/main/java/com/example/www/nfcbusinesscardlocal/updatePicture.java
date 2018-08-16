@@ -68,13 +68,6 @@ public class updatePicture extends AppCompatActivity {
         imageView=(ImageView)findViewById(R.id.image_selected);
         selection=(Button) findViewById(R.id.btn_select_image);
         upload=(Button) findViewById(R.id.btn_upload_image);
-        back=(Button) findViewById(R.id.btn_UpdateBack);
-        back.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                previous();
-            }
-        });
         selection.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -115,6 +108,8 @@ public class updatePicture extends AppCompatActivity {
         super.onResume();
         mProgressDialog.setMessage("Loading your details...");
         mProgressDialog.show();
+        mProgressDialog.setCancelable(false);
+        mProgressDialog.setCanceledOnTouchOutside(false);
         databaseReference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
@@ -172,7 +167,7 @@ public class updatePicture extends AppCompatActivity {
                             progressDialog.dismiss();
                             Toast.makeText(updatePicture.this,"Photo uploaded",Toast.LENGTH_SHORT).show();
                             databaseReference.setValue(person);
-
+                            finish();
                         }
                     })
                     .addOnFailureListener(new OnFailureListener() {

@@ -13,6 +13,8 @@ import android.location.Address;
 import android.location.Geocoder;
 import android.location.Location;
 import android.location.LocationManager;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.net.Uri;
 import android.provider.MediaStore;
 import android.provider.Settings;
@@ -82,6 +84,14 @@ public class updateDetails extends AppCompatActivity {
         btnOpenUpload.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                ConnectivityManager connectivityManager=(ConnectivityManager) getApplicationContext().getSystemService(Context.CONNECTIVITY_SERVICE);
+                NetworkInfo activeNetwork=connectivityManager.getActiveNetworkInfo();
+                boolean isConnected=activeNetwork!=null && activeNetwork.isConnectedOrConnecting();
+                if(!isConnected)
+                {
+                    Toast.makeText(getApplicationContext(), "Internet connection needed for this action.", Toast.LENGTH_SHORT).show();
+                    return;
+                }
                 Intent intent=new Intent(updateDetails.this,updatePicture.class);
                 startActivity(intent);
             }
@@ -116,8 +126,8 @@ public class updateDetails extends AppCompatActivity {
         super.onResume();
         mProgressDialog.setMessage("Loading your details...");
         mProgressDialog.show();
-        if(person!=null)
-            loadPicture(person);
+        mProgressDialog.setCancelable(false);
+        mProgressDialog.setCanceledOnTouchOutside(false);
         databaseReference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
@@ -269,10 +279,17 @@ public class updateDetails extends AppCompatActivity {
     }
 
     private void loadPicture(TestUser user){
-        imageView.setImageURI(null);
+        ConnectivityManager connectivityManager=(ConnectivityManager) getApplicationContext().getSystemService(Context.CONNECTIVITY_SERVICE);
+        NetworkInfo activeNetwork=connectivityManager.getActiveNetworkInfo();
+        boolean isConnected=activeNetwork!=null && activeNetwork.isConnectedOrConnecting();
+        if(!isConnected)
+        {
+            Toast.makeText(getApplicationContext(), "Unable to get image, internet connection needed.", Toast.LENGTH_SHORT).show();
+            return;
+        }
         if(user.getImageUrl()!=""){
             StorageReference httpRef=FirebaseStorage.getInstance().getReferenceFromUrl(user.getImageUrl());
-            Glide.with(updateDetails.this)
+            Glide.with(getApplicationContext())
                     .using(new FirebaseImageLoader())
                     .load(httpRef)
                     .signature(new StringSignature(String.valueOf(System.currentTimeMillis())))

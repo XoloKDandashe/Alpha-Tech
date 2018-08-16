@@ -1,41 +1,29 @@
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.example.www.nfcbusinesscardlocal.ManageCards"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="@mipmap/backgrounda"
     android:padding="@dimen/padding">
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="top"
-        android:layout_marginBottom="@dimen/spacing">
-        <ImageView
 
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/Logo"
-            android:src="@mipmap/clientlogo"
-            android:layout_marginBottom="@dimen/spacing"/>
-    </LinearLayout>
     <TextView
+        android:layout_marginTop="50dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/sendnotify"
         android:textSize="@dimen/heading"
-        android:textColor="@color/black"
+        android:textColor="@color/white"
         android:textStyle="bold"
         android:gravity="center"/>
     <TextView
         android:id="@+id/text_field"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Type a message"
+        android:text="Getting details"
         android:gravity="center"
-        android:textColor="@color/black"
+        android:textColor="@color/white"
         android:textSize="@dimen/heading"/>
-    <Button
-        android:layout_width="@dimen/signoutbtn"
-        android:layout_height="@dimen/signoutbtn"
-        android:layout_marginLeft="15dp"
-        android:background="@mipmap/backarrow"
-        android:onClick="backMainActivity" />
 </LinearLayout>

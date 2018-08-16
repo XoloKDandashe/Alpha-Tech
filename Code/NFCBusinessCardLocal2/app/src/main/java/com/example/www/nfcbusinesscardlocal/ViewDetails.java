@@ -1,8 +1,11 @@
 package com.example.www.nfcbusinesscardlocal;
 
 import android.app.ProgressDialog;
+import android.content.Context;
 import android.content.Intent;
 import android.media.Image;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -52,6 +55,8 @@ public class ViewDetails extends AppCompatActivity {
         super.onResume();
         mProgressDialog.setMessage("Loading your details...");
         mProgressDialog.show();
+        mProgressDialog.setCancelable(false);
+        mProgressDialog.setCanceledOnTouchOutside(false);
         databaseReference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
@@ -93,10 +98,17 @@ public class ViewDetails extends AppCompatActivity {
         textView.setText(person.getWorkTelephone());
     }
     private void loadPicture(TestUser user){
-
+        ConnectivityManager connectivityManager=(ConnectivityManager) getApplicationContext().getSystemService(Context.CONNECTIVITY_SERVICE);
+        NetworkInfo activeNetwork=connectivityManager.getActiveNetworkInfo();
+        boolean isConnected=activeNetwork!=null && activeNetwork.isConnectedOrConnecting();
+        if(!isConnected)
+        {
+            Toast.makeText(getApplicationContext(), "Unable to get image, internet connection needed.", Toast.LENGTH_SHORT).show();
+            return;
+        }
         if(user.getImageUrl()!=""){
             StorageReference httpRef= FirebaseStorage.getInstance().getReferenceFromUrl(user.getImageUrl());
-            Glide.with(ViewDetails.this)
+            Glide.with(getApplicationContext())
                     .using(new FirebaseImageLoader())
                     .load(httpRef)
                     .signature(new StringSignature(String.valueOf(System.currentTimeMillis())))
@@ -106,10 +118,7 @@ public class ViewDetails extends AppCompatActivity {
     public void backViewDetails(View view){
         onBackPressed();
     }
-    public void viewAppointments(View view){
-        Intent intent=new Intent(this,ViewAppointmentsInterface.class);
-        startActivity(intent);
-    }
+
     @Override
     public void onBackPressed() {
         super.onBackPressed();

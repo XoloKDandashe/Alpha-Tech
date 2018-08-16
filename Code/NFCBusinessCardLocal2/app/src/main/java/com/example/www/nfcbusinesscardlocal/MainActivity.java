@@ -9,12 +9,17 @@ import android.os.Environment;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 
@@ -27,16 +32,26 @@ public class MainActivity extends AppCompatActivity {
 
     private FirebaseAuth firebaseAuth;
     private FirebaseUser user;
+    private Button btn_signout;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
         firebaseAuth=FirebaseAuth.getInstance();
         if(firebaseAuth.getCurrentUser()==null){
             finish();
             startActivity(new Intent(this, LogIn.class));
         }
         user=firebaseAuth.getCurrentUser();
+        btn_signout=(Button)findViewById(R.id.btn_signout);
+        btn_signout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                backMainActivity();
+            }
+        });
+
     }
     public void openViewDetails(View view){
         Intent intent = new Intent(this,ViewDetails.class);
@@ -54,7 +69,7 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(this,ReceiverInterface.class);
         startActivity(intent);
     }
-    public void backMainActivity(View view){
+    public void backMainActivity(){
 
         AlertDialog.Builder builder;
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {

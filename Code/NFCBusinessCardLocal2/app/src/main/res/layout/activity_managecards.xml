@@ -7,38 +7,26 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/white"
+    android:background="@mipmap/backgrounda"
+    android:weightSum="4"
     android:padding="@dimen/padding"
     >
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="top">
-        <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/Logo"
-            android:src="@mipmap/clientlogo"
-            android:layout_marginBottom="@dimen/spacing"/>
-    </LinearLayout>
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/banner"
-        android:textSize="@dimen/heading"
-        android:textStyle="bold"
-        android:textColor="@color/black"
-        android:gravity="center"/>
+
     <!--Manage Cards Start-->
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
+        android:layout_weight="4"
+        android:weightSum="4"
+        android:layout_marginTop="@dimen/spacing"
         android:orientation="vertical">
         <Button
             android:id="@+id/viewcards"
             android:layout_width="match_parent"
-            android:layout_height="@dimen/slabButtons"
+            android:layout_height="0dp"
+            android:layout_weight="1"
             android:textSize="@dimen/heading"
-            android:background="@color/epiuseblue"
+            android:background="@drawable/textview_border"
             android:textColor="@color/white"
             android:layout_marginBottom="@dimen/spacing"
             android:drawableRight="@mipmap/viewcards"
@@ -47,9 +35,10 @@
         <Button
             android:id="@+id/readinfo"
             android:layout_width="match_parent"
-            android:layout_height="@dimen/slabButtons"
+            android:layout_height="0dp"
+            android:layout_weight="1"
             android:textSize="@dimen/heading"
-            android:background="@color/epiuseblue"
+            android:background="@drawable/textview_border"
             android:textColor="@color/white"
             android:drawableRight="@mipmap/files"
             android:layout_marginBottom="@dimen/spacing"
@@ -58,9 +47,10 @@
         <Button
             android:id="@+id/delinfo"
             android:layout_width="match_parent"
-            android:layout_height="@dimen/slabButtons"
+            android:layout_height="0dp"
+            android:layout_weight="1"
             android:textSize="@dimen/heading"
-            android:background="@color/epiuseblue"
+            android:background="@drawable/textview_border"
             android:textColor="@color/white"
             android:drawableRight="@mipmap/trashcan"
             android:layout_marginBottom="@dimen/spacing"
@@ -69,23 +59,15 @@
         <Button
             android:id="@+id/writeinfo"
             android:layout_width="match_parent"
-            android:layout_height="@dimen/slabButtons"
+            android:layout_height="0dp"
+            android:layout_weight="1"
             android:textSize="@dimen/heading"
-            android:background="@color/epiuseblue"
+            android:background="@drawable/textview_border"
             android:textColor="@color/white"
             android:drawableRight="@mipmap/edittwo"
             android:onClick="openCardWriteInformation"
             android:text="@string/updatecard"/>
     </LinearLayout>
     <!--Manage Card End-->
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-        <Button
-            android:layout_width="@dimen/signoutbtn"
-            android:layout_height="@dimen/signoutbtn"
-                android:onClick="backManageCards"
-            android:background="@mipmap/backarrow"/>
-    </LinearLayout>
+
 </LinearLayout>

@@ -6,16 +6,17 @@
     android:padding="@dimen/padding"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@mipmap/backgrounda"
     tools:context="com.example.www.nfcbusinesscardlocal.ReaderActivity">
     <LinearLayout
+
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
         android:orientation="vertical"
-        android:padding="10dp">
-        <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/Logo"
-            android:src="@mipmap/clientlogo"/>
+        android:padding="10dp"
+        >
+
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -23,7 +24,7 @@
             android:gravity="center"
             android:textStyle="bold"
             android:textSize="@dimen/heading"
-            android:textColor="@color/black"
+            android:textColor="@color/white"
             android:layout_centerHorizontal="true"/>
     </LinearLayout>
     <Button
@@ -33,7 +34,7 @@
         android:layout_centerVertical="true"
         android:textColor="@color/white"
         android:textSize="@dimen/fontsize"
-        android:background="@color/epiuseblue"
+        android:background="@drawable/textview_border"
         android:text="@string/qrscan"
         android:id="@+id/scan_btn"/>
     <LinearLayout
@@ -49,32 +50,28 @@
             android:textStyle="bold"
             android:gravity="center"
             android:textSize="@dimen/heading"
-            android:textColor="@color/black"/>
+            android:textColor="@color/white"/>
         <TextView
             android:id="@+id/scannedDetails"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textColor="@color/black"
+            android:textColor="@color/white"
             android:textSize="@dimen/heading"
             />
     </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
         android:gravity="center">
         <Button
             android:layout_width="@dimen/buttons"
             android:layout_height="wrap_content"
-            android:background="@color/epiuseblue"
+            android:background="@drawable/textview_border"
             android:textColor="@color/white"
             android:id="@+id/qrbtn"
             android:visibility="invisible"
             android:text="Save to phone"/>
     </LinearLayout>
-    <Button
-        android:layout_width="@dimen/signoutbtn"
-        android:layout_height="@dimen/signoutbtn"
-        android:layout_marginLeft="15dp"
-        android:background="@mipmap/backarrow"
-        android:onClick="backMainActivity" />
+
 </LinearLayout>

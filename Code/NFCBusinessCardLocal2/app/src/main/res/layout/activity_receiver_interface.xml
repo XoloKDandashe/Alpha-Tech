@@ -5,89 +5,78 @@
     android:layout_width="match_parent"
     android:orientation="vertical"
     android:padding="@dimen/padding"
+    android:background="@mipmap/backgrounda"
+    android:weightSum="5"
     android:layout_height="match_parent"
     tools:context="com.example.www.nfcbusinesscardlocal.ReceiverInterface">
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-        <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/Logo"
-            android:src="@mipmap/clientlogo"
-            android:layout_marginBottom="@dimen/spacing"/>
-    </LinearLayout>
+
     <TextView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
+        android:layout_weight="1"
         android:text="@string/receivebanner"
         android:gravity="center"
-        android:textColor="@color/black"
+        android:textColor="@color/white"
         android:textSize="@dimen/heading"
         android:textStyle="bold"/>
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
+        android:layout_weight="2"
+        android:padding="@dimen/padding"
+        android:weightSum="2"
         android:gravity="center"
-        android:layout_marginTop="@dimen/maketop"
-        android:orientation="horizontal">
+        >
         <Button
             android:id="@+id/button1"
-            android:layout_width="@dimen/buttons"
-            android:layout_height="@dimen/buttons"
-            android:background="@color/epiuseblue"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:background="@drawable/textview_border"
             android:textColor="@color/white"
             android:text="@string/nfcreceive"
             android:textSize="@dimen/fontsize"
+            android:layout_marginRight="@dimen/spacing"
             android:drawableLeft="@mipmap/sendingphone"
             android:drawableRight="@mipmap/sendingphoner"
             android:textStyle="bold"
             android:onClick="openNFCRecieve"
-            android:layout_marginRight="@dimen/spacing"
-            android:layout_marginBottom="@dimen/spacing"
             />
         <Button
             android:id="@+id/button2"
-            android:layout_width="@dimen/buttons"
-            android:layout_height="@dimen/buttons"
-            android:background="@color/epiuseblue"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:background="@drawable/textview_border"
             android:text="@string/qrreceive"
             android:textSize="@dimen/fontsize"
             android:textStyle="bold"
             android:onClick="openQRRecieve"
-            android:layout_marginRight="@dimen/spacing"
-            android:layout_marginBottom="@dimen/spacing"
             android:drawableRight="@mipmap/qr"
             android:textColor="@color/white"/>
     </LinearLayout>
+
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center"
+        android:layout_height="0dp"
+        android:layout_weight="1"
         android:padding="@dimen/padding"
+        android:gravity="center"
         android:orientation="horizontal">
         <Button
             android:id="@+id/button3"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@color/epiuseblue"
+            android:layout_height="match_parent"
+            android:background="@drawable/textview_border"
             android:textColor="@color/white"
-            android:text="Import Card"
+            android:text="Import physical Card"
             android:textSize="@dimen/fontsize"
             android:textStyle="bold"
             android:onClick="openRecieveImport"
-            android:layout_marginRight="@dimen/spacing"
             />
     </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" >
-
-        <Button
-            android:layout_width="@dimen/signoutbtn"
-            android:layout_height="@dimen/signoutbtn"
-            android:layout_marginTop="50dp"
-            android:layout_marginLeft="15dp"
-            android:background="@mipmap/backarrow"
-            android:onClick="backMainActivity" />
-    </LinearLayout>
+        android:layout_height="0dp"
+        android:layout_weight="1"/>
 </LinearLayout>

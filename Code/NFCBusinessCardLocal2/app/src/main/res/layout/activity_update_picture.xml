@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="@dimen/padding"
+    android:background="@mipmap/backgrounda"
     tools:context="com.example.www.nfcbusinesscardlocal.updatePicture">
     <LinearLayout
         android:layout_width="match_parent"
@@ -20,7 +21,7 @@
                 android:layout_height="match_parent"
                 android:text="Select Image"
                 android:textColor="@color/white"
-                android:background="@color/epiuseblue"
+                android:background="@drawable/textview_border"
                 android:textStyle="bold"
                 android:padding="@dimen/lesspadding"
                 android:textSize="@dimen/padding"
@@ -33,7 +34,7 @@
                 android:text="Upload"
                 android:padding="@dimen/lesspadding"
                 android:textColor="@color/white"
-                android:background="@color/epiuseblue"
+                android:background="@drawable/textview_border"
                 android:textStyle="bold"
                 android:textSize="@dimen/padding"
                 android:drawableRight="@mipmap/internet"/>
@@ -45,15 +46,5 @@
             android:layout_height="380dp"
             android:src="@mipmap/imagesblue"
             android:padding="@dimen/padding"/>
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-            <Button
-                android:id="@+id/btn_UpdateBack"
-                android:layout_width="@dimen/signoutbtn"
-                android:layout_height="@dimen/signoutbtn"
-                android:background="@mipmap/backarrow" />
-        </LinearLayout>
     </LinearLayout>
 </RelativeLayout>

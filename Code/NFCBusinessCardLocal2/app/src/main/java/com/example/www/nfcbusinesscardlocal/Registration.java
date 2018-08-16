@@ -221,7 +221,6 @@ public class Registration extends AppCompatActivity {
         editText=(EditText)findViewById(R.id.input_address);
         newUser.setWorkAddress(editText.getText().toString().trim());
         newUser.setRecievedCards("");
-        newUser.setAppointmentlist("");
         progressDialog.dismiss();
 
         progressDialog.setMessage("Creating profile...");
@@ -250,16 +249,13 @@ public class Registration extends AppCompatActivity {
                         if(task.isSuccessful())
                         {
                             successfulRegistration(newUser);
-                            Intent intent=new Intent(getApplicationContext(),LogIn.class);
                             finish();
-                            startActivity(intent);
                         }
                         else
                         {
                             Toast.makeText(getApplicationContext(), "Log in failed.", Toast.LENGTH_SHORT).show();
-                            Intent intent=new Intent(getApplicationContext(),LogIn.class);
                             finish();
-                            startActivity(intent);
+
                         }
                     }
                 });

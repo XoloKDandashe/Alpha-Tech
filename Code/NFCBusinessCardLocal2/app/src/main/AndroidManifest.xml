@@ -20,11 +20,17 @@
         android:name="android.hardware.nfc"
         android:required="true" />
 
+    <supports-screens
+        android:largeScreens="true"
+        android:normalScreens="true"
+        android:smallScreens="true"
+        android:xlargeScreens="true" />
+
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/epiuseicon"
+        android:icon="@mipmap/launcherlogo"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/epiuseicon"
+        android:roundIcon="@mipmap/launcherlogo"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
@@ -46,16 +52,15 @@
         </activity>
         <activity
             android:name=".LogIn"
-            android:screenOrientation="portrait">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+            android:screenOrientation="portrait" />
         <activity
             android:name=".Registration"
-            android:screenOrientation="portrait" />
+            android:noHistory="true"
+            android:screenOrientation="portrait">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".LogIn" />
+        </activity>
         <activity
             android:name=".SendInterface"
             android:screenOrientation="portrait">
@@ -149,46 +154,64 @@
                 android:value=".ViewCardDetails" />
         </activity>
         <activity
-            android:name=".ViewAppointmentsInterface"
+            android:name=".ImportCardDetails"
             android:screenOrientation="portrait">
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value=".ViewDetails" />
-        </activity>
-        <activity android:name=".ImportCardDetails">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".Registration" />
         </activity>
-        <activity android:name=".ReceiveImportCardActivity">
+        <activity
+            android:name=".ReceiveImportCardActivity"
+            android:screenOrientation="portrait">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".ReceiverInterface" />
         </activity>
         <activity
             android:name=".CardReadInformation"
-            android:noHistory="true">
+            android:noHistory="true"
+            android:screenOrientation="portrait">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".ManageCards" />
         </activity>
         <activity
             android:name=".CardWriteInformation"
-            android:noHistory="true">
+            android:noHistory="true"
+            android:screenOrientation="portrait">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".ManageCards" />
         </activity>
-        <activity android:name=".CardDeleteInformation">
+        <activity
+            android:name=".CardDeleteInformation"
+            android:screenOrientation="portrait">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".ManageCards" />
         </activity>
-        <activity android:name=".updatePicture">
+        <activity
+            android:name=".updatePicture"
+            android:screenOrientation="portrait">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".updateDetails" />
         </activity>
+        <activity
+            android:name=".FirebaseConfig"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".RecieverOCR">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".ReceiverInterface" />
+        </activity>
+        <activity android:name=".PasswordActivity"></activity>
     </application>
 
 </manifest>

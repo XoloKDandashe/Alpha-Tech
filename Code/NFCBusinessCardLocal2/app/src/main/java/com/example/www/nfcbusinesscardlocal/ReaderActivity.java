@@ -90,6 +90,8 @@ public class ReaderActivity extends AppCompatActivity {
         super.onStart();
         mProgressDialog.setMessage("Preparing transfer...");
         mProgressDialog.show();
+        mProgressDialog.setCancelable(false);
+        mProgressDialog.setCanceledOnTouchOutside(false);
         databaseReference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
@@ -147,6 +149,15 @@ public class ReaderActivity extends AppCompatActivity {
             }
             else {
                 details=result.getContents().split("%");
+                if(details.length==0)
+                {
+                    Toast.makeText(ReaderActivity.this, "No information available.", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+                else if(details.length<6){
+                    Toast.makeText(ReaderActivity.this, "Information is not for our application.", Toast.LENGTH_SHORT).show();
+                    return;
+                }
                 List<TestUser> arrayList=null;
                 Gson gson= new Gson();
                 String jsonConverter=person.getRecievedCards();
@@ -168,8 +179,8 @@ public class ReaderActivity extends AppCompatActivity {
                 newCard.setMobileNumber(details[4]);
                 newCard.setWorkTelephone(details[5]);
                 newCard.setWorkAddress(details[6]);
+                if(details.length==8)
                 newCard.setImageUrl(details[7]);
-                //Toast.makeText(this,details[6],Toast.LENGTH_LONG).show();
 
                 arrayList.add(newCard);
                 String jsonEncode= gson.toJson(arrayList);

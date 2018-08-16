@@ -32,7 +32,7 @@ public class ReceiverInterface extends AppCompatActivity {
     }
     public void openRecieveImport(View view)
     {
-        Intent intent = new Intent(this,ReceiveImportCardActivity.class);
+        Intent intent = new Intent(this,RecieverOCR.class);
         startActivity(intent);
     }
     public void backMainActivity(View view){

@@ -7,6 +7,7 @@
     android:fitsSystemWindows="true"
     android:orientation="vertical"
     android:padding="@dimen/padding"
+    android:background="@mipmap/backgrounda"
     tools:context="com.example.www.nfcbusinesscardlocal.updateDetails">
 
     <LinearLayout
@@ -29,7 +30,7 @@
                 android:layout_marginTop="25dp"
                 android:layout_width="@dimen/signoutbtn"
                 android:layout_height="@dimen/signoutbtn"
-                android:background="@mipmap/imagesblue"
+                android:background="@drawable/ic_change_image"
                 />
         </LinearLayout>
 
@@ -38,26 +39,31 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="textPersonName"
-            android:textColor="@color/black"
+            android:textColor="@color/white"
+            android:textColorHint="@color/white"
             android:hint="Full Name" />
         <!-- Name Label -->
         <EditText android:id="@+id/update_input_jobtitle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="text"
-            android:textColor="@color/black"
+            android:textColor="@color/white"
+            android:textColorHint="@color/white"
             android:hint="Job Title" />
         <!-- Name Label -->
         <EditText android:id="@+id/update_input_companyname"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="textPersonName"
-            android:textColor="@color/black"
+            android:textColor="@color/white"
+            android:textColorHint="@color/white"
             android:hint="Company Name" />
         <!-- Address Label -->
         <EditText android:id="@+id/update_input_address"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:textColorHint="@color/white"
             android:inputType="textPostalAddress"
             android:hint="Work Address" />
         <Button
@@ -67,58 +73,41 @@
             android:padding="10dp"
             android:textStyle="bold"
             android:textSize="@dimen/padding"
-            android:background="@color/epiuseblue"
+            android:background="@drawable/textview_border"
             android:textColor="@color/white"
             android:drawableRight="@mipmap/location"
             android:text="Find me"
             />
-        <!--  Email Label -->
-        <!--<EditText android:id="@+id/update_input_email"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:inputType="textEmailAddress"
-            android:hint="Email" />-->
         <!--work number-->
         <EditText android:id="@+id/update_input_telephone"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="phone"
+            android:textColor="@color/white"
+            android:textColorHint="@color/white"
             android:hint="Work Telephone" />
         <!-- mobile number -->
         <EditText android:id="@+id/update_input_mobile"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="phone"
+            android:textColor="@color/white"
+            android:textColorHint="@color/white"
             android:hint="Mobile Number" />
 
-        <!-- Password Label -->
-        <!--<EditText android:id="@+id/update_input_password"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:inputType="textPassword"
-            android:hint="Password"/>-->
 
-        <!-- Password Confirm Label -->
-        <!--<EditText android:id="@+id/update_input_confirmPassword"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:inputType="textPassword"
-            android:hint="Confirm Password"/>-->
     </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-        <Button
-            android:layout_width="@dimen/signoutbtn"
-            android:onClick="backToViewDetails"
-            android:layout_height="@dimen/signoutbtn"
-            android:background="@mipmap/backarrow" />
+        android:layout_height="wrap_content"
+        android:gravity="center">
+
         <Button
         android:id="@+id/btn_signup"
         android:layout_width="wrap_content"
         android:layout_height="50dp"
         android:padding="12dp"
-        android:background="@color/epiuseblue"
+        android:background="@drawable/textview_border"
             android:layout_marginLeft="30dp"
         android:textColor="@color/white"
         android:textSize="@dimen/fontsize"

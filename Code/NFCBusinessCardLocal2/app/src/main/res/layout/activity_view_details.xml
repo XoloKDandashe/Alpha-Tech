@@ -6,25 +6,16 @@
     tools:context="com.example.www.nfcbusinesscardlocal.ViewDetails"
     android:orientation="vertical"
     android:layout_width="match_parent"
+    android:weightSum="7"
     android:layout_height="match_parent"
-    android:background="@color/white"
+    android:background="@mipmap/backgrounda"
     android:padding="@dimen/padding"
-    android:layout_gravity="bottom"
     >
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="top">
-        <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/Logo"
-            android:src="@mipmap/clientlogo"
-            android:layout_marginBottom="@dimen/spacing"/>
-   </LinearLayout>
     <!--profile picture and fullname with jobtitle start-->
     <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="2">
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -32,19 +23,18 @@
             <ImageView
                 android:id="@+id/profilePicture"
                 android:layout_width="@dimen/profilepic"
-                android:layout_height="@dimen/profilepic"
-                android:src="@mipmap/avatar"/>
+                android:layout_height="@dimen/profilepic"/>
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
                 <ScrollView
-                    android:layout_width="170dp"
+                    android:layout_width="220dp"
                     android:layout_height="40dp">
                 <TextView
                     android:id="@+id/fullname"
-                    android:textColor="@color/black"
-                    android:layout_width="170dp"
+                    android:textColor="@color/white"
+                    android:layout_width="220dp"
                     android:layout_height="wrap_content"
                     android:textSize="@dimen/heading"
                     android:textStyle="bold"
@@ -52,8 +42,8 @@
                 </ScrollView>
                 <TextView
                     android:id="@+id/jobtitle"
-                    android:textColor="@color/black"
-                    android:layout_width="170dp"
+                    android:textColor="@color/white"
+                    android:layout_width="200dp"
                     android:layout_height="wrap_content"
                     android:textSize="@dimen/fontsize"
                     android:textStyle="bold"
@@ -62,31 +52,26 @@
                     android:layout_width="@dimen/editbox"
                     android:layout_height="@dimen/editbox"
                     android:onClick="openUpdateDetails"
-                    android:background="@mipmap/edit"
+                    android:background="@drawable/ic_update"
                     />
             </LinearLayout>
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:padding="@dimen/lesspadding">
-                <Button
-                    android:id="@+id/appointmentlist"
-                    android:layout_width="@dimen/signoutbtn"
-                    android:layout_height="@dimen/signoutbtn"
-                    android:onClick="viewAppointments"
-                    android:background="@mipmap/appointmenticon"/>
             </LinearLayout>
         </LinearLayout>
     </LinearLayout>
     <!--profile picture and fullname with jobtitle start-->
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
+        android:layout_weight="1"
         android:orientation="horizontal">
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textColor="@color/black"
+            android:textColor="@color/white"
             android:textSize="@dimen/heading"
             android:textStyle="bold"
             android:text="Company: "
@@ -100,22 +85,22 @@
             android:layout_height="match_parent"
             android:textSize="@dimen/heading"
             android:textStyle="bold"
-            android:textColor="@color/black"
+            android:textColor="@color/white"
             android:text="@string/company"
             />
         </ScrollView>
     </LinearLayout>
-
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
+        android:layout_weight="0.5"
         android:orientation="horizontal">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Personal no: "
-            android:textColor="@color/black"
+            android:textColor="@color/white"
             android:textSize="@dimen/heading"
             android:textStyle="bold"
             />
@@ -124,19 +109,20 @@
             android:id="@+id/personalnumber"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textColor="@color/black"
+            android:textColor="@color/white"
             android:text="@string/personal"
             android:textSize="@dimen/heading"
             android:textStyle="bold"/>
     </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
+        android:layout_weight="0.5"
         android:orientation="horizontal">
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textColor="@color/black"
+            android:textColor="@color/white"
             android:textSize="@dimen/heading"
             android:textStyle="bold"
             android:text="Office no: "
@@ -145,7 +131,7 @@
             android:id="@+id/officenumber"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textColor="@color/black"
+            android:textColor="@color/white"
             android:textSize="@dimen/heading"
             android:textStyle="bold"
             android:text="@string/office"
@@ -153,13 +139,14 @@
     </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
+        android:layout_weight="1"
         android:orientation="horizontal">
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="@dimen/heading"
-            android:textColor="@color/black"
+            android:textColor="@color/white"
             android:textStyle="bold"
             android:text="Email: "
             />
@@ -170,7 +157,7 @@
             android:id="@+id/emailAddress"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:textColor="@color/black"
+            android:textColor="@color/white"
             android:textSize="@dimen/heading"
             android:textStyle="bold"
             android:text="@string/email"
@@ -179,41 +166,30 @@
     </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
+        android:layout_weight="2"
         android:orientation="horizontal">
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textColor="@color/black"
+            android:textColor="@color/white"
             android:textSize="@dimen/heading"
             android:textStyle="bold"
             android:text="Office Address: "
             />
         <ScrollView
             android:layout_width="150dp"
-            android:layout_height="100dp">
+            android:layout_height="match_parent">
         <TextView
             android:id="@+id/physAddress"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:textSize="@dimen/fontsize"
             android:textStyle="bold"
-            android:textColor="@color/black"
+            android:textColor="@color/white"
             android:autoLink="map"
             android:text="@string/address"
             />
         </ScrollView>
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-            <Button
-
-                android:layout_width="@dimen/signoutbtn"
-                android:layout_height="@dimen/signoutbtn"
-                android:onClick="backViewDetails"
-                android:background="@mipmap/backarrow" />
     </LinearLayout>
 </LinearLayout>

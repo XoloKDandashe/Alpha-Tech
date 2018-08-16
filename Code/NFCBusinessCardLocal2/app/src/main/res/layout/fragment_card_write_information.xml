@@ -2,6 +2,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/lightblue"
     tools:context="com.example.www.nfcbusinesscardlocal.CardWriteInformationFragment">
     <LinearLayout
         xmlns:android="http://schemas.android.com/apk/res/android"
@@ -17,7 +18,7 @@
             android:layout_gravity="center"
             android:textSize="@dimen/heading"
             android:textStyle="bold"
-            android:textColor="@color/black"
+            android:textColor="@color/white"
             android:text="@string/message_write_tag"/>
 
         <ImageView
@@ -27,7 +28,7 @@
             android:layout_gravity="center"
             android:layout_marginTop="@dimen/activity_horizontal_margin"
             android:src="@drawable/ic_nfc"
-            android:tint="@color/red"/>
+            android:tint="@color/lightblue"/>
 
         <ProgressBar
             android:id="@+id/progress"
@@ -44,6 +45,7 @@
             android:textSize="@dimen/fontsize"
             android:layout_gravity="center"
             android:layout_marginTop="@dimen/activity_horizontal_margin"
+            android:textColor="@color/white"
             android:text="@string/message_tap_tag"/>
 
     </LinearLayout>

@@ -5,59 +5,52 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="@dimen/padding"
+    android:weightSum="9"
     android:orientation="vertical"
+    android:background="@mipmap/backgrounda"
     tools:context="com.example.www.nfcbusinesscardlocal.ViewCardsInterface">
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-        <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/Logo"
-            android:src="@mipmap/clientlogo"
-            android:layout_marginBottom="@dimen/spacing"/>
-    </LinearLayout>
+
     <SearchView
         android:id="@+id/filterlist"
         android:layout_width="match_parent"
         android:queryHint="Search here..."
         android:iconifiedByDefault="false"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        style="@style/AppTheme"
+        android:background="@drawable/textview_border"
         />
     <ListView
         android:id="@+id/scrollusers"
         android:layout_width="match_parent"
-        android:layout_height="310dp">
+        android:layout_height="0dp"
+        android:layout_weight="7">
 
     </ListView>
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-        <Button
-            android:layout_width="@dimen/signoutbtn"
-            android:layout_height="@dimen/signoutbtn"
-            android:layout_marginLeft="15dp"
-            android:background="@mipmap/backarrow"
-            android:onClick="backMainActivity" />
+        android:layout_height="0dp"
+        android:layout_weight="1">
         <LinearLayout
-            android:layout_marginLeft="120dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="right">
 
             <Button
                 android:layout_width="@dimen/signoutbtn"
                 android:layout_height="@dimen/signoutbtn"
-                android:background="@mipmap/a"
+                android:background="@drawable/ic_alphabet_sort"
                 android:onClick="sortAlphabetically" />
             <Button
                 android:layout_width="@dimen/signoutbtn"
                 android:layout_height="@dimen/signoutbtn"
-                android:background="@mipmap/calender"
+                android:background="@drawable/ic_date_sort"
                 android:onClick="sortLatest"
                 />
             <Button
                 android:layout_width="@dimen/signoutbtn"
                 android:layout_height="@dimen/signoutbtn"
-                android:background="@mipmap/skill"
+                android:background="@drawable/ic_work_sort"
                 android:onClick="sortSkills"
                 />
 

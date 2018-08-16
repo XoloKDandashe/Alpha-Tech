@@ -4,8 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="@dimen/padding"
+    android:padding="@dimen/lesspadding"
     android:orientation="vertical"
+    android:background="@mipmap/backgrounda"
     tools:context="com.example.www.nfcbusinesscardlocal.Appointments">
     <LinearLayout
         android:layout_width="match_parent"
@@ -15,7 +16,7 @@
         <TextView
         android:layout_width="wrap_content"
         android:textSize="@dimen/heading"
-        android:textColor="@color/black"
+        android:textColor="@color/white"
         android:textStyle="bold"
         android:text="Title:"
         android:layout_marginRight="@dimen/spacing"
@@ -25,7 +26,8 @@
             android:layout_width="match_parent"
             android:padding="@dimen/lesspadding"
             android:hint="Interview|Meeting|Skype Call"
-            android:textColor="@color/black"
+            android:textColor="@color/white"
+            android:textColorHint="@color/white"
             android:textSize="@dimen/fontsize"
             android:layout_height="wrap_content" />
     </LinearLayout>
@@ -38,7 +40,7 @@
             android:layout_width="wrap_content"
             android:textSize="@dimen/heading"
             android:layout_marginRight="@dimen/spacing"
-            android:textColor="@color/black"
+            android:textColor="@color/white"
             android:textStyle="bold"
             android:text="Date:"
             android:layout_height="wrap_content" />
@@ -47,7 +49,7 @@
             android:layout_width="match_parent"
             android:textSize="@dimen/fontsize"
             android:textColor="@color/white"
-            android:background="@color/epiuseblue"
+            android:background="@drawable/textview_border"
             android:textStyle="bold"
             android:text="Click to Set Date"
             android:drawableRight="@mipmap/date"
@@ -61,7 +63,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:textSize="@dimen/heading"
-            android:textColor="@color/black"
+            android:textColor="@color/white"
             android:textStyle="bold"
             android:layout_marginRight="@dimen/spacing"
             android:text="Time:"
@@ -74,18 +76,42 @@
             android:drawableRight="@mipmap/timer"
             android:textSize="@dimen/fontsize"
             android:textColor="@color/white"
-            android:background="@color/epiuseblue"
+            android:background="@drawable/textview_border"
             android:textStyle="bold"/>
     </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="@dimen/lesspadding"
+        android:paddingLeft="@dimen/lesspadding"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/fontsize"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            android:layout_marginRight="@dimen/spacing"
+            android:text="Duration(in hours):"
+             />
+        <EditText
+            android:id="@+id/etlengthOfTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:hint="eg.2"
+            android:textColorHint="@color/white"
+            android:ems="10"
+            android:inputType="number" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="@dimen/lesspadding"
         android:orientation="vertical">
         <TextView
             android:layout_width="wrap_content"
             android:textSize="@dimen/fontsize"
-            android:textColor="@color/black"
+            android:textColor="@color/white"
             android:textStyle="bold"
             android:text="Notes:"
             android:layout_marginRight="@dimen/spacing"
@@ -95,7 +121,8 @@
             android:layout_width="match_parent"
             android:padding="@dimen/lesspadding"
             android:hint="Additional Notes(optional)"
-            android:textColor="@color/black"
+            android:textColor="@color/white"
+            android:textColorHint="@color/white"
             android:textSize="15sp"
             android:layout_height="wrap_content" />
     </LinearLayout>
@@ -111,7 +138,7 @@
         <Button
             android:id="@+id/saveappointment"
             android:layout_width="250dp"
-            android:background="@color/epiuseblue"
+            android:background="@drawable/textview_border"
             android:textColor="@color/white"
             android:textSize="@dimen/fontsize"
             android:text="Save Appointment"
