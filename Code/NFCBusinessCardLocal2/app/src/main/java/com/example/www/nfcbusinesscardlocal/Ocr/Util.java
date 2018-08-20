@@ -1,4 +1,4 @@
-package com.guna.ocrlibrary;
+package com.example.www.nfcbusinesscardlocal.Ocr;
 
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;

@@ -6,7 +6,7 @@
         android:label="@string/app_name"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".OcrCaptureActivity"
+            android:name="com.example.www.nfcbusinesscardlocal.Ocr.OcrCaptureActivity"
             android:label="@string/title_activity_ocr"
             android:theme="@style/AppTheme.NoActionBar" />
     </application>

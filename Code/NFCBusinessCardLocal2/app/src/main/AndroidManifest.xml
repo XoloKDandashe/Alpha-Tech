@@ -211,7 +211,12 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".ReceiverInterface" />
         </activity>
-        <activity android:name=".PasswordActivity"></activity>
+        <activity android:name=".PasswordActivity" />
+        <activity android:name=".Splash"></activity>
+        <activity
+            android:name=".Ocr.OcrCaptureActivity"
+            android:label="@string/title_activity_ocr"
+            />
     </application>
 
 </manifest>

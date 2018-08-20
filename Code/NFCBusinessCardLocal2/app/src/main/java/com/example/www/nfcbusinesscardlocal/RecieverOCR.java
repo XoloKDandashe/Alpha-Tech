@@ -9,25 +9,20 @@ import android.Manifest;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.net.Uri;
-import android.os.Bundle;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
-import android.support.v7.app.AppCompatActivity;
-import android.util.DisplayMetrics;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.common.api.CommonStatusCodes;
-import com.guna.ocrlibrary.OCRCapture;
-import com.guna.ocrlibrary.OcrCaptureActivity;
+import com.example.www.nfcbusinesscardlocal.Ocr.OCRCapture;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import static com.guna.ocrlibrary.OcrCaptureActivity.TextBlockObject;
+import static com.example.www.nfcbusinesscardlocal.Ocr.OcrCaptureActivity.TextBlockObject;
 
 public class RecieverOCR extends AppCompatActivity {
 

@@ -1,11 +1,9 @@
-package com.guna.ocrlibrary;
+package com.example.www.nfcbusinesscardlocal.Ocr;
 
 import android.app.Activity;
-import android.content.Context;
 import android.content.Intent;
 import android.database.Cursor;
 import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.provider.MediaStore;
 import android.util.Log;
