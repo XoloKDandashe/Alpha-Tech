@@ -212,7 +212,13 @@
                 android:value=".ReceiverInterface" />
         </activity>
         <activity android:name=".PasswordActivity" />
-        <activity android:name=".Splash"></activity>
+        <activity android:name=".Splash"
+            android:theme="@style/splash">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+            </activity>
         <activity
             android:name=".Ocr.OcrCaptureActivity"
             android:label="@string/title_activity_ocr"
