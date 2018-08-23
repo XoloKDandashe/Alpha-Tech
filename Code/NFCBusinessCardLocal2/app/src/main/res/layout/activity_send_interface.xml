@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="@dimen/padding"
-    android:weightSum="5"
+    android:weightSum="6"
     android:background="@mipmap/backgrounda"
     android:orientation="vertical"
     tools:context="com.example.www.nfcbusinesscardlocal.SendInterface">
@@ -53,7 +53,10 @@
             android:drawableRight="@mipmap/qr"
             android:textColor="@color/white"/>
     </LinearLayout>
-
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"/>
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
@@ -82,29 +85,35 @@
                 android:layout_weight="2"
                 android:orientation="vertical"
                 android:weightSum="3">
-
-                <TextView
-                    android:id="@+id/send_fullname"
-                    android:layout_width="match_parent"
-                    android:layout_height="0dp"
-                    android:layout_weight="2"
-                    android:padding="@dimen/lesspadding"
-                    android:text="Kagiso Katametsi"
-                    android:textColor="@color/white"
-                    android:textSize="@dimen/fontsize"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:id="@+id/send_jobtitle"
-                    android:layout_width="match_parent"
-                    android:layout_height="0dp"
-                    android:layout_weight="1"
-                    android:drawableRight="@drawable/ic_work_sort"
-                    android:gravity="right"
-                    android:text="Software Developer"
-                    android:textColor="@color/white"
-                    android:textSize="@dimen/fontsize"
-                    android:textStyle="bold" />
+                    <ScrollView
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="2">
+                        <TextView
+                            android:id="@+id/send_fullname"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:padding="@dimen/lesspadding"
+                            android:text="Kagiso Katametsi"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/fontsize"
+                            android:textStyle="bold" />
+                    </ScrollView>
+                    <ScrollView
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1">
+                        <TextView
+                            android:id="@+id/send_jobtitle"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:drawableRight="@drawable/ic_work_sort"
+                            android:gravity="center"
+                            android:text="Software Developer"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/fontsize"
+                            android:textStyle="bold" />
+                    </ScrollView>
             </LinearLayout>
         </LinearLayout>
     </LinearLayout>
