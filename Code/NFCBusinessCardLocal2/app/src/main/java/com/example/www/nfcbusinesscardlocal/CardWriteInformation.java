@@ -46,6 +46,7 @@ public class CardWriteInformation extends AppCompatActivity implements Listener 
     public static final String TAG = CardWriteInformation.class.getSimpleName();
     private Button mBtWrite;
     private Button mBtLoad;
+    private Button mBtBack;
     private CardWriteInformationFragment cardWriteInformationFragment;
     private boolean isDialogDisplayed = false;
     private boolean isWrite = false;
@@ -65,6 +66,7 @@ public class CardWriteInformation extends AppCompatActivity implements Listener 
 
         mBtWrite = (Button) findViewById(R.id.btn_write);
         mBtLoad = (Button) findViewById(R.id.card_write_load_info);
+        mBtBack = (Button) findViewById(R.id.card_write_buttonback);
         mBtWrite.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -77,7 +79,12 @@ public class CardWriteInformation extends AppCompatActivity implements Listener 
                 mydetails();
             }
         });
-
+        mBtBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                previouspage();
+            }
+        });
         nfcAdapter = NfcAdapter.getDefaultAdapter(this);
     }
     @Override
