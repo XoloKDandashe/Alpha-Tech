@@ -11,24 +11,33 @@
     android:padding="@dimen/maxpadding"
     android:background="@mipmap/backgrounda"
     >
-        <Button
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="2"
-            android:background="@drawable/textview_border"
-            android:textColor="@color/white"
-            android:text="@string/sendcard"
-            android:textSize="@dimen/heading"
-            android:onClick="openSendCard"
-            android:drawableRight="@mipmap/send"
-            android:padding="@dimen/padding"
-            android:textStyle="bold"
-            android:layout_marginBottom="@dimen/spacing"
-            />
+            android:padding="@dimen/lesspadding">
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/textview_border"
+                android:textColor="@color/white"
+                android:text="@string/sendcard"
+                android:textSize="@dimen/heading"
+                android:onClick="openSendCard"
+                android:drawableRight="@drawable/ic_upload"
+                android:padding="@dimen/padding"
+                android:textStyle="bold"
+                android:layout_marginBottom="@dimen/spacing"
+                />
+        </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="2"
+        android:padding="@dimen/lesspadding">
         <Button
             android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="2"
+            android:layout_height="match_parent"
             android:background="@drawable/textview_border"
             android:textColor="@color/white"
             android:padding="@dimen/padding"
@@ -37,12 +46,17 @@
             android:textStyle="bold"
             android:onClick="openReceiveCard"
             android:layout_marginBottom="@dimen/spacing"
-            android:drawableRight="@mipmap/recieve"/>
+            android:drawableRight="@drawable/ic_download"/>
+    </LinearLayout>
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="2"
+        android:padding="@dimen/lesspadding">
         <Button
             android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="2"
+            android:layout_height="match_parent"
             android:onClick="openViewDetails"
             android:background="@drawable/textview_border"
             android:textColor="@color/white"
@@ -52,19 +66,26 @@
             android:textStyle="bold"
             android:layout_marginBottom="@dimen/spacing"
             android:drawableRight="@drawable/ic_person"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="2"
+        android:padding="@dimen/lesspadding">
         <Button
             android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="2"
+            android:layout_height="match_parent"
             android:background="@drawable/textview_border"
             android:textColor="@color/white"
             android:text="@string/managecards"
             android:textSize="@dimen/heading"
             android:textStyle="bold"
             android:padding="@dimen/padding"
-            android:drawableRight="@mipmap/managecard"
+            android:drawableRight="@drawable/ic_card"
             android:layout_marginBottom="@dimen/spacing"
             android:onClick="openManageCards"/>
+    </LinearLayout>
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"

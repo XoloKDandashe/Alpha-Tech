@@ -43,7 +43,6 @@ public class Appointments extends AppCompatActivity {
     Button setAppointment;
     Button datebutton;
     Button timebutton;
-    Button backbutton;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -58,13 +57,7 @@ public class Appointments extends AppCompatActivity {
         lengthOfMeeting=(EditText) findViewById(R.id.etlengthOfTime);
         datebutton=(Button) findViewById(R.id.meetingdate);
         timebutton=(Button) findViewById(R.id.meetingtime);
-        backbutton=(Button) findViewById(R.id.meetingback);
-        backbutton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                goback();
-            }
-        });
+
         datebutton.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view){
@@ -124,7 +117,12 @@ public class Appointments extends AppCompatActivity {
     public void saveAppointment(){
         if(title.getText().toString().compareTo("")==0)
         {
-            Toast.makeText(getApplicationContext(), "Enter type of Meeting", Toast.LENGTH_LONG).show();
+            Toast.makeText(getApplicationContext(), "Enter Type of Meeting", Toast.LENGTH_LONG).show();
+            return;
+        }
+        if(lengthOfMeeting.getText().toString().compareTo("")==0 ||Integer.parseInt(lengthOfMeeting.getText().toString())<1)
+        {
+            Toast.makeText(getApplicationContext(), "Enter Duration of Meeting", Toast.LENGTH_LONG).show();
             return;
         }
         if(datebutton.getText().toString().compareTo("Click to Set Date")==0)
