@@ -33,7 +33,7 @@ public class NFCActivity extends Activity implements NfcAdapter.CreateNdefMessag
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_nfc_new);
+        setContentView(R.layout.activity_nfc);
         mTextView = (TextView) findViewById(R.id.text_field);
 
         NfcAdapter mAdapter = NfcAdapter.getDefaultAdapter(this);
