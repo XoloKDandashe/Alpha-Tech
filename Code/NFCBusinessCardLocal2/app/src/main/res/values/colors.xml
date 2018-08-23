@@ -6,14 +6,11 @@
 
     <!-- EPI-USE -->
     <color name="white">#ffffff</color>
-    <color name="whitefaded">#80ffffff</color>
     <color name="epiuseblue">#050a2d</color>
     <color name="red">#c90000</color>
     <color name="black">#000000</color>
     <color name="powderblue">#80D8FF</color>
-    <color name="light_banner">#03A9F4</color>
     <color name="lightblue">#8003A9F4</color>
-    <color name="navy">#000080</color>
     <color name="peach">#FF5722</color>
 
 </resources>
