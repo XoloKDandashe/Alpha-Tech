@@ -16,7 +16,7 @@
         android:queryHint="Search here..."
         android:iconifiedByDefault="false"
         android:layout_height="0dp"
-        android:layout_weight="1"
+        android:layout_weight="1.5"
         style="@style/AppTheme"
         android:background="@drawable/textview_border"
         />
@@ -24,7 +24,7 @@
         android:id="@+id/scrollusers"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="7">
+        android:layout_weight="6.5">
 
     </ListView>
     <LinearLayout
@@ -53,9 +53,7 @@
                 android:background="@drawable/ic_work_sort"
                 android:onClick="sortSkills"
                 />
-
         </LinearLayout>
-
     </LinearLayout>
 
 </LinearLayout>
