@@ -19,12 +19,13 @@
     <uses-feature
         android:name="android.hardware.nfc"
         android:required="true" />
+
     <supports-screens
-        android:smallScreens="true"
-        android:normalScreens="true"
         android:largeScreens="true"
-        android:xlargeScreens="true"
-        />
+        android:normalScreens="true"
+        android:smallScreens="true"
+        android:xlargeScreens="true" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/launcherlogo"
@@ -54,8 +55,8 @@
             android:screenOrientation="portrait" />
         <activity
             android:name=".Registration"
-            android:screenOrientation="portrait"
-            android:noHistory="true">
+            android:noHistory="true"
+            android:screenOrientation="portrait">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".LogIn" />
@@ -209,6 +210,23 @@
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".ReceiverInterface" />
+        </activity>
+        <activity android:name=".PasswordActivity" />
+        <activity
+            android:name=".Splash"
+            android:theme="@style/splash">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".Ocr.OcrCaptureActivity"
+            android:label="@string/title_activity_ocr" />
+        <activity android:name=".Splash2"
+            android:theme="@style/splash">
+
         </activity>
     </application>
 
