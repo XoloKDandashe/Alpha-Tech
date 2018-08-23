@@ -57,7 +57,6 @@ public class Appointments extends AppCompatActivity {
         lengthOfMeeting=(EditText) findViewById(R.id.etlengthOfTime);
         datebutton=(Button) findViewById(R.id.meetingdate);
         timebutton=(Button) findViewById(R.id.meetingtime);
-        });
 
         datebutton.setOnClickListener(new View.OnClickListener(){
             @Override
