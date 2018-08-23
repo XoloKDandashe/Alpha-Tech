@@ -11,8 +11,16 @@
         android:id="@+id/imageV"
         android:layout_width="200sp"
         android:layout_height="200sp"
-        android:layout_centerInParent="true"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="170dp"
         android:src="@drawable/app_logo" />
+
+
+
+
+
+
 
     <TextView
         android:layout_width="wrap_content"

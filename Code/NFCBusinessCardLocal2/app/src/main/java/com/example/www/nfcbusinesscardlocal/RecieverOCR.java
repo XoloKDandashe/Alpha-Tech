@@ -156,11 +156,11 @@ public class RecieverOCR extends AppCompatActivity {
     }
     public void processImage(String Ocr){
       extractTelephone(Ocr);
-
-
+        extractPhone(Ocr);
+        extractAddress(Ocr);
        extractName(Ocr);
        extractEmail(Ocr);
-        extractPhone(Ocr);
+
     }
     public void extractTelephone(String str){
         String temp =str;
@@ -214,6 +214,28 @@ public class RecieverOCR extends AppCompatActivity {
             String int2 = m.group(9);
             displayTelephone.setText(signed_int1 + ws1 + rbraces1 + c1 + d1 + ws2 + int1 + ws3 + int2);
         }
+        String re12="(\\d)";	// Any Single Digit 1
+        String re22="(1)";	// Any Single Character 1
+        String re32="(\\d)";	// Any Single Digit 2
+        String re42="(\\s+)";	// White Space 1
+        String re52="(\\d+)";	// Integer Number 1
+        String re62="(\\s+)";	// White Space 2
+        String re72="(\\d+)";	// Integer Number 2
+
+        Pattern p2 = Pattern.compile(re12+re22+re32+re42+re52+re62+re72,Pattern.CASE_INSENSITIVE |Pattern.MULTILINE | Pattern.DOTALL);
+        Matcher m2 = p2.matcher(str);
+        if (m2.find())
+        {
+            String d1=m2.group(1);
+            String c1=m2.group(2);
+            String d2=m2.group(3);
+            String ws1=m2.group(4);
+            String int1=m2.group(5);
+            String ws2=m2.group(6);
+            String int2=m2.group(7);
+            displayTelephone.setText(d1+c1+d2+ws1+int1+ws2+int2);
+            //System.out.print("("+d1.toString()+")"+"("+c1.toString()+")"+"("+d2.toString()+")"+"("+ws1.toString()+")"+"("+int1.toString()+")"+"("+ws2.toString()+")"+"("+int2.toString()+")"+"\n");
+        }
 
     }
     public void extractUrl(String str){
@@ -256,28 +278,8 @@ public class RecieverOCR extends AppCompatActivity {
             String ws1=m.group(2);
             String word2=m.group(3);
             displayName.setText(word1.toString()+ws1.toString()+word2.toString());
-           // Toast.makeText(this,,Toast.LENGTH_SHORT).show();
-            //System.out.print("("+word1.toString()+")"+"("+ws1.toString()+")"+"("+word2.toString()+")"+"\n");
         }
 
-
-
-
-        /*    System.out.println("Getting the Name");
-        final String NAME_REGEX = "^([A-Z]([a-z]*|\\.) *){1,2}([A-Z][a-z]+-?)+$";
-
-      //  Pattern p = Pattern.compile(NAME_REGEX, Pattern.MULTILINE);
-        Pattern p = Pattern.compile(NAME_REGEX);
-       // displayName.setText("hello");
-
-        Matcher m =  p.matcher(str);
-
-        if(m.find()){
-          //  Toast.makeText(RecieverOCR.this,m.group().toString(),Toast.LENGTH_SHORT).show();
-            Toast.makeText(RecieverOCR.this,m.group().toString(),Toast.LENGTH_SHORT).show();
-            //System.out.println(m.group());
-            displayName.setText(m.group().toString());
-        }*/
     }
 
     public void extractEmail(String str) {
@@ -342,16 +344,32 @@ public class RecieverOCR extends AppCompatActivity {
             String ws2 = m1.group(6);
             String int1 = m1.group(7);
             String ws3 = m1.group(8);
-            String int2 = m.group(9);
+            String int2 = m1.group(9);
             displayPhone.setText(signed_int1 + ws1 + rbraces1 + c1 + d1 + ws2 + int1 + ws3 + int2);
+        }
+        String re12="(\\d+)";	// Integer Number 1
+        String re22="(\\d)";	// Any Single Digit 1
+        String re32="(\\s+)";	// White Space 1
+        String re42="(\\d+)";	// Integer Number 2
+        String re52="(\\s+)";	// White Space 2
+        String re62="(\\d+)";	// Integer Number 3
+
+        Pattern p2 = Pattern.compile(re12+re22+re32+re42+re52+re62,Pattern.CASE_INSENSITIVE |Pattern.MULTILINE | Pattern.DOTALL);
+        Matcher m2 = p2.matcher(str);
+        if (m2.find())
+        {
+            String int1=m2.group(1);
+            String d1=m2.group(2);
+            String ws1=m2.group(3);
+            String int2=m2.group(4);
+            String ws2=m2.group(5);
+            String int3=m2.group(6);
+            displayPhone.setText(int1+d1+ws1+int2+ws2+int3);
+            //System.out.print("("+int1.toString()+")"+"("+d1.toString()+")"+"("+ws1.toString()+")"+"("+int2.toString()+")"+"("+ws2.toString()+")"+"("+int3.toString()+")"+"\n");
         }
 
     }
-    public void extractTelephone2(String str){
 
-            //System.out.print("("+signed_int1.toString()+")"+"("+ws1.toString()+")"+"("+rbraces1.toString()+")"+"("+c1.toString()+")"+"("+d1.toString()+")"+"("+ws2.toString()+")"+"("+int1.toString()+")"+"("+ws3.toString()+")"+"("+int2.toString()+")"+"\n");
-
-    }
     public void extractAddress(String str){
         System.out.println("Getting the Address");
         final String ADDRESS_REGEX="\\s+(\\d{2,5}\\s+)(?![a|p]m\\b)(([a-zA-Z|\\s+]{1,5}){1,2})?([\\s|\\,|.]+)?(([a-zA-Z|\\s+]{1,30}){1,4})(court|ct|street|st|drive|Cnr|dr|lane|ln|road|rd|blvd)([\\s|\\,|.|\\;]+)?(([a-zA-Z|\\s+]{1,30}){1,2})([\\s|\\,|.]+)";
