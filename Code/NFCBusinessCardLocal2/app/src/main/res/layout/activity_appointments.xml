@@ -6,44 +6,31 @@
     android:layout_height="match_parent"
     android:padding="@dimen/lesspadding"
     android:orientation="vertical"
+    android:weightSum="6"
     android:background="@mipmap/backgrounda"
     tools:context="com.example.www.nfcbusinesscardlocal.Appointments">
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
+        android:layout_weight="1"
         android:padding="@dimen/lesspadding"
         android:orientation="vertical">
-        <TextView
-        android:layout_width="wrap_content"
-        android:textSize="@dimen/heading"
-        android:textColor="@color/white"
-        android:textStyle="bold"
-        android:text="Title:"
-        android:layout_marginRight="@dimen/spacing"
-        android:layout_height="wrap_content" />
         <EditText
             android:id="@+id/meetingtitle"
             android:layout_width="match_parent"
-            android:padding="@dimen/lesspadding"
-            android:hint="Interview|Meeting|Skype Call"
+            android:layout_height="wrap_content"
+            android:hint="Appointment (Interview|Skype Call)"
             android:textColor="@color/white"
             android:textColorHint="@color/white"
             android:textSize="@dimen/fontsize"
-            android:layout_height="wrap_content" />
+             />
     </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
+        android:layout_weight="1"
         android:padding="@dimen/lesspadding"
         android:orientation="vertical">
-        <TextView
-            android:layout_width="wrap_content"
-            android:textSize="@dimen/heading"
-            android:layout_marginRight="@dimen/spacing"
-            android:textColor="@color/white"
-            android:textStyle="bold"
-            android:text="Date:"
-            android:layout_height="wrap_content" />
         <Button
             android:id="@+id/meetingdate"
             android:layout_width="match_parent"
@@ -52,97 +39,78 @@
             android:background="@drawable/textview_border"
             android:textStyle="bold"
             android:text="Click to Set Date"
-            android:drawableRight="@mipmap/date"
+            android:padding="@dimen/padding"
+            android:drawableRight="@drawable/ic_event"
             android:layout_height="wrap_content" />
     </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
+        android:layout_weight="1"
         android:padding="@dimen/lesspadding"
         android:orientation="vertical">
-        <TextView
-            android:layout_width="wrap_content"
-            android:textSize="@dimen/heading"
-            android:textColor="@color/white"
-            android:textStyle="bold"
-            android:layout_marginRight="@dimen/spacing"
-            android:text="Time:"
-            android:layout_height="wrap_content" />
         <Button
             android:id="@+id/meetingtime"
             android:layout_width="match_parent"
+            android:layout_height="match_parent"
             android:text="Click to Set Time"
-            android:layout_height="wrap_content"
-            android:drawableRight="@mipmap/timer"
+            android:drawableRight="@drawable/ic_clock"
             android:textSize="@dimen/fontsize"
+            android:padding="@dimen/padding"
             android:textColor="@color/white"
             android:background="@drawable/textview_border"
             android:textStyle="bold"/>
     </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:paddingLeft="@dimen/lesspadding"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:padding="@dimen/lesspadding"
         android:orientation="horizontal">
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="@dimen/fontsize"
-            android:textColor="@color/white"
-            android:textStyle="bold"
-            android:layout_marginRight="@dimen/spacing"
-            android:text="Duration(in hours):"
-             />
         <EditText
             android:id="@+id/etlengthOfTime"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textColor="@color/white"
-            android:hint="eg.2"
+            android:hint="Duration of meeting (in hours)"
             android:textColorHint="@color/white"
             android:ems="10"
             android:inputType="number" />
     </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:paddingLeft="@dimen/lesspadding"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:padding="@dimen/lesspadding"
         android:orientation="vertical">
-        <TextView
-            android:layout_width="wrap_content"
-            android:textSize="@dimen/fontsize"
-            android:textColor="@color/white"
-            android:textStyle="bold"
-            android:text="Notes:"
-            android:layout_marginRight="@dimen/spacing"
-            android:layout_height="wrap_content" />
         <EditText
             android:id="@+id/meetingnotes"
             android:layout_width="match_parent"
-            android:padding="@dimen/lesspadding"
+            android:layout_height="match_parent"
             android:hint="Additional Notes(optional)"
             android:textColor="@color/white"
             android:textColorHint="@color/white"
             android:textSize="15sp"
-            android:layout_height="wrap_content" />
+             />
     </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:padding="@dimen/lesspadding"
+        android:gravity="center"
         android:orientation="horizontal">
         <Button
-            android:id="@+id/meetingback"
-            android:layout_width="@dimen/signoutbtn"
-            android:layout_height="@dimen/signoutbtn"
-            android:background="@mipmap/backarrow" />
-        <Button
             android:id="@+id/saveappointment"
-            android:layout_width="250dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
             android:background="@drawable/textview_border"
             android:textColor="@color/white"
             android:textSize="@dimen/fontsize"
+            android:padding="@dimen/padding"
             android:text="Save Appointment"
-            android:drawableRight="@mipmap/appointmenticonwhite"
-            android:layout_height="wrap_content" />
+            android:drawableRight="@drawable/ic_date_sort"
+             />
     </LinearLayout>
 </LinearLayout>
