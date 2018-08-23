@@ -8,7 +8,6 @@ import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.EditText;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -28,27 +27,18 @@ public class LogIn extends AppCompatActivity {
 
     ProgressDialog progressDialog;
     FirebaseAuth firebaseAuth;
-    private TextView forgotPassword;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_log_in);
         progressDialog=new ProgressDialog(this);
         firebaseAuth=FirebaseAuth.getInstance();
-        forgotPassword =(TextView)findViewById(R.id.tvForgotPassword);
         if(firebaseAuth.getCurrentUser()!=null)
         {
             Intent intent= new Intent(getApplicationContext(),MainActivity.class);
             finish();
             startActivity(intent);
         }
-        forgotPassword.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(LogIn.this,PasswordActivity.class));
-            }
-        });
     }
     public void openMainMenu(View view){
         progressDialog.setMessage("Logging in...");

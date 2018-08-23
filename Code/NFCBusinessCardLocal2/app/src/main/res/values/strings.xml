@@ -3,7 +3,7 @@
     <!--Strings for main menu-->
     <string name="sendcard">Send Card</string>
     <string name="receivecard">Receive Card</string>
-    <string name="updateinfo">View Details</string>
+    <string name="updateinfo">My Card</string>
     <string name="managecards">Manage Cards</string>
     <!--Strings for View Details-->
     <string name="defaultname">User Fullname</string>
@@ -75,11 +75,4 @@
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
-
-    <!-- OCR Library -->
-    <string name="ok">OK</string>
-    <string name="permission_camera_rationale">Access to the camera is needed for detection</string>
-    <string name="no_camera_permission">This application cannot run because it does not have the camera permission.  The application will now exit.</string>
-    <string name="low_storage_error">Storage doesn\'t available</string>
-    <string name="title_activity_ocr">Ocr Capture Activity</string>
 </resources>
