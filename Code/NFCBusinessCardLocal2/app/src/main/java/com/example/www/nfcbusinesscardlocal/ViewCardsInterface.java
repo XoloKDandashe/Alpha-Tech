@@ -124,7 +124,7 @@ public class ViewCardsInterface extends AppCompatActivity implements SearchView.
         boolean isConnected=activeNetwork!=null && activeNetwork.isConnectedOrConnecting();
         if(!isConnected)
         {
-            //Toast.makeText(getApplicationContext(), "Internet connection needed for this action.", Toast.LENGTH_SHORT).show();
+            Toast.makeText(getApplicationContext(), "Internet connection needed for this action.", Toast.LENGTH_SHORT).show();
         }
         List<TestUser> arrayList=null;
         //SharedPreferences sharedPreferences=getApplication().getSharedPreferences("receivedlist", Context.MODE_PRIVATE);

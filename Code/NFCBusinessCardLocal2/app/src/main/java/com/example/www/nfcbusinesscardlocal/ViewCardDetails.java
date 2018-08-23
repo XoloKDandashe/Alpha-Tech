@@ -50,10 +50,9 @@ public class ViewCardDetails extends AppCompatActivity {
     private FirebaseAuth firebaseAuth;
     private ProgressDialog mProgressDialog;
     private ImageView imageView;
-    private FirebaseUser firebaseUser;
-    private TestUser person=null;
-    private TestUser viewUser;
-    private Intent intent;
+    FirebaseUser firebaseUser;
+    TestUser person=null;
+    TestUser viewUser;
     static final Integer LOCATION = 0x1;
     private File vcfFile;
     static final Integer WRITE_EXST = 0x3;
@@ -64,10 +63,9 @@ public class ViewCardDetails extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_view_card_details);
-        intent=getIntent();
+        Intent intent=getIntent();
         if(intent.hasExtra("ViewUser")) {
-            viewUser= (TestUser) intent.getSerializableExtra("ViewUser");
-
+            viewUser = (TestUser) intent.getSerializableExtra("ViewUser");
         }
         final Button button =(Button) findViewById(R.id.button);
         button.setOnClickListener(new View.OnClickListener() {
@@ -119,10 +117,7 @@ public class ViewCardDetails extends AppCompatActivity {
     protected void onResume()
     {
         super.onResume();
-        if(intent.hasExtra("ViewUser"))
-            viewUser= (TestUser) intent.getSerializableExtra("ViewUser");
-        if(viewUser!=null)
-            setDetails();
+        setDetails();
     }
     @Override
     protected void onStart() {
