@@ -4,35 +4,38 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:weightSum="7"
     android:background="@mipmap/backgrounda"
     android:padding="@dimen/padding">
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="0dp"
+        android:layout_weight="2"
+        android:padding="@dimen/padding">
         <Button
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textSize="@dimen/fontsize"
+            android:layout_height="match_parent"
+            android:padding="@dimen/padding"
+            android:drawableRight="@drawable/ic_qr_code"
+            android:textSize="@dimen/heading"
+            android:textStyle="bold"
             android:textColor="@color/white"
             android:background="@drawable/textview_border"
             android:text="@string/grbanner"
             android:id="@+id/gen_btn"/>
     </LinearLayout>
-
-
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="300dp"
-        android:layout_marginTop="@dimen/spacing">
-
+        android:layout_height="0dp"
+        android:layout_weight="4">
         <ImageView
             android:id="@+id/image"
             android:layout_width="match_parent"
             android:layout_height="match_parent" />
     </LinearLayout>
-    <Button
-        android:layout_width="@dimen/signoutbtn"
-        android:layout_height="@dimen/signoutbtn"
-        android:onClick="backMainActivity"
-        android:background="@mipmap/backarrow"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        ></LinearLayout>
 </LinearLayout>
