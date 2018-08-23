@@ -13,13 +13,13 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.guna.ocrlibrary.camera.util;
+package com.example.www.nfcbusinesscardlocal.Ocr.camera.util;
 
 import android.util.SparseArray;
 
 import com.google.android.gms.vision.Detector;
 import com.google.android.gms.vision.text.TextBlock;
-import com.guna.ocrlibrary.camera.GraphicOverlay;
+import com.example.www.nfcbusinesscardlocal.Ocr.camera.GraphicOverlay;
 
 /**
  * A very simple Processor which receives detected TextBlocks and adds them to the overlay

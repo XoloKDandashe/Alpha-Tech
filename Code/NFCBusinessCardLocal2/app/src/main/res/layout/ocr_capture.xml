@@ -3,12 +3,12 @@
     android:keepScreenOn="true"
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    tools:context=".OcrCaptureActivity"
+    tools:context="com.example.www.nfcbusinesscardlocal.Ocr.OcrCaptureActivity"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
-    <com.guna.ocrlibrary.camera.CameraSourcePreview
+    <com.example.www.nfcbusinesscardlocal.Ocr.camera.CameraSourcePreview
         android:id="@+id/preview"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -17,12 +17,12 @@
         android:layout_width="0dp"
         android:layout_height="0dp">
 
-        <com.guna.ocrlibrary.camera.GraphicOverlay
+        <com.example.www.nfcbusinesscardlocal.Ocr.camera.GraphicOverlay
             android:id="@+id/graphicOverlay"
             android:layout_width="match_parent"
             android:layout_height="match_parent" />
 
-    </com.guna.ocrlibrary.camera.CameraSourcePreview>
+    </com.example.www.nfcbusinesscardlocal.Ocr.camera.CameraSourcePreview>
 
     <ImageButton
         android:padding="10dp"
