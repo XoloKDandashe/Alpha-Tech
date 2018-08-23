@@ -20,74 +20,53 @@
         android:weightSum="4"
         android:layout_marginTop="@dimen/spacing"
         android:orientation="vertical">
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:padding="@dimen/lesspadding"
-            android:layout_weight="1">
-            <Button
-                android:id="@+id/viewcards"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:textSize="@dimen/heading"
-                android:background="@drawable/textview_border"
-                android:textColor="@color/white"
-                android:layout_marginBottom="@dimen/spacing"
-                android:drawableRight="@mipmap/viewcards"
-                android:onClick="openViewCardsInterface"
-                android:text="@string/recievedcards"/>
-        </LinearLayout>
-        <LinearLayout
+        <Button
+            android:id="@+id/viewcards"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"
-            android:padding="@dimen/lesspadding">
-            <Button
-                android:id="@+id/readinfo"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:textSize="@dimen/heading"
-                android:background="@drawable/textview_border"
-                android:textColor="@color/white"
-                android:drawableRight="@mipmap/files"
-                android:layout_marginBottom="@dimen/spacing"
-                android:onClick="openCardReadInformation"
-                android:text="@string/readcard"/>
-        </LinearLayout>
-        <LinearLayout
+            android:textSize="@dimen/heading"
+            android:background="@drawable/textview_border"
+            android:textColor="@color/white"
+            android:layout_marginBottom="@dimen/spacing"
+            android:drawableRight="@mipmap/viewcards"
+            android:onClick="openViewCardsInterface"
+            android:text="@string/recievedcards"/>
+        <Button
+            android:id="@+id/readinfo"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"
-            android:padding="@dimen/lesspadding">
-            <Button
-                android:id="@+id/delinfo"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:textSize="@dimen/heading"
-                android:background="@drawable/textview_border"
-                android:textColor="@color/white"
-                android:drawableRight="@mipmap/trashcan"
-                android:layout_marginBottom="@dimen/spacing"
-                android:onClick="openCardDeleteInformation"
-                android:text="@string/deletecard"/>
-        </LinearLayout>
-        <LinearLayout
+            android:textSize="@dimen/heading"
+            android:background="@drawable/textview_border"
+            android:textColor="@color/white"
+            android:drawableRight="@mipmap/files"
+            android:layout_marginBottom="@dimen/spacing"
+            android:onClick="openCardReadInformation"
+            android:text="@string/readcard"/>
+        <Button
+            android:id="@+id/delinfo"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"
-            android:padding="@dimen/lesspadding">
-            <Button
-                android:id="@+id/writeinfo"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:textSize="@dimen/heading"
-                android:background="@drawable/textview_border"
-                android:textColor="@color/white"
-                android:drawableRight="@mipmap/edittwo"
-                android:layout_marginBottom="@dimen/spacing"
-                android:onClick="openCardWriteInformation"
-                android:text="@string/updatecard"/>
-        </LinearLayout>
+            android:textSize="@dimen/heading"
+            android:background="@drawable/textview_border"
+            android:textColor="@color/white"
+            android:drawableRight="@mipmap/trashcan"
+            android:layout_marginBottom="@dimen/spacing"
+            android:onClick="openCardDeleteInformation"
+            android:text="@string/deletecard"/>
+        <Button
+            android:id="@+id/writeinfo"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:textSize="@dimen/heading"
+            android:background="@drawable/textview_border"
+            android:textColor="@color/white"
+            android:drawableRight="@mipmap/edittwo"
+            android:onClick="openCardWriteInformation"
+            android:text="@string/updatecard"/>
     </LinearLayout>
     <!--Manage Card End-->
 

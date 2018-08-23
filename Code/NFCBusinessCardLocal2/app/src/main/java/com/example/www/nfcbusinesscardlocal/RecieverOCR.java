@@ -2,47 +2,52 @@ package com.example.www.nfcbusinesscardlocal;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.widget.EditText;
 import android.widget.TextView;
 
 import android.Manifest;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.net.Uri;
-import android.os.Bundle;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
-import android.support.v7.app.AppCompatActivity;
-import android.util.DisplayMetrics;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
-import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.android.gms.common.api.CommonStatusCodes;
-
 import com.example.www.nfcbusinesscardlocal.Ocr.OCRCapture;
-import com.google.gson.Gson;
-import com.google.gson.reflect.TypeToken;
 
-import java.lang.reflect.Type;
-import java.util.ArrayList;
-import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-
-import static com.guna.ocrlibrary.OcrCaptureActivity.TextBlockObject;
+import static com.example.www.nfcbusinesscardlocal.Ocr.OcrCaptureActivity.TextBlockObject;
 
 public class RecieverOCR extends AppCompatActivity {
 
     private TextView textView;
     private final int CAMERA_SCAN_TEXT = 0;
     private final int LOAD_IMAGE_RESULTS = 1;
+    EditText displayJobTitle;
+    EditText displayEmail;
+    EditText displayPhone;
+    EditText displayTelephone;
+    EditText displayName;
+    EditText displayAddress;
+    String OCRresult;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_reciever_orc);
+        displayEmail=findViewById(R.id.importEmail);
+        //displayJobTitle=(EditText)findViewById(R.id.rec_import_jobtitle);
+        displayTelephone = findViewById(R.id.importWorkNumber);
+        displayPhone=findViewById(R.id.importMobileNumber);
+        displayName=findViewById(R.id.import_Name);
+        displayAddress=findViewById(R.id.import_Adress);
+
         textView = findViewById(R.id.reciever_tv);
     }
 
@@ -127,6 +132,20 @@ public class RecieverOCR extends AppCompatActivity {
             if (requestCode == CAMERA_SCAN_TEXT) {
                 if (resultCode == CommonStatusCodes.SUCCESS) {
                     textView.setText(data.getStringExtra(TextBlockObject));
+                    OCRresult=null;
+                 OCRresult = data.getStringExtra(TextBlockObject);
+                    //OCRresult ="hello";
+                  //  displayName.setText("hello");
+                    if(OCRresult != null){
+                        processImage(OCRresult);
+                       // extractPhone(OCRresult);
+                        //Toast.makeText(RecieverOCR.this,OCRresult,Toast.LENGTH_SHORT).show();
+
+                        }
+                    else{
+                        Toast.makeText(RecieverOCR.this,"Failed to scan text! try again",Toast.LENGTH_SHORT).show();
+                    }
+
                 }
             } else if (requestCode == LOAD_IMAGE_RESULTS) {
                 Uri pickedImage = data.getData();
@@ -135,7 +154,6 @@ public class RecieverOCR extends AppCompatActivity {
             }
         }
     }
-
     public void processImage(String Ocr){
       extractTelephone(Ocr);
         extractPhone(Ocr);
@@ -364,8 +382,6 @@ public class RecieverOCR extends AppCompatActivity {
 
 
     }
-
-
 
 
 
