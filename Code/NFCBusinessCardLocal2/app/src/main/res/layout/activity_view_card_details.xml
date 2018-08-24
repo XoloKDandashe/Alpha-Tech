@@ -87,6 +87,7 @@
             android:layout_height="0dp"
             android:layout_weight="1"
             android:paddingStart="@dimen/lesspadding"
+            android:paddingEnd="@dimen/padding"
             android:paddingTop="@dimen/lesspadding">
             <ScrollView
                 android:layout_width="match_parent"
@@ -109,7 +110,8 @@
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"
-            android:paddingLeft="@dimen/lesspadding">
+            android:paddingStart="@dimen/lesspadding"
+            android:paddingEnd="@dimen/padding">
             <TextView
                 android:id="@+id/personalnumber_view_user"
                 android:layout_width="match_parent"
@@ -126,7 +128,8 @@
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"
-            android:paddingLeft="@dimen/lesspadding">
+            android:paddingStart="@dimen/lesspadding"
+            android:paddingEnd="@dimen/padding">
             <TextView
                 android:id="@+id/officenumber_view_user"
                 android:layout_width="match_parent"
@@ -143,14 +146,15 @@
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"
-            android:paddingLeft="@dimen/lesspadding">
+            android:paddingStart="@dimen/lesspadding"
+            android:paddingEnd="@dimen/padding">
             <ScrollView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
                 <TextView
                     android:id="@+id/emailAddress_view_user"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
+                    android:layout_height="wrap_content"
                     android:textSize="@dimen/heading"
                     android:textStyle="bold"
                     android:autoLink="email"
@@ -165,7 +169,8 @@
             android:layout_height="0dp"
             android:layout_weight="1.8"
             android:orientation="horizontal"
-            android:paddingLeft="@dimen/padding">
+            android:paddingStart="@dimen/lesspadding"
+            android:paddingEnd="@dimen/padding">
             <ScrollView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">

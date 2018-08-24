@@ -6,7 +6,7 @@
     android:orientation="vertical"
     android:padding="@dimen/padding"
     android:background="@mipmap/backgrounda"
-    android:weightSum="5"
+    android:weightSum="7"
     android:layout_height="match_parent"
     tools:context="com.example.www.nfcbusinesscardlocal.ReceiverInterface">
 
@@ -19,6 +19,10 @@
         android:textColor="@color/white"
         android:textSize="@dimen/heading"
         android:textStyle="bold"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"/>
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
@@ -55,12 +59,11 @@
             android:drawableRight="@mipmap/qr"
             android:textColor="@color/white"/>
     </LinearLayout>
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1"
-        android:padding="@dimen/padding"
+        android:layout_weight="1.5"
+        android:padding="@dimen/lesspadding"
         android:gravity="center"
         android:orientation="horizontal">
         <Button
@@ -78,5 +81,5 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1"/>
+        android:layout_weight="1.5"/>
 </LinearLayout>

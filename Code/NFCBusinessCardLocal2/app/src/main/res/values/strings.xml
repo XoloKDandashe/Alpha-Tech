@@ -10,7 +10,6 @@
     <string name="defaultjob">Job Title</string>
     <string name="personal">+27 81 234 5678</string>
     <string name="office">+27 14 225 1452</string>
-    <string name="web">www.epiuse.com</string>
     <string name="email">example@epiuse.com</string>
     <string name="address">1056 Lynnwood Rd, Brooklyn, Pretoria, 0031</string>
     <string name="company">EPI-USE South Africa</string>
@@ -19,7 +18,6 @@
     <string name="readcard">Read Information</string>
     <string name="deletecard">Delete Information</string>
     <string name="updatecard">Write Information</string>
-    <string name="banner">Card Operations:</string>
     <!--Strings for Log in-->
     <string name="loginemailbanner">Please enter email:</string>
     <string name="loginemail">user@epiuse.com</string>
@@ -28,7 +26,6 @@
     <string name="enter">Log in</string>
     <string name="register">No account? Register now.</string>
     <!--Strings for Registration-->
-    <string name="already_a_member_login">Already a member? Login</string>
     <string name="create_account">Create Account</string>
     <!--Strings for recieve qr -->
     <string name="qrscanbanner">Activate QR Scanner</string>
@@ -41,7 +38,6 @@
     <string name="sendbanner">Select A Sending Option:</string>
     <string name="nfcsend">NFC</string>
     <string name="qrsend">QR Code</string>
-    <string name="bluetooth">Bluetooth</string>
     <!--Strings for update interface-->
     <string name="update_account">Update Details</string>
     <!--Strings for receiver interface-->
@@ -51,8 +47,6 @@
     <string name="nfcreceive">NFC</string>
     <string name="qrreceive">QR Scanner</string>
     <string name="tapreceive">Touch to Receive Details</string>
-    <string name="title_activity_maps">Map</string>
-    <string name="title_activity_settings">Settings</string>
 
     <!-- Strings related to Fragments-->
     <string name="message_write_error">Error Writing Message !</string>
@@ -66,15 +60,11 @@
     <string name="message_write_tag">Write to NFC Card</string>
     <string name="message_delete_tag">Delete details on NFC Card</string>
     <string name="message_tap_tag">Touch the NFC Card to your device !</string>
-    <string name="hint_message">Information to send</string>
     <!--Strings for datetime-->
-    <string name="date">Date: </string>
-    <string name="time">Time: </string>
     <!--ORC-->
     <string name="photo">Photo</string>
 
     <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
 
     <!-- OCR Library -->
     <string name="ok">OK</string>

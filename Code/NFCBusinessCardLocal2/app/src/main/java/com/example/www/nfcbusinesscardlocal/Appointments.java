@@ -43,7 +43,6 @@ public class Appointments extends AppCompatActivity {
     Button setAppointment;
     Button datebutton;
     Button timebutton;
-    Button backbutton;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -58,13 +57,6 @@ public class Appointments extends AppCompatActivity {
         lengthOfMeeting=(EditText) findViewById(R.id.etlengthOfTime);
         datebutton=(Button) findViewById(R.id.meetingdate);
         timebutton=(Button) findViewById(R.id.meetingtime);
-        backbutton=(Button) findViewById(R.id.meetingback);
-        backbutton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                goback();
-            }
-        });
         datebutton.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view){
