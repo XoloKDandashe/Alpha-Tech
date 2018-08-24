@@ -18,8 +18,6 @@ public class Splash extends AppCompatActivity {
         Animation animation = AnimationUtils.loadAnimation(getApplicationContext(),R.anim.fade);
         Animation animationfadeout = AnimationUtils.loadAnimation(getApplicationContext(),R.anim.fadeout);
         imageView1.startAnimation(animation);
-        //imageView1.startAnimation(animationfadeout);
-      //  imageView1.setVisibility(View.INVISIBLE);
 
         Thread timer = new Thread(){
             @Override

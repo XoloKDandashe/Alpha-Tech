@@ -109,10 +109,6 @@ public class Appointments extends AppCompatActivity {
             }
         });
     }
-    public void goback(){
-        onBackPressed();
-        Toast.makeText(getApplicationContext(), "Appointment not set.", Toast.LENGTH_SHORT).show();
-    }
     public void saveAppointment(){
         if(title.getText().toString().compareTo("")==0)
         {

@@ -127,9 +127,7 @@ public class ViewCardsInterface extends AppCompatActivity implements SearchView.
             Toast.makeText(getApplicationContext(), "Internet connection needed for this action.", Toast.LENGTH_SHORT).show();
         }
         List<TestUser> arrayList=null;
-        //SharedPreferences sharedPreferences=getApplication().getSharedPreferences("receivedlist", Context.MODE_PRIVATE);
         Gson gson= new Gson();
-        //String jsonConverter=sharedPreferences.getString("jsonreceivedlist","");
         if(cardlist.isEmpty()||cardlist.compareTo("")==0||cardlist.compareTo("[]")==0)
         {
             Toast.makeText(ViewCardsInterface.this,"You have no cards received.",Toast.LENGTH_LONG).show();
