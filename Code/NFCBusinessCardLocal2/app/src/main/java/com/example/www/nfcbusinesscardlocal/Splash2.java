@@ -36,7 +36,7 @@ public class Splash2 extends AppCompatActivity {
                 try {
                     sleep(5000);
 
-                    Intent intent= new Intent(getApplicationContext(),LogIn.class);
+                    Intent intent= new Intent(getApplicationContext(),FirebaseConfig.class);
                     startActivity(intent);
                     finish();
                     super.run();
