@@ -1,0 +1,29 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.example.www.nfcbusinesscardlocal.ManageCards"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@mipmap/backgrounda"
+    android:padding="@dimen/padding">
+
+    <TextView
+        android:layout_marginTop="50dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/sendnotify"
+        android:textSize="@dimen/heading"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        android:gravity="center"/>
+    <TextView
+        android:id="@+id/text_field"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Getting details"
+        android:gravity="center"
+        android:textColor="@color/white"
+        android:textSize="@dimen/heading"/>
+</LinearLayout>
