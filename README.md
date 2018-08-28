@@ -1,1 +1,2 @@
-# Project Name: Alpha-Tech
+# Project Team: Alpha-Tech
+# Project Name: Smart Biz Card
