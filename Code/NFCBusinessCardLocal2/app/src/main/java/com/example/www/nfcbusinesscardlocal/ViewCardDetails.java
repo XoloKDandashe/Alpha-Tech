@@ -52,6 +52,7 @@ public class ViewCardDetails extends AppCompatActivity {
     private ImageView imageView;
     FirebaseUser firebaseUser;
     TestUser person=null;
+    Intent intent=null;
     TestUser viewUser;
     static final Integer LOCATION = 0x1;
     private File vcfFile;
@@ -63,7 +64,7 @@ public class ViewCardDetails extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_view_card_details);
-        Intent intent=getIntent();
+        intent=getIntent();
         if(intent.hasExtra("ViewUser")) {
             viewUser = (TestUser) intent.getSerializableExtra("ViewUser");
         }
@@ -117,7 +118,14 @@ public class ViewCardDetails extends AppCompatActivity {
     protected void onResume()
     {
         super.onResume();
-        setDetails();
+        if(intent.hasExtra("ViewUser")) {
+            viewUser = (TestUser) intent.getSerializableExtra("ViewUser");
+            setDetails();
+            SharedPreferences pref=getApplicationContext().getSharedPreferences("Viewed_User",0);
+            SharedPreferences.Editor editor=pref.edit();
+            editor.putString("Email",viewUser.getEmailAddress().trim());
+            editor.commit();
+        }
     }
     @Override
     protected void onStart() {
@@ -131,6 +139,33 @@ public class ViewCardDetails extends AppCompatActivity {
             public void onDataChange(DataSnapshot dataSnapshot) {
 
                 person=dataSnapshot.getValue(TestUser.class);
+                if(!intent.hasExtra("ViewUser"))
+                {
+                    SharedPreferences pref=getApplicationContext().getSharedPreferences("Viewed_User",0);
+                    SharedPreferences.Editor editor=pref.edit();
+                    String key_email=pref.getString("Email",null);
+                    String cardlist=person.getRecievedCards();
+                    List<TestUser> arrayList=null;
+                    Gson gson= new Gson();
+                    if(cardlist.isEmpty()||cardlist.compareTo("")==0||cardlist.compareTo("[]")==0)
+                    {
+                        Toast.makeText(ViewCardDetails.this,"You have no cards received.",Toast.LENGTH_LONG).show();
+                        finish();
+                        return;
+                    }
+                    else
+                    {
+                        Type type= new TypeToken<List<TestUser>>(){}.getType();
+                        arrayList=gson.fromJson(cardlist,type);
+                    }
+                    for(TestUser user: arrayList){
+                        if(user.getEmailAddress().compareTo(key_email)==0)
+                        {
+                            viewUser=user;
+                            setDetails();
+                        }
+                    }
+                }
                 mProgressDialog.dismiss();
             }
             @Override

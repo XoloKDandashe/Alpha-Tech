@@ -4,14 +4,16 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:orientation="vertical"
-    android:background="@mipmap/backgrounda"
-    android:layout_height="match_parent">
+    android:background="@mipmap/background"
+    android:layout_height="match_parent"
+    android:padding="@dimen/padding"
+    android:weightSum="5">
 
     <TextView
-        android:layout_marginTop="50dp"
         android:id="@+id/tv_in_label"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
+        android:layout_weight="1"
         android:text="@string/receiverbanner"
         android:gravity="center"
         android:textStyle="bold"
@@ -21,21 +23,26 @@
     <TextView
         android:id="@+id/tv_in_message"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
+        android:layout_weight="3"
         android:gravity="center"
         android:textSize="@dimen/fontsize"
         android:textColor="@color/white"
         android:text="@string/tapreceive"/>
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="5dp"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:padding="@dimen/padding"
         android:gravity="center">
         <Button
-            android:layout_width="@dimen/buttons"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/textview_border"
             android:textColor="@color/white"
+            android:textSize="@dimen/fontsize"
+            android:drawableEnd="@drawable/ic_phone"
+            android:padding="@dimen/lesspadding"
             android:visibility="invisible"
             android:id="@+id/btn"
             android:text="Save to phone"/>
