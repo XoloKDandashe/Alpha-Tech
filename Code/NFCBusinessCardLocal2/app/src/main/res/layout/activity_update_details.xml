@@ -7,7 +7,7 @@
     android:fitsSystemWindows="true"
     android:orientation="vertical"
     android:padding="@dimen/padding"
-    android:background="@mipmap/backgrounda"
+    android:background="@mipmap/background"
     tools:context="com.example.www.nfcbusinesscardlocal.updateDetails">
 
     <LinearLayout
