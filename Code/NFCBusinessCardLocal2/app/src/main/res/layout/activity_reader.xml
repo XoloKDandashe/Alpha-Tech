@@ -6,7 +6,7 @@
     android:padding="@dimen/padding"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@mipmap/backgrounda"
+    android:background="@mipmap/background"
     android:weightSum="7"
     tools:context="com.example.www.nfcbusinesscardlocal.ReaderActivity">
     <LinearLayout

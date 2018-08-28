@@ -8,8 +8,9 @@ import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 
-public class Splash extends AppCompatActivity {
+import com.google.firebase.auth.FirebaseAuth;
 
+public class Splash extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -18,12 +19,11 @@ public class Splash extends AppCompatActivity {
         Animation animation = AnimationUtils.loadAnimation(getApplicationContext(),R.anim.fade);
         Animation animationfadeout = AnimationUtils.loadAnimation(getApplicationContext(),R.anim.fadeout);
         imageView1.startAnimation(animation);
-
         Thread timer = new Thread(){
             @Override
             public void run() {
                 try {
-                    sleep(4000);
+                    sleep(2000);
 
                     Intent intent= new Intent(getApplicationContext(),Splash2.class);
                     startActivity(intent);

@@ -9,7 +9,7 @@
     android:layout_height="match_parent"
     android:weightSum="9"
     android:padding="@dimen/maxpadding"
-    android:background="@mipmap/backgrounda"
+    android:background="@mipmap/background"
     >
         <Button
             android:layout_width="match_parent"

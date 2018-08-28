@@ -8,7 +8,7 @@
     android:layout_width="match_parent"
     android:weightSum="7"
     android:layout_height="match_parent"
-    android:background="@mipmap/backgrounda"
+    android:background="@mipmap/background"
     android:padding="@dimen/padding"
     >
     <!--profile picture and fullname with jobtitle start-->

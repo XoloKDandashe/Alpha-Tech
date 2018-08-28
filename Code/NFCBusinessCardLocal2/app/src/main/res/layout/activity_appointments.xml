@@ -7,7 +7,7 @@
     android:padding="@dimen/lesspadding"
     android:orientation="vertical"
     android:weightSum="6"
-    android:background="@mipmap/backgrounda"
+    android:background="@mipmap/background"
     tools:context="com.example.www.nfcbusinesscardlocal.Appointments">
     <LinearLayout
         android:layout_width="match_parent"
