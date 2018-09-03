@@ -5,7 +5,9 @@
     android:layout_width="match_parent"
     android:orientation="vertical"
     android:padding="@dimen/padding"
+
     android:background="@mipmap/background"
+
     android:weightSum="7"
     android:layout_height="match_parent"
     tools:context="com.example.www.nfcbusinesscardlocal.ReceiverInterface">
