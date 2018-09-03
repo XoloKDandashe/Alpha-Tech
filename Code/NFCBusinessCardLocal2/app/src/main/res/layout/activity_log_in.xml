@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@mipmap/backgrounda"
+    android:background="@mipmap/background"
     android:padding="@dimen/padding"
     tools:context="com.example.www.nfcbusinesscardlocal.LogIn"
     >
@@ -79,7 +79,8 @@
             android:layout_width="match_parent"
             android:layout_height="@dimen/slabButtons"
             android:background="@drawable/textview_border"
-            android:drawableRight="@mipmap/signin"
+            android:drawableRight="@drawable/ic_sign_out"
+            android:padding="@dimen/lesspadding"
             android:onClick="openMainMenu"
             android:text="@string/enter"
             android:textColor="@color/white"
@@ -110,6 +111,7 @@
             android:text="Register Using Physical Business Card"
             android:textColor="@color/navy"
             android:textSize="@dimen/fontsize"
+            android:visibility="invisible"
             android:textStyle="bold" />
     </LinearLayout>
     <!--Log in end-->

@@ -7,7 +7,7 @@
     android:padding="@dimen/padding"
     android:weightSum="9"
     android:orientation="vertical"
-    android:background="@mipmap/backgrounda"
+    android:background="@mipmap/background"
     tools:context="com.example.www.nfcbusinesscardlocal.ViewCardsInterface">
 
     <SearchView

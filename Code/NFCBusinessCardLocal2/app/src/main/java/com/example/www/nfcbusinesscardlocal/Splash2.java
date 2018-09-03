@@ -8,13 +8,14 @@ import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.google.firebase.auth.FirebaseAuth;
+
 public class Splash2 extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash2);
-
         TextView text1 =findViewById(R.id.textView1);
         ImageView imageView1 =findViewById(R.id.imageV1);
         TextView text2 =findViewById(R.id.textView2);
@@ -34,9 +35,9 @@ public class Splash2 extends AppCompatActivity {
             @Override
             public void run() {
                 try {
-                    sleep(5000);
+                    sleep(2500);
 
-                    Intent intent= new Intent(getApplicationContext(),LogIn.class);
+                    Intent intent= new Intent(getApplicationContext(),FirebaseConfig.class);
                     startActivity(intent);
                     finish();
                     super.run();

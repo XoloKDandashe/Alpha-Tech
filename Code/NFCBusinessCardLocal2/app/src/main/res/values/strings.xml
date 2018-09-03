@@ -3,7 +3,7 @@
     <!--Strings for main menu-->
     <string name="sendcard">Send Card</string>
     <string name="receivecard">Receive Card</string>
-    <string name="updateinfo">View Details</string>
+    <string name="updateinfo">My Card</string>
     <string name="managecards">Manage Cards</string>
     <!--Strings for View Details-->
     <string name="defaultname">User Fullname</string>
