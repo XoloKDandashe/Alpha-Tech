@@ -19,6 +19,16 @@
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="2"
+            android:gravity="center">
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:src="@mipmap/header"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="2"
             android:weightSum="3"
             android:orientation="horizontal">
             <Button
@@ -62,6 +72,12 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
+            android:layout_weight="3"
+            android:background="@drawable/profile_border">
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
             android:layout_weight="2"
             android:weightSum="3">
             <LinearLayout
@@ -75,11 +91,11 @@
                 android:onClick="openViewDetails"
                 android:background="@color/transparent"
                 android:textColor="@color/white"
-                android:text="@string/updateinfo"
+                android:text="@string/edit_nfc"
                 android:textSize="@dimen/textsize"
                 android:padding="@dimen/minpadding"
                 android:textStyle="bold"
-                android:drawableTop="@drawable/ic_person"/>
+                android:drawableTop="@drawable/ic_nfc_card"/>
             <LinearLayout
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
