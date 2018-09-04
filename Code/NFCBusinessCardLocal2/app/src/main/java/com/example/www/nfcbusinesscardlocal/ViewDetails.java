@@ -29,12 +29,14 @@ import com.google.firebase.storage.StorageReference;
 
 import java.util.ArrayList;
 
+import de.hdodenhof.circleimageview.CircleImageView;
+
 public class ViewDetails extends AppCompatActivity {
     private DatabaseReference databaseReference;
     private FirebaseAuth firebaseAuth;
     private ProgressDialog mProgressDialog;
     private FirebaseUser firebaseUser;
-    private ImageView imageView;
+    private CircleImageView imageView;
     private TestUser person=null;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,7 +50,7 @@ public class ViewDetails extends AppCompatActivity {
         }
         firebaseUser=firebaseAuth.getCurrentUser();
         databaseReference= FirebaseDatabase.getInstance().getReference("users").child(firebaseUser.getUid());
-        imageView=(ImageView) findViewById(R.id.profilePicture);
+        imageView=(CircleImageView) findViewById(R.id.profilePicture);
     }
     @Override
     protected void onResume() {
@@ -82,7 +84,16 @@ public class ViewDetails extends AppCompatActivity {
     public void setDetails()
     {
         loadPicture(person);
-        TextView textView=(TextView)findViewById(R.id.fullname);
+        TextView textView=(TextView)findViewById(R.id.view_name);
+        String[] breakdown=person.getFullname().split(" ");
+        String firstname="";
+        for(int i=0;i<breakdown.length-1;i++)
+        {
+            firstname+=breakdown[i]+" ";
+        }
+        textView.setText(firstname.trim());
+        textView=(TextView) findViewById(R.id.view_surname);
+        textView.setText(breakdown[breakdown.length-1]);
         textView.setText(person.getFullname());
         textView=(TextView)findViewById(R.id.jobtitle);
         textView.setText(person.getJobTitle());

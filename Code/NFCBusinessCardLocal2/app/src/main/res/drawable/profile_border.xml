@@ -8,5 +8,5 @@ android:shape="rectangle" >
 <corners
     android:radius="3dp"/>
 <solid
-    android:color="@color/transparent"/>
+    android:color="@color/whitefaded"/>
 </shape>
