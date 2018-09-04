@@ -51,6 +51,7 @@
                     android:layout_height="0dp"
                     android:layout_weight="1"
                     android:textSize="@dimen/textsize"
+                    android:textColor="@color/white"
                     android:textStyle="bold"/>
                 <TextView
                     android:id="@+id/view_surname"
@@ -58,6 +59,7 @@
                     android:layout_height="0dp"
                     android:layout_weight="1"
                     android:textSize="@dimen/textsize"
+                    android:textColor="@color/white"
                     android:textStyle="bold"/>
                 <TextView
                     android:id="@+id/jobtitle"
@@ -65,6 +67,7 @@
                     android:layout_height="0dp"
                     android:layout_weight="1"
                     android:textSize="@dimen/textsize"
+                    android:textColor="@color/white"
                     android:drawableEnd="@drawable/ic_work_sort"
                     android:textStyle="bold"/>
             </LinearLayout>
@@ -80,7 +83,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="1"
-                android:textSize="@dimen/textsize"
+                android:textSize="@dimen/fontsize"
+                android:gravity="center_vertical|center_horizontal"
+                android:autoLink="email"
                 android:textStyle="bold"
                 android:textColor="@color/white"
                 android:drawableEnd="@drawable/ic_email"/>
@@ -89,7 +94,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="1"
-                android:textSize="@dimen/textsize"
+                android:textSize="@dimen/fontsize"
+                android:gravity="center_vertical|center_horizontal"
+                android:autoLink="phone"
                 android:textStyle="bold"
                 android:textColor="@color/white"
                 android:drawableEnd="@drawable/ic_phone"/>
@@ -98,7 +105,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="1"
-                android:textSize="@dimen/textsize"
+                android:textSize="@dimen/fontsize"
+                android:gravity="center_vertical|center_horizontal"
+                android:autoLink="phone"
                 android:textStyle="bold"
                 android:textColor="@color/white"
                 android:drawableEnd="@drawable/ic_telephone"/>
@@ -107,7 +116,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="1"
-                android:textSize="@dimen/textsize"
+                android:textSize="@dimen/fontsize"
+                android:gravity="center_vertical|center_horizontal"
                 android:textStyle="bold"
                 android:textColor="@color/white"
                 android:drawableEnd="@drawable/ic_building"/>
@@ -135,9 +145,14 @@
             android:layout_weight="1"
             android:gravity="end|bottom">
             <Button
-                android:layout_width="@dimen/signoutbtn"
+                android:layout_width="wrap_content"
                 android:layout_height="@dimen/signoutbtn"
-                android:background="@drawable/ic_edit_details"
+                android:background="@color/transparent"
+                android:text="Edit Profile"
+                android:textSize="@dimen/fontsize"
+                android:textStyle="bold"
+                android:textColor="@color/white"
+                android:drawableEnd="@drawable/ic_edit_details"
                 android:onClick="openUpdateDetails"/>
         </LinearLayout>
     </LinearLayout>

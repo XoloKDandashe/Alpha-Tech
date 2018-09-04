@@ -94,7 +94,6 @@ public class ViewDetails extends AppCompatActivity {
         textView.setText(firstname.trim());
         textView=(TextView) findViewById(R.id.view_surname);
         textView.setText(breakdown[breakdown.length-1]);
-        textView.setText(person.getFullname());
         textView=(TextView)findViewById(R.id.jobtitle);
         textView.setText(person.getJobTitle());
         textView=(TextView)findViewById(R.id.company);
