@@ -10,5 +10,6 @@
     <color name="light_banner">#03A9F4</color>
     <color name="lightblue">#8003A9F4</color>
     <color name="navy">#000080</color>
+    <color name="transparent">#00000000</color>
 
 </resources>
