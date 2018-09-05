@@ -10,13 +10,12 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        android:padding="@dimen/padding"
-        android:gravity="center_vertical"
-        android:background="@color/powderblue">
+        android:gravity="center_vertical">
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/receivebanner"
+            android:background="@color/light_banner"
             android:gravity="center"
             android:textColor="@color/white"
             android:textSize="@dimen/heading"
@@ -24,12 +23,13 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="@color/light_banner"
             android:padding="@dimen/padding"
             android:weightSum="2"
             android:gravity="center"
             >
             <Button
-                android:id="@+id/button1"
+                android:id="@+id/btn_nfc_rec"
                 android:layout_width="0dp"
                 android:layout_weight="1"
                 android:layout_height="match_parent"
@@ -38,17 +38,15 @@
                 android:text="@string/nfcreceive"
                 android:textSize="@dimen/fontsize"
                 android:drawableTop="@drawable/ic_nfc_card"
-                android:onClick="openNFCRecieve"
                 />
             <Button
-                android:id="@+id/button2"
+                android:id="@+id/btn_scanner"
                 android:layout_width="0dp"
                 android:layout_weight="1"
                 android:layout_height="match_parent"
                 android:background="@color/transparent"
                 android:text="@string/qrreceive"
                 android:textSize="@dimen/fontsize"
-                android:onClick="openQRRecieve"
                 android:drawableTop="@drawable/ic_qr_code"
                 android:textColor="@color/white"/>
         </LinearLayout>
@@ -56,10 +54,11 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="@dimen/lesspadding"
+            android:background="@color/light_banner"
             android:gravity="center"
             android:orientation="horizontal">
             <Button
-                android:id="@+id/button3"
+                android:id="@+id/btn_ocr"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:background="@color/transparent"
@@ -67,9 +66,7 @@
                 android:text="Import physical Card"
                 android:textSize="@dimen/fontsize"
                 android:drawableTop="@drawable/ic_manage_card"
-                android:visibility="invisible"
-                android:onClick="openRecieveImport"
-                />
+                android:visibility="invisible"/>
         </LinearLayout>
     </LinearLayout>
 </FrameLayout>

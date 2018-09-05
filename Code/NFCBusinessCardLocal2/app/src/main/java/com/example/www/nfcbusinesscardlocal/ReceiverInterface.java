@@ -9,11 +9,13 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.Toast;
 
 public class ReceiverInterface extends DialogFragment {
 
-    TestUser person;
+    private TestUser person;
+    private Button btn_nfc,btn_scanner,btn_ocr;
     private Listener mListener;
     public static final String TAG = ReceiverInterface.class.getSimpleName();
     public static ReceiverInterface newInstance() {
@@ -25,28 +27,38 @@ public class ReceiverInterface extends DialogFragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view=inflater.inflate(R.layout.fragment_receiver_interface, container, false);
+        btn_nfc=(Button) view.findViewById(R.id.btn_nfc_rec);
+        btn_nfc.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(!getActivity().getPackageManager().hasSystemFeature(PackageManager.FEATURE_NFC))
+                {
+                    Toast.makeText(view.getContext(), "NFC is not available. Use QR option.", Toast.LENGTH_LONG).show();
+                    return;
+                }
+                Intent mov = new Intent(view.getContext(), ReceiverActivity.class);
+                startActivity(mov);
+            }
+        });
+        btn_scanner=(Button) view.findViewById(R.id.btn_scanner);
+        btn_scanner.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(view.getContext(),ReaderActivity.class);
+                startActivity(intent);
+            }
+        });
+        btn_ocr=(Button) view.findViewById(R.id.btn_ocr);
+        btn_ocr.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(view.getContext(),RecieverOCR.class);
+                startActivity(intent);
+            }
+        });
         return view;
     }
-    public void openNFCRecieve(View view)
-    {
-        if(!getActivity().getPackageManager().hasSystemFeature(PackageManager.FEATURE_NFC))
-        {
-            Toast.makeText(view.getContext(), "NFC is not available. Use QR option.", Toast.LENGTH_LONG).show();
-            return;
-        }
-        Intent mov = new Intent(view.getContext(), ReceiverActivity.class);
-        startActivity(mov);
-    }
-    public void openQRRecieve(View view)
-    {
-        Intent intent = new Intent(view.getContext(),ReaderActivity.class);
-        startActivity(intent);
-    }
-    public void openRecieveImport(View view)
-    {
-        Intent intent = new Intent(view.getContext(),RecieverOCR.class);
-        startActivity(intent);
-    }
+
     @Override
     public void onAttach(Context context) {
         super.onAttach(context);

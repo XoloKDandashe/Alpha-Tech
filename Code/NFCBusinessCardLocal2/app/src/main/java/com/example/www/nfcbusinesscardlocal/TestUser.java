@@ -112,7 +112,7 @@ public class TestUser implements Serializable{
         return workAddress;
     }
     public String getRecievedCards(){
-        if(recievedCards.isEmpty()||workAddress.compareTo("")==0)
+        if(recievedCards.isEmpty()||recievedCards.compareTo("")==0||recievedCards.compareTo("[]")==0)
             return "";
         return recievedCards;
     }

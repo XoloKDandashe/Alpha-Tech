@@ -23,6 +23,8 @@ import java.util.Comparator;
 import java.util.List;
 import java.util.Locale;
 
+import de.hdodenhof.circleimageview.CircleImageView;
+
 /**
  * Created by Xolo Kagiso Dandashe on 19 Apr 2018.
  */
@@ -32,7 +34,7 @@ public class ClientListAdapter extends BaseAdapter {
     ArrayList<String> arrayList;
     ArrayList<String> original;
     private static LayoutInflater inflater = null;
-    private ImageView imageView;
+    private CircleImageView imageView;
 
     public ClientListAdapter(Context context,ArrayList<String> arrayList){
         this.context = context;
@@ -81,22 +83,21 @@ public class ClientListAdapter extends BaseAdapter {
             newCard.setWorkTelephone(details[5]);
             if(details.length>7) {
                 newCard.setImageUrl(details[7]);
-                imageView = (ImageView) vi.findViewById(R.id.row_picture);
+                imageView = (CircleImageView) vi.findViewById(R.id.row_picture);
                 loadPicture(newCard, vi);
             }
-            TextView text = (TextView) vi.findViewById(R.id.row_fullname);
-            text.setText(newCard.getFullname());
-            /*text = (TextView) vi.findViewById(R.id.row_company);
-            text.setText(newCard.getCompanyName());*/
+            String[] breakdown=newCard.getFullname().split(" ");
+            String firstname="";
+            for(int j=0;j<breakdown.length-1;j++)
+            {
+                firstname+=breakdown[j]+" ";
+            }
+            TextView text = (TextView) vi.findViewById(R.id.row_name);
+            text.setText(firstname.trim());
+            text = (TextView) vi.findViewById(R.id.row_surname);
+            text.setText(breakdown[breakdown.length-1]);
             text = (TextView) vi.findViewById(R.id.row_jobtitle);
             text.setText(newCard.getJobTitle());
-            /*text = (TextView) vi.findViewById(R.id.row_emailaddress);
-            text.setText(newCard.getEmailAddress());
-            text = (TextView) vi.findViewById(R.id.row_phonenumber);
-            text.setText(newCard.getMobileNumber());
-            text = (TextView) vi.findViewById(R.id.row_worknumber);
-            text.setText(newCard.getWorkTelephone());*/
-
             return vi;
     }
     private void loadPicture(TestUser user,View view){

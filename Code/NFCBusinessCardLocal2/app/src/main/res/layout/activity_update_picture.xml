@@ -4,14 +4,16 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="@dimen/padding"
-    android:background="@mipmap/background"
+    android:background="@mipmap/city_background"
     tools:context="com.example.www.nfcbusinesscardlocal.updatePicture">
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:weightSum="8"
-        android:orientation="vertical">
+        android:padding="@dimen/padding"
+        android:orientation="vertical"
+        android:background="@color/lightblue">
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
@@ -21,13 +23,13 @@
                 android:id="@+id/btn_select_image"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:text="Select Image"
+                android:text="Choose Image"
                 android:textColor="@color/white"
-                android:background="@drawable/textview_border"
+                android:background="@color/transparent"
                 android:textStyle="bold"
                 android:padding="@dimen/lesspadding"
                 android:textSize="@dimen/heading"
-                android:drawableRight="@mipmap/images"/>
+                android:drawableEnd="@drawable/ic_change_image"/>
         </LinearLayout>
         <LinearLayout
             android:layout_width="match_parent"
@@ -59,6 +61,6 @@
             android:background="@drawable/textview_border"
             android:textStyle="bold"
             android:textSize="@dimen/heading"
-            android:drawableRight="@mipmap/internet"/>
+            android:drawableEnd="@drawable/ic_upload"/>
     </LinearLayout>
 </RelativeLayout>

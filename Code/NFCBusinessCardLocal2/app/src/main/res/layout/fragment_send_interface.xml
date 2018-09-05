@@ -11,14 +11,14 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical"
-            android:gravity="center_vertical"
-            android:background="@color/powderblue">
+            android:gravity="center_vertical">
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/sendbanner"
                 android:gravity="center"
                 android:textColor="@color/white"
+                android:background="@color/light_banner"
                 android:textSize="@dimen/heading"
                 android:textStyle="bold"/>
             <LinearLayout
@@ -26,6 +26,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
+                android:background="@color/light_banner"
                 android:weightSum="2"
                 android:orientation="horizontal">
                 <Button

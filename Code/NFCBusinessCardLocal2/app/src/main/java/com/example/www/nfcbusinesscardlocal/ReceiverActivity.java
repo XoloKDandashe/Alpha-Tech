@@ -130,6 +130,7 @@ public class ReceiverActivity extends AppCompatActivity {
         // foreground dispatch should be enabled here, as onResume is the guaranteed place where app
         // is in the foreground
         enableForegroundDispatch(this, this.nfcAdapter);
+        if(person!=null)
         receiveMessageFromDevice(getIntent());
     }
 
@@ -341,9 +342,6 @@ public class ReceiverActivity extends AppCompatActivity {
     }
     private void saveupdate(TestUser user){
         databaseReference.setValue(user);
-    }
-    public void backMainActivity(View view){
-        onBackPressed();
     }
     @Override
     public void onBackPressed() {

@@ -121,7 +121,7 @@
                 android:textStyle="bold"
                 android:gravity="center"
                 android:textColor="@color/navy"
-                android:drawableStart="@drawable/ic_smartphone"
+                android:drawableStart="@drawable/ic_phone"
                 android:autoLink="phone"/>
         </LinearLayout>
         <LinearLayout
@@ -181,7 +181,7 @@
                     android:textSize="@dimen/heading"
                     android:textStyle="bold"
                     android:textColor="@color/navy"
-                    android:drawableStart="@drawable/ic_place"
+                    android:drawableStart="@drawable/ic_edit_location"
                     android:text="@string/address"
                     />
             </ScrollView>

@@ -5,6 +5,7 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.pm.PackageManager;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Build;
@@ -148,8 +149,18 @@ public class MainActivity extends AppCompatActivity implements Listener{
         startActivity(intent);
     }
     public void openManageCards(View view){
-        Intent intent = new Intent(this,ManageCards.class);
+        Intent intent = new Intent(this,ViewCardsInterface.class);
         startActivity(intent);
+    }
+    public void openReadNFCCard(View view)
+    {
+        if(!getPackageManager().hasSystemFeature(PackageManager.FEATURE_NFC))
+        {
+            Toast.makeText(this, "NFC is not available on device.", Toast.LENGTH_LONG).show();
+            return;
+        }
+        Intent mov = new Intent(this, CardReadInformation.class);
+        startActivity(mov);
     }
     public void openSendCard(View view){
         sendInterface= (SendInterface) getFragmentManager().findFragmentByTag(sendInterface.TAG);
@@ -164,7 +175,7 @@ public class MainActivity extends AppCompatActivity implements Listener{
     public void openReceiveCard(View view){
         receiverInterface= (ReceiverInterface) getFragmentManager().findFragmentByTag(receiverInterface.TAG);
 
-        if (sendInterface == null) {
+        if (receiverInterface == null) {
 
             receiverInterface = receiverInterface.newInstance();
         }

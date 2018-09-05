@@ -53,7 +53,7 @@ public class ManageCards extends AppCompatActivity {
         Intent mov = new Intent(this, CardWriteInformation.class);
         startActivity(mov);
     }
-    public void backManageCards(View view){
+    public void openReadNFC(View view){
         onBackPressed();
     }
     @Override

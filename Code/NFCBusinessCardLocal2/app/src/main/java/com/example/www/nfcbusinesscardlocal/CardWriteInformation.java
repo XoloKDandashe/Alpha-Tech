@@ -184,9 +184,6 @@ public class CardWriteInformation extends AppCompatActivity implements Listener 
         if(nfcAdapter!= null)
             nfcAdapter.disableForegroundDispatch(this);
     }
-    private void previouspage(){
-        onBackPressed();
-    }
     @Override
     public void onBackPressed() {
         super.onBackPressed();
