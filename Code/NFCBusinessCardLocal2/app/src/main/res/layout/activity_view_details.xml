@@ -76,14 +76,14 @@
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:weightSum="5"
-            android:layout_weight="5"
+            android:layout_weight="4"
             android:orientation="vertical">
             <TextView
                 android:id="@+id/emailAddress"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="1"
-                android:textSize="@dimen/fontsize"
+                android:textSize="@dimen/textsize"
                 android:gravity="center_vertical|center_horizontal"
                 android:autoLink="email"
                 android:textStyle="bold"
@@ -94,7 +94,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="1"
-                android:textSize="@dimen/fontsize"
+                android:textSize="@dimen/textsize"
                 android:gravity="center_vertical|center_horizontal"
                 android:autoLink="phone"
                 android:textStyle="bold"
@@ -105,7 +105,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="1"
-                android:textSize="@dimen/fontsize"
+                android:textSize="@dimen/textsize"
                 android:gravity="center_vertical|center_horizontal"
                 android:autoLink="phone"
                 android:textStyle="bold"
@@ -116,7 +116,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="1"
-                android:textSize="@dimen/fontsize"
+                android:textSize="@dimen/textsize"
                 android:gravity="center_vertical|center_horizontal"
                 android:textStyle="bold"
                 android:textColor="@color/white"
@@ -134,6 +134,7 @@
                         android:layout_height="wrap_content"
                         android:textSize="@dimen/textsize"
                         android:textStyle="bold"
+                        android:gravity="center_vertical|center_horizontal"
                         android:textColor="@color/white"
                         android:drawableEnd="@drawable/ic_edit_location"/>
                 </ScrollView>
@@ -142,18 +143,54 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="1"
-            android:gravity="end|bottom">
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="@dimen/signoutbtn"
-                android:background="@color/transparent"
-                android:text="Edit Profile"
-                android:textSize="@dimen/fontsize"
-                android:textStyle="bold"
-                android:textColor="@color/white"
-                android:drawableEnd="@drawable/ic_edit_details"
-                android:onClick="openUpdateDetails"/>
+            android:layout_weight="2"
+            android:weightSum="3">
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="2"
+                android:weightSum="2"
+                android:orientation="vertical">
+                <Button
+                    android:id="@+id/btn_clear_card"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:background="@color/transparent"
+                    android:text="Clear NFC Card"
+                    android:textStyle="bold"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/fontsize"
+                    android:gravity="center_vertical"
+                    android:drawableStart="@drawable/ic_remove"/>
+                <Button
+                    android:id="@+id/btn_write_card"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:background="@color/transparent"
+                    android:text="Write to NFC Card"
+                    android:textStyle="bold"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/fontsize"
+                    android:gravity="center_vertical"
+                    android:drawableStart="@drawable/ic_manage_card"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="end|bottom">
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/signoutbtn"
+                    android:background="@color/transparent"
+                    android:textSize="@dimen/fontsize"
+                    android:textStyle="bold"
+                    android:textColor="@color/white"
+                    android:drawableEnd="@drawable/ic_edit_details"
+                    android:onClick="openUpdateDetails"/>
+            </LinearLayout>
         </LinearLayout>
     </LinearLayout>
 </LinearLayout>
