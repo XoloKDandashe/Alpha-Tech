@@ -114,12 +114,13 @@
                 android:textSize="@dimen/textsize"
                 android:textStyle="bold"/>
             <TextView
-                android:id="@+id/main_email"
+                android:id="@+id/main_job"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="1"
                 android:textColor="@color/white"
                 android:textSize="@dimen/textsize"
+                android:drawableEnd="@drawable/ic_work_sort"
                 android:textStyle="bold"/>
             <Button
                     android:layout_width="@dimen/signoutbtn"

@@ -45,7 +45,7 @@ import java.util.List;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements Listener{
 
     private FirebaseAuth firebaseAuth;
     private DatabaseReference databaseReference;
@@ -54,6 +54,10 @@ public class MainActivity extends AppCompatActivity {
     private ProgressDialog mProgressDialog;
     private CircleImageView imageView;
     private TestUser person=null;
+
+    public static final String TAG = MainActivity.class.getSimpleName();
+    private SendInterface sendInterface;
+    private ReceiverInterface receiverInterface;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -113,8 +117,8 @@ public class MainActivity extends AppCompatActivity {
         textView.setText(firstname.trim());
         textView=(TextView) findViewById(R.id.main_surname);
         textView.setText(breakdown[breakdown.length-1]);
-        textView=(TextView) findViewById(R.id.main_email);
-        textView.setText(person.getEmailAddress());
+        textView=(TextView) findViewById(R.id.main_job);
+        textView.setText(person.getJobTitle());
     }
     private void loadPicture(TestUser user){
         ConnectivityManager connectivityManager=(ConnectivityManager) getApplicationContext().getSystemService(Context.CONNECTIVITY_SERVICE);
@@ -148,12 +152,23 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
     public void openSendCard(View view){
-        Intent intent = new Intent(this,SendInterface.class);
-        startActivity(intent);
+        sendInterface= (SendInterface) getFragmentManager().findFragmentByTag(sendInterface.TAG);
+
+        if (sendInterface == null) {
+
+            sendInterface = sendInterface.newInstance();
+        }
+        sendInterface.show(getFragmentManager(),sendInterface.TAG);
+
     }
     public void openReceiveCard(View view){
-        Intent intent = new Intent(this,ReceiverInterface.class);
-        startActivity(intent);
+        receiverInterface= (ReceiverInterface) getFragmentManager().findFragmentByTag(receiverInterface.TAG);
+
+        if (sendInterface == null) {
+
+            receiverInterface = receiverInterface.newInstance();
+        }
+        receiverInterface.show(getFragmentManager(),receiverInterface.TAG);
     }
     public void backMainActivity(){
 
@@ -186,5 +201,15 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public void onBackPressed() {
         super.onBackPressed();
+    }
+
+    @Override
+    public void onDialogDisplayed() {
+
+    }
+
+    @Override
+    public void onDialogDismissed() {
+
     }
 }
