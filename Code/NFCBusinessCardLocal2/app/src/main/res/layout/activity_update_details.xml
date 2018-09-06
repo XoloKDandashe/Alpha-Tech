@@ -6,14 +6,15 @@
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
     android:orientation="vertical"
-    android:padding="@dimen/padding"
-    android:background="@mipmap/background"
+    android:background="@mipmap/city_background"
     tools:context="com.example.www.nfcbusinesscardlocal.updateDetails">
 
     <LinearLayout
-        android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:padding="@dimen/padding"
+        android:orientation="vertical"
+        android:background="@color/lightblue"
         android:weightSum="10">
 
         <LinearLayout
@@ -49,7 +50,7 @@
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"
-            android:inputType="text"
+            android:inputType="textAutoCorrect|textCapSentences"
             android:textColor="@color/white"
             android:textColorHint="@color/white"
             android:hint="Job Title" />
@@ -58,7 +59,7 @@
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"
-            android:inputType="textPersonName"
+            android:inputType="textCapSentences"
             android:textColor="@color/white"
             android:textColorHint="@color/white"
             android:hint="Company Name" />
@@ -73,16 +74,14 @@
             android:hint="Work Address" />
         <Button
             android:id="@+id/update_button"
-            android:layout_width="wrap_content"
+            android:layout_width="@dimen/signoutbtn"
             android:layout_height="0dp"
             android:layout_weight="1"
             android:padding="10dp"
             android:textStyle="bold"
             android:textSize="@dimen/padding"
-            android:background="@drawable/textview_border"
             android:textColor="@color/white"
-            android:drawableRight="@drawable/ic_edit_location"
-            android:text="Find me"
+            android:background="@drawable/ic_edit_location"
             />
         <!--work number-->
         <EditText android:id="@+id/update_input_telephone"
@@ -112,11 +111,11 @@
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:padding="@dimen/lesspadding"
-                android:background="@drawable/textview_border"
+                android:background="@color/transparent"
                 android:textColor="@color/white"
                 android:textSize="@dimen/fontsize"
                 android:onClick="updateUser"
-                android:drawableRight="@drawable/ic_update"
+                android:drawableRight="@drawable/ic_done"
                 android:text="@string/update_account"/>
         </LinearLayout>
     </LinearLayout>
