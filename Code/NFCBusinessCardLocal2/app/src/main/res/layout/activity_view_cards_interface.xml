@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="@dimen/padding"
+    android:weightSum="9"
+    android:orientation="vertical"
+    android:background="@mipmap/background"
+    tools:context="com.example.www.nfcbusinesscardlocal.ViewCardsInterface">
+
+    <SearchView
+        android:id="@+id/filterlist"
+        android:layout_width="match_parent"
+        android:queryHint="Search here..."
+        android:iconifiedByDefault="false"
+        android:layout_height="0dp"
+        android:layout_weight="1.5"
+        style="@style/AppTheme"
+        android:background="@drawable/textview_border"
+        />
+    <ListView
+        android:id="@+id/scrollusers"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="6.5">
+
+    </ListView>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="right">
+
+            <Button
+                android:layout_width="@dimen/signoutbtn"
+                android:layout_height="@dimen/signoutbtn"
+                android:background="@drawable/ic_alphabet_sort"
+                android:onClick="sortAlphabetically" />
+            <Button
+                android:layout_width="@dimen/signoutbtn"
+                android:layout_height="@dimen/signoutbtn"
+                android:background="@drawable/ic_date_sort"
+                android:onClick="sortLatest"
+                />
+            <Button
+                android:layout_width="@dimen/signoutbtn"
+                android:layout_height="@dimen/signoutbtn"
+                android:background="@drawable/ic_work_sort"
+                android:onClick="sortSkills"
+                />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

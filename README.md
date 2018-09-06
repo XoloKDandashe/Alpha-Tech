@@ -1,2 +1,2 @@
-# Project Name: Alpha-Tech
-Demo 1 : 16 March 2018
+# Project Team: Alpha-Tech
+# Project Name: Smart Biz Card

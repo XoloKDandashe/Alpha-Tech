@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="@dimen/padding"
+    android:orientation="vertical"
+    android:background="@mipmap/background"
+    tools:context="com.example.www.nfcbusinesscardlocal.CardReadInformation">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:weightSum="5">
+
+        <Button
+            android:id="@+id/btn_read"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:layout_below="@+id/et_message"
+            android:textSize="@dimen/fontsize"
+            android:padding="@dimen/padding"
+            android:drawableRight="@drawable/ic_nfc_card"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            android:text="@string/message_read_tag"
+            android:background="@drawable/textview_border"/>
+        <TextView
+            android:id="@+id/tv_read_message"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="4"
+            android:gravity="center"
+            android:textSize="@dimen/heading"
+            android:textColor="@color/white"/>
+    </LinearLayout>
+</RelativeLayout>
