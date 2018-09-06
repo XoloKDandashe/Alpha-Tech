@@ -1,9 +1,10 @@
 <resources>
     <string name="app_name">Smart Biz Card</string>
     <!--Strings for main menu-->
-    <string name="sendcard">Send Card</string>
-    <string name="receivecard">Receive Card</string>
-    <string name="updateinfo">My Card</string>
+    <string name="sendcard">Send Biz Card</string>
+    <string name="receivecard">Receive Biz Card</string>
+    <string name="updateinfo">View My Card</string>
+    <string name="edit_nfc">Read NFC Card</string>
     <string name="managecards">Manage Cards</string>
     <!--Strings for View Details-->
     <string name="defaultname">User Fullname</string>

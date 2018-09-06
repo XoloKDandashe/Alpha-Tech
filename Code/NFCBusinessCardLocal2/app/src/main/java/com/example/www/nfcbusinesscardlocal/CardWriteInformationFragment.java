@@ -47,7 +47,7 @@ public class CardWriteInformationFragment extends DialogFragment {
     @Override
     public void onAttach(Context context) {
         super.onAttach(context);
-        mListener = (CardWriteInformation)context;
+        mListener = (ViewDetails)context;
         mListener.onDialogDisplayed();
     }
 

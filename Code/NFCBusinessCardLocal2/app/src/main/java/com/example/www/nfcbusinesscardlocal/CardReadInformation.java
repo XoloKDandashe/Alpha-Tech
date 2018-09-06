@@ -92,13 +92,14 @@ public class CardReadInformation extends AppCompatActivity implements Listener{
                 if (isWrite) {
 
                     Toast.makeText(this,"Unable to read.",Toast.LENGTH_SHORT);
-                    finish();
+                    cardReadInformationFragment.dismiss();
                     return;
 
                 } else {
 
                     cardReadInformationFragment = (CardReadInformationFragment)getFragmentManager().findFragmentByTag(CardReadInformationFragment.TAG);
                     textView.setText(cardReadInformationFragment.onNfcDetected(ndef));
+                    cardReadInformationFragment.dismiss();
                 }
             }
         }

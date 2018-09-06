@@ -59,7 +59,6 @@ public class CardDeleteInformation extends AppCompatActivity implements Listener
                 this, 0, new Intent(this, getClass()).addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP), 0);
         if(nfcAdapter!= null)
             nfcAdapter.enableForegroundDispatch(this, pendingIntent, nfcIntentFilter, null);
-        showDeleteFragment();
     }
 
     @Override
@@ -68,9 +67,6 @@ public class CardDeleteInformation extends AppCompatActivity implements Listener
         if(nfcAdapter!= null)
             nfcAdapter.disableForegroundDispatch(this);
 
-    }
-    private void previouspage(){
-        onBackPressed();
     }
     @Override
     public void onBackPressed() {

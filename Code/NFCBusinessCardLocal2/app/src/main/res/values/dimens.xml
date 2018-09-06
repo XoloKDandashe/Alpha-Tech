@@ -3,10 +3,12 @@
     <!-- Smartphone sizes -->
     <dimen name="padding">15dp</dimen>
     <dimen name="lesspadding">10dp</dimen>
+    <dimen name="minpadding">5dp</dimen>
     <dimen name="maxpadding">25dp</dimen>    <!--Main Menu Dimensions-->
     <dimen name="signoutbtn">50dp</dimen>
     <dimen name="spacing">10dp</dimen>
     <dimen name="fontsize">20sp</dimen>
+    <dimen name="textsize">16sp</dimen>
     <!--View Details Dimensions-->
     <dimen name="profilepic">100dp</dimen>
     <dimen name="profilePicture">150dp</dimen>
