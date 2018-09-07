@@ -1,0 +1,73 @@
+<html>
+<head>
+  <title>Firebase Login</title>
+  <link href="https://fonts.googleapis.com/css?family=Nunito:400,600,700" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+
+  <div id="login_div" class="main-div">
+    <h3>Firebase Web login Example</h3>
+    <input type="email" placeholder="Email..." id="email_field" />
+    <input type="password" placeholder="Password..." id="password_field" />
+
+    <button onclick="login()">Login to Account</button>
+  </div>
+
+  <div id="user_div" class="loggedin">
+  
+    <h3>Welcome User</h3>
+    <div class="container1">
+      <div class="UserProfile">
+          <img src="noimage.png" alt="user" id="photo" style="width:100%">
+          <h1 id ="name">John Doe</h1>
+        
+          <i class="fa fa-institution" style="font-size:24px" ></i>
+          <a id= "company"></a>
+         <p class="title" id ="position" >CEO & Founder, Example</p>
+         <i class="fa fa-envelope-o"  style="font-size:24px" ></i>
+         <a id="email"></a>
+        <br/>
+         <i class="fa fa-mobile-phone" style="font-size:36px"></i>
+         <a id="phone"></a>
+          <br/>
+          <i class="fa fa-phone" style="font-size:24px"></i>
+          <a id="Telephone"></a>
+          <br/>
+          <i class="fa fa-map-marker" style="font-size:24px"></i>
+          <a id = "loction"></a>
+          <br/>
+     
+      </div>
+      <div class="ViewCards">
+        <h1 >Your cards</h1>
+      </div>
+    
+    </div>
+    <div>
+	<p id="user_para">Welcome to Firebase web login Example. You're currently logged in.</p>
+    <button onclick="logout()">Logout</button>
+  </div>
+  </div>
+
+
+
+<script src="https://www.gstatic.com/firebasejs/5.4.2/firebase.js"></script>
+<script>
+ 
+  var config = {
+    apiKey: "AIzaSyCMP5oZa2sPU8hJbzGPaIDUOw5qWsc1SE4",
+    authDomain: "nfcbusinesscardlocal2.firebaseapp.com",
+    databaseURL: "https://nfcbusinesscardlocal2.firebaseio.com",
+    projectId: "nfcbusinesscardlocal2",
+    storageBucket: "nfcbusinesscardlocal2.appspot.com",
+    messagingSenderId: "1049508478027"
+  };
+  firebase.initializeApp(config);
+</script>
+  <script src="index.js"></script>
+
+</body>
+</html>
