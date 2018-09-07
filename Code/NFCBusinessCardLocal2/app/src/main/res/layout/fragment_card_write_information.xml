@@ -2,7 +2,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/lightblue"
+    android:background="@color/light_banner"
     tools:context="com.example.www.nfcbusinesscardlocal.CardWriteInformationFragment">
     <LinearLayout
         xmlns:android="http://schemas.android.com/apk/res/android"
@@ -28,7 +28,7 @@
             android:layout_gravity="center"
             android:layout_marginTop="@dimen/activity_horizontal_margin"
             android:src="@drawable/ic_nfc"
-            android:tint="@color/lightblue"/>
+            android:tint="@color/pink"/>
 
         <ProgressBar
             android:id="@+id/progress"

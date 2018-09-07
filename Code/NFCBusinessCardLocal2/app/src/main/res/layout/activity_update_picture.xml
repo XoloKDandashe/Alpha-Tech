@@ -4,47 +4,63 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="@dimen/padding"
-    android:background="@mipmap/backgrounda"
+    android:background="@mipmap/city_background"
     tools:context="com.example.www.nfcbusinesscardlocal.updatePicture">
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:weightSum="8"
+        android:padding="@dimen/padding"
+        android:orientation="vertical"
+        android:background="@color/lightblue">
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="0dp"
+            android:layout_weight="1"
             android:gravity="center">
             <Button
                 android:id="@+id/btn_select_image"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:text="Select Image"
+                android:text="Choose Image"
                 android:textColor="@color/white"
-                android:background="@drawable/textview_border"
+                android:background="@color/transparent"
                 android:textStyle="bold"
                 android:padding="@dimen/lesspadding"
-                android:textSize="@dimen/padding"
-                android:layout_marginRight="@dimen/padding"
-                android:drawableRight="@mipmap/images"/>
-            <Button
-                android:id="@+id/btn_upload_image"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:text="Upload"
-                android:padding="@dimen/lesspadding"
-                android:textColor="@color/white"
-                android:background="@drawable/textview_border"
-                android:textStyle="bold"
-                android:textSize="@dimen/padding"
-                android:drawableRight="@mipmap/internet"/>
+                android:textSize="@dimen/heading"
+                android:drawableEnd="@drawable/ic_change_image"/>
         </LinearLayout>
-
-        <ImageView
-            android:id="@+id/image_selected"
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="380dp"
-            android:src="@mipmap/imagesblue"
-            android:padding="@dimen/padding"/>
+            android:layout_height="0dp"
+            android:layout_weight="0.5"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="5"
+            android:padding="@dimen/padding">
+            <ImageView
+                android:id="@+id/image_selected"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/ic_person" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.5"/>
+        <Button
+            android:id="@+id/btn_upload_image"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:text="Upload image"
+            android:padding="@dimen/lesspadding"
+            android:textColor="@color/white"
+            android:background="@color/transparent"
+            android:textStyle="bold"
+            android:textSize="@dimen/heading"
+            android:drawableEnd="@drawable/ic_upload"/>
     </LinearLayout>
 </RelativeLayout>

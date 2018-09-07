@@ -3,42 +3,53 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
+    android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@mipmap/backgrounda"
-    android:layout_height="match_parent">
-
-    <TextView
-        android:layout_marginTop="50dp"
-        android:id="@+id/tv_in_label"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/receiverbanner"
-        android:gravity="center"
-        android:textStyle="bold"
-        android:textColor="@color/white"
-        android:textSize="@dimen/heading"/>
-
-    <TextView
-        android:id="@+id/tv_in_message"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:textSize="@dimen/fontsize"
-        android:textColor="@color/white"
-        android:text="@string/tapreceive"/>
+    android:background="@mipmap/city_background">
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="5dp"
-        android:gravity="center">
-        <Button
-            android:layout_width="@dimen/buttons"
-            android:layout_height="wrap_content"
-            android:background="@drawable/textview_border"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="@color/lightblue"
+        android:padding="@dimen/lesspadding"
+        android:weightSum="5">
+        <TextView
+            android:id="@+id/tv_in_label"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:text="@string/receiverbanner"
+            android:gravity="center"
+            android:textStyle="bold"
             android:textColor="@color/white"
-            android:visibility="invisible"
-            android:id="@+id/btn"
-            android:text="Save to phone"/>
-    </LinearLayout>
+            android:textSize="@dimen/heading"/>
 
+        <TextView
+            android:id="@+id/tv_in_message"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="3"
+            android:gravity="center"
+            android:textSize="@dimen/fontsize"
+            android:textColor="@color/white"
+            android:text="@string/tapreceive"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:padding="@dimen/padding"
+            android:gravity="center">
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/transparent"
+                android:textColor="@color/white"
+                android:textSize="@dimen/fontsize"
+                android:drawableEnd="@drawable/ic_phone"
+                android:textStyle="bold"
+                android:id="@+id/btn"
+                android:visibility="invisible"
+                android:text="Save to phone"/>
+        </LinearLayout>
+    </LinearLayout>
 </LinearLayout>

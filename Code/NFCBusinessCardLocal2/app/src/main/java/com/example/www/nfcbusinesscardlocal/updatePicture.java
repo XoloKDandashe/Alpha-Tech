@@ -83,7 +83,6 @@ public class updatePicture extends AppCompatActivity {
                 } else {
                     builder = new AlertDialog.Builder(updatePicture.this);
                 }
-                TextView textView=(TextView) findViewById(R.id.fullname_view_user);
                 builder.setTitle("About to upload image.")
                         .setMessage("Are you sure you want to update your image?")
                         .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {

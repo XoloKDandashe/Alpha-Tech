@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
+    android:background="@mipmap/city_background"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
@@ -9,6 +10,7 @@
         android:layout_width="match_parent"
         android:layout_height="200dp"
         android:textIsSelectable="true"
+        android:background="@color/whitefaded"
         android:text="TextView" />
 
 
@@ -20,64 +22,86 @@
         android:layout_width="175dp"
         android:layout_height="wrap_content"
         android:ems="10"
+        android:background="@color/whitefaded"
         android:hint="Name"
         android:inputType="textPersonName" />
-        <EditText
-            android:id="@+id/importCompanyName"
-            android:layout_width="175dp"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:hint="CompanyName"
-            android:inputType="textPersonName" />
+
 
 
     </LinearLayout>
     <EditText
+        android:id="@+id/importCompanyName"
+        android:layout_width="match_parent"
+        android:background="@color/whitefaded"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="CompanyName"
+        android:inputType="textPersonName"
+        android:drawableEnd="@drawable/ic_building"/>
+    <EditText
         android:id="@+id/import_Adress"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="@color/whitefaded"
+        android:textColorHint="@color/white"
         android:ems="10"
         android:hint="Address"
-        android:inputType="textPersonName" />
-
-    <EditText
-        android:id="@+id/importWorkNumber"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:hint="Work Telephone"
-        android:inputType="phone" />
-
+        android:inputType="textPersonName"
+        android:drawableEnd="@drawable/ic_edit_location"/>
     <EditText
         android:id="@+id/importMobileNumber"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
+        android:background="@color/whitefaded"
         android:hint="Mobile number"
-        android:inputType="phone" />
+        android:inputType="phone"
+        android:drawableEnd="@drawable/ic_phone"/>
+    <EditText
+        android:id="@+id/importWorkNumber"
+        android:layout_width="match_parent"
+        android:background="@color/whitefaded"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Work Telephone"
+        android:inputType="phone"
+        android:drawableEnd="@drawable/ic_telephone"/>
+
+
 
     <EditText
         android:id="@+id/importEmail"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="@color/whitefaded"
         android:ems="10"
         android:hint="Email"
+        android:drawableEnd="@drawable/ic_email"
         android:inputType="textEmailAddress" />
 
 
 
-    <Button
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:padding="@dimen/lesspadding"
+        android:gravity="center">
 
-            android:id="@+id/rec_import_btn_signup"
+        <Button
+            android:id="@+id/qrbtn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="12dp"
-            android:background="@color/epiuseblue"
+            android:background="@color/transparent"
+            android:drawableEnd="@drawable/ic_phone"
+            android:padding="@dimen/lesspadding"
+            android:text="Save Card"
             android:textColor="@color/white"
-            android:layout_marginBottom="@dimen/spacing"
             android:textSize="@dimen/fontsize"
-            android:drawableRight="@mipmap/addme"
-            android:text="Save Contact"/>
+            android:textStyle="bold"
+            android:visibility="visible" />
+    </LinearLayout>
 
 
 </LinearLayout>

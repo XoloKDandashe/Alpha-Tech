@@ -44,7 +44,7 @@ public class CardDeleteInformationFragment extends DialogFragment {
     @Override
     public void onAttach(Context context) {
         super.onAttach(context);
-        mListener = (CardDeleteInformation)context;
+        mListener = (ViewDetails)context;
         mListener.onDialogDisplayed();
     }
 

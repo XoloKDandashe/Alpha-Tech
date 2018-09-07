@@ -3,18 +3,26 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="@dimen/padding"
-    android:background="@drawable/textview_border">
+    android:background="@drawable/profile_border">
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:padding="@dimen/padding"
         android:weightSum="3">
-        <ImageView
-            android:id="@+id/row_picture"
+        <LinearLayout
             android:layout_width="0dp"
             android:layout_height="100dp"
             android:layout_weight="1"
-            />
+            android:padding="@dimen/lesspadding">
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/row_picture"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:src="@drawable/ic_person"
+                />
+        </LinearLayout>
         <LinearLayout
             android:layout_width="0dp"
             android:layout_weight="2"
@@ -23,15 +31,23 @@
             android:weightSum="3"
             >
             <TextView
-                android:id="@+id/row_fullname"
+                android:id="@+id/row_name"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
-                android:layout_weight="2"
+                android:layout_weight="1"
                 android:textColor="@color/white"
                 android:textStyle="bold"
-                android:textSize="@dimen/heading"
-                android:padding="@dimen/lesspadding"
-                android:text="Kagiso Katametsi"
+                android:textSize="@dimen/textsize"
+                android:text="Kagiso "
+                />
+            <TextView
+                android:id="@+id/row_surname"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:textColor="@color/white"
+                android:textSize="@dimen/textsize"
+                android:text="Katametsi"
                 />
             <TextView
                 android:id="@+id/row_jobtitle"
@@ -39,11 +55,9 @@
                 android:layout_height="0dp"
                 android:layout_weight="1"
                 android:textColor="@color/white"
-                android:textStyle="bold"
-                android:gravity="right"
-                android:textSize="@dimen/fontsize"
+                android:textSize="@dimen/textsize"
                 android:text="Software Developer"
-                android:drawableRight="@drawable/ic_work_sort"
+                android:drawableEnd="@drawable/ic_work_sort"
                 />
         </LinearLayout>
     </LinearLayout>

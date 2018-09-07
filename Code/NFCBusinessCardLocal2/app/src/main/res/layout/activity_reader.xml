@@ -3,75 +3,85 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
-    android:padding="@dimen/padding"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@mipmap/backgrounda"
+    android:background="@mipmap/city_background"
+
     tools:context="com.example.www.nfcbusinesscardlocal.ReaderActivity">
     <LinearLayout
-
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
+        android:layout_height="match_parent"
         android:orientation="vertical"
-        android:padding="10dp"
-        >
+        android:background="@color/lightblue"
+        android:padding="@dimen/padding"
+        android:weightSum="7">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:padding="@dimen/padding"
+            >
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/qrscanbanner"
+                android:gravity="center"
+                android:textStyle="bold"
+                android:textSize="@dimen/heading"
+                android:textColor="@color/white"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:textColor="@color/white"
+                android:textSize="@dimen/fontsize"
+                android:background="@color/transparent"
+                android:drawableTop="@drawable/ic_qr_code"
+                android:text="@string/qrscan"
+                android:id="@+id/scan_btn"/>
+        </LinearLayout>
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/qrscanbanner"
-            android:gravity="center"
-            android:textStyle="bold"
-            android:textSize="@dimen/heading"
-            android:textColor="@color/white"
-            android:layout_centerHorizontal="true"/>
-    </LinearLayout>
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
-        android:textColor="@color/white"
-        android:textSize="@dimen/fontsize"
-        android:background="@drawable/textview_border"
-        android:text="@string/qrscan"
-        android:id="@+id/scan_btn"/>
-    <LinearLayout
-        android:id="@+id/scanned"
-        android:visibility="invisible"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Received Details:"
-            android:textStyle="bold"
-            android:gravity="center"
-            android:textSize="@dimen/heading"
-            android:textColor="@color/white"/>
-        <TextView
-            android:id="@+id/scannedDetails"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textColor="@color/white"
-            android:textSize="@dimen/heading"
-            />
-    </LinearLayout>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="5dp"
-        android:gravity="center">
-        <Button
-            android:layout_width="@dimen/buttons"
-            android:layout_height="wrap_content"
-            android:background="@drawable/textview_border"
-            android:textColor="@color/white"
-            android:id="@+id/qrbtn"
+        <LinearLayout
+            android:id="@+id/scanned"
             android:visibility="invisible"
-            android:text="Save to phone"/>
-    </LinearLayout>
+            android:layout_width="match_parent"
+            android:padding="@dimen/lesspadding"
+            android:layout_height="0dp"
+            android:layout_weight="4"
+            android:orientation="vertical">
 
+            <TextView
+                android:id="@+id/scannedDetails"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:textColor="@color/white"
+                android:textSize="@dimen/fontsize"
+                />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:padding="@dimen/lesspadding"
+            android:gravity="center">
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/transparent"
+                android:textColor="@color/white"
+                android:textSize="@dimen/fontsize"
+                android:drawableEnd="@drawable/ic_phone"
+                android:padding="@dimen/lesspadding"
+                android:text="Save to phone"
+                android:visibility="invisible"
+                android:textStyle="bold"
+                android:id="@+id/qrbtn"/>
+        </LinearLayout>
+    </LinearLayout>
 </LinearLayout>

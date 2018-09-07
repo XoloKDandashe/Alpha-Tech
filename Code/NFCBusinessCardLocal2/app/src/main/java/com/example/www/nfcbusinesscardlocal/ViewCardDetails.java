@@ -45,14 +45,17 @@ import java.io.IOException;
 import java.lang.reflect.Type;
 import java.util.List;
 
+import de.hdodenhof.circleimageview.CircleImageView;
+
 public class ViewCardDetails extends AppCompatActivity {
     private DatabaseReference databaseReference;
     private FirebaseAuth firebaseAuth;
     private ProgressDialog mProgressDialog;
-    private ImageView imageView;
-    FirebaseUser firebaseUser;
-    TestUser person=null;
-    TestUser viewUser;
+    private CircleImageView imageView;
+    private FirebaseUser firebaseUser;
+    private TestUser person=null;
+    private Intent intent=null;
+    private TestUser viewUser;
     static final Integer LOCATION = 0x1;
     private File vcfFile;
     static final Integer WRITE_EXST = 0x3;
@@ -63,7 +66,7 @@ public class ViewCardDetails extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_view_card_details);
-        Intent intent=getIntent();
+        intent=getIntent();
         if(intent.hasExtra("ViewUser")) {
             viewUser = (TestUser) intent.getSerializableExtra("ViewUser");
         }
@@ -83,7 +86,7 @@ public class ViewCardDetails extends AppCompatActivity {
                 startActivity(mapIntent);
             }
         });
-        imageView=(ImageView) findViewById(R.id.profilePicture_view_user);
+        imageView=(CircleImageView) findViewById(R.id.profilePicture_view_user);
         saveButton= (Button) findViewById(R.id.save_view_user);
         saveButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -117,7 +120,14 @@ public class ViewCardDetails extends AppCompatActivity {
     protected void onResume()
     {
         super.onResume();
-        setDetails();
+        if(intent.hasExtra("ViewUser")) {
+            viewUser = (TestUser) intent.getSerializableExtra("ViewUser");
+            setDetails();
+            SharedPreferences pref=getApplicationContext().getSharedPreferences("Viewed_User",0);
+            SharedPreferences.Editor editor=pref.edit();
+            editor.putString("Email",viewUser.getEmailAddress().trim());
+            editor.commit();
+        }
     }
     @Override
     protected void onStart() {
@@ -131,6 +141,33 @@ public class ViewCardDetails extends AppCompatActivity {
             public void onDataChange(DataSnapshot dataSnapshot) {
 
                 person=dataSnapshot.getValue(TestUser.class);
+                if(!intent.hasExtra("ViewUser"))
+                {
+                    SharedPreferences pref=getApplicationContext().getSharedPreferences("Viewed_User",0);
+                    SharedPreferences.Editor editor=pref.edit();
+                    String key_email=pref.getString("Email",null);
+                    String cardlist=person.getRecievedCards();
+                    List<TestUser> arrayList=null;
+                    Gson gson= new Gson();
+                    if(cardlist.isEmpty()||cardlist.compareTo("")==0||cardlist.compareTo("[]")==0)
+                    {
+                        Toast.makeText(ViewCardDetails.this,"You have no cards received.",Toast.LENGTH_LONG).show();
+                        finish();
+                        return;
+                    }
+                    else
+                    {
+                        Type type= new TypeToken<List<TestUser>>(){}.getType();
+                        arrayList=gson.fromJson(cardlist,type);
+                    }
+                    for(TestUser user: arrayList){
+                        if(user.getEmailAddress().compareTo(key_email)==0)
+                        {
+                            viewUser=user;
+                            setDetails();
+                        }
+                    }
+                }
                 mProgressDialog.dismiss();
             }
             @Override
@@ -163,8 +200,16 @@ public class ViewCardDetails extends AppCompatActivity {
     public void setDetails()
     {
         loadPicture(viewUser);
-        TextView textView=(TextView)findViewById(R.id.fullname_view_user);
-        textView.setText(viewUser.getFullname());
+        String[] breakdown=viewUser.getFullname().split(" ");
+        String firstname="";
+        for(int i=0;i<breakdown.length-1;i++)
+        {
+            firstname+=breakdown[i]+" ";
+        }
+        TextView textView=(TextView)findViewById(R.id.name_view_user);
+        textView.setText(firstname.trim());
+        textView=(TextView)findViewById(R.id.surname_view_user);
+        textView.setText(breakdown[breakdown.length-1]);
         textView=(TextView)findViewById(R.id.jobtitle_view_user);
         textView.setText(viewUser.getJobTitle());
         textView=(TextView)findViewById(R.id.company_view_user);
@@ -261,7 +306,7 @@ public class ViewCardDetails extends AppCompatActivity {
         } else {
             builder = new AlertDialog.Builder(this);
         }
-        TextView textView=(TextView) findViewById(R.id.fullname_view_user);
+        TextView textView=(TextView) findViewById(R.id.name_view_user);
         builder.setTitle("Delete "+textView.getText()+"'s Details?")
                 .setMessage("Are you sure you want to delete this contact?")
                 .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
@@ -320,7 +365,7 @@ public class ViewCardDetails extends AppCompatActivity {
         } else {
             builder = new AlertDialog.Builder(this);
         }
-        TextView textView=(TextView) findViewById(R.id.fullname_view_user);
+        TextView textView=(TextView) findViewById(R.id.name_view_user);
         builder.setTitle("About to set Appointment with: "+textView.getText())
                 .setMessage("Do you want to set an appointment?")
                 .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {

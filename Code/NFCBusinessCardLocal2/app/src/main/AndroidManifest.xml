@@ -44,13 +44,6 @@
                 android:value=".MainActivity" />
         </activity>
         <activity
-            android:name=".ManageCards"
-            android:screenOrientation="portrait">
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value=".MainActivity" />
-        </activity>
-        <activity
             android:name=".LogIn"
             android:screenOrientation="portrait" />
         <activity
@@ -60,13 +53,6 @@
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".LogIn" />
-        </activity>
-        <activity
-            android:name=".SendInterface"
-            android:screenOrientation="portrait">
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value=".MainActivity" />
         </activity>
         <activity
             android:name=".updateDetails"
@@ -80,7 +66,7 @@
             android:screenOrientation="portrait">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".SendInterface" />
+                android:value=".MainActivity" />
         </activity>
         <activity
             android:name=".NFCDisplayActivity"
@@ -90,7 +76,7 @@
             android:screenOrientation="portrait">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".SendInterface" />
+                android:value=".MainActivity" />
         </activity>
         <activity
             android:name=".ReceiverActivity"
@@ -105,13 +91,6 @@
 
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".ReceiverInterface" />
-        </activity>
-        <activity
-            android:name=".ReceiverInterface"
-            android:screenOrientation="portrait">
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
                 android:value=".MainActivity" />
         </activity>
         <activity
@@ -119,14 +98,14 @@
             android:screenOrientation="portrait">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".ReceiverInterface" />
+                android:value=".MainActivity" />
         </activity>
         <activity
             android:name=".ViewCardsInterface"
             android:screenOrientation="portrait">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".ManageCards" />
+                android:value=".MainActivity" />
         </activity>
         <activity
             android:name=".ViewCardDetails"
@@ -165,7 +144,7 @@
             android:screenOrientation="portrait">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".ReceiverInterface" />
+                android:value=".MainActivity" />
         </activity>
         <activity
             android:name=".CardReadInformation"
@@ -173,22 +152,7 @@
             android:screenOrientation="portrait">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".ManageCards" />
-        </activity>
-        <activity
-            android:name=".CardWriteInformation"
-            android:noHistory="true"
-            android:screenOrientation="portrait">
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value=".ManageCards" />
-        </activity>
-        <activity
-            android:name=".CardDeleteInformation"
-            android:screenOrientation="portrait">
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value=".ManageCards" />
+                android:value=".MainActivity" />
         </activity>
         <activity
             android:name=".updatePicture"
@@ -200,18 +164,30 @@
         <activity
             android:name=".FirebaseConfig"
             android:screenOrientation="portrait">
+
+        </activity>
+        <activity android:name=".RecieverOCR">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MainActivity" />
+        </activity>
+        <activity android:name=".PasswordActivity" />
+        <activity
+            android:name=".Splash"
+            android:theme="@style/splash">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".RecieverOCR">
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value=".ReceiverInterface" />
+        <activity
+            android:name=".Ocr.OcrCaptureActivity"
+            android:label="@string/title_activity_ocr" />
+        <activity android:name=".Splash2"
+            android:theme="@style/splash">
+
         </activity>
-        <activity android:name=".PasswordActivity"></activity>
     </application>
 
 </manifest>
