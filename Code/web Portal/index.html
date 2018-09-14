@@ -1,12 +1,18 @@
 <html>
 <head>
   <title>Firebase Login</title>
-  <link href="https://fonts.googleapis.com/css?family=Nunito:400,600,700" rel="stylesheet">
-
-  <link rel="stylesheet" href="style.css" />
+  <script src = "service.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.js"></script>
+<link rel="stylesheet" type="text/css" href="style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/css/materialize.min.css">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
 </head>
-<body>
+<body ng-app="myApp">
 
   <div id="login_div" class="main-div">
     <h3>Firebase Web login Example</h3>
@@ -20,8 +26,9 @@
   
     <h3>Welcome User</h3>
     <div class="container1">
+
       <div class="UserProfile">
-          <img src="noimage.png" alt="user" id="photo" style="width:100%">
+          <img class="img-circle" src="noimage.png" alt="user" id="photo" style="width:200px">
           <h1 id ="name">John Doe</h1>
         
           <i class="fa fa-institution" style="font-size:24px" ></i>
@@ -41,19 +48,85 @@
           <br/>
      
       </div>
-      <div class="ViewCards">
-        <h1 >Your cards</h1>
-      </div>
+      <div class="ViewCards" ng-controller="myCtrl">
+          <h1>Your cards</h1>
+
+      
+
+        <div class="card customcs"  id ="bodyk" ng-repeat="person in people">
+
+            <div class="card-image waves-effect waves-block waves-light ">
+              <img class="responsive-img" src="img/ny.jpg">
+              <img id ="user-img" class="circle activator" src="img/user.jpg">
+        
+            </div>
+            <div id="centered" class="card-content">
+              <a id="more" class="card-title activator btn-floating btn-large waves-effect waves-light pink"><i class="material-icons medium">keyboard_arrow_right</i></a>
+              <h3>{{person.fullname}}</h3>
+              <h6>Web Developer</h6>
+              <hr>
+              <ul id="inline">
+                <li><a href="#"><img class="img-responsive" src="img/facebook.png"></a></li>
+                <li><a href="#"><img class="img-responsive" src="img/twitter.png"></a></li>
+                <li><a href="#"><img class="img-responsive" src="img/github.png"></a></li>
+              </ul>
+              
+            </div>
+        
+            <div class="card-reveal" >
+              <a id="more" class="card-title activator btn-floating btn-large waves-effect waves-light pink"><i class="material-icons medium">keyboard_arrow_left</i></a>
+                <div id="titles-back">
+              <span class="card-title white-text"><h3>John Doe</h3><h6>Web Developer</h6><br></span>
+                
+        <div class="row">
+        <div class="col s12">
+          <span class="white-text">
+             <table id="info" class="bordered highlight centered">
+                <tbody>
+                  <tr>
+                    <td><i class="material-icons small">phone</i></td>
+                    <td>555-12345-1234</td>
+                    
+                  </tr>
+                  <tr>
+                    <td><i class="material-icons small">mail</i></td>
+                    <td>example@example.com</td>
+                    
+                  </tr>
+                  <tr>
+                    <td><i class="material-icons small">computer</i></td>
+                    <td>http://www.example.com</td>
+                    
+                  </tr>
+                  <tr>
+                    <td><i class="material-icons small">location_on</i></td>
+                    <td>San Andreas, California US</td>
+                    
+                  </tr>
+                </tbody>
+              </table>
+            </span>
+        </div>
+        </div>    
+              </span>
+              </div>
+            </div>
+        </div>
     
-    </div>
-    <div>
-	<p id="user_para">Welcome to Firebase web login Example. You're currently logged in.</p>
-    <button onclick="logout()">Logout</button>
+
+       
+
+ 
   </div>
-  </div>
+</div>
 
 
 
+  <div>
+      <p id="user_para">Welcome to Firebase web login Example. You're currently logged in.</p>
+        <button onclick="logout()">Logout</button>
+      </div>
+<div id="temp" style="visibility:hidden"></div>
 <script src="https://www.gstatic.com/firebasejs/5.4.2/firebase.js"></script>
 <script>
  
@@ -68,6 +141,110 @@
   firebase.initializeApp(config);
 </script>
   <script src="index.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/js/materialize.min.js"></script>
+<script>
+  var app= angular.module("myApp",[]);
+  var myObj;
+  app.controller("myCtrl",["$scope", function($scope){
+  
+
+//  $scope.people = myObj;
+}]);
+
+function getScope(ctrlName) {
+    var sel = 'div[ng-controller="' + ctrlName + '"]';
+    return angular.element(sel).scope();
+}
+
+function setobject(obj){
+//console.log(myObj);
+myObj= [
+    {"name":"bob"}
+  ];
+var $scope = getScope('myCtrl');
+$scope.people = JSON.parse(obj) ;
+$scope.$apply();
+
+
+}
+firebase.auth().onAuthStateChanged(function(user, myObj) {
+
+if (user) {
+  // User is signed in.
+  document.getElementById("user_div").style.display = "block";
+ document.getElementById("login_div").style.display = "none";
+//  window.location='home.html';
+  var user = firebase.auth().currentUser;
+
+  if(user != null){
+
+    var email_id = user.email;
+  var photoUrl =document.getElementById("para");
+  var firebaseref = firebase.database().ref('/users/'+user.uid).child("imageUrl");
+  firebaseref.on('value',function(snapshot){
+//		photoUrl.innerText="hi"+snapshot.val();
+    if(snapshot.val()!= null){
+      var image= document.getElementById("photo");
+      image.src=snapshot.val();
+    }
+  
+  });
+ 
+
+  return firebase.database().ref('/users/'+user.uid).once('value').then(function(snapshot){
+    document.getElementById("name").innerHTML=(snapshot.val() && snapshot.val().fullname)||'Anonymous';
+    document.getElementById("company").innerHTML = (snapshot.val() && snapshot.val().companyName)||'Anonymous';
+    document.getElementById("position").innerHTML = (snapshot.val() && snapshot.val().jobTitle)||'Anonymous';
+    document.getElementById("email").innerHTML = email_id;
+    document.getElementById("phone").innerHTML = (snapshot.val() && snapshot.val().mobileNumber)||'Anonymous';
+    document.getElementById("Telephone").innerHTML = (snapshot.val() && snapshot.val().workTelephone)||'Anonymous';
+    document.getElementById("loction").innerHTML = (snapshot.val() && snapshot.val().workAddress)||'Anonymous';
+    var myObj2 = (snapshot.val() && snapshot.val().recievedCards)||'Anonymous';
+    setobject(myObj2);
+  //  console.log("here");
+   
+  });
+
+ 
+
+  }
+
+} else {
+  // No user is signed in.
+
+  document.getElementById("user_div").style.display = "none";
+  document.getElementById("login_div").style.display = "block";
+
+}
+});
+
+function login(){
+
+var userEmail = document.getElementById("email_field").value;
+var userPass = document.getElementById("password_field").value;
+
+firebase.auth().signInWithEmailAndPassword(userEmail, userPass).catch(function(error) {
+  // Handle Errors here.
+  var errorCode = error.code;
+  var errorMessage = error.message;
+
+  window.alert("Error : " + errorMessage);
+
+  // ...
+});
+
+}
+
+function logout(){
+firebase.auth().signOut();
+}
+
+ 
+
+</script>
+
+
 
 </body>
 </html>
