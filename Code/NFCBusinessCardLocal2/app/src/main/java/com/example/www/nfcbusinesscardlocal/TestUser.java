@@ -139,14 +139,14 @@ public class TestUser implements Serializable{
     public String generateDetails()
     {
         String returnString="";
-            returnString+=getFullname()+"%";
-            returnString+=getJobTitle()+"%";
-            returnString+=getCompanyName()+"%";
-            returnString+=getEmailAddress()+"%";
-            returnString+=getMobileNumber()+"%";
-            returnString+=getWorkTelephone()+"%";
-            returnString+=getWorkAddress()+"%";
-            returnString+=getImageUrl();
+        returnString+=getFullname()+"\n";
+        returnString+=getJobTitle()+"\n";
+        returnString+=getCompanyName()+"\n";
+        returnString+=getEmailAddress()+"\n";
+        returnString+=getMobileNumber()+"\n";
+        returnString+=getWorkTelephone()+"\n";
+        returnString+=getWorkAddress()+" \n";
+        returnString+=getImageUrl();
 
         return returnString;
     }

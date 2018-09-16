@@ -202,7 +202,7 @@ public class updateDetails extends AppCompatActivity {
 
             }else{
 
-                Toast.makeText(this,"Unble to Trace your location",Toast.LENGTH_SHORT).show();
+                Toast.makeText(this,"Unable to Trace your location",Toast.LENGTH_SHORT).show();
 
             }
         }
