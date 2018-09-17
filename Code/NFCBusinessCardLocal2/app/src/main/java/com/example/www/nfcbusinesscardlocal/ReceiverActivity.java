@@ -85,11 +85,6 @@ public class ReceiverActivity extends AppCompatActivity {
         firebaseUser=firebaseAuth.getCurrentUser();
         databaseReference= FirebaseDatabase.getInstance().getReference("users").child(firebaseUser.getUid());
     }
-    @Override
-    protected void onDestroy() {
-        super.onDestroy();
-        nfcAdapter.disableReaderMode(this);
-    }
     // need to check NfcAdapter for nullability. Null means no NFC support on the device
     private boolean isNfcSupported() {
         this.nfcAdapter = NfcAdapter.getDefaultAdapter(this);

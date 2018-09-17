@@ -34,11 +34,6 @@ public class CardReadInformation extends AppCompatActivity implements Listener{
         nfcAdapter=NfcAdapter.getDefaultAdapter(this);
     }
 
-    @Override
-    protected void onDestroy() {
-        super.onDestroy();
-        nfcAdapter.disableReaderMode(this);
-    }
 
     private void showReadFragment() {
         if (!nfcAdapter.isEnabled()) {
