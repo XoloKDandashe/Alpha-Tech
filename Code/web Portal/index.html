@@ -24,7 +24,7 @@
 
   <div id="user_div" class="loggedin">
   
-    <h3>Welcome User</h3>
+    <p>Welcome User</p>
     <div class="container1">
 
       <div class="UserProfile">
@@ -48,49 +48,53 @@
           <br/>
      
       </div>
-      <div class="ViewCards" ng-controller="myCtrl">
-          <h1>Your cards</h1>
+      <div id="content" class="ViewCards" ng-controller="myCtrl">
 
-      
-
-        <div class="card customcs"  id ="bodyk" ng-repeat="person in people">
-
+        <span class="card customcs col-md-12 pull-left"  id ="bodyk" ng-repeat="person in people">
+          
             <div class="card-image waves-effect waves-block waves-light ">
-              <img class="responsive-img" src="img/ny.jpg">
-              <img id ="user-img" class="circle activator" src="img/user.jpg">
+              <img class="responsive-img" src="img/ny.jpg" >
+              <img id ="user-img" class="circle activator" src="{{person.imageUrl}}" >
         
             </div>
             <div id="centered" class="card-content">
               <a id="more" class="card-title activator btn-floating btn-large waves-effect waves-light pink"><i class="material-icons medium">keyboard_arrow_right</i></a>
+              <a id="delete" ng-click="delete(person)" ng-confirm-click="Are you sure to delete this Card ?" class=" btn-floating btn-large waves-effect waves-light black pink"><i class="material-icons medium">delete</i></a>
               <h3>{{person.fullname}}</h3>
-              <h6>Web Developer</h6>
+              <h6>{{person.jobTitle}}</h6>
+              <i class="fa fa-institution" style="font-size:24px " >{{person.companyName}}</i>
+       
               <hr>
-              <ul id="inline">
-                <li><a href="#"><img class="img-responsive" src="img/facebook.png"></a></li>
-                <li><a href="#"><img class="img-responsive" src="img/twitter.png"></a></li>
-                <li><a href="#"><img class="img-responsive" src="img/github.png"></a></li>
-              </ul>
               
             </div>
         
             <div class="card-reveal" >
               <a id="more" class="card-title activator btn-floating btn-large waves-effect waves-light pink"><i class="material-icons medium">keyboard_arrow_left</i></a>
-                <div id="titles-back">
-              <span class="card-title white-text"><h3>John Doe</h3><h6>Web Developer</h6><br></span>
-                
-        <div class="row">
+              <button id="delete" ng-click="delete(person)" ng-confirm-click="Are you sure to delete this Card ?"class="btn-floating btn-large waves-effect waves-light black"><i class="material-icons medium">delete</i></button>
+  
+              <div id="titles-back">
+
+              <span class="card-title white-text"><h3>{{person.fullname}}</h3><h6>{{person.jobTitle}}</h6><br></span>
+       
         <div class="col s12">
           <span class="white-text">
              <table id="info" class="bordered highlight centered">
                 <tbody>
                   <tr>
-                    <td><i class="material-icons small">phone</i></td>
-                    <td>555-12345-1234</td>
+                    <td><i class="material-icons small">phone_iphone</i></td>
+                    <td>{{person.mobileNumber}}</td>
                     
                   </tr>
                   <tr>
+                      <td><i class="material-icons small">phone</i></td>
+                      <td >{{person.workTelephone}}</td>
+                      
+                    </tr>
+                  <tr>
                     <td><i class="material-icons small">mail</i></td>
-                    <td>example@example.com</td>
+                    <td>
+                      <a href="mailto:{{person.emailAddress}}"  >{{person.emailAddress}}</a>
+                    </td>
                     
                   </tr>
                   <tr>
@@ -100,18 +104,20 @@
                   </tr>
                   <tr>
                     <td><i class="material-icons small">location_on</i></td>
-                    <td>San Andreas, California US</td>
+                    <td>{{person.workAddress}}</td>
                     
                   </tr>
                 </tbody>
               </table>
             </span>
         </div>
-        </div>    
+      
               </span>
               </div>
             </div>
-        </div>
+       
+         
+          </span>
     
 
        
@@ -146,11 +152,63 @@
 <script>
   var app= angular.module("myApp",[]);
   var myObj;
+  var UserID;
   app.controller("myCtrl",["$scope", function($scope){
-  
+
+  var Cards;
+  $scope.delete = function(dataModel){
+    var userId = firebase.auth().currentUser.uid;
+  return firebase.database().ref('/users/'+userId).once('value').then(function(snapshot){
+   Cards = (snapshot.val() && snapshot.val().recievedCards)||'Anonymous';
+    var l =JSON.parse(Cards);
+    //var l = Cards;
+    var index;
+    for (var i = 0; i < l.length; i++) {
+      console.log("l:"+ l[i].emailAddress +" tem :"+dataModel.emailAddress);
+      if(l[i].emailAddress == dataModel.emailAddress){
+        index=i;
+      }
+    }
+    delete l[index];
+    var newArray;
+    Array.prototype.clean = function(deleteValue) {
+      for (var i = 0; i < this.length; i++) {
+        if (this[i] == deleteValue) {         
+          this.splice(i, 1);
+          i--;
+        }
+      }
+      return this;
+    };
+    l.clean(undefined);
+    l = JSON.stringify(l);
+    function writeUserData(userId, l) {
+    firebase.database().ref('/users/' + userId).update({
+    recievedCards:l
+      
+   });
+ }
+ writeUserData(userId,l);
+location.reload();
+  });
+  }
 
 //  $scope.people = myObj;
 }]);
+app.directive('ngConfirmClick', [
+    function(){
+        return {
+            link: function (scope, element, attr) {
+                var msg = attr.ngConfirmClick || "Are you sure?";
+                var clickAction = attr.confirmedClick;
+                element.bind('click',function (event) {
+                    if ( window.confirm(msg) ) {
+                        scope.$eval(clickAction)
+                    }
+                });
+            }
+        };
+}])
 
 function getScope(ctrlName) {
     var sel = 'div[ng-controller="' + ctrlName + '"]';
@@ -159,12 +217,14 @@ function getScope(ctrlName) {
 
 function setobject(obj){
 //console.log(myObj);
+/*
 myObj= [
     {"name":"bob"}
-  ];
+  ];*/
+  if(obj!=null){
 var $scope = getScope('myCtrl');
 $scope.people = JSON.parse(obj) ;
-$scope.$apply();
+$scope.$apply();}
 
 
 }
@@ -178,7 +238,7 @@ if (user) {
   var user = firebase.auth().currentUser;
 
   if(user != null){
-
+    UserID =user.uid;
     var email_id = user.email;
   var photoUrl =document.getElementById("para");
   var firebaseref = firebase.database().ref('/users/'+user.uid).child("imageUrl");
@@ -190,10 +250,18 @@ if (user) {
     }
   
   });
+  var firebaseref = firebase.database().ref('/users/'+user.uid);
+  firebaseref.on('value',function(snapshot){
+//		photoUrl.innerText="hi"+snapshot.val();
+    if(snapshot.val()!= null){
+      document.getElementById("name").innerHTML=snapshot.val().fullname;
+    }
+  
+  });
  
 
   return firebase.database().ref('/users/'+user.uid).once('value').then(function(snapshot){
-    document.getElementById("name").innerHTML=(snapshot.val() && snapshot.val().fullname)||'Anonymous';
+   // document.getElementById("name").innerHTML=(snapshot.val() && snapshot.val().fullname)||'Anonymous';
     document.getElementById("company").innerHTML = (snapshot.val() && snapshot.val().companyName)||'Anonymous';
     document.getElementById("position").innerHTML = (snapshot.val() && snapshot.val().jobTitle)||'Anonymous';
     document.getElementById("email").innerHTML = email_id;
@@ -202,7 +270,7 @@ if (user) {
     document.getElementById("loction").innerHTML = (snapshot.val() && snapshot.val().workAddress)||'Anonymous';
     var myObj2 = (snapshot.val() && snapshot.val().recievedCards)||'Anonymous';
     setobject(myObj2);
-  //  console.log("here");
+   //console.log("here");
    
   });
 
