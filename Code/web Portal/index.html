@@ -53,14 +53,14 @@
         <span class="card customcs col-md-12 pull-left"  id ="bodyk" ng-repeat="person in people">
           
             <div class="card-image waves-effect waves-block waves-light ">
-              <img class="responsive-img" src="img/ny.jpg" >
-              <img id ="user-img" class="circle activator" src="{{person.imageUrl}}" >
+              <img class="responsive-img" src="img/ny.jpg"  >
+              <img id ="user-img" class="circle activator" src="{{person.imageUrl}}" alt="./images/noimage.png" >
         
             </div>
             <div id="centered" class="card-content">
               <a id="more" class="card-title activator btn-floating btn-large waves-effect waves-light pink"><i class="material-icons medium">keyboard_arrow_right</i></a>
               <a id="delete" ng-click="delete(person)" ng-confirm-click="Are you sure to delete this Card ?" class=" btn-floating btn-large waves-effect waves-light black pink"><i class="material-icons medium">delete</i></a>
-              <h3>{{person.fullname}}</h3>
+              <h4>{{person.fullname}}</h4>
               <h6>{{person.jobTitle}}</h6>
               <i class="fa fa-institution" style="font-size:24px " >{{person.companyName}}</i>
        
@@ -246,7 +246,9 @@ if (user) {
 //		photoUrl.innerText="hi"+snapshot.val();
     if(snapshot.val()!= null){
       var image= document.getElementById("photo");
+   
       image.src=snapshot.val();
+      
     }
   
   });

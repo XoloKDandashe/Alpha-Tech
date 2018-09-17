@@ -19,7 +19,7 @@ input, button {
 
 .container1{
   display:flex;
-  align-items: flex-end;
+  align-items: flex-start;
   justify-content: space-around;
 }
 .container1 div{
@@ -32,14 +32,15 @@ input, button {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   max-width: 300px;
   margin: auto;
+  
   text-align: left;
   font-family: arial;
 
 }
 
 .ViewCards{
-  flex: 2;
-  
+  flex: 1;
+  margin: auto;
   
 }
 #pad{
@@ -340,7 +341,7 @@ tr:hover{
 
 }*/
 .customcs{
-  width: 350px;
+  width: 330px;
   
 }
 
