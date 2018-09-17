@@ -6,6 +6,7 @@ import android.content.IntentFilter;
 import android.nfc.NfcAdapter;
 import android.nfc.Tag;
 import android.nfc.tech.Ndef;
+import android.provider.Settings;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -32,8 +33,19 @@ public class CardReadInformation extends AppCompatActivity implements Listener{
         mBtRead.setOnClickListener(view -> showReadFragment());
         nfcAdapter=NfcAdapter.getDefaultAdapter(this);
     }
-    private void showReadFragment() {
 
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        nfcAdapter.disableReaderMode(this);
+    }
+
+    private void showReadFragment() {
+        if (!nfcAdapter.isEnabled()) {
+            Toast.makeText(this, "Please enable NFC via Settings.", Toast.LENGTH_LONG).show();
+            startActivity(new Intent(Settings.ACTION_WIRELESS_SETTINGS));
+            return;
+        }
         cardReadInformationFragment = (CardReadInformationFragment) getFragmentManager().findFragmentByTag(CardReadInformationFragment.TAG);
 
         if (cardReadInformationFragment == null) {

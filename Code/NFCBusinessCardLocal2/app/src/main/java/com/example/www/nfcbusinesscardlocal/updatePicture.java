@@ -161,7 +161,6 @@ public class updatePicture extends AppCompatActivity {
                         @Override
                         public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
                             // Get a URL to the uploaded content
-                            //Uri downloadUrl = taskSnapshot.getDownloadUrl();
                             person.setImageUrl(taskSnapshot.getDownloadUrl().toString());
                             progressDialog.dismiss();
                             Toast.makeText(updatePicture.this,"Photo uploaded",Toast.LENGTH_SHORT).show();

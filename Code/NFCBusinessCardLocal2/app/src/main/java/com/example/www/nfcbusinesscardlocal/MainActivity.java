@@ -128,7 +128,7 @@ public class MainActivity extends AppCompatActivity implements Listener{
         boolean isConnected=activeNetwork!=null && activeNetwork.isConnectedOrConnecting();
         if(!isConnected)
         {
-            Toast.makeText(getApplicationContext(), "Unable to get image, internet connection needed.", Toast.LENGTH_SHORT).show();
+            //Toast.makeText(getApplicationContext(), "Unable to get image, internet connection needed.", Toast.LENGTH_SHORT).show();
             return;
         }
         if(user.getImageUrl()!=""){
@@ -141,7 +141,7 @@ public class MainActivity extends AppCompatActivity implements Listener{
         }
         else
         {
-            Toast.makeText(getApplicationContext(), "You have no image.", Toast.LENGTH_SHORT).show();
+            //Toast.makeText(getApplicationContext(), "You have no image.", Toast.LENGTH_SHORT).show();
             return;
         }
     }
@@ -157,7 +157,7 @@ public class MainActivity extends AppCompatActivity implements Listener{
     {
         if(!getPackageManager().hasSystemFeature(PackageManager.FEATURE_NFC))
         {
-            Toast.makeText(this, "NFC is not available on device.", Toast.LENGTH_LONG).show();
+            Toast.makeText(this, "NFC is not supported on this device.", Toast.LENGTH_LONG).show();
             return;
         }
         Intent mov = new Intent(this, CardReadInformation.class);

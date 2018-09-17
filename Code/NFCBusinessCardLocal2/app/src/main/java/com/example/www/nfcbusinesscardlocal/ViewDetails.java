@@ -5,6 +5,7 @@ import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
+import android.content.pm.PackageManager;
 import android.media.Image;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
@@ -12,6 +13,7 @@ import android.net.Uri;
 import android.nfc.NfcAdapter;
 import android.nfc.Tag;
 import android.nfc.tech.Ndef;
+import android.provider.Settings;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -176,7 +178,16 @@ public class ViewDetails extends AppCompatActivity implements Listener{
         }
     }
     private void showWriteFragment() {
-
+        if(!getPackageManager().hasSystemFeature(PackageManager.FEATURE_NFC))
+        {
+            Toast.makeText(this, "NFC is not supported on this device.", Toast.LENGTH_LONG).show();
+            return;
+        }
+        if (!nfcAdapter.isEnabled()) {
+            Toast.makeText(this, "Please enable NFC via Settings.", Toast.LENGTH_LONG).show();
+            startActivity(new Intent(Settings.ACTION_WIRELESS_SETTINGS));
+            return;
+        }
         isWrite = true;
 
         cardWriteInformationFragment= (CardWriteInformationFragment) getFragmentManager().findFragmentByTag(CardWriteInformationFragment.TAG);
@@ -189,7 +200,16 @@ public class ViewDetails extends AppCompatActivity implements Listener{
 
     }
     private void showDeleteFragment() {
-
+        if(!getPackageManager().hasSystemFeature(PackageManager.FEATURE_NFC))
+        {
+            Toast.makeText(this, "NFC is not supported on this device.", Toast.LENGTH_LONG).show();
+            return;
+        }
+        if (!nfcAdapter.isEnabled()) {
+            Toast.makeText(this, "Please enable NFC via Settings.", Toast.LENGTH_LONG).show();
+            startActivity(new Intent(Settings.ACTION_WIRELESS_SETTINGS));
+            return;
+        }
         isDelete= true;
 
         cardDeleteInformationFragment= (CardDeleteInformationFragment) getFragmentManager().findFragmentByTag(CardDeleteInformationFragment.TAG);
