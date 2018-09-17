@@ -209,7 +209,12 @@ public class ReceiverActivity extends AppCompatActivity {
             newCard.setWorkAddress(details[6]);
             if(details.length==8)
             newCard.setImageUrl(details[7]);
-
+            for(int i=0;i<arrayList.size();i++){
+                if(arrayList.get(i).getEmailAddress().compareTo(newCard.getEmailAddress())==0)
+                {
+                    arrayList.remove(i);
+                }
+            }
             arrayList.add(newCard);
             String jsonEncode= gson.toJson(arrayList);
             person.setRecievedCards(jsonEncode);

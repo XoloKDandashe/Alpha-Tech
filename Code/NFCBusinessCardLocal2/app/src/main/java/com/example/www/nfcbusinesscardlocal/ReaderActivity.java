@@ -148,7 +148,7 @@ public class ReaderActivity extends AppCompatActivity {
                 Toast.makeText(this, "You cancelled the scanning", Toast.LENGTH_LONG).show();
             }
             else {
-                details=result.getContents().split("%");
+                details=result.getContents().split("\n");
                 if(details.length==0)
                 {
                     Toast.makeText(ReaderActivity.this, "No information available.", Toast.LENGTH_SHORT).show();
@@ -181,7 +181,14 @@ public class ReaderActivity extends AppCompatActivity {
                 newCard.setWorkAddress(details[6]);
                 if(details.length==8)
                 newCard.setImageUrl(details[7]);
+                //check if it exists
 
+                for(int i=0;i<arrayList.size();i++){
+                    if(arrayList.get(i).getEmailAddress().compareTo(newCard.getEmailAddress())==0)
+                    {
+                        arrayList.remove(i);
+                    }
+                }
                 arrayList.add(newCard);
                 String jsonEncode= gson.toJson(arrayList);
                 person.setRecievedCards(jsonEncode);
@@ -243,10 +250,13 @@ public class ReaderActivity extends AppCompatActivity {
                 });
                 Toast.makeText(this,"Business card is saved.",Toast.LENGTH_LONG).show();
                 String resultString="";
-                for (int i=0;i<details.length;i++)
+                int length=details.length;
+                if(details.length==8)
+                    length--;
+                for (int i=0;i<length;i++)
                 {
                     resultString+=details[i];
-                    if(i+1<details.length)
+                    if(i+1<length)
                         resultString+="\n";
                 }
                 textView.setText(resultString);}
