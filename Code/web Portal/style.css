@@ -20,6 +20,7 @@ input, button {
 .container1{
   display:flex;
   align-items: flex-start;
+  flex-direction:row;
   justify-content: space-around;
 }
 .container1 div{
@@ -28,7 +29,8 @@ input, button {
     
 }
 .UserProfile {
-  flex: 1;
+ /* flex: 1;*/
+ 
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   max-width: 300px;
   margin: auto;
@@ -39,7 +41,9 @@ input, button {
 }
 
 .ViewCards{
-  flex: 1;
+   flex: 1;
+  display:flex;
+  
   margin: auto;
   
 }
@@ -125,7 +129,9 @@ li p {
  }
 
  .img-circle {
+ 
   border-radius: 50%;
+
 }
 
 

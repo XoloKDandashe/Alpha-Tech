@@ -15,7 +15,7 @@
 <body ng-app="myApp">
 
   <div id="login_div" class="main-div">
-    <h3>Firebase Web login Example</h3>
+    <h3>SmartBiz-Card</h3>
     <input type="email" placeholder="Email..." id="email_field" />
     <input type="password" placeholder="Password..." id="password_field" />
 
@@ -24,12 +24,14 @@
 
   <div id="user_div" class="loggedin">
   
-    <p>Welcome User</p>
+    
+    <input type="text" placeholder="Search for patient" class="input-lg form-control" ng-model="search.fullname"  />
     <div class="container1">
-
+    
       <div class="UserProfile">
+          <p>Welcome User</p>
           <img class="img-circle" src="noimage.png" alt="user" id="photo" style="width:200px">
-          <h1 id ="name">John Doe</h1>
+          <h3 id ="name">John Doe</h3>
         
           <i class="fa fa-institution" style="font-size:24px" ></i>
           <a id= "company"></a>
@@ -48,11 +50,13 @@
           <br/>
      
       </div>
+      
       <div id="content" class="ViewCards" ng-controller="myCtrl">
 
-        <span class="card customcs col-md-12 pull-left"  id ="bodyk" ng-repeat="person in people">
+        <div class="card customcs col-md-12 pull-left"  id ="bodyk" ng-repeat="person in people" |filter:search.fullname>
           
-            <div class="card-image waves-effect waves-block waves-light ">
+           
+            <div class="card-image waves-effect waves-block waves-light " style="max-height: 30%;">
               <img class="responsive-img" src="img/ny.jpg"  >
               <img id ="user-img" class="circle activator" src="{{person.imageUrl}}" alt="noUser"  href="./images/noimage.png">
         
@@ -68,17 +72,17 @@
               
             </div>
         
-            <div class="card-reveal" >
+            <div class="card-reveal" style="max-height: 100%; word-break: break-all;" >
               <a id="more" class="card-title activator btn-floating btn-large waves-effect waves-light pink"><i class="material-icons medium">keyboard_arrow_left</i></a>
               <button id="delete" ng-click="delete(person)" ng-confirm-click="Are you sure to delete this Card ?"class="btn-floating btn-large waves-effect waves-light black"><i class="material-icons medium">delete</i></button>
   
               <div id="titles-back">
 
-              <span class="card-title white-text"><h3>{{person.fullname}}</h3><h6>{{person.jobTitle}}</h6><br></span>
+              <span class="card-title white-text"><h5>{{person.fullname}}</h5><h6>{{person.jobTitle}}</h6><br></span>
        
-        <div class="col s12">
+        
           <span class="white-text">
-             <table id="info" class="bordered highlight centered">
+             <table id="info" class="bordered highlight centered" >
                 <tbody>
                   <tr>
                     <td><i class="material-icons small">phone_iphone</i></td>
@@ -110,9 +114,9 @@
                 </tbody>
               </table>
             </span>
-        </div>
       
-              </span>
+      
+      </div>
               </div>
             </div>
        
@@ -129,8 +133,7 @@
 
 
   <div>
-      <p id="user_para">Welcome to Firebase web login Example. You're currently logged in.</p>
-        <button onclick="logout()">Logout</button>
+        <button onclick="logout()"  style="display: block; margin: 0 auto;" width="48" height="48">Logout</button>
       </div>
 <div id="temp" style="visibility:hidden"></div>
 <script src="https://www.gstatic.com/firebasejs/5.4.2/firebase.js"></script>
