@@ -48,14 +48,14 @@ public class ReceiverInterface extends DialogFragment {
                 startActivity(intent);
             }
         });
-        btn_ocr=(Button) view.findViewById(R.id.btn_ocr);
+      /*  btn_ocr=(Button) view.findViewById(R.id.btn_ocr);
         btn_ocr.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(view.getContext(),RecieverOCR.class);
                 startActivity(intent);
             }
-        });
+        });*/
         return view;
     }
 
