@@ -1,6 +1,6 @@
 <html>
 <head>
-  <title>Firebase Login</title>
+  <title>SmartBiz-Card</title>
   <script src = "service.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.js"></script>
@@ -31,25 +31,35 @@
   
       <div class="logout" onclick="logout()" >LOGOUT</div>  
       </a>
+     
         </div>
+  
         
+    
+
     <div class="mainDiv">
     
       <div >
         <div class="User">
        
           <img class="img-circle" src="noimage.png" alt="user" id="photo" style="width:200px">
-          <h3 id ="name">John Doe</h3>
-        
-          <i class="fa fa-institution" style="font-size:24px" ></i>
-          <a id= "company"></a>
-         <p class="title" id ="position" >CEO & Founder, Example</p>
+      
+          <h3 class="title" id ="name" >John Doe</h3>
+          <h3 class="title" id ="position" >CEO & Founder, Example</h3>
+          <i class="fa fa-institution" style="font-size:24px"  id= "company" ></i>
 
-          <br/>
         </div>
+          
       
       <div class="container ViewCards" ng-controller="myCtrl">
-
+          <div class="wrap">
+              <div class="search">
+                 <input type="text" class="searchTerm" placeholder="Search Business Card" ng-model="search.fullname">
+                 <button type="submit" class="searchButton">
+                   <i class="fa fa-search"></i>
+                </button>
+              </div>
+           </div>  
 
         <div class="card customcs col-md-12 " ng-repeat="person in people" |filter:search>
           
@@ -124,7 +134,8 @@
 
        
 
- 
+
+ <footer class="footer text-center">2018 &copy; SmartBiz-Card Alpha-Tech</footer>
   </div>
 </div>
 
