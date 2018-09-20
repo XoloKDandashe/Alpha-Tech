@@ -24,35 +24,34 @@
 
   <div id="user_div" class="loggedin">
   
-    <p>your cards</p>
-    <div class="container1">
+  
+   <div class="navigation">
+        <a class="button" href="">
+          <img src="noimage.png"   id="photo1">
+  
+      <div class="logout" onclick="logout()" >LOGOUT</div>  
+      </a>
+        </div>
+        
+    <div class="mainDiv">
     
-      <div class="UserProfile">
-          <p>Welcome User</p>
+      <div >
+        <div class="User">
+       
           <img class="img-circle" src="noimage.png" alt="user" id="photo" style="width:200px">
           <h3 id ="name">John Doe</h3>
         
           <i class="fa fa-institution" style="font-size:24px" ></i>
           <a id= "company"></a>
          <p class="title" id ="position" >CEO & Founder, Example</p>
-         <i class="fa fa-envelope-o"  style="font-size:24px" ></i>
-         <a id="email"></a>
-        <br/>
-         <i class="fa fa-mobile-phone" style="font-size:36px"></i>
-         <a id="phone"></a>
-          <br/>
-          <i class="fa fa-phone" style="font-size:24px"></i>
-          <a id="Telephone"></a>
-          <br/>
-          <i class="fa fa-map-marker" style="font-size:24px"></i>
-          <a id = "loction"></a>
-          <br/>
-     
-      </div>
-      
-      <div id="content" class="ViewCards" ng-controller="myCtrl">
 
-        <div class="card customcs col-md-12 pull-left"  id ="bodyk" ng-repeat="person in people" |filter:search.fullname>
+          <br/>
+        </div>
+      
+      <div class="container ViewCards" ng-controller="myCtrl">
+
+
+        <div class="card customcs col-md-12 " ng-repeat="person in people" |filter:search>
           
            
             <div class="card-image waves-effect waves-block waves-light " style="max-height: 30%;">
@@ -131,9 +130,7 @@
 
 
 
-  <div>
-        <button onclick="logout()"  style="display: block; margin: 0 auto;" width="48" height="48">Logout</button>
-      </div>
+ 
 <div id="temp" style="visibility:hidden"></div>
 <script src="https://www.gstatic.com/firebasejs/5.4.2/firebase.js"></script>
 <script>
@@ -248,8 +245,10 @@ if (user) {
 //		photoUrl.innerText="hi"+snapshot.val();
     if(snapshot.val()!= null){
       var image= document.getElementById("photo");
-   
-      image.src=snapshot.val();
+      var image2 = document.getElementById("photo1")
+      var tem = snapshot.val();
+      image2.src=tem;
+      image.src=tem;
       
     }
   
@@ -268,10 +267,10 @@ if (user) {
    // document.getElementById("name").innerHTML=(snapshot.val() && snapshot.val().fullname)||'Anonymous';
     document.getElementById("company").innerHTML = (snapshot.val() && snapshot.val().companyName)||'Anonymous';
     document.getElementById("position").innerHTML = (snapshot.val() && snapshot.val().jobTitle)||'Anonymous';
-    document.getElementById("email").innerHTML = email_id;
-    document.getElementById("phone").innerHTML = (snapshot.val() && snapshot.val().mobileNumber)||'Anonymous';
-    document.getElementById("Telephone").innerHTML = (snapshot.val() && snapshot.val().workTelephone)||'Anonymous';
-    document.getElementById("loction").innerHTML = (snapshot.val() && snapshot.val().workAddress)||'Anonymous';
+   // document.getElementById("email").innerHTML = email_id;
+   // document.getElementById("phone").innerHTML = (snapshot.val() && snapshot.val().mobileNumber)||'Anonymous';
+  //  document.getElementById("Telephone").innerHTML = (snapshot.val() && snapshot.val().workTelephone)||'Anonymous';
+   // document.getElementById("loction").innerHTML = (snapshot.val() && snapshot.val().workAddress)||'Anonymous';
     var myObj2 = (snapshot.val() && snapshot.val().recievedCards)||'Anonymous';
     setobject(myObj2);
    //console.log("here");
