@@ -27,13 +27,13 @@ import org.json.JSONException;
 import org.json.JSONObject;
 public class GenerateQRCode extends AppCompatActivity {
 
-    Button gen_btn;
-    ImageView image;
+    private Button gen_btn;
+    private ImageView image;
     private DatabaseReference databaseReference;
     private FirebaseAuth firebaseAuth;
     private ProgressDialog mProgressDialog;
-    FirebaseUser firebaseUser;
-    TestUser person=null;
+    private FirebaseUser firebaseUser;
+    private TestUser person=null;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -100,9 +100,6 @@ public class GenerateQRCode extends AppCompatActivity {
     }
     private String QRresult(){
         return person.generateDetails();
-    }
-    public void backMainActivity(View view){
-        onBackPressed();
     }
     @Override
     public void onBackPressed() {
