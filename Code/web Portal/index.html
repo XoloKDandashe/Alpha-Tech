@@ -37,7 +37,7 @@
         
     
 
-    <div class="mainDiv">
+    <div class="mainDiv" ng-controller="myCtrl">
     
       <div >
         <div class="User">
@@ -49,21 +49,21 @@
           <i class="fa fa-institution" style="font-size:24px"  id= "company" ></i>
           <p></p>
       
-          <div class="wrap">
-              <div class="search">
-                 <input type="text" class="searchTerm" placeholder="Search Business Card" ng-model="search.fullname">
-                 <button type="submit" class="searchButton">
-                   <i class="fa fa-search"></i>
-                </button>
-              </div>
-           </div>  
+         
         </div>
-          
+        <div class="wrap">
+          <div class="search">
+             <input type="text" class="searchTerm" placeholder="Search Business Card" ng-model="search">
+             <button type="submit" class="searchButton">
+               <i class="fa fa-search"></i>
+            </button>
+          </div>
+       </div>  
       
-      <div class="container ViewCards" ng-controller="myCtrl">
+      <div class="container ViewCards" >
       
 
-        <div class="card customcs col-md-12 " ng-repeat="person in people" |filter:search>
+        <div class="card customcs col-md-12 " ng-repeat="person in people | filter:search ">
           
            
             <div class="card-image waves-effect waves-block waves-light " style="max-height: 30%;">
