@@ -14,12 +14,10 @@ import android.widget.Toast;
 
 public class ReceiverInterface extends DialogFragment {
 
-    private TestUser person;
     private Button btn_nfc,btn_scanner,btn_ocr;
     private Listener mListener;
     public static final String TAG = ReceiverInterface.class.getSimpleName();
     public static ReceiverInterface newInstance() {
-
         return new ReceiverInterface();
     }
     @Override
@@ -40,6 +38,8 @@ public class ReceiverInterface extends DialogFragment {
                 startActivity(mov);
             }
         });
+        if(!getActivity().getPackageManager().hasSystemFeature(PackageManager.FEATURE_NFC))
+            btn_nfc.setVisibility(View.INVISIBLE);
         btn_scanner=(Button) view.findViewById(R.id.btn_scanner);
         btn_scanner.setOnClickListener(new View.OnClickListener() {
             @Override

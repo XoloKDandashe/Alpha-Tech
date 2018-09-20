@@ -51,6 +51,7 @@ public class SendInterface extends DialogFragment {
         {
             btn_nfc.setVisibility(View.INVISIBLE);
         }
+
         btn_nfc.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

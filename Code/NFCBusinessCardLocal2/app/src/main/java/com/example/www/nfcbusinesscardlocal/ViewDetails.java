@@ -83,6 +83,11 @@ public class ViewDetails extends AppCompatActivity implements Listener{
                 showDeleteFragment();
             }
         });
+        if(!getPackageManager().hasSystemFeature(PackageManager.FEATURE_NFC))
+        {
+            btn_clear.setVisibility(View.INVISIBLE);
+            btn_write.setVisibility(View.INVISIBLE);
+        }
         firebaseUser=firebaseAuth.getCurrentUser();
         databaseReference= FirebaseDatabase.getInstance().getReference("users").child(firebaseUser.getUid());
         imageView=(CircleImageView) findViewById(R.id.profilePicture);
