@@ -23,6 +23,7 @@ public class FirebaseConfig extends AppCompatActivity {
         SharedPreferences pref=getApplicationContext().getSharedPreferences("Agreement_Signature",0);
         SharedPreferences.Editor editor=pref.edit();
         String key_email=pref.getString("Accepted",null);
+        if(key_email!=null)
         if(key_email.compareTo("I Accept All Conditions Stated in Agreement.")==0)
         {
             finish();

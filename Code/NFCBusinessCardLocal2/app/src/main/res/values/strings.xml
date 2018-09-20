@@ -76,6 +76,7 @@
 
     <!--Agreement-->
     <string name="agreement">
+        <strong>Smart Biz Card Agreement:</strong>\n\n
 Non-public information – Refers to private information, this includes the information that a user provides when they sign up and information they received when receiving a virtual business card.\n
 Authorised Admin users – Refers to members that are developing, implementing, testing and maintaining the application and databases. The authorised admin user will therefore adhere to the Protection of Private Information Act, 2013.\n
 \n
