@@ -73,4 +73,29 @@
     <string name="no_camera_permission">This application cannot run because it does not have the camera permission.  The application will now exit.</string>
     <string name="low_storage_error">Storage doesn\'t available</string>
     <string name="title_activity_ocr">Ocr Capture Activity</string>
+
+    <!--Agreement-->
+    <string name="agreement">
+Non-public information – Refers to private information, this includes the information that a user provides when they sign up and information they received when receiving a virtual business card.\n
+Authorised Admin users – Refers to members that are developing, implementing, testing and maintaining the application and databases. The authorised admin user will therefore adhere to the Protection of Private Information Act, 2013.\n
+\n
+Protection of Non-public Information. You agree to:\n
+•	To willingly provide contact details, name, surname, company name and business location.\n
+•	Refrain from disclosing non-public information to anyone, except as permitted under those policies;\n
+•	Reasonably safeguard your account against unauthorized access and use.\n
+\n
+Violation. You agree that, in case of a violation of this agreement, including improper access, use, or disclosure of non-public information:\n
+•	You will report the violation immediately;\n
+•	You will delete or otherwise destroy all non-public information in your possession and control, if instructed by authorised admin users;\n
+•	Your access to non-public information may be terminated; and\n
+\n
+Other provisions. You also agree:\n
+•	This agreement does not create an employment, agency, partnership, or joint venture relationship between you and authorised admin users and their partners.\n
+•	You may not transfer or assign your rights or obligations under this agreement;\n
+•	You are solely responsible for how you access and use non-public information, and your activity or account may be reviewed by other authorized admin users.\n
+•	The laws of the Republic of South Africa will govern this agreement (without reference to conflict of laws principles).\n
+•	Are18 years and older, hence legible to sign a legally binding agreement.\n
+\n
+By clicking “Accept” you acknowledge that you have read, reviewed and agree to the stated above.\n
+    </string>
 </resources>

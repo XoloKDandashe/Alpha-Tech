@@ -185,7 +185,6 @@ public class ViewCardDetails extends AppCompatActivity {
         boolean isConnected=activeNetwork!=null && activeNetwork.isConnectedOrConnecting();
         if(!isConnected)
         {
-            Toast.makeText(getApplicationContext(), "Unable to get image, internet connection needed.", Toast.LENGTH_SHORT).show();
             return;
         }
         if(user.getImageUrl()!=""){
