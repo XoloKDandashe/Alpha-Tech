@@ -70,6 +70,11 @@ public class MainActivity extends AppCompatActivity implements Listener{
             finish();
             startActivity(new Intent(this, LogIn.class));
         }
+        if(!getPackageManager().hasSystemFeature(PackageManager.FEATURE_NFC))
+        {
+            Button button=(Button) findViewById(R.id.read_card);
+            button.setVisibility(View.INVISIBLE);
+        }
         mProgressDialog=new ProgressDialog(this);
         firebaseUser=firebaseAuth.getCurrentUser();
         databaseReference= FirebaseDatabase.getInstance().getReference("users").child(firebaseUser.getUid());
