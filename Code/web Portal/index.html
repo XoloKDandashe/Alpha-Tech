@@ -43,15 +43,12 @@
         <div class="User">
        
           <img class="img-circle" src="noimage.png" alt="user" id="photo" style="width:200px">
-      
-          <h3 class="title" id ="name" >John Doe</h3>
-          <h3 class="title" id ="position" >CEO & Founder, Example</h3>
+          <br/>
+          <h4 class="title" id ="name" >John Doe</h4>
+          <h5 class="title" id ="position" >CEO & Founder, Example</h5>
           <i class="fa fa-institution" style="font-size:24px"  id= "company" ></i>
-
-        </div>
-          
+          <p></p>
       
-      <div class="container ViewCards" ng-controller="myCtrl">
           <div class="wrap">
               <div class="search">
                  <input type="text" class="searchTerm" placeholder="Search Business Card" ng-model="search.fullname">
@@ -60,6 +57,11 @@
                 </button>
               </div>
            </div>  
+        </div>
+          
+      
+      <div class="container ViewCards" ng-controller="myCtrl">
+      
 
         <div class="card customcs col-md-12 " ng-repeat="person in people" |filter:search>
           
