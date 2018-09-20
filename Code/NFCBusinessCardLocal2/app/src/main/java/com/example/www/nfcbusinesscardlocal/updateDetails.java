@@ -305,9 +305,6 @@ public class updateDetails extends AppCompatActivity {
     private void saveupdate(TestUser user){
         databaseReference.setValue(user);
     }
-    public void backToViewDetails(View view){
-        onBackPressed();
-    }
     @Override
     public void onBackPressed() {
         super.onBackPressed();
