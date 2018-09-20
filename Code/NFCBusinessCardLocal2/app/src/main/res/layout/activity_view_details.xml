@@ -53,7 +53,7 @@
                     android:textSize="@dimen/textsize"
                     android:textColor="@color/white"
                     android:textStyle="bold"
-                    android:gravity="bottom"/>
+                    android:gravity="center_vertical"/>
                 <TextView
                     android:id="@+id/view_surname"
                     android:layout_width="match_parent"
@@ -62,7 +62,7 @@
                     android:textSize="@dimen/textsize"
                     android:textColor="@color/white"
                     android:textStyle="bold"
-                    android:gravity="bottom"/>
+                    android:gravity="center_vertical"/>
                 <TextView
                     android:id="@+id/jobtitle"
                     android:layout_width="match_parent"
@@ -72,7 +72,7 @@
                     android:textColor="@color/white"
                     android:drawableEnd="@drawable/ic_work_sort"
                     android:textStyle="bold"
-                    android:gravity="bottom"/>
+                    android:gravity="center_vertical"/>
             </LinearLayout>
         </LinearLayout>
         <LinearLayout
