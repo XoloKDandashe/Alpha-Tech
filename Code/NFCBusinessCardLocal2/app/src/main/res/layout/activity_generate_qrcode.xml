@@ -25,7 +25,6 @@
                 android:textStyle="bold"
                 android:textColor="@color/white"
                 android:background="@color/transparent"
-                android:text="@string/grbanner"
                 android:id="@+id/gen_btn"/>
         </LinearLayout>
         <LinearLayout

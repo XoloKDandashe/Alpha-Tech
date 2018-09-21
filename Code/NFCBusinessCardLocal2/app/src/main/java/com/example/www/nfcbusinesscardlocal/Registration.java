@@ -11,6 +11,8 @@ import android.location.Address;
 import android.location.Geocoder;
 import android.location.Location;
 import android.location.LocationManager;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.provider.Settings;
 import android.support.annotation.NonNull;
 import android.support.v4.app.ActivityCompat;
@@ -62,7 +64,14 @@ public class Registration extends AppCompatActivity {
         final Button button = (Button) findViewById(R.id.button);
         button.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-
+                ConnectivityManager connectivityManager=(ConnectivityManager) getApplicationContext().getSystemService(Context.CONNECTIVITY_SERVICE);
+                NetworkInfo activeNetwork=connectivityManager.getActiveNetworkInfo();
+                boolean isConnected=activeNetwork!=null && activeNetwork.isConnectedOrConnecting();
+                if(!isConnected)
+                {
+                    Toast.makeText(getApplicationContext(), "Internet connection needed.", Toast.LENGTH_SHORT).show();
+                    return;
+                }
 
                 locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
                 if (!locationManager.isProviderEnabled(LocationManager.GPS_PROVIDER)) {
