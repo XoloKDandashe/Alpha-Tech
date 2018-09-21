@@ -54,6 +54,7 @@ public class CardWriteInformationFragment extends DialogFragment {
     @Override
     public void onDetach() {
         super.onDetach();
+        if(mListener!=null)
         mListener.onDialogDismissed();
     }
 

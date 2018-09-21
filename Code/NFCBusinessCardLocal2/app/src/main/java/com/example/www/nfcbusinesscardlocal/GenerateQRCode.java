@@ -27,13 +27,13 @@ import org.json.JSONException;
 import org.json.JSONObject;
 public class GenerateQRCode extends AppCompatActivity {
 
-    Button gen_btn;
-    ImageView image;
+    private Button gen_btn;
+    private ImageView image;
     private DatabaseReference databaseReference;
     private FirebaseAuth firebaseAuth;
     private ProgressDialog mProgressDialog;
-    FirebaseUser firebaseUser;
-    TestUser person=null;
+    private FirebaseUser firebaseUser;
+    private TestUser person=null;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -55,24 +55,12 @@ public class GenerateQRCode extends AppCompatActivity {
         gen_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                final String result = QRresult();
-                MultiFormatWriter multiFormatWriter = new MultiFormatWriter();
-                try{
-                    BitMatrix bitMatrix = multiFormatWriter.encode(result, BarcodeFormat.QR_CODE,200,200);
-                    // BitMatrix bitMatrix2 = multiFormatWriter.encode(text3Qr, BarcodeFormat.QR_CODE,200,200);
-                    BarcodeEncoder barcodeEncoder = new BarcodeEncoder();
-                    Bitmap bitmap = barcodeEncoder.createBitmap(bitMatrix);
-                    // Bitmap bitmap2 = barcodeEncoder.createBitmap(bitMatrix2);
-                    image.setImageBitmap(bitmap);
-                    // image.setImageBitmap(bitmap2);
-                }
-                catch (WriterException e){
-                    e.printStackTrace();
-                }
+                QRCode();
             }
         });
 
     }
+
     @Override
     protected void onStart() {
         super.onStart();
@@ -87,6 +75,7 @@ public class GenerateQRCode extends AppCompatActivity {
                 person = dataSnapshot.getValue(TestUser.class);
                 mProgressDialog.dismiss();
                 QRresult();
+                QRCode();
             }
 
             @Override
@@ -101,8 +90,21 @@ public class GenerateQRCode extends AppCompatActivity {
     private String QRresult(){
         return person.generateDetails();
     }
-    public void backMainActivity(View view){
-        onBackPressed();
+    private void QRCode(){
+        final String result = QRresult();
+        MultiFormatWriter multiFormatWriter = new MultiFormatWriter();
+        try{
+            BitMatrix bitMatrix = multiFormatWriter.encode(result, BarcodeFormat.QR_CODE,200,200);
+            // BitMatrix bitMatrix2 = multiFormatWriter.encode(text3Qr, BarcodeFormat.QR_CODE,200,200);
+            BarcodeEncoder barcodeEncoder = new BarcodeEncoder();
+            Bitmap bitmap = barcodeEncoder.createBitmap(bitMatrix);
+            // Bitmap bitmap2 = barcodeEncoder.createBitmap(bitMatrix2);
+            image.setImageBitmap(bitmap);
+            // image.setImageBitmap(bitmap2);
+        }
+        catch (WriterException e){
+            e.printStackTrace();
+        }
     }
     @Override
     public void onBackPressed() {

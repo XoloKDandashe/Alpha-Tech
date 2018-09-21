@@ -19,6 +19,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -68,6 +69,11 @@ public class MainActivity extends AppCompatActivity implements Listener{
         if(firebaseAuth.getCurrentUser()==null){
             finish();
             startActivity(new Intent(this, LogIn.class));
+        }
+        if(!getPackageManager().hasSystemFeature(PackageManager.FEATURE_NFC))
+        {
+            Button button=(Button) findViewById(R.id.read_card);
+            button.setVisibility(View.INVISIBLE);
         }
         mProgressDialog=new ProgressDialog(this);
         firebaseUser=firebaseAuth.getCurrentUser();
@@ -127,7 +133,7 @@ public class MainActivity extends AppCompatActivity implements Listener{
         boolean isConnected=activeNetwork!=null && activeNetwork.isConnectedOrConnecting();
         if(!isConnected)
         {
-            Toast.makeText(getApplicationContext(), "Unable to get image, internet connection needed.", Toast.LENGTH_SHORT).show();
+            //Toast.makeText(getApplicationContext(), "Unable to get image, internet connection needed.", Toast.LENGTH_SHORT).show();
             return;
         }
         if(user.getImageUrl()!=""){
@@ -140,7 +146,7 @@ public class MainActivity extends AppCompatActivity implements Listener{
         }
         else
         {
-            Toast.makeText(getApplicationContext(), "You have no image.", Toast.LENGTH_SHORT).show();
+            //Toast.makeText(getApplicationContext(), "You have no image.", Toast.LENGTH_SHORT).show();
             return;
         }
     }
@@ -156,7 +162,7 @@ public class MainActivity extends AppCompatActivity implements Listener{
     {
         if(!getPackageManager().hasSystemFeature(PackageManager.FEATURE_NFC))
         {
-            Toast.makeText(this, "NFC is not available on device.", Toast.LENGTH_LONG).show();
+            Toast.makeText(this, "NFC is not supported on this device.", Toast.LENGTH_LONG).show();
             return;
         }
         Intent mov = new Intent(this, CardReadInformation.class);

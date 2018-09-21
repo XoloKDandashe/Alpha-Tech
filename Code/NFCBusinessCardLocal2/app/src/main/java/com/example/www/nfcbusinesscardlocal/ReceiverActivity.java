@@ -48,8 +48,8 @@ public class ReceiverActivity extends AppCompatActivity {
     private DatabaseReference databaseReference;
     private FirebaseAuth firebaseAuth;
     private ProgressDialog mProgressDialog;
-    FirebaseUser firebaseUser;
-    TestUser person=null;
+    private FirebaseUser firebaseUser;
+    private TestUser person=null;
     public static final String MIME_TEXT_PLAIN = "text/plain";
     public String etname, etpos, etphon,etmail,etOff,etWAddress;
     private TextView tvIncomingMessage;
@@ -71,6 +71,8 @@ public class ReceiverActivity extends AppCompatActivity {
         }
         if (!nfcAdapter.isEnabled()) {
             Toast.makeText(ReceiverActivity.this, "NFC disabled on this device. Turn on to proceed", Toast.LENGTH_SHORT).show();
+            startActivity(new Intent(Settings.ACTION_WIRELESS_SETTINGS));
+            finish();
         }
 
         initViews();
@@ -83,7 +85,6 @@ public class ReceiverActivity extends AppCompatActivity {
         firebaseUser=firebaseAuth.getCurrentUser();
         databaseReference= FirebaseDatabase.getInstance().getReference("users").child(firebaseUser.getUid());
     }
-
     // need to check NfcAdapter for nullability. Null means no NFC support on the device
     private boolean isNfcSupported() {
         this.nfcAdapter = NfcAdapter.getDefaultAdapter(this);
@@ -209,7 +210,12 @@ public class ReceiverActivity extends AppCompatActivity {
             newCard.setWorkAddress(details[6]);
             if(details.length==8)
             newCard.setImageUrl(details[7]);
-
+            for(int i=0;i<arrayList.size();i++){
+                if(arrayList.get(i).getEmailAddress().compareTo(newCard.getEmailAddress())==0)
+                {
+                    arrayList.remove(i);
+                }
+            }
             arrayList.add(newCard);
             String jsonEncode= gson.toJson(arrayList);
             person.setRecievedCards(jsonEncode);

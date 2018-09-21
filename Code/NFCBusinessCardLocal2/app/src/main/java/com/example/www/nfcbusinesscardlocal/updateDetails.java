@@ -202,7 +202,7 @@ public class updateDetails extends AppCompatActivity {
 
             }else{
 
-                Toast.makeText(this,"Unble to Trace your location",Toast.LENGTH_SHORT).show();
+                Toast.makeText(this,"Unable to Trace your location",Toast.LENGTH_SHORT).show();
 
             }
         }
@@ -226,19 +226,25 @@ public class updateDetails extends AppCompatActivity {
         alert.show();
     }
     public void setDetails(){
+        String detail="";
         loadPicture(person);
         EditText editText=(EditText)findViewById(R.id.update_input_name);
-        editText.setText(person.getFullname());
+        editText.setText(check(person.getFullname()));
         editText=(EditText)findViewById(R.id.update_input_jobtitle);
-        editText.setText(person.getJobTitle());
+        editText.setText(check(person.getJobTitle()));
         editText=(EditText)findViewById(R.id.update_input_companyname);
-        editText.setText(person.getCompanyName());
+        editText.setText(check(person.getCompanyName()));
         editText=(EditText)findViewById(R.id.update_input_mobile);
-        editText.setText(person.getMobileNumber());
+        editText.setText(check(person.getMobileNumber()));
         editText=(EditText)findViewById(R.id.update_input_telephone);
-        editText.setText(person.getWorkTelephone());
+        editText.setText(check(person.getWorkTelephone()));
         editText=(EditText)findViewById(R.id.update_input_address);
-        editText.setText(person.getWorkAddress());
+        editText.setText(check(person.getWorkAddress()));
+    }
+    public String check(String word){
+        if(word.compareTo("n/a")==0)
+        return "";
+        return word;
     }
     public void updateUser(View view){
         EditText editText;
@@ -298,9 +304,6 @@ public class updateDetails extends AppCompatActivity {
     }
     private void saveupdate(TestUser user){
         databaseReference.setValue(user);
-    }
-    public void backToViewDetails(View view){
-        onBackPressed();
     }
     @Override
     public void onBackPressed() {

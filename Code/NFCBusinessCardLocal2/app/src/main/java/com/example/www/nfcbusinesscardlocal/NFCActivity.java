@@ -27,16 +27,17 @@ public class NFCActivity extends Activity implements NfcAdapter.CreateNdefMessag
     private DatabaseReference databaseReference;
     private FirebaseAuth firebaseAuth;
     private ProgressDialog mProgressDialog;
-    FirebaseUser firebaseUser;
+    private FirebaseUser firebaseUser;
     private TextView mTextView;
-    TestUser person=null;
+    private TestUser person=null;
+    private NfcAdapter mAdapter;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_nfc);
         mTextView = (TextView) findViewById(R.id.text_field);
 
-        NfcAdapter mAdapter = NfcAdapter.getDefaultAdapter(this);
+        mAdapter = NfcAdapter.getDefaultAdapter(this);
         if (mAdapter == null) {
             mTextView.setText("Sorry this device does not have NFC.");
             finish();
