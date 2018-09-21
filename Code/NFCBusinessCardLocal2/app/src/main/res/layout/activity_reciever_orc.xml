@@ -1,84 +1,100 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+    android:background="@mipmap/city_background"
     android:orientation="vertical"
-
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
-
+    android:layout_height="match_parent"
+    android:padding="@dimen/spacing"
+    android:weightSum="11">
     <TextView
         android:id="@+id/reciever_tv"
         android:layout_width="match_parent"
-        android:layout_height="200dp"
+        android:layout_height="175dp"
         android:textIsSelectable="true"
-        android:text="TextView" />
+        android:text="TextView"
+        android:background="@color/common_google_signin_btn_text_light_focused"/>
 
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-    <EditText
-        android:id="@+id/import_Name"
-        android:layout_width="175dp"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:hint="Name"
-        android:inputType="textPersonName" />
-        <EditText
-            android:id="@+id/importCompanyName"
-            android:layout_width="175dp"
+    <!-- Name Label -->
+        <EditText android:id="@+id/import_Name"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:ems="10"
-            android:hint="CompanyName"
-            android:inputType="textPersonName" />
+            android:layout_weight="1"
+            android:inputType="textPersonName"
+            android:textColor="@color/white"
+            android:textColorHint="@color/white"
+            android:hint="Full Name" />
 
-
-    </LinearLayout>
+        <!-- Company Name -->
+    <EditText
+        android:id="@+id/importCompanyName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:hint="CompanyName"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
+        android:inputType="textPersonName"
+        android:drawableEnd="@drawable/ic_building"/>
     <EditText
         android:id="@+id/import_Adress"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:ems="10"
+        android:layout_weight="1"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
         android:hint="Address"
-        android:inputType="textPersonName" />
+        android:inputType="textPersonName"
+        android:drawableEnd="@drawable/ic_edit_location"/>
 
-    <EditText
-        android:id="@+id/importWorkNumber"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:hint="Work Telephone"
-        android:inputType="phone" />
 
+        <EditText
+            android:id="@+id/importEmail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:textColorHint="@color/white"
+            android:hint="Email"
+            android:drawableEnd="@drawable/ic_email"
+            android:inputType="textEmailAddress" />
     <EditText
         android:id="@+id/importMobileNumber"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:ems="10"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
         android:hint="Mobile number"
-        android:inputType="phone" />
-
+        android:inputType="phone"
+        android:drawableEnd="@drawable/ic_phone"/>
     <EditText
-        android:id="@+id/importEmail"
+        android:id="@+id/importWorkNumber"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:ems="10"
-        android:hint="Email"
-        android:inputType="textEmailAddress" />
-
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
+        android:hint="Work Telephone"
+        android:inputType="phone"
+        android:drawableEnd="@drawable/ic_telephone"/>
 
 
     <Button
+        android:id="@+id/qrbtn"
+        android:layout_width="match_parent"
+        android:layout_height="25dp"
+        android:background="@color/transparent"
+        android:drawableEnd="@drawable/ic_phone"
+        android:padding="@dimen/lesspadding"
+        android:text="Save Card"
+        android:textColor="@color/white"
+        android:textSize="@dimen/fontsize"
+        android:textStyle="bold"
+        android:visibility="visible" />
 
-            android:id="@+id/rec_import_btn_signup"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:padding="12dp"
-            android:background="@color/epiuseblue"
-            android:textColor="@color/white"
-            android:layout_marginBottom="@dimen/spacing"
-            android:textSize="@dimen/fontsize"
-            android:drawableRight="@mipmap/addme"
-            android:text="Save Contact"/>
+
+
+
+
+
 
 
 </LinearLayout>

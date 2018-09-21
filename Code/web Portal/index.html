@@ -1,0 +1,322 @@
+<html>
+<head>
+  <title>Firebase Login</title>
+  <script src = "service.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.js"></script>
+<link rel="stylesheet" type="text/css" href="style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/css/materialize.min.css">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+<body ng-app="myApp">
+
+  <div id="login_div" class="main-div">
+    <h3>SmartBiz-Card</h3>
+    <input type="email" placeholder="Email..." id="email_field" />
+    <input type="password" placeholder="Password..." id="password_field" />
+
+    <button onclick="login()">Login to Account</button>
+  </div>
+
+  <div id="user_div" class="loggedin">
+  
+    <p>your cards</p>
+    <div class="container1">
+    
+      <div class="UserProfile">
+          <p>Welcome User</p>
+          <img class="img-circle" src="noimage.png" alt="user" id="photo" style="width:200px">
+          <h3 id ="name">John Doe</h3>
+        
+          <i class="fa fa-institution" style="font-size:24px" ></i>
+          <a id= "company"></a>
+         <p class="title" id ="position" >CEO & Founder, Example</p>
+         <i class="fa fa-envelope-o"  style="font-size:24px" ></i>
+         <a id="email"></a>
+        <br/>
+         <i class="fa fa-mobile-phone" style="font-size:36px"></i>
+         <a id="phone"></a>
+          <br/>
+          <i class="fa fa-phone" style="font-size:24px"></i>
+          <a id="Telephone"></a>
+          <br/>
+          <i class="fa fa-map-marker" style="font-size:24px"></i>
+          <a id = "loction"></a>
+          <br/>
+     
+      </div>
+      
+      <div id="content" class="ViewCards" ng-controller="myCtrl">
+
+        <div class="card customcs col-md-12 pull-left"  id ="bodyk" ng-repeat="person in people" |filter:search.fullname>
+          
+           
+            <div class="card-image waves-effect waves-block waves-light " style="max-height: 30%;">
+              <img class="responsive-img" src="img/ny.jpg"  >
+              <img id ="user-img" class="circle activator" src="{{person.imageUrl}}" alt="noUser"  href="./images/noimage.png">
+        
+            </div>
+            <div id="centered" class="card-content">
+              <a id="more" class="card-title activator btn-floating btn-large waves-effect waves-light pink"><i class="material-icons medium">keyboard_arrow_right</i></a>
+              <a id="delete" ng-click="delete(person)" ng-confirm-click="Are you sure to delete this Card ?" class=" btn-floating btn-large waves-effect waves-light black pink"><i class="material-icons medium">delete</i></a>
+              <h4>{{person.fullname}}</h4>
+              <h6>{{person.jobTitle}}</h6>
+              <i class="fa fa-institution" style="font-size:24px " >{{person.companyName}}</i>
+       
+              <hr>
+              
+            </div>
+        
+            <div class="card-reveal" style="max-height: 100%; word-break: break-all;" >
+              <a id="more" class="card-title activator btn-floating btn-large waves-effect waves-light pink"><i class="material-icons medium">keyboard_arrow_left</i></a>
+              <button id="delete" ng-click="delete(person)" ng-confirm-click="Are you sure to delete this Card ?"class="btn-floating btn-large waves-effect waves-light black"><i class="material-icons medium">delete</i></button>
+  
+              <div id="titles-back">
+
+              <span class="card-title white-text"><h5>{{person.fullname}}</h5><h6>{{person.jobTitle}}</h6><br></span>
+       
+        
+          <span class="white-text">
+             <table id="info" class="bordered highlight centered" >
+                <tbody>
+                  <tr>
+                    <td><i class="material-icons small">phone_iphone</i></td>
+                    <td>{{person.mobileNumber}}</td>
+                    
+                  </tr>
+                  <tr>
+                      <td><i class="material-icons small">phone</i></td>
+                      <td >{{person.workTelephone}}</td>
+                      
+                    </tr>
+                  <tr>
+                    <td><i class="material-icons small">mail</i></td>
+                    <td>
+                      <a href="mailto:{{person.emailAddress}}"  >{{person.emailAddress}}</a>
+                    </td>
+                    
+                  </tr>
+                  <tr>
+                    <td><i class="material-icons small">computer</i></td>
+                    <td>http://www.example.com</td>
+                    
+                  </tr>
+                  <tr>
+                    <td><i class="material-icons small">location_on</i></td>
+                    <td>{{person.workAddress}}</td>
+                    
+                  </tr>
+                </tbody>
+              </table>
+            </span>
+      
+      
+      </div>
+              </div>
+            </div>
+       
+         
+          </span>
+    
+
+       
+
+ 
+  </div>
+</div>
+
+
+
+  <div>
+        <button onclick="logout()"  style="display: block; margin: 0 auto;" width="48" height="48">Logout</button>
+      </div>
+<div id="temp" style="visibility:hidden"></div>
+<script src="https://www.gstatic.com/firebasejs/5.4.2/firebase.js"></script>
+<script>
+ 
+  var config = {
+    apiKey: "AIzaSyCMP5oZa2sPU8hJbzGPaIDUOw5qWsc1SE4",
+    authDomain: "nfcbusinesscardlocal2.firebaseapp.com",
+    databaseURL: "https://nfcbusinesscardlocal2.firebaseio.com",
+    projectId: "nfcbusinesscardlocal2",
+    storageBucket: "nfcbusinesscardlocal2.appspot.com",
+    messagingSenderId: "1049508478027"
+  };
+  firebase.initializeApp(config);
+</script>
+  <script src="index.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/js/materialize.min.js"></script>
+<script>
+  var app= angular.module("myApp",[]);
+  var myObj;
+  var UserID;
+  app.controller("myCtrl",["$scope", function($scope){
+
+  var Cards;
+  $scope.delete = function(dataModel){
+    var userId = firebase.auth().currentUser.uid;
+  return firebase.database().ref('/users/'+userId).once('value').then(function(snapshot){
+   Cards = (snapshot.val() && snapshot.val().recievedCards)||'Anonymous';
+    var l =JSON.parse(Cards);
+    //var l = Cards;
+    var index;
+    for (var i = 0; i < l.length; i++) {
+      console.log("l:"+ l[i].emailAddress +" tem :"+dataModel.emailAddress);
+      if(l[i].emailAddress == dataModel.emailAddress){
+        index=i;
+      }
+    }
+    delete l[index];
+    var newArray;
+    Array.prototype.clean = function(deleteValue) {
+      for (var i = 0; i < this.length; i++) {
+        if (this[i] == deleteValue) {         
+          this.splice(i, 1);
+          i--;
+        }
+      }
+      return this;
+    };
+    l.clean(undefined);
+    l = JSON.stringify(l);
+    function writeUserData(userId, l) {
+    firebase.database().ref('/users/' + userId).update({
+    recievedCards:l
+      
+   });
+ }
+ writeUserData(userId,l);
+location.reload();
+  });
+  }
+
+//  $scope.people = myObj;
+}]);
+app.directive('ngConfirmClick', [
+    function(){
+        return {
+            link: function (scope, element, attr) {
+                var msg = attr.ngConfirmClick || "Are you sure?";
+                var clickAction = attr.confirmedClick;
+                element.bind('click',function (event) {
+                    if ( window.confirm(msg) ) {
+                        scope.$eval(clickAction)
+                    }
+                });
+            }
+        };
+}])
+
+function getScope(ctrlName) {
+    var sel = 'div[ng-controller="' + ctrlName + '"]';
+    return angular.element(sel).scope();
+}
+
+function setobject(obj){
+//console.log(myObj);
+/*
+myObj= [
+    {"name":"bob"}
+  ];*/
+  if(obj!=null){
+var $scope = getScope('myCtrl');
+$scope.people = JSON.parse(obj) ;
+$scope.$apply();}
+
+
+}
+firebase.auth().onAuthStateChanged(function(user, myObj) {
+
+if (user) {
+  // User is signed in.
+  document.getElementById("user_div").style.display = "block";
+ document.getElementById("login_div").style.display = "none";
+//  window.location='home.html';
+  var user = firebase.auth().currentUser;
+
+  if(user != null){
+    UserID =user.uid;
+    var email_id = user.email;
+  var photoUrl =document.getElementById("para");
+  var firebaseref = firebase.database().ref('/users/'+user.uid).child("imageUrl");
+  firebaseref.on('value',function(snapshot){
+//		photoUrl.innerText="hi"+snapshot.val();
+    if(snapshot.val()!= null){
+      var image= document.getElementById("photo");
+   
+      image.src=snapshot.val();
+      
+    }
+  
+  });
+  var firebaseref = firebase.database().ref('/users/'+user.uid);
+  firebaseref.on('value',function(snapshot){
+//		photoUrl.innerText="hi"+snapshot.val();
+    if(snapshot.val()!= null){
+      document.getElementById("name").innerHTML=snapshot.val().fullname;
+    }
+  
+  });
+ 
+
+  return firebase.database().ref('/users/'+user.uid).once('value').then(function(snapshot){
+   // document.getElementById("name").innerHTML=(snapshot.val() && snapshot.val().fullname)||'Anonymous';
+    document.getElementById("company").innerHTML = (snapshot.val() && snapshot.val().companyName)||'Anonymous';
+    document.getElementById("position").innerHTML = (snapshot.val() && snapshot.val().jobTitle)||'Anonymous';
+    document.getElementById("email").innerHTML = email_id;
+    document.getElementById("phone").innerHTML = (snapshot.val() && snapshot.val().mobileNumber)||'Anonymous';
+    document.getElementById("Telephone").innerHTML = (snapshot.val() && snapshot.val().workTelephone)||'Anonymous';
+    document.getElementById("loction").innerHTML = (snapshot.val() && snapshot.val().workAddress)||'Anonymous';
+    var myObj2 = (snapshot.val() && snapshot.val().recievedCards)||'Anonymous';
+    setobject(myObj2);
+   //console.log("here");
+   
+  });
+
+ 
+
+  }
+
+} else {
+  // No user is signed in.
+
+  document.getElementById("user_div").style.display = "none";
+  document.getElementById("login_div").style.display = "block";
+
+}
+});
+
+function login(){
+
+var userEmail = document.getElementById("email_field").value;
+var userPass = document.getElementById("password_field").value;
+
+firebase.auth().signInWithEmailAndPassword(userEmail, userPass).catch(function(error) {
+  // Handle Errors here.
+  var errorCode = error.code;
+  var errorMessage = error.message;
+
+  window.alert("Error : " + errorMessage);
+
+  // ...
+});
+
+}
+
+function logout(){
+firebase.auth().signOut();
+}
+
+ 
+
+</script>
+
+
+
+</body>
+</html>
