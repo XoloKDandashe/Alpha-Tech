@@ -5,7 +5,7 @@ body {
   /*background: #fff;*/
   background-image: url("/img/ny.jpg") ;
   background-repeat: no-repeat; background-size: 100% 100%;
-  background-color: #cccccc;
+  /*background-color: #cccccc;*/
   padding: 0px;
   margin: 0px;
   font-family: 'Nunito', sans-serif;
@@ -17,6 +17,9 @@ input, button {
   font-weight: 700;
 }
 
+p{
+  color: #00B4CC;
+}
 
 
 .container1{
@@ -42,11 +45,13 @@ input, button {
   margin-bottom: 4px;
   float: left;
 }
+
 .User{
   text-align: left;
   font-family: Cu;
   color: white;
-border: 5px;
+  border: 5px;
+
   
 }
 .innerProfile {
@@ -166,8 +171,12 @@ li p {
  }
 
  .img-circle {
- 
-  border-radius: 90%;
+ margin-right:6px;
+ width:250px;
+ height:180px ;
+ margin-left: 5px;
+ transform: rotate(-90deg);
+  border-radius: 50%;
 
 }
 
@@ -193,6 +202,7 @@ li p {
     max-height: 200px;
     border: 5px solid #fff;
     border-radius: 50%;
+    margin-left: 15px;
 }
 
 #details-img{

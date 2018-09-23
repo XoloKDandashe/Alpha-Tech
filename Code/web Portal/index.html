@@ -20,6 +20,8 @@
     <input type="password" placeholder="Password..." id="password_field" />
 
     <button onclick="login()">Login to Account</button>
+    <p>   Download App:<a style="color:white" href="https://github.com/XoloKDandashe/Alpha-Tech/raw/master/Smart%20Business%20Card%20APK/smart%20biz%20card.apk">SmartBiz-Card.apk</a></p>
+
   </div>
 
   <div id="user_div" class="loggedin">
@@ -44,14 +46,14 @@
        
           <img class="img-circle" src="noimage.png" alt="user" id="photo" style="width:200px">
           <br/>
-          <h4 class="title" id ="name" >John Doe</h4>
-          <h5 class="title" id ="position" >CEO & Founder, Example</h5>
+          <h4  id ="name" >John Doe</h4>
+          <h5  id ="position" >CEO & Founder, Example</h5>
           <i class="fa fa-institution" style="font-size:24px"  id= "company" ></i>
           <p></p>
       
          
         </div>
-        <div class="wrap">
+      <div class="wrap">
           <div class="search">
              <input type="text" class="searchTerm" placeholder="Search Business Card" ng-model="search">
              <button type="submit" class="searchButton">
@@ -66,7 +68,7 @@
         <div class="card customcs col-md-12 " ng-repeat="person in people | filter:search ">
           
            
-            <div class="card-image waves-effect waves-block waves-light " style="max-height: 30%;">
+            <div class="card-image waves-effect waves-block waves-light " style="max-height: 40%;">
               <img class="responsive-img" src="img/ny.jpg"  >
               <img id ="user-img" class="circle activator" src="{{person.imageUrl}}" alt="noUser"  href="./images/noimage.png">
         
