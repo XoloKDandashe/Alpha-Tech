@@ -119,13 +119,6 @@ public class ViewCardsInterface extends AppCompatActivity implements SearchView.
     }
     public void setViews(String cardlist)
     {
-        ConnectivityManager connectivityManager=(ConnectivityManager) getApplicationContext().getSystemService(Context.CONNECTIVITY_SERVICE);
-        NetworkInfo activeNetwork=connectivityManager.getActiveNetworkInfo();
-        boolean isConnected=activeNetwork!=null && activeNetwork.isConnectedOrConnecting();
-        if(!isConnected)
-        {
-            Toast.makeText(getApplicationContext(), "Internet connection needed for this action.", Toast.LENGTH_SHORT).show();
-        }
         List<TestUser> arrayList=null;
         Gson gson= new Gson();
         if(cardlist.isEmpty()||cardlist.compareTo("")==0||cardlist.compareTo("[]")==0)

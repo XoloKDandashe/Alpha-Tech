@@ -47,6 +47,11 @@ public class SendInterface extends DialogFragment {
         // Inflate the layout for this fragment
         View view=inflater.inflate(R.layout.fragment_send_interface, container, false);
         btn_nfc = (Button) view.findViewById(R.id.btn_nfc);
+        if(!getActivity().getPackageManager().hasSystemFeature(PackageManager.FEATURE_NFC))
+        {
+            btn_nfc.setVisibility(View.INVISIBLE);
+        }
+
         btn_nfc.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -79,6 +84,7 @@ public class SendInterface extends DialogFragment {
     @Override
     public void onDetach() {
         super.onDetach();
+        if(mListener!=null)
         mListener.onDialogDismissed();
     }
 }
