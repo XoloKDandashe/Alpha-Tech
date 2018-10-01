@@ -21,9 +21,9 @@
     <string name="updatecard">Write Information</string>
     <!--Strings for Log in-->
     <string name="loginemailbanner">Please enter email:</string>
-    <string name="loginemail">user@epiuse.com</string>
+    <string name="loginemail">Email</string>
     <string name="loginpasswordbanner">Please enter password:</string>
-    <string name="loginpassword">*********</string>
+    <string name="loginpassword">Password</string>
     <string name="enter">Log in</string>
     <string name="register">No account? Register now.</string>
     <!--Strings for Registration-->
