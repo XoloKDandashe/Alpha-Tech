@@ -163,7 +163,7 @@
                     android:text="Clear NFC Card"
                     android:textStyle="bold"
                     android:textColor="@color/white"
-                    android:textSize="@dimen/fontsize"
+                    android:textSize="@dimen/textsize"
                     android:gravity="center_vertical"
                     android:drawableStart="@drawable/ic_remove"/>
                 <Button
@@ -175,7 +175,7 @@
                     android:text="Write to NFC Card"
                     android:textStyle="bold"
                     android:textColor="@color/white"
-                    android:textSize="@dimen/fontsize"
+                    android:textSize="@dimen/textsize"
                     android:gravity="center_vertical"
                     android:drawableStart="@drawable/ic_manage_card"/>
             </LinearLayout>
