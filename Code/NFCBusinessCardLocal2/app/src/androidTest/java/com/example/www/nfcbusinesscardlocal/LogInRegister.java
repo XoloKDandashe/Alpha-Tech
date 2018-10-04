@@ -120,7 +120,20 @@ public class LogInRegister {
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
-
+        ViewInteraction appCompatButton8 = onView(
+                allOf(withId(R.id.btn_signup), withText("Create Account"),
+                        childAtPosition(
+                                childAtPosition(
+                                        withClassName(is("android.widget.LinearLayout")),
+                                        0),
+                                10),
+                        isDisplayed()));
+        appCompatButton8.perform(click());
+        try {
+            Thread.sleep(1000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
             ViewInteraction appCompatEditText3 = onView(
                     allOf(withId(R.id.input_name),
                             childAtPosition(
@@ -141,7 +154,7 @@ public class LogInRegister {
                             isDisplayed()));
             appCompatEditText4.perform(replaceText("John "), closeSoftKeyboard());
             try {
-                Thread.sleep(35);
+                Thread.sleep(505);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
@@ -165,7 +178,7 @@ public class LogInRegister {
                             isDisplayed()));
             appCompatEditText6.perform(replaceText("Epiuse South Africa "), closeSoftKeyboard());
         try {
-            Thread.sleep(35);
+            Thread.sleep(505);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
@@ -180,7 +193,7 @@ public class LogInRegister {
             appCompatEditText7.perform(replaceText("245 Lynnwood Road "), closeSoftKeyboard());
 
         try {
-            Thread.sleep(35);
+            Thread.sleep(305);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
@@ -196,7 +209,7 @@ public class LogInRegister {
             appCompatEditText8.perform(replaceText("john@gmail.com"), closeSoftKeyboard());
 
         try {
-            Thread.sleep(35);
+            Thread.sleep(505);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
@@ -212,7 +225,7 @@ public class LogInRegister {
             appCompatEditText9.perform(replaceText("0125563674"), closeSoftKeyboard());
 
         try {
-            Thread.sleep(35);
+            Thread.sleep(505);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
@@ -228,7 +241,7 @@ public class LogInRegister {
             appCompatEditText10.perform(replaceText("0715967064"), closeSoftKeyboard());
 
         try {
-            Thread.sleep(356);
+            Thread.sleep(556);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
@@ -275,8 +288,13 @@ public class LogInRegister {
                                     10),
                             isDisplayed()));
             appCompatButton3.perform(click());
+        try {
+            Thread.sleep(1500);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
 
-            ViewInteraction appCompatEditText13 = onView(
+        ViewInteraction appCompatEditText13 = onView(
                     allOf(withId(R.id.input_confirmPassword), withText("password1"),
                             childAtPosition(
                                     childAtPosition(
@@ -296,7 +314,7 @@ public class LogInRegister {
                             isDisplayed()));
             appCompatEditText14.perform(click());
         try {
-            Thread.sleep(500);
+            Thread.sleep(1000);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
@@ -386,12 +404,30 @@ public class LogInRegister {
             // The recommended way to handle such scenarios is to use Espresso idling resources:
             // https://google.github.io/android-testing-support-library/docs/espresso/idling-resource/index.html
             try {
-                Thread.sleep(35008);
+                Thread.sleep(3508);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
+            pressBack();
 
+        ViewInteraction appCompatButton10 = onView(
+                allOf(withId(R.id.btn_signout),
+                        childAtPosition(
+                                childAtPosition(
+                                        withClassName(is("android.widget.LinearLayout")),
+                                        2),
+                                0),
+                        isDisplayed()));
+        appCompatButton10.perform(click());
 
+        ViewInteraction appCompatButton11 = onView(
+                allOf(withId(android.R.id.button1), withText("OK"),
+                        childAtPosition(
+                                childAtPosition(
+                                        withId(R.id.buttonPanel),
+                                        0),
+                                3)));
+        appCompatButton11.perform(scrollTo(), click());
 
 
     }

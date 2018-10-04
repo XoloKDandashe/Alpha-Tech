@@ -21,7 +21,6 @@ import static android.support.test.espresso.Espresso.pressBack;
 import static android.support.test.espresso.action.ViewActions.click;
 import static android.support.test.espresso.action.ViewActions.closeSoftKeyboard;
 import static android.support.test.espresso.action.ViewActions.replaceText;
-import static android.support.test.espresso.action.ViewActions.scrollTo;
 import static android.support.test.espresso.matcher.ViewMatchers.isDisplayed;
 import static android.support.test.espresso.matcher.ViewMatchers.withClassName;
 import static android.support.test.espresso.matcher.ViewMatchers.withId;
@@ -31,82 +30,21 @@ import static org.hamcrest.Matchers.is;
 
 @LargeTest
 @RunWith(AndroidJUnit4.class)
-public class LogInTest {
+public class ForgotPasswordTest {
 
     @Rule
     public ActivityTestRule<LogIn> mActivityTestRule = new ActivityTestRule<>(LogIn.class);
 
     @Test
-    public void logInTest() {
+    public void forgotPasswordTest() {
         // Added a sleep statement to match the app's execution delay.
         // The recommended way to handle such scenarios is to use Espresso idling resources:
         // https://google.github.io/android-testing-support-library/docs/espresso/idling-resource/index.html
         try {
-            Thread.sleep(60000);
+            Thread.sleep(600);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-
-        ViewInteraction appCompatEditText = onView(
-                allOf(withId(R.id.emaillogin),
-                        childAtPosition(
-                                childAtPosition(
-                                        withClassName(is("android.widget.LinearLayout")),
-                                        0),
-                                1),
-                        isDisplayed()));
-        appCompatEditText.perform(click());
-
-        ViewInteraction appCompatEditText2 = onView(
-                allOf(withId(R.id.emaillogin),
-                        childAtPosition(
-                                childAtPosition(
-                                        withClassName(is("android.widget.LinearLayout")),
-                                        0),
-                                1),
-                        isDisplayed()));
-        appCompatEditText2.perform(click());
-
-        ViewInteraction appCompatEditText3 = onView(
-                allOf(withId(R.id.emaillogin),
-                        childAtPosition(
-                                childAtPosition(
-                                        withClassName(is("android.widget.LinearLayout")),
-                                        0),
-                                1),
-                        isDisplayed()));
-        appCompatEditText3.perform(click());
-
-        ViewInteraction appCompatEditText4 = onView(
-                allOf(withId(R.id.emaillogin),
-                        childAtPosition(
-                                childAtPosition(
-                                        withClassName(is("android.widget.LinearLayout")),
-                                        0),
-                                1),
-                        isDisplayed()));
-        appCompatEditText4.perform(replaceText("khodanimufamadi@gmail.com"), closeSoftKeyboard());
-
-        // Added a sleep statement to match the app's execution delay.
-        // The recommended way to handle such scenarios is to use Espresso idling resources:
-        // https://google.github.io/android-testing-support-library/docs/espresso/idling-resource/index.html
-        try {
-            Thread.sleep(60000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-
-        ViewInteraction appCompatEditText5 = onView(
-                allOf(withId(R.id.passwordlogin),
-                        childAtPosition(
-                                childAtPosition(
-                                        withClassName(is("android.widget.LinearLayout")),
-                                        1),
-                                1),
-                        isDisplayed()));
-        appCompatEditText5.perform(replaceText("password"), closeSoftKeyboard());
-
-        pressBack();
 
         ViewInteraction appCompatButton = onView(
                 allOf(withText("Log in"),
@@ -122,30 +60,65 @@ public class LogInTest {
         // The recommended way to handle such scenarios is to use Espresso idling resources:
         // https://google.github.io/android-testing-support-library/docs/espresso/idling-resource/index.html
         try {
-            Thread.sleep(3566133);
+            Thread.sleep(600);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
 
-        ViewInteraction appCompatButton2 = onView(
-                allOf(withId(R.id.btn_signout),
+        ViewInteraction appCompatTextView = onView(
+                allOf(withId(R.id.tvForgotPassword), withText("Forgot Password?"),
                         childAtPosition(
                                 childAtPosition(
                                         withClassName(is("android.widget.LinearLayout")),
-                                        2),
-                                0),
+                                        1),
+                                2),
                         isDisplayed()));
-        appCompatButton2.perform(click());
+        appCompatTextView.perform(click());
 
-        ViewInteraction appCompatButton3 = onView(
-                allOf(withId(android.R.id.button1), withText("OK"),
+        // Added a sleep statement to match the app's execution delay.
+        // The recommended way to handle such scenarios is to use Espresso idling resources:
+        // https://google.github.io/android-testing-support-library/docs/espresso/idling-resource/index.html
+        try {
+            Thread.sleep(3579);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
+        ViewInteraction appCompatEditText = onView(
+                allOf(withId(R.id.etPasswordEmail),
                         childAtPosition(
                                 childAtPosition(
-                                        withId(R.id.buttonPanel),
+                                        withClassName(is("android.widget.LinearLayout")),
                                         0),
-                                3)));
-        appCompatButton3.perform(scrollTo(), click());
+                                0),
+                        isDisplayed()));
+        appCompatEditText.perform(click());
 
+        ViewInteraction appCompatEditText2 = onView(
+                allOf(withId(R.id.etPasswordEmail),
+                        childAtPosition(
+                                childAtPosition(
+                                        withClassName(is("android.widget.LinearLayout")),
+                                        0),
+                                0),
+                        isDisplayed()));
+        appCompatEditText2.perform(replaceText("s"), closeSoftKeyboard());
+
+
+        ViewInteraction appCompatButton2 = onView(
+                allOf(withId(R.id.btnPasswordReset), withText("Reset Password"),
+                        childAtPosition(
+                                childAtPosition(
+                                        withClassName(is("android.widget.LinearLayout")),
+                                        1),
+                                1),
+                        isDisplayed()));
+        appCompatButton2.perform(click());
+        try {
+            Thread.sleep(889);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
     }
 
     private static Matcher<View> childAtPosition(

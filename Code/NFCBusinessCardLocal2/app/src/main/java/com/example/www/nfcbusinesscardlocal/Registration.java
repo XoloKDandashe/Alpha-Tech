@@ -157,6 +157,7 @@ public class Registration extends AppCompatActivity {
                 .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
                     public void onClick(final DialogInterface dialog, final int id) {
                         startActivity(new Intent(Settings.ACTION_LOCATION_SOURCE_SETTINGS));
+
                     }
                 })
                 .setNegativeButton("No", new DialogInterface.OnClickListener() {

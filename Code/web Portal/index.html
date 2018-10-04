@@ -65,7 +65,7 @@
       <div class="container ViewCards" >
       
 
-        <div class="card customcs col-md-12 " ng-repeat="person in people | filter:search ">
+        <div class="card customcs col-md-12 " ng-repeat="person in people |orderBy : '-'| filter:search ">
           
            
             <div class="card-image waves-effect waves-block waves-light " style="max-height: 50%;">
