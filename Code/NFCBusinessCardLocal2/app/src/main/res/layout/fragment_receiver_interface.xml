@@ -57,7 +57,7 @@
             android:background="@color/light_banner"
             android:gravity="center"
             android:orientation="horizontal">
-         <!--   <Button
+          <Button
                 android:id="@+id/btn_ocr"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -65,7 +65,7 @@
                 android:textColor="@color/white"
                 android:text="Import physical Card"
                 android:textSize="@dimen/fontsize"
-                android:drawableTop="@drawable/ic_manage_card"/> -->
+                android:drawableTop="@drawable/ic_manage_card"/>
         </LinearLayout>
     </LinearLayout>
 </FrameLayout>

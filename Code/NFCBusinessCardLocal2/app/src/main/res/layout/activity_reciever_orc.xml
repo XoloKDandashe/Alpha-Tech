@@ -1,5 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    >
+<LinearLayout
 
     android:background="@mipmap/city_background"
     android:orientation="vertical"
@@ -13,6 +18,7 @@
         android:layout_height="175dp"
         android:textIsSelectable="true"
         android:text="TextView"
+        android:textColor="@color/white"
         android:background="@color/common_google_signin_btn_text_light_focused"/>
 
     <!-- Name Label -->
@@ -36,16 +42,29 @@
         android:textColorHint="@color/white"
         android:inputType="textPersonName"
         android:drawableEnd="@drawable/ic_building"/>
+<!-- Job Title -->
+    <EditText
+        android:id="@+id/import_jobtitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:hint="JobTitle"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
+        android:inputType="textPersonName"
+       />
+
+
     <EditText
         android:id="@+id/import_Adress"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="1"
-        android:textColor="@color/white"
-        android:textColorHint="@color/white"
+        android:drawableEnd="@drawable/ic_edit_location"
         android:hint="Address"
         android:inputType="textPersonName"
-        android:drawableEnd="@drawable/ic_edit_location"/>
+        android:textColor="@color/white"
+        android:textColorHint="@color/white" />
 
 
         <EditText
@@ -79,22 +98,15 @@
 
     <Button
         android:id="@+id/qrbtn"
-        android:layout_width="match_parent"
-        android:layout_height="25dp"
-        android:background="@color/transparent"
-        android:drawableEnd="@drawable/ic_phone"
+        android:layout_width="150dp"
+        android:layout_height="match_parent"
         android:padding="@dimen/lesspadding"
         android:text="Save Card"
         android:textColor="@color/white"
         android:textSize="@dimen/fontsize"
+        android:layout_gravity="center"
         android:textStyle="bold"
         android:visibility="visible" />
 
-
-
-
-
-
-
-
 </LinearLayout>
+</ScrollView>

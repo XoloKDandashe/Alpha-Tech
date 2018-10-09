@@ -16,9 +16,14 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.widget.Toast;
 
+
 import com.google.android.gms.common.api.CommonStatusCodes;
 import com.example.www.nfcbusinesscardlocal.Ocr.OCRCapture;
+import com.google.i18n.phonenumbers.PhoneNumberMatch;
+import com.google.i18n.phonenumbers.PhoneNumberUtil;
 
+import java.util.ArrayList;
+import java.util.Locale;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -155,13 +160,34 @@ public class RecieverOCR extends AppCompatActivity {
         }
     }
     public void processImage(String Ocr){
-      extractTelephone(Ocr);
+    //  extractTelephone(Ocr);
         extractPhone(Ocr);
+        parseResults(Ocr);
         extractAddress(Ocr);
        extractName(Ocr);
        extractEmail(Ocr);
 
     }
+    /**
+     * Parses phoneNumbers from a string using Google's libphonenumber library
+     *
+     * @param bCardText, The text obtained from the vision API processing
+     * @return ArrayList of parsed phone numbers from the vision API processed text string
+     */
+    private void parseResults(String bCardText) {
+        PhoneNumberUtil phoneNumberUtil = PhoneNumberUtil.getInstance();
+        Iterable<PhoneNumberMatch> numberMatches = phoneNumberUtil.findNumbers(bCardText, Locale.US.getCountry());
+        ArrayList<String> data = new ArrayList<>();
+        for(PhoneNumberMatch number : numberMatches){
+            String s = number.rawString();
+            data.add(s);
+            Toast.makeText(RecieverOCR.this,s,Toast.LENGTH_SHORT).show();
+            displayTelephone.setText(s);
+        }
+
+      //  return data;
+    }
+
     public void extractTelephone(String str){
         String temp =str;
         String re1="([-+]\\d+)";	// Integer Number 1
@@ -358,13 +384,14 @@ public class RecieverOCR extends AppCompatActivity {
         Matcher m2 = p2.matcher(str);
         if (m2.find())
         {
+            String zero ="0";
             String int1=m2.group(1);
             String d1=m2.group(2);
             String ws1=m2.group(3);
             String int2=m2.group(4);
             String ws2=m2.group(5);
             String int3=m2.group(6);
-            displayPhone.setText(int1+d1+ws1+int2+ws2+int3);
+            displayPhone.setText(zero+int1+d1+ws1+int2+ws2+int3);
             //System.out.print("("+int1.toString()+")"+"("+d1.toString()+")"+"("+ws1.toString()+")"+"("+int2.toString()+")"+"("+ws2.toString()+")"+"("+int3.toString()+")"+"\n");
         }
 

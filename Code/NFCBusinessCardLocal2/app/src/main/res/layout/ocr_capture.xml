@@ -25,7 +25,7 @@
     </com.example.www.nfcbusinesscardlocal.Ocr.camera.CameraSourcePreview>
 
     <ImageButton
-        android:padding="10dp"
+        android:padding="20dp"
         android:tint="?attr/colorAccent"
         style="@style/Widget.AppCompat.Button.Borderless"
         android:src="@drawable/ic_done_white_24dp"
