@@ -212,7 +212,6 @@ public class Registration extends AppCompatActivity {
             Toast.makeText(this, "Passwords do not match.", Toast.LENGTH_SHORT).show();
             return;
         }
-        newUser.setPassword(password);
 
         /*If all checks out*/
         newUser.setFullname(inputCheck);
@@ -220,6 +219,8 @@ public class Registration extends AppCompatActivity {
         newUser.setJobTitle(editText.getText().toString().trim());
         editText=(EditText)findViewById(R.id.input_companyname);
         newUser.setCompanyName(editText.getText().toString().trim());
+        editText=(EditText)findViewById(R.id.input_web);
+        newUser.setWebsite(editText.getText().toString().trim());
         editText=(EditText)findViewById(R.id.input_mobile);
         newUser.setMobileNumber(editText.getText().toString().trim());
         editText=(EditText)findViewById(R.id.input_telephone);
@@ -231,7 +232,7 @@ public class Registration extends AppCompatActivity {
 
         progressDialog.setMessage("Creating profile...");
         progressDialog.show();
-        firebaseAuth.createUserWithEmailAndPassword(newUser.getEmailAddress(),newUser.getPassword())
+        firebaseAuth.createUserWithEmailAndPassword(newUser.getEmailAddress(),password)
         .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
@@ -247,7 +248,7 @@ public class Registration extends AppCompatActivity {
         });
         progressDialog.setMessage("Saving information...");
         progressDialog.show();
-        firebaseAuth.signInWithEmailAndPassword(newUser.getEmailAddress(),newUser.getPassword())
+        firebaseAuth.signInWithEmailAndPassword(newUser.getEmailAddress(),password)
                 .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
