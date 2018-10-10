@@ -20,6 +20,7 @@ import android.support.v4.content.FileProvider;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -56,6 +57,7 @@ public class ReceiverActivity extends AppCompatActivity {
     static final Integer READ_EXST = 0x4;
     private static final String VCF_DIRECTORY = "/vcf_demonuts";
     private File vcfFile;
+    private LinearLayout linearLayout;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -81,6 +83,7 @@ public class ReceiverActivity extends AppCompatActivity {
         }
         firebaseUser=firebaseAuth.getCurrentUser();
         databaseReference= FirebaseDatabase.getInstance().getReference("users").child(firebaseUser.getUid());
+        linearLayout.setVisibility(View.INVISIBLE);
     }
     // need to check NfcAdapter for nullability. Null means no NFC support on the device
     private boolean isNfcSupported() {
@@ -89,7 +92,7 @@ public class ReceiverActivity extends AppCompatActivity {
     }
 
     private void initViews() {
-        this.tvIncomingMessage = (TextView) findViewById(R.id.tv_in_message);
+        //this.tvIncomingMessage = (TextView) findViewById(R.id.tv_in_message);
     }
 
     @Override
@@ -172,7 +175,7 @@ public class ReceiverActivity extends AppCompatActivity {
                 Toast.makeText(ReceiverActivity.this, "Information is not for our application.", Toast.LENGTH_SHORT).show();
                 return;
             }
-            String payload="";
+            /*String payload="";
             int length=shred.length;
             if(length>8)
                 length--;
@@ -180,9 +183,9 @@ public class ReceiverActivity extends AppCompatActivity {
                 payload += shred[i];
                 if((i+1)<length)
                     payload+="\n";
-            }
-            this.tvIncomingMessage.setText(payload);
-
+            }*/
+            //this.tvIncomingMessage.setText(payload);
+            linearLayout.setVisibility(View.INVISIBLE);
             String [] details=inMessage.split("\n");
             List<User> arrayList=null;
             Gson gson= new Gson();
@@ -214,6 +217,22 @@ public class ReceiverActivity extends AppCompatActivity {
                     arrayList.remove(i);
                 }
             }
+            tvIncomingMessage=findViewById(R.id.rec_nfc_fullname);
+            tvIncomingMessage.setText(newCard.getFullname());
+            tvIncomingMessage=findViewById(R.id.rec_nfc_jobTitle);
+            tvIncomingMessage.setText(newCard.getJobTitle());
+            tvIncomingMessage=findViewById(R.id.rec_nfc_company);
+            tvIncomingMessage.setText(newCard.getCompanyName());
+            tvIncomingMessage=findViewById(R.id.rec_nfc_emailAddress);
+            tvIncomingMessage.setText(newCard.getEmailAddress());
+            tvIncomingMessage=findViewById(R.id.rec_nfc_personalnumber);
+            tvIncomingMessage.setText(newCard.getMobileNumber());
+            tvIncomingMessage=findViewById(R.id.rec_nfc_officenumber);
+            tvIncomingMessage.setText(newCard.getWorkTelephone());
+            tvIncomingMessage=findViewById(R.id.rec_nfc_physAddress);
+            tvIncomingMessage.setText(newCard.getWorkAddress());
+            tvIncomingMessage=findViewById(R.id.rec_nfc_webAddress);
+            tvIncomingMessage.setText(newCard.getWebsite());
             arrayList.add(newCard);
             String jsonEncode= gson.toJson(arrayList);
             person.setRecievedCards(jsonEncode);

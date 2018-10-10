@@ -34,7 +34,7 @@
     <!--Strings for send qr -->
     <string name="grbanner">Generate Code</string>
     <!--Strings for send NFC-->
-    <string name="sendnotify">Touch to Send Details</string>
+    <string name="sendnotify">Touch to Send </string>
     <!--Strings for send interface-->
     <string name="sendbanner">Select A Sending Option:</string>
     <string name="nfcsend">NFC</string>
