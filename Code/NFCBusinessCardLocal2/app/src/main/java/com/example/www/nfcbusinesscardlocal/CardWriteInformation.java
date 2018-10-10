@@ -1,13 +1,11 @@
 package com.example.www.nfcbusinesscardlocal;
 
-import android.app.AlertDialog;
 import android.app.PendingIntent;
 import android.app.ProgressDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.os.Build;
-import android.os.Environment;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.nfc.NfcAdapter;
@@ -28,12 +26,6 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
-import com.google.gson.Gson;
-import com.google.gson.reflect.TypeToken;
-
-import java.io.File;
-import java.lang.reflect.Type;
-import java.util.List;
 
 public class CardWriteInformation extends AppCompatActivity implements Listener {
     //firebase
@@ -41,7 +33,7 @@ public class CardWriteInformation extends AppCompatActivity implements Listener 
     private FirebaseAuth firebaseAuth;
     private ProgressDialog mProgressDialog;
     FirebaseUser firebaseUser;
-    TestUser person=null;
+    User person=null;
     //nfc
     public static final String TAG = CardWriteInformation.class.getSimpleName();
     private Button mBtWrite;
@@ -90,7 +82,7 @@ public class CardWriteInformation extends AppCompatActivity implements Listener 
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
 
-                person=dataSnapshot.getValue(TestUser.class);
+                person=dataSnapshot.getValue(User.class);
                 mProgressDialog.dismiss();
             }
             @Override

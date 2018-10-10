@@ -1,32 +1,14 @@
 package com.example.www.nfcbusinesscardlocal;
 
-import android.Manifest;
-import android.app.ActionBar;
-import android.app.Activity;
 import android.app.ProgressDialog;
-import android.content.Context;
 import android.content.Intent;
-import android.content.SharedPreferences;
-import android.content.pm.PackageManager;
-import android.net.ConnectivityManager;
-import android.net.NetworkInfo;
-import android.net.Uri;
-import android.os.Environment;
-import android.support.v4.app.ActivityCompat;
-import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
-import android.widget.HorizontalScrollView;
 import android.widget.ListView;
-import android.widget.ScrollView;
 import android.widget.SearchView;
-import android.widget.TextView;
 import android.widget.Toast;
-import java.io.File;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -38,12 +20,8 @@ import com.google.firebase.database.ValueEventListener;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 
-import java.io.FileWriter;
-import java.io.IOException;
 import java.lang.reflect.Type;
 import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Comparator;
 import java.util.List;
 
 public class ViewCardsInterface extends AppCompatActivity implements SearchView.OnQueryTextListener{
@@ -51,9 +29,9 @@ public class ViewCardsInterface extends AppCompatActivity implements SearchView.
     private FirebaseAuth firebaseAuth;
     private ProgressDialog mProgressDialog;
     FirebaseUser firebaseUser;
-    TestUser person=null;
+    User person=null;
     ListView scrollView;
-    TestUser viewUser;
+    User viewUser;
     Intent intent;
     SearchView searchView;
     ClientListAdapter ad;
@@ -71,7 +49,7 @@ public class ViewCardsInterface extends AppCompatActivity implements SearchView.
                 intent=new Intent(getApplicationContext(),ViewCardDetails.class);
 
                 String [] details=parent.getItemAtPosition(position).toString().split("\n");
-                viewUser=new TestUser();
+                viewUser=new User();
                 viewUser.setFullname(details[0]);
                 viewUser.setJobTitle(details[1]);
                 viewUser.setCompanyName(details[2]);
@@ -79,8 +57,9 @@ public class ViewCardsInterface extends AppCompatActivity implements SearchView.
                 viewUser.setMobileNumber(details[4]);
                 viewUser.setWorkTelephone(details[5]);
                 viewUser.setWorkAddress(details[6]);
-                if(details.length>7)
-                viewUser.setImageUrl(details[7]);
+                viewUser.setWebsite(details[7]);
+                if(details.length>8)
+                viewUser.setImageUrl(details[8]);
                 intent.putExtra("ViewUser",viewUser);
                 startActivity(intent);
             }
@@ -104,7 +83,7 @@ public class ViewCardsInterface extends AppCompatActivity implements SearchView.
         databaseReference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
-                person=dataSnapshot.getValue(TestUser.class);
+                person=dataSnapshot.getValue(User.class);
                 mProgressDialog.dismiss();
                 setViews(person.getRecievedCards());
             }
@@ -119,7 +98,7 @@ public class ViewCardsInterface extends AppCompatActivity implements SearchView.
     }
     public void setViews(String cardlist)
     {
-        List<TestUser> arrayList=null;
+        List<User> arrayList=null;
         Gson gson= new Gson();
         if(cardlist.isEmpty()||cardlist.compareTo("")==0||cardlist.compareTo("[]")==0)
         {
@@ -129,11 +108,11 @@ public class ViewCardsInterface extends AppCompatActivity implements SearchView.
         }
         else
         {
-            Type type= new TypeToken<List<TestUser>>(){}.getType();
+            Type type= new TypeToken<List<User>>(){}.getType();
             arrayList=gson.fromJson(cardlist,type);
         }
         ArrayList<String> adapter=new ArrayList<>();
-        for (TestUser user:arrayList) {
+        for (User user:arrayList) {
             adapter.add(user.getDetails());
         }
         ad=new ClientListAdapter(this,adapter);

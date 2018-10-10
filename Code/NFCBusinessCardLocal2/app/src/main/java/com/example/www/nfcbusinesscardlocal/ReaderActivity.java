@@ -3,21 +3,17 @@ package com.example.www.nfcbusinesscardlocal;
 import android.Manifest;
 import android.app.Activity;
 import android.app.ProgressDialog;
-import android.content.Context;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
-import android.net.Uri;
 import android.os.Environment;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
 import android.support.v4.content.FileProvider;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.text.Layout;
 import android.view.View;
 import android.widget.Button;
-import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -40,14 +36,12 @@ import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.List;
 
-import static com.example.www.nfcbusinesscardlocal.ViewCardDetails.READ_EXST;
-
 public class ReaderActivity extends AppCompatActivity {
     private DatabaseReference databaseReference;
     private FirebaseAuth firebaseAuth;
     private ProgressDialog mProgressDialog;
     FirebaseUser firebaseUser;
-    TestUser person=null;
+    User person=null;
     private Button scan_btn;
     private View view;
     public String etname, etpos, etphon,etmail,etOff,etWAddress;
@@ -96,7 +90,7 @@ public class ReaderActivity extends AppCompatActivity {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
 
-                person=dataSnapshot.getValue(TestUser.class);
+                person=dataSnapshot.getValue(User.class);
                 mProgressDialog.dismiss();
             }
             @Override
@@ -141,8 +135,6 @@ public class ReaderActivity extends AppCompatActivity {
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         IntentResult result = IntentIntegrator.parseActivityResult(requestCode, resultCode, data);
         view=(View) findViewById(R.id.scanned);
-
-        textView= (TextView) findViewById(R.id.scannedDetails);
         if(result != null){
             if(result.getContents()==null){
                 Toast.makeText(this, "You cancelled the scanning", Toast.LENGTH_LONG).show();
@@ -158,7 +150,7 @@ public class ReaderActivity extends AppCompatActivity {
                     Toast.makeText(ReaderActivity.this, "Information is not for our application.", Toast.LENGTH_SHORT).show();
                     return;
                 }
-                List<TestUser> arrayList=null;
+                List<User> arrayList=null;
                 Gson gson= new Gson();
                 String jsonConverter=person.getRecievedCards();
                 if(jsonConverter.isEmpty())
@@ -167,11 +159,11 @@ public class ReaderActivity extends AppCompatActivity {
                 }
                 else
                 {
-                    Type type= new TypeToken<List<TestUser>>(){}.getType();
+                    Type type= new TypeToken<List<User>>(){}.getType();
                     arrayList=gson.fromJson(jsonConverter,type);
                 }
                 view.setVisibility(View.VISIBLE);
-                TestUser newCard=new TestUser();
+                User newCard=new User();
                 newCard.setFullname(details[0]);
                 newCard.setJobTitle(details[1]);
                 newCard.setCompanyName(details[2]);
@@ -179,10 +171,27 @@ public class ReaderActivity extends AppCompatActivity {
                 newCard.setMobileNumber(details[4]);
                 newCard.setWorkTelephone(details[5]);
                 newCard.setWorkAddress(details[6]);
-                if(details.length==8)
-                newCard.setImageUrl(details[7]);
+                newCard.setWebsite(details[7]);
+                if(details.length==9)
+                newCard.setImageUrl(details[8]);
                 //check if it exists
 
+                TextView tvIncomingMessage=findViewById(R.id.rec_qr_fullname);
+                tvIncomingMessage.setText(newCard.getFullname());
+                tvIncomingMessage=findViewById(R.id.rec_qr_jobTitle);
+                tvIncomingMessage.setText(newCard.getJobTitle());
+                tvIncomingMessage=findViewById(R.id.rec_qr_company);
+                tvIncomingMessage.setText(newCard.getCompanyName());
+                tvIncomingMessage=findViewById(R.id.rec_qr_emailAddress);
+                tvIncomingMessage.setText(newCard.getEmailAddress());
+                tvIncomingMessage=findViewById(R.id.rec_qr_personalnumber);
+                tvIncomingMessage.setText(newCard.getMobileNumber());
+                tvIncomingMessage=findViewById(R.id.rec_qr_officenumber);
+                tvIncomingMessage.setText(newCard.getWorkTelephone());
+                tvIncomingMessage=findViewById(R.id.rec_qr_physAddress);
+                tvIncomingMessage.setText(newCard.getWorkAddress());
+                tvIncomingMessage=findViewById(R.id.rec_qr_webAddress);
+                tvIncomingMessage.setText(newCard.getWebsite());
                 for(int i=0;i<arrayList.size();i++){
                     if(arrayList.get(i).getEmailAddress().compareTo(newCard.getEmailAddress())==0)
                     {
@@ -259,13 +268,13 @@ public class ReaderActivity extends AppCompatActivity {
                     if(i+1<length)
                         resultString+="\n";
                 }
-                textView.setText(resultString);}
+                }
         }
         else {
             super.onActivityResult(requestCode, resultCode, data);
         }
     }
-    private void saveupdate(TestUser user){
+    private void saveupdate(User user){
         databaseReference.setValue(user);
     }
 }

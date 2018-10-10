@@ -1,27 +1,22 @@
 package com.example.www.nfcbusinesscardlocal;
 
-import android.os.Parcelable;
-import android.telecom.Call;
-
-import junit.framework.Test;
-
 import java.io.Serializable;
 import java.security.NoSuchAlgorithmException;
 import java.security.NoSuchProviderException;
 import java.security.SecureRandom;
 import java.security.MessageDigest;
 
-public class TestUser implements Serializable{
+public class User implements Serializable{
     //Attributes
-    private String fullname, jobTitle, password;
+    private String fullname, jobTitle, website="";
     private String companyName,mobileNumber,workTelephone,emailAddress,workAddress;
     private String recievedCards="",imageUrl="";
     //String facebook_link,linkedIn_link,googleplus_link;
-    public TestUser(){
+    public User(){
     }
-    public TestUser(TestUser copy)
+    public User(User copy)
     {
-        fullname=copy.getFullname(); jobTitle=copy.getJobTitle();password=copy.getPassword();
+        fullname=copy.getFullname(); jobTitle=copy.getJobTitle();website=copy.getWebsite();
         companyName=copy.getCompanyName();mobileNumber=copy.getMobileNumber();workTelephone=copy.getWorkTelephone();
         emailAddress=copy.getEmailAddress();workAddress=copy.getWorkAddress();
         recievedCards=getRecievedCards();
@@ -35,10 +30,9 @@ public class TestUser implements Serializable{
         this.jobTitle = jobTitle;
     }
 
-    public void setPassword(String password) //throws NoSuchAlgorithmException,NoSuchProviderException
+    public void setWebsite(String website)
     {
-        //byte[] salt=getSalt();
-        this.password = password;//getSecurePassword(password,salt);
+        this.website = website;
     }
 
     public void setCompanyName(String companyName) {
@@ -77,10 +71,10 @@ public class TestUser implements Serializable{
         return jobTitle;
     }
 
-    public String getPassword() {
-        if(password.isEmpty()||password.compareTo("")==0)
+    public String getWebsite() {
+        if(website.isEmpty()||website.compareTo("")==0)
         { return "n/a";}
-        return password;
+        return website;
     }
 
     public String getCompanyName() {
@@ -132,6 +126,7 @@ public class TestUser implements Serializable{
             returnString+=getMobileNumber()+"\n";
             returnString+=getWorkTelephone()+"\n";
             returnString+=getWorkAddress()+" \n";
+            returnString+=getWebsite()+" \n";
             returnString+=getImageUrl();
 
         return returnString;
@@ -146,46 +141,10 @@ public class TestUser implements Serializable{
         returnString+=getMobileNumber()+"\n";
         returnString+=getWorkTelephone()+"\n";
         returnString+=getWorkAddress()+" \n";
+        returnString+=getWebsite()+" \n";
         returnString+=getImageUrl();
 
         return returnString;
     }
-    private static String getSecurePassword(String passwordToHash, byte[] salt)
-    {
-        String generatedPassword = null;
-        try {
-            // Create MessageDigest instance for MD5
-            MessageDigest md = MessageDigest.getInstance("MD5");
-            //Add password bytes to digest
-            md.update(salt);
-            //Get the hash's bytes
-            byte[] bytes = md.digest(passwordToHash.getBytes());
-            //This bytes[] has bytes in decimal format;
-            //Convert it to hexadecimal format
-            StringBuilder sb = new StringBuilder();
-            for(int i=0; i< bytes.length ;i++)
-            {
-                sb.append(Integer.toString((bytes[i] & 0xff) + 0x100, 16).substring(1));
-            }
-            //Get complete hashed password in hex format
-            generatedPassword = sb.toString();
-        }
-        catch (NoSuchAlgorithmException e) {
-            e.printStackTrace();
-        }
-        return generatedPassword;
-    }
 
-    //Add salt
-    private static byte[] getSalt() throws NoSuchAlgorithmException, NoSuchProviderException
-    {
-        //Always use a SecureRandom generator
-        SecureRandom sr = SecureRandom.getInstance("SHA1PRNG", "SUN");
-        //Create array for salt
-        byte[] salt = new byte[16];
-        //Get a random salt
-        sr.nextBytes(salt);
-        //return salt
-        return salt;
-    }
 }

@@ -12,7 +12,7 @@
         android:layout_height="match_parent"
         android:orientation="vertical"
         android:background="@color/lightblue"
-        android:weightSum="5">
+        android:weightSum="9">
         <TextView
             android:layout_width="match_parent"
             android:layout_height="0dp"
@@ -22,14 +22,104 @@
             android:textColor="@color/white"
             android:textStyle="bold"
             android:gravity="center"/>
-        <TextView
-            android:id="@+id/text_field"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="4"
-            android:text="Getting details"
-            android:gravity="center"
-            android:textColor="@color/white"
-            android:textSize="@dimen/fontsize"/>
+            android:layout_weight="8">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:weightSum="8"
+                android:orientation="vertical">
+                <TextView
+                    android:id="@+id/send_fullname"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:textSize="@dimen/textsize"
+                    android:gravity="center_vertical|center_horizontal"
+                    android:textStyle="bold"
+                    android:textColor="@color/white"
+                    android:drawableEnd="@drawable/ic_person"/>
+                <TextView
+                    android:id="@+id/send_jobTitle"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:textSize="@dimen/textsize"
+                    android:gravity="center_vertical|center_horizontal"
+                    android:textStyle="bold"
+                    android:textColor="@color/white"
+                    android:drawableEnd="@drawable/ic_work_sort"/>
+                <TextView
+                    android:id="@+id/send_emailAddress"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:textSize="@dimen/textsize"
+                    android:gravity="center_vertical|center_horizontal"
+                    android:textStyle="bold"
+                    android:textColor="@color/white"
+                    android:drawableEnd="@drawable/ic_email"/>
+                <TextView
+                    android:id="@+id/send_webAddress"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:textSize="@dimen/textsize"
+                    android:gravity="center_vertical|center_horizontal"
+                    android:textStyle="bold"
+                    android:textColor="@color/white"
+                    android:drawableEnd="@drawable/ic_website"/>
+                <TextView
+                    android:id="@+id/send_personalnumber"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:textSize="@dimen/textsize"
+                    android:gravity="center_vertical|center_horizontal"
+                    android:textStyle="bold"
+                    android:textColor="@color/white"
+                    android:drawableEnd="@drawable/ic_phone"/>
+                <TextView
+                    android:id="@+id/send_officenumber"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:textSize="@dimen/textsize"
+                    android:gravity="center_vertical|center_horizontal"
+                    android:textStyle="bold"
+                    android:textColor="@color/white"
+                    android:drawableEnd="@drawable/ic_telephone"/>
+                <TextView
+                    android:id="@+id/send_company"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:textSize="@dimen/textsize"
+                    android:gravity="center_vertical|center_horizontal"
+                    android:textStyle="bold"
+                    android:textColor="@color/white"
+                    android:drawableEnd="@drawable/ic_building"/>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1">
+                    <ScrollView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+                        <TextView
+                            android:id="@+id/send_physAddress"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textSize="@dimen/textsize"
+                            android:textStyle="bold"
+                            android:gravity="center_vertical|center_horizontal"
+                            android:textColor="@color/white"
+                            android:drawableEnd="@drawable/ic_edit_location"/>
+                    </ScrollView>
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
     </LinearLayout>
 </LinearLayout>
