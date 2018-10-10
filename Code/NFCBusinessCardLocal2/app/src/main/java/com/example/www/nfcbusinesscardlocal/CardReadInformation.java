@@ -10,7 +10,9 @@ import android.provider.Settings;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 import android.widget.Button;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -29,7 +31,6 @@ public class CardReadInformation extends AppCompatActivity implements Listener{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_card_read_information);
         mBtRead = (Button) findViewById(R.id.btn_read);
-        textView= (TextView) findViewById(R.id.tv_read_message);
         mBtRead.setOnClickListener(view -> showReadFragment());
         nfcAdapter=NfcAdapter.getDefaultAdapter(this);
     }
@@ -105,7 +106,26 @@ public class CardReadInformation extends AppCompatActivity implements Listener{
                 } else {
 
                     cardReadInformationFragment = (CardReadInformationFragment)getFragmentManager().findFragmentByTag(CardReadInformationFragment.TAG);
-                    textView.setText(cardReadInformationFragment.onNfcDetected(ndef));
+                    String message=cardReadInformationFragment.onNfcDetected(ndef);
+                    LinearLayout linearLayout =(LinearLayout) findViewById(R.id.read_layout);
+                    linearLayout.setVisibility(View.VISIBLE);
+                    String [] details=message.split("\n");
+                    TextView tvIncomingMessage=findViewById(R.id.read_fullname);
+                    tvIncomingMessage.setText(details[0]);
+                    tvIncomingMessage=findViewById(R.id.read_jobTitle);
+                    tvIncomingMessage.setText(details[1]);
+                    tvIncomingMessage=findViewById(R.id.read_company);
+                    tvIncomingMessage.setText(details[2]);
+                    tvIncomingMessage=findViewById(R.id.read_emailAddress);
+                    tvIncomingMessage.setText(details[3]);
+                    tvIncomingMessage=findViewById(R.id.read_personalnumber);
+                    tvIncomingMessage.setText(details[4]);
+                    tvIncomingMessage=findViewById(R.id.read_officenumber);
+                    tvIncomingMessage.setText(details[5]);
+                    tvIncomingMessage=findViewById(R.id.read_physAddress);
+                    tvIncomingMessage.setText(details[6]);
+                    tvIncomingMessage=findViewById(R.id.read_webAddress);
+                    tvIncomingMessage.setText(details[7]);
                     cardReadInformationFragment.dismiss();
                 }
             }

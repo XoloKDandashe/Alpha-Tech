@@ -3,12 +3,9 @@ package com.example.www.nfcbusinesscardlocal;
 import android.Manifest;
 import android.app.PendingIntent;
 import android.app.ProgressDialog;
-import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
-import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
-import android.net.Uri;
 import android.nfc.NdefMessage;
 import android.nfc.NdefRecord;
 import android.nfc.NfcAdapter;
@@ -23,6 +20,7 @@ import android.support.v4.content.FileProvider;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -49,7 +47,7 @@ public class ReceiverActivity extends AppCompatActivity {
     private FirebaseAuth firebaseAuth;
     private ProgressDialog mProgressDialog;
     private FirebaseUser firebaseUser;
-    private TestUser person=null;
+    private User person=null;
     public static final String MIME_TEXT_PLAIN = "text/plain";
     public String etname, etpos, etphon,etmail,etOff,etWAddress;
     private TextView tvIncomingMessage;
@@ -59,6 +57,8 @@ public class ReceiverActivity extends AppCompatActivity {
     static final Integer READ_EXST = 0x4;
     private static final String VCF_DIRECTORY = "/vcf_demonuts";
     private File vcfFile;
+    private LinearLayout linearLayout;
+    private TextView textview_banner;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -84,6 +84,10 @@ public class ReceiverActivity extends AppCompatActivity {
         }
         firebaseUser=firebaseAuth.getCurrentUser();
         databaseReference= FirebaseDatabase.getInstance().getReference("users").child(firebaseUser.getUid());
+        linearLayout=(LinearLayout) findViewById(R.id.details_layout);
+        textview_banner=(TextView) findViewById(R.id.tv_in_label);
+        textview_banner.setText("Touch to receive:");
+        linearLayout.setVisibility(View.INVISIBLE);
     }
     // need to check NfcAdapter for nullability. Null means no NFC support on the device
     private boolean isNfcSupported() {
@@ -92,7 +96,7 @@ public class ReceiverActivity extends AppCompatActivity {
     }
 
     private void initViews() {
-        this.tvIncomingMessage = (TextView) findViewById(R.id.tv_in_message);
+        //this.tvIncomingMessage = (TextView) findViewById(R.id.tv_in_message);
     }
 
     @Override
@@ -112,7 +116,7 @@ public class ReceiverActivity extends AppCompatActivity {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
 
-                person=dataSnapshot.getValue(TestUser.class);
+                person=dataSnapshot.getValue(User.class);
                 mProgressDialog.dismiss();
             }
             @Override
@@ -175,19 +179,20 @@ public class ReceiverActivity extends AppCompatActivity {
                 Toast.makeText(ReceiverActivity.this, "Information is not for our application.", Toast.LENGTH_SHORT).show();
                 return;
             }
-            String payload="";
+            /*String payload="";
             int length=shred.length;
-            if(length>7)
+            if(length>8)
                 length--;
             for(int i=0;i<length;i++) {
                 payload += shred[i];
                 if((i+1)<length)
                     payload+="\n";
-            }
-            this.tvIncomingMessage.setText(payload);
-
+            }*/
+            //this.tvIncomingMessage.setText(payload);
+            linearLayout.setVisibility(View.VISIBLE);
+            textview_banner.setText("Business Details:");
             String [] details=inMessage.split("\n");
-            List<TestUser> arrayList=null;
+            List<User> arrayList=null;
             Gson gson= new Gson();
             String jsonConverter=person.getRecievedCards();
             if(jsonConverter.isEmpty())
@@ -196,11 +201,11 @@ public class ReceiverActivity extends AppCompatActivity {
             }
             else
             {
-                Type type= new TypeToken<List<TestUser>>(){}.getType();
+                Type type= new TypeToken<List<User>>(){}.getType();
                 arrayList=gson.fromJson(jsonConverter,type);
             }
 
-            TestUser newCard=new TestUser();
+            User newCard=new User();
             newCard.setFullname(details[0]);
             newCard.setJobTitle(details[1]);
             newCard.setCompanyName(details[2]);
@@ -208,14 +213,31 @@ public class ReceiverActivity extends AppCompatActivity {
             newCard.setMobileNumber(details[4]);
             newCard.setWorkTelephone(details[5]);
             newCard.setWorkAddress(details[6]);
-            if(details.length==8)
-            newCard.setImageUrl(details[7]);
+            newCard.setWebsite(details[7]);
+            if(details.length==9)
+                newCard.setImageUrl(details[8]);
             for(int i=0;i<arrayList.size();i++){
                 if(arrayList.get(i).getEmailAddress().compareTo(newCard.getEmailAddress())==0)
                 {
                     arrayList.remove(i);
                 }
             }
+            tvIncomingMessage=findViewById(R.id.rec_nfc_fullname);
+            tvIncomingMessage.setText(newCard.getFullname());
+            tvIncomingMessage=findViewById(R.id.rec_nfc_jobTitle);
+            tvIncomingMessage.setText(newCard.getJobTitle());
+            tvIncomingMessage=findViewById(R.id.rec_nfc_company);
+            tvIncomingMessage.setText(newCard.getCompanyName());
+            tvIncomingMessage=findViewById(R.id.rec_nfc_emailAddress);
+            tvIncomingMessage.setText(newCard.getEmailAddress());
+            tvIncomingMessage=findViewById(R.id.rec_nfc_personalnumber);
+            tvIncomingMessage.setText(newCard.getMobileNumber());
+            tvIncomingMessage=findViewById(R.id.rec_nfc_officenumber);
+            tvIncomingMessage.setText(newCard.getWorkTelephone());
+            tvIncomingMessage=findViewById(R.id.rec_nfc_physAddress);
+            tvIncomingMessage.setText(newCard.getWorkAddress());
+            tvIncomingMessage=findViewById(R.id.rec_nfc_webAddress);
+            tvIncomingMessage.setText(newCard.getWebsite());
             arrayList.add(newCard);
             String jsonEncode= gson.toJson(arrayList);
             person.setRecievedCards(jsonEncode);
@@ -346,7 +368,7 @@ public class ReceiverActivity extends AppCompatActivity {
     public void disableForegroundDispatch(final AppCompatActivity activity, NfcAdapter adapter) {
         adapter.disableForegroundDispatch(activity);
     }
-    private void saveupdate(TestUser user){
+    private void saveupdate(User user){
         databaseReference.setValue(user);
     }
     @Override

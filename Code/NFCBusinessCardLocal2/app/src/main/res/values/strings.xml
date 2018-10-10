@@ -4,7 +4,7 @@
     <string name="sendcard">Send Biz Card</string>
     <string name="receivecard">Receive Biz Card</string>
     <string name="updateinfo">View My Card</string>
-    <string name="edit_nfc">Read NFC Card</string>
+    <string name="edit_nfc">Details on NFC Card</string>
     <string name="managecards">Manage Cards</string>
     <!--Strings for View Details-->
     <string name="defaultname">User Fullname</string>
@@ -21,20 +21,20 @@
     <string name="updatecard">Write Information</string>
     <!--Strings for Log in-->
     <string name="loginemailbanner">Please enter email:</string>
-    <string name="loginemail">user@epiuse.com</string>
+    <string name="loginemail">Email</string>
     <string name="loginpasswordbanner">Please enter password:</string>
-    <string name="loginpassword">*********</string>
+    <string name="loginpassword">Password</string>
     <string name="enter">Log in</string>
     <string name="register">No account? Register now.</string>
     <!--Strings for Registration-->
     <string name="create_account">Create Account</string>
     <!--Strings for recieve qr -->
     <string name="qrscanbanner">Activate QR Scanner</string>
-    <string name="qrscan">Scan</string>
+    <string name="qrscan">Activate Scanner</string>
     <!--Strings for send qr -->
     <string name="grbanner">Generate Code</string>
     <!--Strings for send NFC-->
-    <string name="sendnotify">Touch to Send Details</string>
+    <string name="sendnotify">Touch to Send </string>
     <!--Strings for send interface-->
     <string name="sendbanner">Select A Sending Option:</string>
     <string name="nfcsend">NFC</string>

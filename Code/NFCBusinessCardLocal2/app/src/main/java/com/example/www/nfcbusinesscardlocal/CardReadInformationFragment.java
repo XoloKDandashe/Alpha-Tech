@@ -90,10 +90,10 @@ public class CardReadInformationFragment extends DialogFragment {
             {
                 return "No information available.";
             }
-            else if(details.length<6){
+            else if(details.length<7){
                 return "Information is not for our application.";
             }
-            if(length>7)
+            if(length>8)
                 length--;
             for(int i=0;i<length;i++) {
                 payload += details[i];
