@@ -126,6 +126,7 @@ public class User implements Serializable{
             returnString+=getMobileNumber()+"\n";
             returnString+=getWorkTelephone()+"\n";
             returnString+=getWorkAddress()+" \n";
+            returnString+=getWebsite()+" \n";
             returnString+=getImageUrl();
 
         return returnString;
@@ -140,6 +141,7 @@ public class User implements Serializable{
         returnString+=getMobileNumber()+"\n";
         returnString+=getWorkTelephone()+"\n";
         returnString+=getWorkAddress()+" \n";
+        returnString+=getWebsite()+" \n";
         returnString+=getImageUrl();
 
         return returnString;

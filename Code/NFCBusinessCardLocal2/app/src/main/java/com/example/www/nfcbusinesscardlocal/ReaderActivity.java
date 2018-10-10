@@ -172,8 +172,9 @@ public class ReaderActivity extends AppCompatActivity {
                 newCard.setMobileNumber(details[4]);
                 newCard.setWorkTelephone(details[5]);
                 newCard.setWorkAddress(details[6]);
-                if(details.length==8)
-                newCard.setImageUrl(details[7]);
+                newCard.setWebsite(details[7]);
+                if(details.length==9)
+                newCard.setImageUrl(details[8]);
                 //check if it exists
 
                 for(int i=0;i<arrayList.size();i++){

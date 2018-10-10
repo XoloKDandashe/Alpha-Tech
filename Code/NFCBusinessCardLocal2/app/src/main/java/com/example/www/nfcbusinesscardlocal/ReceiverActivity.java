@@ -174,7 +174,7 @@ public class ReceiverActivity extends AppCompatActivity {
             }
             String payload="";
             int length=shred.length;
-            if(length>7)
+            if(length>8)
                 length--;
             for(int i=0;i<length;i++) {
                 payload += shred[i];
@@ -205,8 +205,9 @@ public class ReceiverActivity extends AppCompatActivity {
             newCard.setMobileNumber(details[4]);
             newCard.setWorkTelephone(details[5]);
             newCard.setWorkAddress(details[6]);
-            if(details.length==8)
-            newCard.setImageUrl(details[7]);
+            newCard.setWebsite(details[7]);
+            if(details.length==9)
+                newCard.setImageUrl(details[8]);
             for(int i=0;i<arrayList.size();i++){
                 if(arrayList.get(i).getEmailAddress().compareTo(newCard.getEmailAddress())==0)
                 {

@@ -105,7 +105,7 @@ public class NFCActivity extends Activity implements NfcAdapter.CreateNdefMessag
         String[] details=person.getDetails().split("\n");
         String payload="";
         int length=details.length;
-        if(length>7)
+        if(length>8)
             length--;
         for(int i=0;i<length;i++) {
             payload += details[i];

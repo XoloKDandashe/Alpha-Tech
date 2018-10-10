@@ -223,6 +223,8 @@ public class updateDetails extends AppCompatActivity {
         editText.setText(check(person.getWorkTelephone()));
         editText=(EditText)findViewById(R.id.update_input_address);
         editText.setText(check(person.getWorkAddress()));
+        editText=(EditText)findViewById(R.id.update_input_web);
+        editText.setText(check(person.getWebsite()));
     }
     public String check(String word){
         if(word.compareTo("n/a")==0)

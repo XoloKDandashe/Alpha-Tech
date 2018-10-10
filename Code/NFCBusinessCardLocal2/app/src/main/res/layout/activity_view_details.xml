@@ -14,7 +14,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        android:weightSum="8"
+        android:weightSum="9"
         android:background="@color/lightblue"
         android:padding="@dimen/lesspadding">
         <LinearLayout
@@ -78,8 +78,8 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:weightSum="5"
-            android:layout_weight="4"
+            android:weightSum="6"
+            android:layout_weight="5"
             android:orientation="vertical">
             <TextView
                 android:id="@+id/emailAddress"
@@ -92,6 +92,17 @@
                 android:textStyle="bold"
                 android:textColor="@color/white"
                 android:drawableEnd="@drawable/ic_email"/>
+            <TextView
+                android:id="@+id/webAddress"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:textSize="@dimen/textsize"
+                android:gravity="center_vertical|center_horizontal"
+                android:autoLink="web"
+                android:textStyle="bold"
+                android:textColor="@color/white"
+                android:drawableEnd="@drawable/ic_website"/>
             <TextView
                 android:id="@+id/personalnumber"
                 android:layout_width="match_parent"

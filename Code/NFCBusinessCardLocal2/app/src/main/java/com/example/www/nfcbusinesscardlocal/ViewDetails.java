@@ -148,6 +148,8 @@ public class ViewDetails extends AppCompatActivity implements Listener{
         textView=(TextView)findViewById(R.id.jobtitle);
         textView.setText(person.getJobTitle());
         textView=(TextView)findViewById(R.id.company);
+        textView.setText(person.getWebsite());
+        textView=(TextView)findViewById(R.id.webAddress);
         textView.setText(person.getCompanyName());
         textView=(TextView)findViewById(R.id.emailAddress);
         textView.setText(person.getEmailAddress());
