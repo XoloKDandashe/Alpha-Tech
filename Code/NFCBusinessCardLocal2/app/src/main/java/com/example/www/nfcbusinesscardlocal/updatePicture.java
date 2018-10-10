@@ -135,7 +135,15 @@ public class updatePicture extends AppCompatActivity {
 
             try {
                 Bitmap bitmap= MediaStore.Images.Media.getBitmap(getContentResolver(),filepath);
-                imageView.setImageBitmap(bitmap);
+                if(bitmap.getWidth()>bitmap.getHeight())
+                {
+                    Bitmap altBitmap=Bitmap.createScaledBitmap(bitmap, bitmap.getWidth(),bitmap.getHeight(),false);
+                    imageView.setImageBitmap(altBitmap);
+                }
+                else
+                {
+                    imageView.setImageBitmap(bitmap);
+                }
                 Toast.makeText(getApplicationContext(), "Image Selected.", Toast.LENGTH_SHORT).show();
             } catch (IOException e) {
                 Toast.makeText(getApplicationContext(),"Unable to load image",Toast.LENGTH_SHORT).show();

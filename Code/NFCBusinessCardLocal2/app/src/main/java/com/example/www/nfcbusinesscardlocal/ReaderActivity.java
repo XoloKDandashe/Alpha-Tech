@@ -13,6 +13,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -174,6 +175,7 @@ public class ReaderActivity extends AppCompatActivity {
                 if(details.length==9)
                 newCard.setImageUrl(details[8]);
                 //check if it exists
+
                 TextView tvIncomingMessage=findViewById(R.id.rec_qr_fullname);
                 tvIncomingMessage.setText(newCard.getFullname());
                 tvIncomingMessage=findViewById(R.id.rec_qr_jobTitle);

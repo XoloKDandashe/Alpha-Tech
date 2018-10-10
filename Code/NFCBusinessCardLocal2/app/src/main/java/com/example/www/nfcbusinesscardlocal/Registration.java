@@ -271,9 +271,6 @@ public class Registration extends AppCompatActivity {
         FirebaseUser firebaseUser=firebaseAuth.getCurrentUser();
         databaseReference.child(firebaseUser.getUid()).setValue(user);
     }
-    public void backToLogin(View view){
-        onBackPressed();
-    }
     @Override
     public void onBackPressed() {
         super.onBackPressed();

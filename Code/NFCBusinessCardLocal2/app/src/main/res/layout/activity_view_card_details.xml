@@ -13,41 +13,47 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        android:padding="@dimen/lesspadding"
         android:background="@color/lightblue"
         android:weightSum="8"
         >
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="2"
-            android:background="@drawable/profile_border"
-            android:weightSum="4">
+            android:layout_weight="6.5"
+            android:orientation="vertical"
+            android:background="@drawable/profile_border">
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="horizontal"
-                android:padding="8dp"
-                android:weightSum="3">
+                android:layout_height="0dp"
+                android:layout_weight="2"
+                android:weightSum="4">
                 <LinearLayout
-                    android:layout_width="0dp"
-                    android:layout_weight="1"
-                    android:layout_height="match_parent">
-                    <de.hdodenhof.circleimageview.CircleImageView
-                        android:id="@+id/profilePicture_view_user"
-                        android:layout_width="100dp"
-                        android:layout_height="120dp"
-                        android:layout_centerHorizontal="true"
-                        android:layout_centerVertical="true"
-                        android:src="@drawable/ic_person"/>
-                </LinearLayout>
-                <LinearLayout
-                    android:layout_width="0dp"
-                    android:layout_weight="2"
+                    android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:weightSum="3"
-                    android:orientation="vertical">
-                    <TextView
+                    android:orientation="horizontal"
+                    android:paddingRight="8dp"
+                    android:paddingTop="8dp"
+                    android:paddingBottom="8dp"
+                    android:weightSum="3">
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="match_parent">
+                        <de.hdodenhof.circleimageview.CircleImageView
+                            android:id="@+id/profilePicture_view_user"
+                            android:layout_width="100dp"
+                            android:layout_height="120dp"
+                            android:layout_centerHorizontal="true"
+                            android:layout_centerVertical="true"
+                            android:src="@drawable/ic_person"/>
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_weight="2"
+                        android:layout_height="match_parent"
+                        android:weightSum="3"
+                        android:orientation="vertical">
+                        <TextView
                             android:id="@+id/name_view_user"
                             android:textColor="@color/white"
                             android:layout_width="match_parent"
@@ -56,16 +62,16 @@
                             android:textSize="@dimen/textsize"
                             android:textStyle="bold"
                             android:text="@string/defaultname"/>
-                    <TextView
-                        android:id="@+id/surname_view_user"
-                        android:textColor="@color/white"
-                        android:layout_width="match_parent"
-                        android:layout_height="0dp"
-                        android:layout_weight="1"
-                        android:textSize="@dimen/textsize"
-                        android:textStyle="bold"
-                        android:text=""/>
-                    <TextView
+                        <TextView
+                            android:id="@+id/surname_view_user"
+                            android:textColor="@color/white"
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_weight="1"
+                            android:textSize="@dimen/textsize"
+                            android:textStyle="bold"
+                            android:text=""/>
+                        <TextView
                             android:id="@+id/jobtitle_view_user"
                             android:textColor="@color/white"
                             android:layout_width="match_parent"
@@ -75,146 +81,147 @@
                             android:textStyle="bold"
                             android:drawableEnd="@drawable/ic_work_sort"
                             android:text="@string/defaultjob"/>
+                    </LinearLayout>
                 </LinearLayout>
             </LinearLayout>
-        </LinearLayout>
-        <!--profile picture and fullname with jobtitle start-->
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="4.5"
-            android:orientation="vertical"
-            android:weightSum="7">
+            <!--profile picture and fullname with jobtitle start-->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
-                android:layout_weight="1">
-                <ScrollView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent">
-                    <TextView
-                        android:id="@+id/emailAddress_view_user"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:textStyle="bold"
-                        android:textColor="@color/white"
-                        android:textSize="@dimen/textsize"
-                        android:gravity="center_vertical|center_horizontal"
-                        android:autoLink="email"
-                        android:drawableEnd="@drawable/ic_email"
-                        android:text="@string/email"
-                        /></ScrollView>
-            </LinearLayout>
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight="1">
-                <TextView
-                    android:id="@+id/webAddress_view_user"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:textSize="@dimen/textsize"
-                    android:gravity="center_vertical|center_horizontal"
-                    android:autoLink="web"
-                    android:textStyle="bold"
-                    android:textColor="@color/white"
-                    android:drawableEnd="@drawable/ic_website"/>
-            </LinearLayout>
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight="1">
-                <TextView
-                    android:id="@+id/personalnumber_view_user"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:text="@string/personal"
-                    android:textStyle="bold"
-                    android:textColor="@color/white"
-                    android:textSize="@dimen/textsize"
-                    android:gravity="center_vertical|center_horizontal"
-                    android:drawableEnd="@drawable/ic_phone"
-                    android:autoLink="phone"/>
-            </LinearLayout>
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight="1">
-                <TextView
-                    android:id="@+id/officenumber_view_user"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:textStyle="bold"
-                    android:textColor="@color/white"
-                    android:textSize="@dimen/textsize"
-                    android:gravity="center_vertical|center_horizontal"
-                    android:drawableEnd="@drawable/ic_telephone"
-                    android:text="@string/office"
-                    android:autoLink="phone"/>
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight="1">
-                <ScrollView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent">
-                    <TextView
-                        android:id="@+id/company_view_user"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:textStyle="bold"
-                        android:textColor="@color/white"
-                        android:textSize="@dimen/textsize"
-                        android:gravity="center_vertical|center_horizontal"
-                        android:drawableEnd="@drawable/ic_building"
-                        android:text="@string/company"
-                        />
-                </ScrollView>
-            </LinearLayout>
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight="1">
-                <ScrollView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent">
-                    <TextView
-                        android:id="@+id/physAddress_view_user"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:textStyle="bold"
-                        android:textColor="@color/white"
-                        android:textSize="@dimen/textsize"
-                        android:gravity="center_vertical|center_horizontal"
-                        android:drawableEnd="@drawable/ic_edit_location"
-                        android:text="@string/address"
-                        />
-                </ScrollView>
-            </LinearLayout>
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight="1"
-                android:padding="4dp">
+                android:layout_weight="4.5"
+                android:orientation="vertical"
+                android:weightSum="7">
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:gravity="right"
-                    android:layout_marginRight="5dp"
-                    android:layout_marginBottom="5dp">
-                    <Button
-                        android:id="@+id/button"
-                        android:layout_width="wrap_content"
+                    android:layout_height="0dp"
+                    android:layout_weight="1">
+                    <ScrollView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+                        <TextView
+                            android:id="@+id/emailAddress_view_user"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textStyle="bold"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/textsize"
+                            android:gravity="center_vertical|center_horizontal"
+                            android:autoLink="email"
+                            android:drawableEnd="@drawable/ic_email"
+                            android:text="@string/email"
+                            /></ScrollView>
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1">
+                    <TextView
+                        android:id="@+id/webAddress_view_user"
+                        android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:background="@color/transparent"
+                        android:textSize="@dimen/textsize"
+                        android:gravity="center_vertical|center_horizontal"
+                        android:autoLink="web"
                         android:textStyle="bold"
                         android:textColor="@color/white"
-                        android:textSize="@dimen/fontsize"
+                        android:drawableEnd="@drawable/ic_website"/>
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1">
+                    <TextView
+                        android:id="@+id/personalnumber_view_user"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:text="@string/personal"
+                        android:textStyle="bold"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/textsize"
                         android:gravity="center_vertical|center_horizontal"
-                        android:drawableEnd="@drawable/ic_car"
-                        android:text="Navigate me"/>
+                        android:drawableEnd="@drawable/ic_phone"
+                        android:autoLink="phone"/>
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1">
+                    <TextView
+                        android:id="@+id/officenumber_view_user"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:textStyle="bold"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/textsize"
+                        android:gravity="center_vertical|center_horizontal"
+                        android:drawableEnd="@drawable/ic_telephone"
+                        android:text="@string/office"
+                        android:autoLink="phone"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1">
+                    <ScrollView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+                        <TextView
+                            android:id="@+id/company_view_user"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textStyle="bold"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/textsize"
+                            android:gravity="center_vertical|center_horizontal"
+                            android:drawableEnd="@drawable/ic_building"
+                            android:text="@string/company"
+                            />
+                    </ScrollView>
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1">
+                    <ScrollView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+                        <TextView
+                            android:id="@+id/physAddress_view_user"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textStyle="bold"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/textsize"
+                            android:gravity="center_vertical|center_horizontal"
+                            android:drawableEnd="@drawable/ic_edit_location"
+                            android:text="@string/address"
+                            />
+                    </ScrollView>
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:padding="4dp">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="right"
+                        android:layout_marginRight="5dp"
+                        android:layout_marginBottom="5dp">
+                        <Button
+                            android:id="@+id/button"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:background="@color/transparent"
+                            android:textStyle="bold"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/fontsize"
+                            android:gravity="center_vertical|center_horizontal"
+                            android:drawableEnd="@drawable/ic_car"
+                            android:text="Navigate me"/>
+                    </LinearLayout>
                 </LinearLayout>
             </LinearLayout>
         </LinearLayout>
