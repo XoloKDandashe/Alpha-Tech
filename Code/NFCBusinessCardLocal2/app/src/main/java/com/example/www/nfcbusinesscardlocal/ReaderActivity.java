@@ -176,7 +176,22 @@ public class ReaderActivity extends AppCompatActivity {
                 if(details.length==9)
                 newCard.setImageUrl(details[8]);
                 //check if it exists
-
+                TextView tvIncomingMessage=findViewById(R.id.rec_qr_fullname);
+                tvIncomingMessage.setText(newCard.getFullname());
+                tvIncomingMessage=findViewById(R.id.rec_qr_jobTitle);
+                tvIncomingMessage.setText(newCard.getJobTitle());
+                tvIncomingMessage=findViewById(R.id.rec_qr_company);
+                tvIncomingMessage.setText(newCard.getCompanyName());
+                tvIncomingMessage=findViewById(R.id.rec_qr_emailAddress);
+                tvIncomingMessage.setText(newCard.getEmailAddress());
+                tvIncomingMessage=findViewById(R.id.rec_qr_personalnumber);
+                tvIncomingMessage.setText(newCard.getMobileNumber());
+                tvIncomingMessage=findViewById(R.id.rec_qr_officenumber);
+                tvIncomingMessage.setText(newCard.getWorkTelephone());
+                tvIncomingMessage=findViewById(R.id.rec_qr_physAddress);
+                tvIncomingMessage.setText(newCard.getWorkAddress());
+                tvIncomingMessage=findViewById(R.id.rec_qr_webAddress);
+                tvIncomingMessage.setText(newCard.getWebsite());
                 for(int i=0;i<arrayList.size();i++){
                     if(arrayList.get(i).getEmailAddress().compareTo(newCard.getEmailAddress())==0)
                     {

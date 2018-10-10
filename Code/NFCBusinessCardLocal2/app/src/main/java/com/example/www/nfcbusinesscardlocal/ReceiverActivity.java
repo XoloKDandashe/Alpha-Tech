@@ -58,6 +58,7 @@ public class ReceiverActivity extends AppCompatActivity {
     private static final String VCF_DIRECTORY = "/vcf_demonuts";
     private File vcfFile;
     private LinearLayout linearLayout;
+    private TextView textview_banner;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -83,6 +84,9 @@ public class ReceiverActivity extends AppCompatActivity {
         }
         firebaseUser=firebaseAuth.getCurrentUser();
         databaseReference= FirebaseDatabase.getInstance().getReference("users").child(firebaseUser.getUid());
+        linearLayout=(LinearLayout) findViewById(R.id.details_layout);
+        textview_banner=(TextView) findViewById(R.id.tv_in_label);
+        textview_banner.setText("Touch to receive:");
         linearLayout.setVisibility(View.INVISIBLE);
     }
     // need to check NfcAdapter for nullability. Null means no NFC support on the device
@@ -185,7 +189,8 @@ public class ReceiverActivity extends AppCompatActivity {
                     payload+="\n";
             }*/
             //this.tvIncomingMessage.setText(payload);
-            linearLayout.setVisibility(View.INVISIBLE);
+            linearLayout.setVisibility(View.VISIBLE);
+            textview_banner.setText("Business Details:");
             String [] details=inMessage.split("\n");
             List<User> arrayList=null;
             Gson gson= new Gson();

@@ -30,7 +30,7 @@
     <string name="create_account">Create Account</string>
     <!--Strings for recieve qr -->
     <string name="qrscanbanner">Activate QR Scanner</string>
-    <string name="qrscan">Scan</string>
+    <string name="qrscan">Activate Scanner</string>
     <!--Strings for send qr -->
     <string name="grbanner">Generate Code</string>
     <!--Strings for send NFC-->
