@@ -516,11 +516,11 @@ public class ImportCardDetails extends AppCompatActivity {
             Toast.makeText(this, "Passwords do not match.", Toast.LENGTH_SHORT).show();
             return;
         }
-        newUser.setPassword(password);
+
         /*If all checks out, add to arraylist*/
         mProgressDialog.setMessage("Creating profile...");
         mProgressDialog.show();
-        firebaseAuth.createUserWithEmailAndPassword(newUser.getEmailAddress(),newUser.getPassword())
+        firebaseAuth.createUserWithEmailAndPassword(newUser.getEmailAddress(),password)
                 .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
@@ -536,7 +536,7 @@ public class ImportCardDetails extends AppCompatActivity {
                 });
         mProgressDialog.setMessage("Saving information...");
         mProgressDialog.show();
-        firebaseAuth.signInWithEmailAndPassword(newUser.getEmailAddress(),newUser.getPassword())
+        firebaseAuth.signInWithEmailAndPassword(newUser.getEmailAddress(),password)
                 .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {

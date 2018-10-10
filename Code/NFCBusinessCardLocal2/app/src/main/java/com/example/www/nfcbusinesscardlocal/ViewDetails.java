@@ -148,8 +148,6 @@ public class ViewDetails extends AppCompatActivity implements Listener{
         textView=(TextView)findViewById(R.id.jobtitle);
         textView.setText(person.getJobTitle());
         textView=(TextView)findViewById(R.id.company);
-        textView.setText(person.getWebsite());
-        textView=(TextView)findViewById(R.id.webAddress);
         textView.setText(person.getCompanyName());
         textView=(TextView)findViewById(R.id.emailAddress);
         textView.setText(person.getEmailAddress());
@@ -159,6 +157,8 @@ public class ViewDetails extends AppCompatActivity implements Listener{
         textView.setText(person.getMobileNumber());
         textView=(TextView)findViewById(R.id.officenumber);
         textView.setText(person.getWorkTelephone());
+        textView=(TextView)findViewById(R.id.webAddress);
+        textView.setText(person.getWebsite());
     }
     private void loadPicture(User user){
         ConnectivityManager connectivityManager=(ConnectivityManager) getApplicationContext().getSystemService(Context.CONNECTIVITY_SERVICE);

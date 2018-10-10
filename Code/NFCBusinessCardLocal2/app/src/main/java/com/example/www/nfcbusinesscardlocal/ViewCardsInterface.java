@@ -57,8 +57,9 @@ public class ViewCardsInterface extends AppCompatActivity implements SearchView.
                 viewUser.setMobileNumber(details[4]);
                 viewUser.setWorkTelephone(details[5]);
                 viewUser.setWorkAddress(details[6]);
-                if(details.length>7)
-                viewUser.setImageUrl(details[7]);
+                viewUser.setWebsite(details[7]);
+                if(details.length>8)
+                viewUser.setImageUrl(details[8]);
                 intent.putExtra("ViewUser",viewUser);
                 startActivity(intent);
             }

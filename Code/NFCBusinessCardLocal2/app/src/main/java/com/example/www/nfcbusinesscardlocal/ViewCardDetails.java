@@ -220,6 +220,8 @@ public class ViewCardDetails extends AppCompatActivity {
         textView.setText(viewUser.getMobileNumber());
         textView=(TextView)findViewById(R.id.officenumber_view_user);
         textView.setText(viewUser.getWorkTelephone());
+        textView=(TextView)findViewById(R.id.webAddress_view_user);
+        textView.setText(viewUser.getWebsite());
     }
     private void askForPermission(String permission, Integer requestCode) {
         if (ContextCompat.checkSelfPermission(ViewCardDetails.this, permission) != PackageManager.PERMISSION_GRANTED) {

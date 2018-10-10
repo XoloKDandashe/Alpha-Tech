@@ -76,8 +76,9 @@ public class ClientListAdapter extends BaseAdapter {
             newCard.setEmailAddress(details[3]);
             newCard.setMobileNumber(details[4]);
             newCard.setWorkTelephone(details[5]);
-            if(details.length>7) {
-                newCard.setImageUrl(details[7]);
+            newCard.setWebsite(details[7]);
+            if(details.length>8) {
+                newCard.setImageUrl(details[8]);
                 imageView = (CircleImageView) vi.findViewById(R.id.row_picture);
                 loadPicture(newCard, vi);
             }

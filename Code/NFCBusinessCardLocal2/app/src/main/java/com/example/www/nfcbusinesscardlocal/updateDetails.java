@@ -259,7 +259,8 @@ public class updateDetails extends AppCompatActivity {
         person.setWorkTelephone(editText.getText().toString());
         editText=(EditText)findViewById(R.id.update_input_address);
         person.setWorkAddress(editText.getText().toString());
-
+        editText=(EditText) findViewById(R.id.update_input_web);
+        person.setWebsite(editText.getText().toString());
         mProgressDialog.dismiss();
         Toast.makeText(this, "Profile Updated.", Toast.LENGTH_LONG).show();
         mProgressDialog.setMessage("Saving information...");
