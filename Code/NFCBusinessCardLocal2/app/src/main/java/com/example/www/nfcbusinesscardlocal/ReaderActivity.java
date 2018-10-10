@@ -134,8 +134,6 @@ public class ReaderActivity extends AppCompatActivity {
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         IntentResult result = IntentIntegrator.parseActivityResult(requestCode, resultCode, data);
         view=(View) findViewById(R.id.scanned);
-
-        textView= (TextView) findViewById(R.id.scannedDetails);
         if(result != null){
             if(result.getContents()==null){
                 Toast.makeText(this, "You cancelled the scanning", Toast.LENGTH_LONG).show();
@@ -268,7 +266,7 @@ public class ReaderActivity extends AppCompatActivity {
                     if(i+1<length)
                         resultString+="\n";
                 }
-                textView.setText(resultString);}
+                }
         }
         else {
             super.onActivityResult(requestCode, resultCode, data);
