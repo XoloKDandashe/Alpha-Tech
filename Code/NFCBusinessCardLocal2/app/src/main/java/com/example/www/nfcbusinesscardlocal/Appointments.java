@@ -5,9 +5,7 @@ import android.app.DatePickerDialog;
 import android.app.Dialog;
 import android.app.DialogFragment;
 import android.app.ProgressDialog;
-import android.content.Context;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.provider.CalendarContract;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -24,21 +22,16 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
-import com.google.gson.Gson;
-import com.google.gson.reflect.TypeToken;
 
-import java.lang.reflect.Type;
-import java.util.ArrayList;
 import java.util.Calendar;
-import java.util.List;
 
 public class Appointments extends AppCompatActivity {
     private DatabaseReference databaseReference;
     private FirebaseAuth firebaseAuth;
     private ProgressDialog mProgressDialog;
     FirebaseUser firebaseUser;
-    TestUser person=null;
-    TestUser appointmentuser;
+    User person=null;
+    User appointmentuser;
     EditText title,notes,lengthOfMeeting;
     Button setAppointment;
     Button datebutton;
@@ -49,7 +42,7 @@ public class Appointments extends AppCompatActivity {
         setContentView(R.layout.activity_appointments);
         Intent intent=getIntent();
         if(intent.hasExtra("ViewUser")) {
-            appointmentuser = (TestUser) intent.getSerializableExtra("ViewUser");
+            appointmentuser = (User) intent.getSerializableExtra("ViewUser");
         }
         title=(EditText) findViewById(R.id.meetingtitle);
         notes=(EditText) findViewById(R.id.meetingnotes);
@@ -98,7 +91,7 @@ public class Appointments extends AppCompatActivity {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
 
-                person=dataSnapshot.getValue(TestUser.class);
+                person=dataSnapshot.getValue(User.class);
                 mProgressDialog.dismiss();            }
             @Override
             public void onCancelled(DatabaseError databaseError) {

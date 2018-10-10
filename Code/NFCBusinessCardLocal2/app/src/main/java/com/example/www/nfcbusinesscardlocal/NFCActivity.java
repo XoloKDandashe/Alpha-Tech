@@ -1,7 +1,6 @@
 package com.example.www.nfcbusinesscardlocal;
 
 import android.app.ProgressDialog;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.app.Activity;
 import android.content.Intent;
@@ -11,7 +10,6 @@ import android.nfc.NfcAdapter;
 import android.nfc.NfcEvent;
 import android.provider.Settings;
 import android.view.View;
-import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -29,7 +27,7 @@ public class NFCActivity extends Activity implements NfcAdapter.CreateNdefMessag
     private ProgressDialog mProgressDialog;
     private FirebaseUser firebaseUser;
     private TextView mTextView;
-    private TestUser person=null;
+    private User person=null;
     private NfcAdapter mAdapter;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -70,7 +68,7 @@ public class NFCActivity extends Activity implements NfcAdapter.CreateNdefMessag
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
 
-                person = dataSnapshot.getValue(TestUser.class);
+                person = dataSnapshot.getValue(User.class);
                 mProgressDialog.dismiss();
                 mTextView.setText(setDetails());
             }

@@ -6,10 +6,8 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.pm.PackageManager;
-import android.media.Image;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
-import android.net.Uri;
 import android.nfc.NfcAdapter;
 import android.nfc.Tag;
 import android.nfc.tech.Ndef;
@@ -19,8 +17,6 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
-import android.widget.EditText;
-import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -37,8 +33,6 @@ import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 
-import java.util.ArrayList;
-
 import de.hdodenhof.circleimageview.CircleImageView;
 
 public class ViewDetails extends AppCompatActivity implements Listener{
@@ -48,7 +42,7 @@ public class ViewDetails extends AppCompatActivity implements Listener{
     private ProgressDialog mProgressDialog;
     private FirebaseUser firebaseUser;
     private CircleImageView imageView;
-    private TestUser person=null;
+    private User person=null;
     private NfcAdapter nfcAdapter;
     //write fragment
     private Button btn_write;
@@ -115,7 +109,7 @@ public class ViewDetails extends AppCompatActivity implements Listener{
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
 
-                person=dataSnapshot.getValue(TestUser.class);
+                person=dataSnapshot.getValue(User.class);
                 mProgressDialog.dismiss();
                 setDetails();
             }
@@ -164,7 +158,7 @@ public class ViewDetails extends AppCompatActivity implements Listener{
         textView=(TextView)findViewById(R.id.officenumber);
         textView.setText(person.getWorkTelephone());
     }
-    private void loadPicture(TestUser user){
+    private void loadPicture(User user){
         ConnectivityManager connectivityManager=(ConnectivityManager) getApplicationContext().getSystemService(Context.CONNECTIVITY_SERVICE);
         NetworkInfo activeNetwork=connectivityManager.getActiveNetworkInfo();
         boolean isConnected=activeNetwork!=null && activeNetwork.isConnectedOrConnecting();

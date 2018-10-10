@@ -3,12 +3,9 @@ package com.example.www.nfcbusinesscardlocal;
 import android.Manifest;
 import android.app.PendingIntent;
 import android.app.ProgressDialog;
-import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
-import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
-import android.net.Uri;
 import android.nfc.NdefMessage;
 import android.nfc.NdefRecord;
 import android.nfc.NfcAdapter;
@@ -49,7 +46,7 @@ public class ReceiverActivity extends AppCompatActivity {
     private FirebaseAuth firebaseAuth;
     private ProgressDialog mProgressDialog;
     private FirebaseUser firebaseUser;
-    private TestUser person=null;
+    private User person=null;
     public static final String MIME_TEXT_PLAIN = "text/plain";
     public String etname, etpos, etphon,etmail,etOff,etWAddress;
     private TextView tvIncomingMessage;
@@ -112,7 +109,7 @@ public class ReceiverActivity extends AppCompatActivity {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
 
-                person=dataSnapshot.getValue(TestUser.class);
+                person=dataSnapshot.getValue(User.class);
                 mProgressDialog.dismiss();
             }
             @Override
@@ -187,7 +184,7 @@ public class ReceiverActivity extends AppCompatActivity {
             this.tvIncomingMessage.setText(payload);
 
             String [] details=inMessage.split("\n");
-            List<TestUser> arrayList=null;
+            List<User> arrayList=null;
             Gson gson= new Gson();
             String jsonConverter=person.getRecievedCards();
             if(jsonConverter.isEmpty())
@@ -196,11 +193,11 @@ public class ReceiverActivity extends AppCompatActivity {
             }
             else
             {
-                Type type= new TypeToken<List<TestUser>>(){}.getType();
+                Type type= new TypeToken<List<User>>(){}.getType();
                 arrayList=gson.fromJson(jsonConverter,type);
             }
 
-            TestUser newCard=new TestUser();
+            User newCard=new User();
             newCard.setFullname(details[0]);
             newCard.setJobTitle(details[1]);
             newCard.setCompanyName(details[2]);
@@ -346,7 +343,7 @@ public class ReceiverActivity extends AppCompatActivity {
     public void disableForegroundDispatch(final AppCompatActivity activity, NfcAdapter adapter) {
         adapter.disableForegroundDispatch(activity);
     }
-    private void saveupdate(TestUser user){
+    private void saveupdate(User user){
         databaseReference.setValue(user);
     }
     @Override

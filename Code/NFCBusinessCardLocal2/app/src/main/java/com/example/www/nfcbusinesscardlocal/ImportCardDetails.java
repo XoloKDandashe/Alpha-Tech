@@ -10,7 +10,6 @@ import android.content.res.AssetManager;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Matrix;
-import android.graphics.drawable.BitmapDrawable;
 import android.net.Uri;
 import android.os.Environment;
 import android.provider.MediaStore;
@@ -24,7 +23,6 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
-import android.widget.TextView;
 import android.widget.Toast;
 
 /*import org.opencv.android.OpenCVLoader;
@@ -50,14 +48,11 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
-import java.security.NoSuchAlgorithmException;
-import java.security.NoSuchProviderException;
-import java.util.ArrayList;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class ImportCardDetails extends AppCompatActivity {
-    TestUser newUser;
+    User newUser;
     Button button ;
     ImageView imageView ;
     File photo;
@@ -476,7 +471,7 @@ public class ImportCardDetails extends AppCompatActivity {
         mProgressDialog.show();
         String emailneedle,password,confirmpassword,inputCheck;
         EditText editText;
-        newUser=new TestUser();
+        newUser=new User();
         /*Check all neccessary fields have information */
         editText=(EditText)findViewById(R.id.import_name);
         inputCheck=editText.getText().toString().trim();
@@ -563,7 +558,7 @@ public class ImportCardDetails extends AppCompatActivity {
                     }
                 });
     }
-    private void successfulRegistration(TestUser user){
+    private void successfulRegistration(User user){
         FirebaseUser firebaseUser=firebaseAuth.getCurrentUser();
         databaseReference.child(firebaseUser.getUid()).setValue(user);
     }

@@ -7,8 +7,6 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.location.Address;
 import android.location.Geocoder;
 import android.location.Location;
@@ -16,9 +14,7 @@ import android.location.LocationManager;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.net.Uri;
-import android.provider.MediaStore;
 import android.provider.Settings;
-import android.support.annotation.NonNull;
 import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -33,8 +29,6 @@ import android.widget.Toast;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.signature.StringSignature;
 import com.firebase.ui.storage.images.FirebaseImageLoader;
-import com.google.android.gms.tasks.OnFailureListener;
-import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
@@ -43,26 +37,15 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.storage.FirebaseStorage;
-import com.google.firebase.storage.OnProgressListener;
 import com.google.firebase.storage.StorageReference;
-import com.google.firebase.storage.UploadTask;
-import com.squareup.picasso.Picasso;
 
-import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
-import java.io.File;
 import java.io.IOException;
-import java.security.NoSuchAlgorithmException;
-import java.security.NoSuchProviderException;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
 
-import static java.lang.System.out;
-
 public class updateDetails extends AppCompatActivity {
     private final int PICK_IMAGE_REQUEST = 234;
-    TestUser person=null;
+    User person=null;
     String lattitude,longitude;
     private DatabaseReference databaseReference;
     private FirebaseAuth firebaseAuth;
@@ -131,7 +114,7 @@ public class updateDetails extends AppCompatActivity {
         databaseReference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
-                person=dataSnapshot.getValue(TestUser.class);
+                person=dataSnapshot.getValue(User.class);
                 mProgressDialog.dismiss();
                 setDetails();
             }
@@ -284,7 +267,7 @@ public class updateDetails extends AppCompatActivity {
         finish();
     }
 
-    private void loadPicture(TestUser user){
+    private void loadPicture(User user){
         ConnectivityManager connectivityManager=(ConnectivityManager) getApplicationContext().getSystemService(Context.CONNECTIVITY_SERVICE);
         NetworkInfo activeNetwork=connectivityManager.getActiveNetworkInfo();
         boolean isConnected=activeNetwork!=null && activeNetwork.isConnectedOrConnecting();
@@ -302,7 +285,7 @@ public class updateDetails extends AppCompatActivity {
                     .into(imageView);
         }
     }
-    private void saveupdate(TestUser user){
+    private void saveupdate(User user){
         databaseReference.setValue(user);
     }
     @Override

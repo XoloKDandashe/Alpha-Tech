@@ -1,15 +1,11 @@
 package com.example.www.nfcbusinesscardlocal;
 
 import android.content.Context;
-import android.net.ConnectivityManager;
-import android.net.NetworkInfo;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
-import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.signature.StringSignature;
@@ -20,7 +16,6 @@ import com.google.firebase.storage.StorageReference;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
-import java.util.List;
 import java.util.Locale;
 
 import de.hdodenhof.circleimageview.CircleImageView;
@@ -74,7 +69,7 @@ public class ClientListAdapter extends BaseAdapter {
 
             String s= arrayList.get(i);
             String [] details=s.split("\n");
-            TestUser newCard=new TestUser();
+            User newCard=new User();
             newCard.setFullname(details[0]);
             newCard.setJobTitle(details[1]);
             newCard.setCompanyName(details[2]);
@@ -100,7 +95,7 @@ public class ClientListAdapter extends BaseAdapter {
             text.setText(newCard.getJobTitle());
             return vi;
     }
-    private void loadPicture(TestUser user,View view){
+    private void loadPicture(User user, View view){
         imageView.setImageURI(null);
         if(user.getImageUrl()!=""){
             StorageReference httpRef= FirebaseStorage.getInstance().getReferenceFromUrl(user.getImageUrl());

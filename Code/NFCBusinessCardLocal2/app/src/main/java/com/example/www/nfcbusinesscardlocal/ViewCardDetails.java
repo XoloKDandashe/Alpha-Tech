@@ -20,7 +20,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -53,9 +52,9 @@ public class ViewCardDetails extends AppCompatActivity {
     private ProgressDialog mProgressDialog;
     private CircleImageView imageView;
     private FirebaseUser firebaseUser;
-    private TestUser person=null;
+    private User person=null;
     private Intent intent=null;
-    private TestUser viewUser;
+    private User viewUser;
     static final Integer LOCATION = 0x1;
     private File vcfFile;
     static final Integer WRITE_EXST = 0x3;
@@ -68,7 +67,7 @@ public class ViewCardDetails extends AppCompatActivity {
         setContentView(R.layout.activity_view_card_details);
         intent=getIntent();
         if(intent.hasExtra("ViewUser")) {
-            viewUser = (TestUser) intent.getSerializableExtra("ViewUser");
+            viewUser = (User) intent.getSerializableExtra("ViewUser");
         }
         final Button button =(Button) findViewById(R.id.button);
         button.setOnClickListener(new View.OnClickListener() {
@@ -121,7 +120,7 @@ public class ViewCardDetails extends AppCompatActivity {
     {
         super.onResume();
         if(intent.hasExtra("ViewUser")) {
-            viewUser = (TestUser) intent.getSerializableExtra("ViewUser");
+            viewUser = (User) intent.getSerializableExtra("ViewUser");
             setDetails();
             SharedPreferences pref=getApplicationContext().getSharedPreferences("Viewed_User",0);
             SharedPreferences.Editor editor=pref.edit();
@@ -140,14 +139,14 @@ public class ViewCardDetails extends AppCompatActivity {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
 
-                person=dataSnapshot.getValue(TestUser.class);
+                person=dataSnapshot.getValue(User.class);
                 if(!intent.hasExtra("ViewUser"))
                 {
                     SharedPreferences pref=getApplicationContext().getSharedPreferences("Viewed_User",0);
                     SharedPreferences.Editor editor=pref.edit();
                     String key_email=pref.getString("Email",null);
                     String cardlist=person.getRecievedCards();
-                    List<TestUser> arrayList=null;
+                    List<User> arrayList=null;
                     Gson gson= new Gson();
                     if(cardlist.isEmpty()||cardlist.compareTo("")==0||cardlist.compareTo("[]")==0)
                     {
@@ -157,10 +156,10 @@ public class ViewCardDetails extends AppCompatActivity {
                     }
                     else
                     {
-                        Type type= new TypeToken<List<TestUser>>(){}.getType();
+                        Type type= new TypeToken<List<User>>(){}.getType();
                         arrayList=gson.fromJson(cardlist,type);
                     }
-                    for(TestUser user: arrayList){
+                    for(User user: arrayList){
                         if(user.getEmailAddress().compareTo(key_email)==0)
                         {
                             viewUser=user;
@@ -179,7 +178,7 @@ public class ViewCardDetails extends AppCompatActivity {
             }
         });
     }
-    private void loadPicture(TestUser user){
+    private void loadPicture(User user){
         ConnectivityManager connectivityManager=(ConnectivityManager) getApplicationContext().getSystemService(Context.CONNECTIVITY_SERVICE);
         NetworkInfo activeNetwork=connectivityManager.getActiveNetworkInfo();
         boolean isConnected=activeNetwork!=null && activeNetwork.isConnectedOrConnecting();
@@ -311,7 +310,7 @@ public class ViewCardDetails extends AppCompatActivity {
                 .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int which) {
                         // continue with delete
-                        List<TestUser> arrayList=null;
+                        List<User> arrayList=null;
                         //SharedPreferences sharedPreferences=getApplication().getSharedPreferences("receivedlist", Context.MODE_PRIVATE);
                         Gson gson= new Gson();
                         //String jsonConverter=sharedPreferences.getString("jsonreceivedlist","");
@@ -324,7 +323,7 @@ public class ViewCardDetails extends AppCompatActivity {
                         }
                         else
                         {
-                            Type type= new TypeToken<List<TestUser>>(){}.getType();
+                            Type type= new TypeToken<List<User>>(){}.getType();
                             arrayList=gson.fromJson(jsonConverter,type);
                         }
 
@@ -384,7 +383,7 @@ public class ViewCardDetails extends AppCompatActivity {
                 .setIcon(android.R.drawable.ic_dialog_alert)
                 .show();
     }
-    private void saveupdate(TestUser user){
+    private void saveupdate(User user){
         databaseReference.setValue(user);
     }
 }

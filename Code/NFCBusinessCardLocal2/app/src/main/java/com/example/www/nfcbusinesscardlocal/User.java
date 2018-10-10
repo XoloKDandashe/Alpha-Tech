@@ -1,25 +1,20 @@
 package com.example.www.nfcbusinesscardlocal;
 
-import android.os.Parcelable;
-import android.telecom.Call;
-
-import junit.framework.Test;
-
 import java.io.Serializable;
 import java.security.NoSuchAlgorithmException;
 import java.security.NoSuchProviderException;
 import java.security.SecureRandom;
 import java.security.MessageDigest;
 
-public class TestUser implements Serializable{
+public class User implements Serializable{
     //Attributes
     private String fullname, jobTitle, password;
     private String companyName,mobileNumber,workTelephone,emailAddress,workAddress;
     private String recievedCards="",imageUrl="";
     //String facebook_link,linkedIn_link,googleplus_link;
-    public TestUser(){
+    public User(){
     }
-    public TestUser(TestUser copy)
+    public User(User copy)
     {
         fullname=copy.getFullname(); jobTitle=copy.getJobTitle();password=copy.getPassword();
         companyName=copy.getCompanyName();mobileNumber=copy.getMobileNumber();workTelephone=copy.getWorkTelephone();

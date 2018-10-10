@@ -5,7 +5,6 @@ import android.app.ProgressDialog;
 import android.content.ActivityNotFoundException;
 import android.content.Context;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.content.res.AssetManager;
 import android.graphics.Bitmap;
@@ -49,7 +48,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class ReceiveImportCardActivity extends AppCompatActivity {
-    TestUser newUser;
+    User newUser;
     Button button ;
     Button backbutton,saveButton;
     ImageView imageView ;
@@ -74,7 +73,7 @@ public class ReceiveImportCardActivity extends AppCompatActivity {
     private FirebaseAuth firebaseAuth;
     private ProgressDialog mProgressDialog;
     FirebaseUser firebaseUser;
-    TestUser person=null;
+    User person=null;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -164,7 +163,7 @@ public class ReceiveImportCardActivity extends AppCompatActivity {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
 
-                person=dataSnapshot.getValue(TestUser.class);
+                person=dataSnapshot.getValue(User.class);
                 mProgressDialog.dismiss();
             }
             @Override
@@ -495,7 +494,7 @@ public class ReceiveImportCardActivity extends AppCompatActivity {
     public void SaveCard(){
         String emailneedle,inputCheck;
         EditText editText;
-        newUser=new TestUser();
+        newUser=new User();
         /*Check all neccessary fields have information */
         editText=(EditText)findViewById(R.id.rec_import_name);
         inputCheck=editText.getText().toString().trim();
@@ -528,7 +527,7 @@ public class ReceiveImportCardActivity extends AppCompatActivity {
         }
         newUser.setEmailAddress(emailneedle);
 
-        List<TestUser> arrayList=null;
+        List<User> arrayList=null;
         //SharedPreferences sharedPreferences=getApplication().getSharedPreferences("receivedlist", Context.MODE_PRIVATE);
         Gson gson= new Gson();
         //String jsonConverter=sharedPreferences.getString("jsonreceivedlist","");
@@ -539,7 +538,7 @@ public class ReceiveImportCardActivity extends AppCompatActivity {
         }
         else
         {
-            Type type= new TypeToken<List<TestUser>>(){}.getType();
+            Type type= new TypeToken<List<User>>(){}.getType();
             arrayList=gson.fromJson(jsonConverter,type);
         }
         arrayList.add(newUser);

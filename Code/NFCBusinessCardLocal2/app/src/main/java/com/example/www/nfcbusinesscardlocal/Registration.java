@@ -34,9 +34,6 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
 import java.io.IOException;
-import java.security.NoSuchAlgorithmException;
-import java.security.NoSuchProviderException;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
 
@@ -46,7 +43,7 @@ public class Registration extends AppCompatActivity {
     FirebaseAuth firebaseAuth;
     private DatabaseReference databaseReference;
     LocationManager locationManager;
-    private TestUser newUser;
+    private User newUser;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -172,7 +169,7 @@ public class Registration extends AppCompatActivity {
         progressDialog.show();
         String emailneedle,password,confirmpassword,inputCheck;
         EditText editText;
-        newUser=new TestUser();
+        newUser=new User();
         /*Check all neccessary fields have information */
         editText=(EditText)findViewById(R.id.input_name);
         inputCheck=editText.getText().toString().trim();
@@ -269,7 +266,7 @@ public class Registration extends AppCompatActivity {
                     }
                 });
     }
-    private void successfulRegistration(TestUser user){
+    private void successfulRegistration(User user){
         FirebaseUser firebaseUser=firebaseAuth.getCurrentUser();
         databaseReference.child(firebaseUser.getUid()).setValue(user);
     }
