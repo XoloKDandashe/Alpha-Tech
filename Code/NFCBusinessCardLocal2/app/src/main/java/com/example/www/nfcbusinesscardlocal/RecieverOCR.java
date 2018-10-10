@@ -73,7 +73,9 @@ public class RecieverOCR extends AppCompatActivity {
                         .buildWithRequestCode(CAMERA_SCAN_TEXT);
                 break;
             case R.id.actionPhoto:
+
                 if (hasPermission()) {
+
                     pickImage();
                 } else {
                     getPermission();
@@ -89,6 +91,9 @@ public class RecieverOCR extends AppCompatActivity {
         if (ActivityCompat.shouldShowRequestPermissionRationale(this,
                 Manifest.permission.READ_EXTERNAL_STORAGE)) {
             //TODO:
+            ActivityCompat.requestPermissions(this,
+                    new String[]{Manifest.permission.READ_EXTERNAL_STORAGE}, 1);
+
         } else {
             // No explanation needed; request the permission
             ActivityCompat.requestPermissions(this,
@@ -156,6 +161,18 @@ public class RecieverOCR extends AppCompatActivity {
                 Uri pickedImage = data.getData();
                 String text = OCRCapture.Builder(this).getTextFromUri(pickedImage);
                 textView.setText(text);
+                OCRresult=null;
+                OCRresult = text;
+
+                if(OCRresult != null){
+                    processImage(OCRresult);
+                    // extractPhone(OCRresult);
+                    //Toast.makeText(RecieverOCR.this,OCRresult,Toast.LENGTH_SHORT).show();
+
+                }
+                else{
+                    Toast.makeText(RecieverOCR.this,"Failed to scan text! try again",Toast.LENGTH_SHORT).show();
+                }
             }
         }
     }
@@ -181,10 +198,9 @@ public class RecieverOCR extends AppCompatActivity {
         for(PhoneNumberMatch number : numberMatches){
             String s = number.rawString();
             data.add(s);
-            Toast.makeText(RecieverOCR.this,s,Toast.LENGTH_SHORT).show();
+         //   Toast.makeText(RecieverOCR.this,s,Toast.LENGTH_SHORT).show();
             displayTelephone.setText(s);
         }
-
       //  return data;
     }
 
@@ -384,14 +400,14 @@ public class RecieverOCR extends AppCompatActivity {
         Matcher m2 = p2.matcher(str);
         if (m2.find())
         {
-            String zero ="0";
+
             String int1=m2.group(1);
             String d1=m2.group(2);
             String ws1=m2.group(3);
             String int2=m2.group(4);
             String ws2=m2.group(5);
             String int3=m2.group(6);
-            displayPhone.setText(zero+int1+d1+ws1+int2+ws2+int3);
+            displayPhone.setText(int1+d1+ws1+int2+ws2+int3);
             //System.out.print("("+int1.toString()+")"+"("+d1.toString()+")"+"("+ws1.toString()+")"+"("+int2.toString()+")"+"("+ws2.toString()+")"+"("+int3.toString()+")"+"\n");
         }
 

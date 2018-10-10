@@ -53,17 +53,17 @@
       
          
         </div>
-      <div class="wrap">
+      
+      
+      <div class="container ViewCards" >
+        <div class="wrap">
           <div class="search">
              <input type="text" class="searchTerm" placeholder="Search Business Card" ng-model="search">
              <button type="submit" class="searchButton">
                <i class="fa fa-search"></i>
             </button>
           </div>
-       </div>  
-      
-      <div class="container ViewCards" >
-      
+       </div> 
 
         <div class="card customcs col-md-12 " ng-repeat="person in people |orderBy : '-'| filter:search ">
           

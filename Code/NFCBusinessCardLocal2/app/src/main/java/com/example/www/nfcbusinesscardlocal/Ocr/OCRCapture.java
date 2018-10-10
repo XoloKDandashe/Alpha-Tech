@@ -22,6 +22,7 @@ import java.util.Arrays;
 
 public class OCRCapture {
     private static final String TAG = OCRCapture.class.getSimpleName();
+
     private Activity activity;
     private boolean useFlash;
     private boolean autoFocus;
