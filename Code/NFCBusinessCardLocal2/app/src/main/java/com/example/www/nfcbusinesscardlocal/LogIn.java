@@ -50,6 +50,7 @@ public class LogIn extends AppCompatActivity {
             }
         });
     }
+
     public void openMainMenu(View view){
         progressDialog.setMessage("Logging in...");
         progressDialog.show();

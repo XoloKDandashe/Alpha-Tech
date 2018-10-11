@@ -201,15 +201,17 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:gravity="end|bottom">
+
                 <Button
+                    android:id="@+id/edit_details"
                     android:layout_width="wrap_content"
                     android:layout_height="@dimen/signoutbtn"
                     android:background="@color/transparent"
-                    android:textSize="@dimen/fontsize"
-                    android:textStyle="bold"
-                    android:textColor="@color/white"
                     android:drawableEnd="@drawable/ic_edit_details"
-                    android:onClick="openUpdateDetails"/>
+                    android:onClick="openUpdateDetails"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/fontsize"
+                    android:textStyle="bold" />
             </LinearLayout>
         </LinearLayout>
     </LinearLayout>
