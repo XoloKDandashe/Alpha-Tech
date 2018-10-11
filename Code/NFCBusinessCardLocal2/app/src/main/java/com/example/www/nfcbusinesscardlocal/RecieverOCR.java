@@ -233,7 +233,7 @@ public class RecieverOCR extends AppCompatActivity {
             String s = number.rawString();
             data.add(s);
             String result = data.get(0);
-           Toast.makeText(RecieverOCR.this,result,Toast.LENGTH_SHORT).show();
+        //   Toast.makeText(RecieverOCR.this,result,Toast.LENGTH_SHORT).show();
            displayPhone.setText(result);
             displayTelephone.setText(s);
         }
@@ -338,7 +338,36 @@ public class RecieverOCR extends AppCompatActivity {
             displayTelephone.setText(d1+c1+d2+ws1+int1+ws2+int2);
             //System.out.print("("+d1.toString()+")"+"("+c1.toString()+")"+"("+d2.toString()+")"+"("+ws1.toString()+")"+"("+int1.toString()+")"+"("+ws2.toString()+")"+"("+int2.toString()+")"+"\n");
         }
+/*
+        String re13="(\\(.*\\))";	// Round Braces 1
+        String re23="(\\s+)";	// White Space 1
+        String re33="(\\d)";	// Any Single Digit 1
+        String re43="(\\d)";	// Any Single Digit 2
+        String re53="(\\d)";	// Any Single Digit 3
+        String re63="(\\s+)";	// White Space 2
+        String re73="(\\d)";	// Any Single Digit 4
+        String re83="(\\d)";	// Any Single Digit 5
+        String re93="(\\d)";	// Any Single Digit 6
+        String re10="(\\d)";	// Any Single Digit 7
 
+        Pattern p3 = Pattern.compile(re13+re23+re33+re43+re53+re63+re73+re83+re93+re10,Pattern.CASE_INSENSITIVE | Pattern.DOTALL);
+        Matcher m3 = p3.matcher(str);
+        if (m3.find())
+        {
+            String rbraces1=m.group(1);
+            String ws1=m.group(2);
+            String d1=m.group(3);
+            String d2=m.group(4);
+            String d3=m.group(5);
+            String ws2=m.group(6);
+            String d4=m.group(7);
+            String d5=m.group(8);
+            String d6=m.group(9);
+            String d7=m.group(10);
+            displayTelephone.setText(rbraces1+ws1+d1+d2+d3+ws2+d4+d5+d6+d7);
+          //  System.out.print("("+rbraces1.toString()+")"+"("+ws1.toString()+")"+"("+d1.toString()+")"+"("+d2.toString()+")"+"("+d3.toString()+")"+"("+ws2.toString()+")"+"("+d4.toString()+")"+"("+d5.toString()+")"+"("+d6.toString()+")"+"("+d7.toString()+")"+"\n");
+        }
+        */
     }
 
 
