@@ -113,7 +113,15 @@
                   </tr>
                   <tr>
                     <td><i class="material-icons small">computer</i></td>
-                    <td>http://www.example.com</td>
+
+                    <td class="cent" ng-if="!person.website">
+                        n/a
+                   </td>
+                    <td>
+                      <a target="_blank" rel="noopener noreferrer" href="http://{{person.website}}"> {{person.website}}</a>
+                    </td>
+                   
+                  
                     
                   </tr>
                   <tr>

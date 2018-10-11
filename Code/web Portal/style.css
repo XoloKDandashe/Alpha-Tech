@@ -323,7 +323,9 @@ tr:hover{
 
 #info{
 	widows: 150px;
-	background: #fff;
+  background: #fff;
+  width: 270px;
+ 
 }
 #Logout{
   position:absolute;
@@ -453,3 +455,6 @@ a {
   color: #ffffff;
 }
 
+.cent{
+ text-align: center;
+}
