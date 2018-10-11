@@ -2,6 +2,8 @@ package com.example.www.nfcbusinesscardlocal;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
@@ -32,14 +34,19 @@ import static com.example.www.nfcbusinesscardlocal.Ocr.OcrCaptureActivity.TextBl
 public class RecieverOCR extends AppCompatActivity {
 
     private TextView textView;
+    private TextView textView0;
     private final int CAMERA_SCAN_TEXT = 0;
     private final int LOAD_IMAGE_RESULTS = 1;
     EditText displayJobTitle;
+    EditText displayWebsite;
     EditText displayEmail;
+    EditText displayCompanyName;
     EditText displayPhone;
     EditText displayTelephone;
     EditText displayName;
     EditText displayAddress;
+    Button saveButton;
+
     String OCRresult;
 
     @Override
@@ -51,9 +58,13 @@ public class RecieverOCR extends AppCompatActivity {
         displayTelephone = findViewById(R.id.importWorkNumber);
         displayPhone=findViewById(R.id.importMobileNumber);
         displayName=findViewById(R.id.import_Name);
+        displayCompanyName=findViewById(R.id.importCompanyName);
         displayAddress=findViewById(R.id.import_Adress);
-
+        displayWebsite=findViewById(R.id.import_website);
+        saveButton = findViewById(R.id.saveBtn) ;
         textView = findViewById(R.id.reciever_tv);
+        textView0 = findViewById(R.id.text0);
+
     }
 
     @Override
@@ -141,6 +152,17 @@ public class RecieverOCR extends AppCompatActivity {
         if (data != null) {
             if (requestCode == CAMERA_SCAN_TEXT) {
                 if (resultCode == CommonStatusCodes.SUCCESS) {
+
+                    textView0.setVisibility(View.GONE);
+                    displayTelephone.setVisibility(View.VISIBLE);
+                    displayCompanyName.setVisibility(View.VISIBLE);
+                    displayEmail.setVisibility(View.VISIBLE);
+                    displayPhone.setVisibility(View.VISIBLE);
+                    displayName.setVisibility(View.VISIBLE);
+                    displayWebsite.setVisibility(View.VISIBLE);
+                    displayAddress.setVisibility(View.VISIBLE);
+                    saveButton.setVisibility(View.VISIBLE);
+                    textView.setVisibility(View.VISIBLE);
                     textView.setText(data.getStringExtra(TextBlockObject));
                     OCRresult=null;
                  OCRresult = data.getStringExtra(TextBlockObject);
@@ -160,6 +182,17 @@ public class RecieverOCR extends AppCompatActivity {
             } else if (requestCode == LOAD_IMAGE_RESULTS) {
                 Uri pickedImage = data.getData();
                 String text = OCRCapture.Builder(this).getTextFromUri(pickedImage);
+                textView0.setVisibility(View.GONE);
+
+                displayTelephone.setVisibility(View.VISIBLE);
+                displayWebsite.setVisibility(View.VISIBLE);
+                displayEmail.setVisibility(View.VISIBLE);
+                displayCompanyName.setVisibility(View.VISIBLE);
+                displayPhone.setVisibility(View.VISIBLE);
+                displayName.setVisibility(View.VISIBLE);
+                displayAddress.setVisibility(View.VISIBLE);
+                saveButton.setVisibility(View.VISIBLE);
+                textView.setVisibility(View.VISIBLE);
                 textView.setText(text);
                 OCRresult=null;
                 OCRresult = text;
@@ -177,8 +210,9 @@ public class RecieverOCR extends AppCompatActivity {
         }
     }
     public void processImage(String Ocr){
-    //  extractTelephone(Ocr);
+      extractTelephone(Ocr);
         extractPhone(Ocr);
+        extractUrl(Ocr);
         parseResults(Ocr);
         extractAddress(Ocr);
        extractName(Ocr);
@@ -198,10 +232,36 @@ public class RecieverOCR extends AppCompatActivity {
         for(PhoneNumberMatch number : numberMatches){
             String s = number.rawString();
             data.add(s);
-         //   Toast.makeText(RecieverOCR.this,s,Toast.LENGTH_SHORT).show();
+            String result = data.get(0);
+           Toast.makeText(RecieverOCR.this,result,Toast.LENGTH_SHORT).show();
+           displayPhone.setText(result);
             displayTelephone.setText(s);
         }
       //  return data;
+    }
+    public void extractUrl(String str){
+        System.out.println("Getting the url");
+/*
+        final String URL_REGEX= "\\b(https?|ftp|file)://[-a-zA-Z0-9+&@#/%?=~_|!:,.;]*[-a-zA-Z0-9+&@#/%=~_|]";
+       // final String URL_REGEX ="^(https?|ftp|file)://[-a-zA-Z0-9+&@#/%?=~_|!:,.;]*[-a-zA-Z0-9+&@#/%=~_|]";
+        Pattern p = Pattern.compile(URL_REGEX,Pattern.CASE_INSENSITIVE| Pattern.MULTILINE| Pattern.DOTALL);
+        Matcher m = p.matcher(str);
+        if(m.find()){
+            System.out.println(m.group());
+            displayWebsite.setText(m.group());
+
+        }*/
+
+        String re1="((?:[a-z][a-z\\.\\d\\-]+)\\.(?:[a-z][a-z\\-]+))(?![\\w\\.])";	// Fully Qualified Domain Name 1
+
+        Pattern p = Pattern.compile(re1,Pattern.CASE_INSENSITIVE | Pattern.DOTALL);
+        Matcher m = p.matcher(str);
+        if (m.find())
+        {
+            String fqdn1=m.group(1);
+            displayWebsite.setText(fqdn1.toString());
+          //  System.out.print("("+fqdn1.toString()+")"+"\n");
+        }
     }
 
     public void extractTelephone(String str){
@@ -280,17 +340,7 @@ public class RecieverOCR extends AppCompatActivity {
         }
 
     }
-    public void extractUrl(String str){
-        System.out.println("Getting the url");
-        final String URL_REGEX= "\\b(https?|ftp|file)://[-a-zA-Z0-9+&@#/%?=~_|!:,.;]*[-a-zA-Z0-9+&@#/%=~_|]";
-        Pattern p = Pattern.compile(URL_REGEX, Pattern.MULTILINE);
-        Matcher m = p.matcher(str);
-        if(m.find()){
-            System.out.println(m.group());
-            displayJobTitle.setText(m.group());
 
-        }
-    }
 
     public void extractCompanyName(String str){
         String re1="((?:[a-z][a-z]+))";	// Word 1
@@ -415,13 +465,15 @@ public class RecieverOCR extends AppCompatActivity {
 
     public void extractAddress(String str){
         System.out.println("Getting the Address");
-        final String ADDRESS_REGEX="\\s+(\\d{2,5}\\s+)(?![a|p]m\\b)(([a-zA-Z|\\s+]{1,5}){1,2})?([\\s|\\,|.]+)?(([a-zA-Z|\\s+]{1,30}){1,4})(court|ct|street|st|drive|Cnr|dr|lane|ln|road|rd|blvd)([\\s|\\,|.|\\;]+)?(([a-zA-Z|\\s+]{1,30}){1,2})([\\s|\\,|.]+)";
+        str = str.toLowerCase();
+        final String ADDRESS_REGEX="\\s+(\\d{2,5}\\s+)(?![a|p]m\\b)(([a-zA-Z|\\s+]{1,5}){1,2})?([\\s|\\,|.]+)?(([a-zA-Z|\\s+]{1,30}){1,4})(court|ct|Street|street|st|drive|Cnr|dr|lane|ln|Road|road|rd|blvd)([\\s|\\,|.|\\;]+)?(([a-zA-Z|\\s+]{1,30}){1,2})([\\s|\\,|.]+)";
         Pattern p = Pattern.compile(ADDRESS_REGEX, Pattern.MULTILINE);
         Matcher m = p.matcher(str);   // get a matcher object
         if(m.find()){
             System.out.println(m.group());
             displayAddress.setText(m.group());
         }
+
 
 
     }
