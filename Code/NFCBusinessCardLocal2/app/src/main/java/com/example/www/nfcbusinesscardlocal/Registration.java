@@ -34,9 +34,6 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
 import java.io.IOException;
-import java.security.NoSuchAlgorithmException;
-import java.security.NoSuchProviderException;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
 
@@ -46,7 +43,7 @@ public class Registration extends AppCompatActivity {
     FirebaseAuth firebaseAuth;
     private DatabaseReference databaseReference;
     LocationManager locationManager;
-    private TestUser newUser;
+    private User newUser;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -173,7 +170,7 @@ public class Registration extends AppCompatActivity {
         progressDialog.show();
         String emailneedle,password,confirmpassword,inputCheck;
         EditText editText;
-        newUser=new TestUser();
+        newUser=new User();
         /*Check all neccessary fields have information */
         editText=(EditText)findViewById(R.id.input_name);
         inputCheck=editText.getText().toString().trim();
@@ -216,7 +213,6 @@ public class Registration extends AppCompatActivity {
             Toast.makeText(this, "Passwords do not match.", Toast.LENGTH_SHORT).show();
             return;
         }
-        newUser.setPassword(password);
 
         /*If all checks out*/
         newUser.setFullname(inputCheck);
@@ -224,6 +220,8 @@ public class Registration extends AppCompatActivity {
         newUser.setJobTitle(editText.getText().toString().trim());
         editText=(EditText)findViewById(R.id.input_companyname);
         newUser.setCompanyName(editText.getText().toString().trim());
+        editText=(EditText)findViewById(R.id.input_web);
+        newUser.setWebsite(editText.getText().toString().trim());
         editText=(EditText)findViewById(R.id.input_mobile);
         newUser.setMobileNumber(editText.getText().toString().trim());
         editText=(EditText)findViewById(R.id.input_telephone);
@@ -235,7 +233,7 @@ public class Registration extends AppCompatActivity {
 
         progressDialog.setMessage("Creating profile...");
         progressDialog.show();
-        firebaseAuth.createUserWithEmailAndPassword(newUser.getEmailAddress(),newUser.getPassword())
+        firebaseAuth.createUserWithEmailAndPassword(newUser.getEmailAddress(),password)
         .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
@@ -251,7 +249,7 @@ public class Registration extends AppCompatActivity {
         });
         progressDialog.setMessage("Saving information...");
         progressDialog.show();
-        firebaseAuth.signInWithEmailAndPassword(newUser.getEmailAddress(),newUser.getPassword())
+        firebaseAuth.signInWithEmailAndPassword(newUser.getEmailAddress(),password)
                 .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
@@ -270,12 +268,9 @@ public class Registration extends AppCompatActivity {
                     }
                 });
     }
-    private void successfulRegistration(TestUser user){
+    private void successfulRegistration(User user){
         FirebaseUser firebaseUser=firebaseAuth.getCurrentUser();
         databaseReference.child(firebaseUser.getUid()).setValue(user);
-    }
-    public void backToLogin(View view){
-        onBackPressed();
     }
     @Override
     public void onBackPressed() {

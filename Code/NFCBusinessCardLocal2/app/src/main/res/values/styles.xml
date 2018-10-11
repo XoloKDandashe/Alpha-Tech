@@ -5,8 +5,13 @@
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/light_banner</item>
         <item name="colorPrimaryDark">@color/black</item>
-        <item name="colorAccent">@color/pink</item>
+        <item name="colorAccent">@color/epiuseblue</item>
     </style>
-    <style name="splash" parent="Theme.AppCompat.DayNight.NoActionBar"/>
+    <style name="splash" parent="Theme.AppCompat.DayNight.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/light_banner</item>
+        <item name="colorPrimaryDark">@color/black</item>
+        <item name="colorAccent">@color/epiuseblue</item>
+    </style>
 
 </resources>

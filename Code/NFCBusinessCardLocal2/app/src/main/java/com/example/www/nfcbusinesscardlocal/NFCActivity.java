@@ -1,7 +1,6 @@
 package com.example.www.nfcbusinesscardlocal;
 
 import android.app.ProgressDialog;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.app.Activity;
 import android.content.Intent;
@@ -23,23 +22,23 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import org.w3c.dom.Text;
+
 public class NFCActivity extends Activity implements NfcAdapter.CreateNdefMessageCallback {
     private DatabaseReference databaseReference;
     private FirebaseAuth firebaseAuth;
     private ProgressDialog mProgressDialog;
     private FirebaseUser firebaseUser;
     private TextView mTextView;
-    private TestUser person=null;
+    private User person=null;
     private NfcAdapter mAdapter;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_nfc);
-        mTextView = (TextView) findViewById(R.id.text_field);
 
         mAdapter = NfcAdapter.getDefaultAdapter(this);
         if (mAdapter == null) {
-            mTextView.setText("Sorry this device does not have NFC.");
             finish();
             return;
         }
@@ -70,9 +69,9 @@ public class NFCActivity extends Activity implements NfcAdapter.CreateNdefMessag
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
 
-                person = dataSnapshot.getValue(TestUser.class);
+                person = dataSnapshot.getValue(User.class);
                 mProgressDialog.dismiss();
-                mTextView.setText(setDetails());
+                setDetails();
             }
 
             @Override
@@ -103,18 +102,25 @@ public class NFCActivity extends Activity implements NfcAdapter.CreateNdefMessag
     public void onBackPressed() {
         super.onBackPressed();
     }
-    private String setDetails(){
+    private void setDetails(){
         String[] details=person.getDetails().split("\n");
-        String payload="";
         int length=details.length;
-        if(length>7)
-            length--;
-        for(int i=0;i<length;i++) {
-            payload += details[i];
-            if((i+1)<length)
-                payload+="\n";
-        }
-        return payload;
+        TextView textView=(TextView)findViewById(R.id.send_fullname);
+        textView.setText(details[0]);
+        textView=(TextView)findViewById(R.id.send_jobTitle);
+        textView.setText(details[1]);
+        textView=(TextView)findViewById(R.id.send_company);
+        textView.setText(details[2]);
+        textView=(TextView)findViewById(R.id.send_emailAddress);
+        textView.setText(details[3]);
+        textView=(TextView)findViewById(R.id.send_personalnumber);
+        textView.setText(details[4]);
+        textView=(TextView)findViewById(R.id.send_officenumber);
+        textView.setText(details[5]);
+        textView=(TextView)findViewById(R.id.send_physAddress);
+        textView.setText(details[6]);
+        textView=(TextView)findViewById(R.id.send_webAddress);
+        textView.setText(details[7]);
     }
 }
 

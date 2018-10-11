@@ -7,7 +7,6 @@ import android.content.Intent;
 import android.graphics.Bitmap;
 import android.view.View;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
 
@@ -23,8 +22,7 @@ import com.google.zxing.MultiFormatWriter;
 import com.google.zxing.WriterException;
 import com.google.zxing.common.BitMatrix;
 import com.journeyapps.barcodescanner.BarcodeEncoder;
-import org.json.JSONException;
-import org.json.JSONObject;
+
 public class GenerateQRCode extends AppCompatActivity {
 
     private Button gen_btn;
@@ -33,14 +31,14 @@ public class GenerateQRCode extends AppCompatActivity {
     private FirebaseAuth firebaseAuth;
     private ProgressDialog mProgressDialog;
     private FirebaseUser firebaseUser;
-    private TestUser person=null;
+    private User person=null;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_generate_qrcode);
         Intent intent=getIntent();
         if(intent.hasExtra("LoginUser")) {
-            person = (TestUser) intent.getSerializableExtra("LoginUser");
+            person = (User) intent.getSerializableExtra("LoginUser");
         }
         gen_btn = (Button) findViewById(R.id.gen_btn);
         image = (ImageView) findViewById(R.id.image);
@@ -72,7 +70,7 @@ public class GenerateQRCode extends AppCompatActivity {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
 
-                person = dataSnapshot.getValue(TestUser.class);
+                person = dataSnapshot.getValue(User.class);
                 mProgressDialog.dismiss();
                 QRresult();
                 QRCode();

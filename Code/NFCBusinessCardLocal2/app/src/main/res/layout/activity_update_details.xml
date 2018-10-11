@@ -63,26 +63,41 @@
             android:textColor="@color/white"
             android:textColorHint="@color/white"
             android:hint="Company Name" />
-        <!-- Address Label -->
-        <EditText android:id="@+id/update_input_address"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"
-            android:textColor="@color/white"
-            android:textColorHint="@color/white"
-            android:inputType="textPostalAddress"
-            android:hint="Work Address" />
-        <Button
-            android:id="@+id/update_button"
-            android:layout_width="@dimen/signoutbtn"
+            android:weightSum="10">
+            <EditText android:id="@+id/update_input_address"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="10"
+                android:textColor="@color/white"
+                android:textColorHint="@color/white"
+                android:inputType="textPostalAddress"
+                android:hint="Work Address" />
+            <Button
+                android:id="@+id/update_button"
+                android:layout_width="@dimen/signoutbtn"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:padding="10dp"
+                android:textStyle="bold"
+                android:textSize="@dimen/padding"
+                android:textColor="@color/white"
+                android:background="@drawable/ic_edit_location"
+                />
+        </LinearLayout>
+        <!--Website-->
+        <EditText
+            android:id="@+id/update_input_web"
+            android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"
-            android:padding="10dp"
-            android:textStyle="bold"
-            android:textSize="@dimen/padding"
+            android:hint="Website"
             android:textColor="@color/white"
-            android:background="@drawable/ic_edit_location"
-            />
+            android:textColorHint="@color/white"
+            android:inputType="textWebEditText"/>
         <!--work number-->
         <EditText android:id="@+id/update_input_telephone"
             android:layout_width="match_parent"

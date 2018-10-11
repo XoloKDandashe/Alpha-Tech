@@ -26,8 +26,8 @@ import java.util.List;
 
 public class LogIn extends AppCompatActivity {
 
-    ProgressDialog progressDialog;
-    FirebaseAuth firebaseAuth;
+    private ProgressDialog progressDialog;
+    private FirebaseAuth firebaseAuth;
     private TextView forgotPassword;
 
     @Override
@@ -90,7 +90,6 @@ public class LogIn extends AppCompatActivity {
         });
     }
     public void openRegistration(View view){
-
         Intent intent = new Intent(this,Registration.class);
         startActivity(intent);
     }

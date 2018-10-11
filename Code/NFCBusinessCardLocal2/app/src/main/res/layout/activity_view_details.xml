@@ -14,133 +14,150 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        android:weightSum="8"
+        android:weightSum="9"
         android:background="@color/lightblue"
-        android:padding="@dimen/lesspadding">
+        >
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="2"
-            android:weightSum="3"
+            android:layout_weight="7"
+            android:weightSum="7"
             android:background="@drawable/profile_border"
-            android:padding="@dimen/minpadding">
+            android:orientation="vertical">
             <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:gravity="center_vertical|center_horizontal">
-                <de.hdodenhof.circleimageview.CircleImageView
-                    android:id="@+id/profilePicture"
-                    android:layout_width="100dp"
-                    android:layout_height="120dp"
-                    android:layout_centerHorizontal="true"
-                    android:layout_centerVertical="true"
-                    android:src="@drawable/ic_person"
-                    />
-            </LinearLayout>
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
                 android:layout_weight="2"
                 android:weightSum="3"
-                android:orientation="vertical"
-                android:paddingLeft="@dimen/minpadding">
-                <TextView
-                    android:id="@+id/view_name"
-                    android:layout_width="match_parent"
-                    android:layout_height="0dp"
+                android:paddingRight="@dimen/minpadding">
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:textSize="@dimen/textsize"
-                    android:textColor="@color/white"
-                    android:textStyle="bold"
-                    android:gravity="center_vertical"/>
-                <TextView
-                    android:id="@+id/view_surname"
-                    android:layout_width="match_parent"
-                    android:layout_height="0dp"
-                    android:layout_weight="1"
-                    android:textSize="@dimen/textsize"
-                    android:textColor="@color/white"
-                    android:textStyle="bold"
-                    android:gravity="center_vertical"/>
-                <TextView
-                    android:id="@+id/jobtitle"
-                    android:layout_width="match_parent"
-                    android:layout_height="0dp"
-                    android:layout_weight="1"
-                    android:textSize="@dimen/textsize"
-                    android:textColor="@color/white"
-                    android:drawableEnd="@drawable/ic_work_sort"
-                    android:textStyle="bold"
-                    android:gravity="center_vertical"/>
+                    android:gravity="center_vertical|center_horizontal">
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:id="@+id/profilePicture"
+                        android:layout_width="100dp"
+                        android:layout_height="120dp"
+                        android:layout_centerHorizontal="true"
+                        android:layout_centerVertical="true"
+                        android:src="@drawable/ic_person"
+                        />
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"
+                    android:weightSum="3"
+                    android:orientation="vertical">
+                    <TextView
+                        android:id="@+id/view_name"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:textSize="@dimen/textsize"
+                        android:textColor="@color/white"
+                        android:textStyle="bold"
+                        android:gravity="center_vertical"/>
+                    <TextView
+                        android:id="@+id/view_surname"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:textSize="@dimen/textsize"
+                        android:textColor="@color/white"
+                        android:textStyle="bold"
+                        android:gravity="center_vertical"/>
+                    <TextView
+                        android:id="@+id/jobtitle"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:textSize="@dimen/textsize"
+                        android:textColor="@color/white"
+                        android:drawableEnd="@drawable/ic_work_sort"
+                        android:textStyle="bold"
+                        android:gravity="center_vertical"/>
+                </LinearLayout>
             </LinearLayout>
-        </LinearLayout>
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:weightSum="5"
-            android:layout_weight="4"
-            android:orientation="vertical">
-            <TextView
-                android:id="@+id/emailAddress"
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight="1"
-                android:textSize="@dimen/textsize"
-                android:gravity="center_vertical|center_horizontal"
-                android:autoLink="email"
-                android:textStyle="bold"
-                android:textColor="@color/white"
-                android:drawableEnd="@drawable/ic_email"/>
-            <TextView
-                android:id="@+id/personalnumber"
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight="1"
-                android:textSize="@dimen/textsize"
-                android:gravity="center_vertical|center_horizontal"
-                android:autoLink="phone"
-                android:textStyle="bold"
-                android:textColor="@color/white"
-                android:drawableEnd="@drawable/ic_phone"/>
-            <TextView
-                android:id="@+id/officenumber"
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight="1"
-                android:textSize="@dimen/textsize"
-                android:gravity="center_vertical|center_horizontal"
-                android:autoLink="phone"
-                android:textStyle="bold"
-                android:textColor="@color/white"
-                android:drawableEnd="@drawable/ic_telephone"/>
-            <TextView
-                android:id="@+id/company"
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight="1"
-                android:textSize="@dimen/textsize"
-                android:gravity="center_vertical|center_horizontal"
-                android:textStyle="bold"
-                android:textColor="@color/white"
-                android:drawableEnd="@drawable/ic_building"/>
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
-                android:layout_weight="1">
-                <ScrollView
+                android:weightSum="6"
+                android:layout_weight="5"
+                android:orientation="vertical">
+                <TextView
+                    android:id="@+id/emailAddress"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent">
-                    <TextView
-                        android:id="@+id/physAddress"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:textSize="@dimen/textsize"
+                    android:gravity="center_vertical|center_horizontal"
+                    android:autoLink="email"
+                    android:textStyle="bold"
+                    android:textColor="@color/white"
+                    android:drawableEnd="@drawable/ic_email"/>
+                <TextView
+                    android:id="@+id/webAddress"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:textSize="@dimen/textsize"
+                    android:gravity="center_vertical|center_horizontal"
+                    android:autoLink="web"
+                    android:textStyle="bold"
+                    android:textColor="@color/white"
+                    android:drawableEnd="@drawable/ic_website"/>
+                <TextView
+                    android:id="@+id/personalnumber"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:textSize="@dimen/textsize"
+                    android:gravity="center_vertical|center_horizontal"
+                    android:autoLink="phone"
+                    android:textStyle="bold"
+                    android:textColor="@color/white"
+                    android:drawableEnd="@drawable/ic_phone"/>
+                <TextView
+                    android:id="@+id/officenumber"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:textSize="@dimen/textsize"
+                    android:gravity="center_vertical|center_horizontal"
+                    android:autoLink="phone"
+                    android:textStyle="bold"
+                    android:textColor="@color/white"
+                    android:drawableEnd="@drawable/ic_telephone"/>
+                <TextView
+                    android:id="@+id/company"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:textSize="@dimen/textsize"
+                    android:gravity="center_vertical|center_horizontal"
+                    android:textStyle="bold"
+                    android:textColor="@color/white"
+                    android:drawableEnd="@drawable/ic_building"/>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1">
+                    <ScrollView
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:textSize="@dimen/textsize"
-                        android:textStyle="bold"
-                        android:gravity="center_vertical|center_horizontal"
-                        android:textColor="@color/white"
-                        android:drawableEnd="@drawable/ic_edit_location"/>
-                </ScrollView>
+                        android:layout_height="match_parent">
+                        <TextView
+                            android:id="@+id/physAddress"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textSize="@dimen/textsize"
+                            android:textStyle="bold"
+                            android:gravity="center_vertical|center_horizontal"
+                            android:textColor="@color/white"
+                            android:drawableEnd="@drawable/ic_edit_location"/>
+                    </ScrollView>
+                </LinearLayout>
             </LinearLayout>
         </LinearLayout>
         <LinearLayout
@@ -163,7 +180,7 @@
                     android:text="Clear NFC Card"
                     android:textStyle="bold"
                     android:textColor="@color/white"
-                    android:textSize="@dimen/fontsize"
+                    android:textSize="@dimen/textsize"
                     android:gravity="center_vertical"
                     android:drawableStart="@drawable/ic_remove"/>
                 <Button
@@ -175,7 +192,7 @@
                     android:text="Write to NFC Card"
                     android:textStyle="bold"
                     android:textColor="@color/white"
-                    android:textSize="@dimen/fontsize"
+                    android:textSize="@dimen/textsize"
                     android:gravity="center_vertical"
                     android:drawableStart="@drawable/ic_manage_card"/>
             </LinearLayout>
