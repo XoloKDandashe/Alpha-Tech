@@ -1,6 +1,6 @@
 <html>
 <head>
-  <title>Firebase Login</title>
+  <title>SmartBiz-Card</title>
   <script src = "service.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.js"></script>
@@ -20,55 +20,66 @@
     <input type="password" placeholder="Password..." id="password_field" />
 
     <button onclick="login()">Login to Account</button>
+    <p>   Download App:<a style="color:white" href="https://github.com/XoloKDandashe/Alpha-Tech/raw/master/Smart%20Business%20Card%20APK/smart%20biz%20card.apk">SmartBiz-Card.apk</a></p>
+    <footer class="footer text-center">2018 &copy; SmartBiz-Card Alpha-Tech</footer>
   </div>
 
   <div id="user_div" class="loggedin">
   
-    <p>your cards</p>
-    <div class="container1">
-    
-      <div class="UserProfile">
-          <p>Welcome User</p>
-          <img class="img-circle" src="noimage.png" alt="user" id="photo" style="width:200px">
-          <h3 id ="name">John Doe</h3>
-        
-          <i class="fa fa-institution" style="font-size:24px" ></i>
-          <a id= "company"></a>
-         <p class="title" id ="position" >CEO & Founder, Example</p>
-         <i class="fa fa-envelope-o"  style="font-size:24px" ></i>
-         <a id="email"></a>
-        <br/>
-         <i class="fa fa-mobile-phone" style="font-size:36px"></i>
-         <a id="phone"></a>
-          <br/>
-          <i class="fa fa-phone" style="font-size:24px"></i>
-          <a id="Telephone"></a>
-          <br/>
-          <i class="fa fa-map-marker" style="font-size:24px"></i>
-          <a id = "loction"></a>
-          <br/>
+  
+   <div class="navigation">
+        <a class="button" href="">
+          <img src="noimage.png"   id="photo1">
+  
+      <div class="logout" onclick="logout()" >LOGOUT</div>  
+      </a>
      
-      </div>
-      
-      <div id="content" class="ViewCards" ng-controller="myCtrl">
+        </div>
+  
+        
+    
 
-        <div class="card customcs col-md-12 pull-left"  id ="bodyk" ng-repeat="person in people" |filter:search.fullname>
+    <div class="mainDiv" ng-controller="myCtrl">
+    
+      <div >
+        <div class="User">
+       
+          <img class="img-circle" src="noimage.png" alt="user" id="photo" style="width:200px">
+          <br/>
+          <h4  id ="name" >John Doe</h4>
+          <h5  id ="position" >CEO & Founder, Example</h5>
+          <i class="fa fa-institution" style="font-size:24px"  id= "company" ></i>
+          <p></p>
+      
+         
+        </div>
+      
+      
+      <div class="container ViewCards" >
+        <div class="wrap">
+          <div class="search">
+             <input type="text" class="searchTerm" placeholder="Search Business Card" ng-model="search">
+             <button type="submit" class="searchButton">
+               <i class="fa fa-search"></i>
+            </button>
+          </div>
+       </div> 
+
+        <div class="card customcs col-md-12 " ng-repeat="person in people |orderBy : '-'| filter:search ">
           
            
-            <div class="card-image waves-effect waves-block waves-light " style="max-height: 30%;">
+            <div class="card-image waves-effect waves-block waves-light " style="max-height: 50%;">
               <img class="responsive-img" src="img/ny.jpg"  >
               <img id ="user-img" class="circle activator" src="{{person.imageUrl}}" alt="noUser"  href="./images/noimage.png">
         
             </div>
             <div id="centered" class="card-content">
               <a id="more" class="card-title activator btn-floating btn-large waves-effect waves-light pink"><i class="material-icons medium">keyboard_arrow_right</i></a>
-              <a id="delete" ng-click="delete(person)" ng-confirm-click="Are you sure to delete this Card ?" class=" btn-floating btn-large waves-effect waves-light black pink"><i class="material-icons medium">delete</i></a>
+              <a id="delete" ng-click="delete(person)" ng-confirm-click="Are you sure you want to delete this Card ?" class=" btn-floating btn-large waves-effect waves-light black pink"><i class="material-icons medium">delete</i></a>
               <h4>{{person.fullname}}</h4>
               <h6>{{person.jobTitle}}</h6>
               <i class="fa fa-institution" style="font-size:24px " >{{person.companyName}}</i>
-       
-              <hr>
-              
+         
             </div>
         
             <div class="card-reveal" style="max-height: 100%; word-break: break-all;" >
@@ -125,15 +136,14 @@
 
        
 
- 
+
+
   </div>
 </div>
 
 
 
-  <div>
-        <button onclick="logout()"  style="display: block; margin: 0 auto;" width="48" height="48">Logout</button>
-      </div>
+ 
 <div id="temp" style="visibility:hidden"></div>
 <script src="https://www.gstatic.com/firebasejs/5.4.2/firebase.js"></script>
 <script>
@@ -191,7 +201,8 @@
    });
  }
  writeUserData(userId,l);
-location.reload();
+//location.reload();
+setobject(l);
   });
   }
 
@@ -248,8 +259,10 @@ if (user) {
 //		photoUrl.innerText="hi"+snapshot.val();
     if(snapshot.val()!= null){
       var image= document.getElementById("photo");
-   
-      image.src=snapshot.val();
+      var image2 = document.getElementById("photo1")
+      var tem = snapshot.val();
+      image2.src=tem;
+      image.src=tem;
       
     }
   
@@ -268,10 +281,10 @@ if (user) {
    // document.getElementById("name").innerHTML=(snapshot.val() && snapshot.val().fullname)||'Anonymous';
     document.getElementById("company").innerHTML = (snapshot.val() && snapshot.val().companyName)||'Anonymous';
     document.getElementById("position").innerHTML = (snapshot.val() && snapshot.val().jobTitle)||'Anonymous';
-    document.getElementById("email").innerHTML = email_id;
-    document.getElementById("phone").innerHTML = (snapshot.val() && snapshot.val().mobileNumber)||'Anonymous';
-    document.getElementById("Telephone").innerHTML = (snapshot.val() && snapshot.val().workTelephone)||'Anonymous';
-    document.getElementById("loction").innerHTML = (snapshot.val() && snapshot.val().workAddress)||'Anonymous';
+   // document.getElementById("email").innerHTML = email_id;
+   // document.getElementById("phone").innerHTML = (snapshot.val() && snapshot.val().mobileNumber)||'Anonymous';
+  //  document.getElementById("Telephone").innerHTML = (snapshot.val() && snapshot.val().workTelephone)||'Anonymous';
+   // document.getElementById("loction").innerHTML = (snapshot.val() && snapshot.val().workAddress)||'Anonymous';
     var myObj2 = (snapshot.val() && snapshot.val().recievedCards)||'Anonymous';
     setobject(myObj2);
    //console.log("here");
