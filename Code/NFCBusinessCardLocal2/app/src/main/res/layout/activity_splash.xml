@@ -13,26 +13,20 @@
         android:layout_height="200sp"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="170dp"
+        android:layout_marginBottom="223dp"
         android:background="@color/transparent"
-        android:src="@drawable/app_logo" />
-
-
-
-
-
+        android:src="@mipmap/new_app_logo" />
 
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/imageV"
         android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="108dp"
+        android:layout_marginBottom="157dp"
         android:text="Smart Biz Card"
-        android:textSize="30sp"
         android:textColor="@android:color/white"
 
-        />
+        android:textSize="30sp" />
 
 </RelativeLayout>
