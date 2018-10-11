@@ -1,5 +1,6 @@
 package com.example.www.nfcbusinesscardlocal;
 
+import android.app.ProgressDialog;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -21,10 +22,21 @@ import android.widget.Toast;
 
 import com.google.android.gms.common.api.CommonStatusCodes;
 import com.example.www.nfcbusinesscardlocal.Ocr.OCRCapture;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
 import com.google.i18n.phonenumbers.PhoneNumberMatch;
 import com.google.i18n.phonenumbers.PhoneNumberUtil;
 
+import java.lang.reflect.Type;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Locale;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -46,15 +58,30 @@ public class RecieverOCR extends AppCompatActivity {
     EditText displayName;
     EditText displayAddress;
     Button saveButton;
-
+    //firebase
+    private DatabaseReference databaseReference;
+    private FirebaseAuth firebaseAuth;
+    private ProgressDialog mProgressDialog;
+    private FirebaseUser firebaseUser;
+    private User person=null;
+    //end firebase
     String OCRresult;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_reciever_orc);
+        mProgressDialog=new ProgressDialog(this);
+        firebaseAuth= FirebaseAuth.getInstance();
+        if(firebaseAuth.getCurrentUser()==null){
+            finish();
+            startActivity(new Intent(this, LogIn.class));
+        }
+        firebaseUser=firebaseAuth.getCurrentUser();
+        databaseReference= FirebaseDatabase.getInstance().getReference("users").child(firebaseUser.getUid());
+        //
         displayEmail=findViewById(R.id.importEmail);
-        //displayJobTitle=(EditText)findViewById(R.id.rec_import_jobtitle);
+        displayJobTitle=findViewById(R.id.import_jobtitle);
         displayTelephone = findViewById(R.id.importWorkNumber);
         displayPhone=findViewById(R.id.importMobileNumber);
         displayName=findViewById(R.id.import_Name);
@@ -62,11 +89,92 @@ public class RecieverOCR extends AppCompatActivity {
         displayAddress=findViewById(R.id.import_Adress);
         displayWebsite=findViewById(R.id.import_website);
         saveButton = findViewById(R.id.saveBtn) ;
+        saveButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                addCard();
+            }
+        });
         textView = findViewById(R.id.reciever_tv);
         textView0 = findViewById(R.id.text0);
 
     }
+    @Override
+    protected void onStart() {
+        super.onStart();
+        mProgressDialog.setMessage("Preparing transfer...");
+        mProgressDialog.show();
+        mProgressDialog.setCancelable(false);
+        mProgressDialog.setCanceledOnTouchOutside(false);
+        databaseReference.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
 
+                person=dataSnapshot.getValue(User.class);
+                mProgressDialog.dismiss();
+            }
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+                mProgressDialog.dismiss();
+                Toast.makeText(getApplicationContext(),"Unable to load details, try again.",Toast.LENGTH_SHORT).show();
+                finish();
+                return;
+            }
+        });
+    }
+    private void addCard(){
+        if(displayName.getText().toString().trim().length()==0)
+        {
+            Toast.makeText(getApplicationContext(), "Full name must be given.", Toast.LENGTH_SHORT).show();
+            return;
+        }
+        if(displayJobTitle.getText().toString().trim().length()==0)
+        {
+            Toast.makeText(getApplicationContext(), "Profession must be given.", Toast.LENGTH_SHORT).show();
+            return;
+        }
+        if(displayEmail.getText().toString().trim().length()==0)
+        {
+            Toast.makeText(getApplicationContext(), "Email must be given.", Toast.LENGTH_SHORT).show();
+            return;
+        }
+        if(displayPhone.getText().toString().trim().length()==0)
+        {
+            Toast.makeText(getApplicationContext(), "Mobile number must be given.", Toast.LENGTH_SHORT).show();
+            return;
+        }
+        List<User> arrayList=null;
+        Gson gson= new Gson();
+        String jsonConverter=person.getRecievedCards();
+        if(jsonConverter.isEmpty())
+        {
+            arrayList=new ArrayList<>();
+        }
+        else
+        {
+            Type type= new TypeToken<List<User>>(){}.getType();
+            arrayList=gson.fromJson(jsonConverter,type);
+        }
+
+        User newCard=new User();
+        newCard.setFullname(displayName.getText().toString().trim());
+        newCard.setJobTitle(displayJobTitle.getText().toString().trim());
+        newCard.setCompanyName(displayCompanyName.getText().toString().trim());
+        newCard.setEmailAddress(displayEmail.getText().toString().trim());
+        newCard.setMobileNumber(displayPhone.getText().toString().trim());
+        newCard.setWorkTelephone(displayTelephone.getText().toString().trim());
+        newCard.setWorkAddress(displayAddress.getText().toString().trim());
+        newCard.setWebsite(displayWebsite.getText().toString().trim());
+        arrayList.add(newCard);
+        String jsonEncode= gson.toJson(arrayList);
+        person.setRecievedCards(jsonEncode);
+        saveupdate(person);
+        Toast.makeText(getApplicationContext(), "Business card is saved.", Toast.LENGTH_SHORT).show();
+        finish();
+    }
+    private void saveupdate(User user){
+        databaseReference.setValue(user);
+    }
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();
@@ -160,6 +268,7 @@ public class RecieverOCR extends AppCompatActivity {
                     displayPhone.setVisibility(View.VISIBLE);
                     displayName.setVisibility(View.VISIBLE);
                     displayWebsite.setVisibility(View.VISIBLE);
+                    displayJobTitle.setVisibility(View.VISIBLE);
                     displayAddress.setVisibility(View.VISIBLE);
                     saveButton.setVisibility(View.VISIBLE);
                     textView.setVisibility(View.VISIBLE);
@@ -185,6 +294,7 @@ public class RecieverOCR extends AppCompatActivity {
                 textView0.setVisibility(View.GONE);
 
                 displayTelephone.setVisibility(View.VISIBLE);
+                displayJobTitle.setVisibility(View.VISIBLE);
                 displayWebsite.setVisibility(View.VISIBLE);
                 displayEmail.setVisibility(View.VISIBLE);
                 displayCompanyName.setVisibility(View.VISIBLE);
