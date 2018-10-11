@@ -2,6 +2,7 @@ package com.example.www.nfcbusinesscardlocal;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
+import android.inputmethodservice.Keyboard;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -40,7 +41,8 @@ public class ViewCardsInterface extends AppCompatActivity implements SearchView.
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_view_cards_interface);
         searchView=(SearchView) findViewById(R.id.filterlist);
-        searchView.setOnQueryTextListener(this);
+
+       searchView.setOnQueryTextListener(this);
         scrollView= (ListView) findViewById(R.id.scrollusers);
 
         scrollView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
