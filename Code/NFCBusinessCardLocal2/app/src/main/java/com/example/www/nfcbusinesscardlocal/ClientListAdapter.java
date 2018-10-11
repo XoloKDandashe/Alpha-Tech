@@ -76,6 +76,7 @@ public class ClientListAdapter extends BaseAdapter {
             newCard.setEmailAddress(details[3]);
             newCard.setMobileNumber(details[4]);
             newCard.setWorkTelephone(details[5]);
+            newCard.setWorkAddress(details[6]);
             newCard.setWebsite(details[7]);
             if(details.length>8) {
                 newCard.setImageUrl(details[8]);
@@ -98,7 +99,7 @@ public class ClientListAdapter extends BaseAdapter {
     }
     private void loadPicture(User user, View view){
         imageView.setImageURI(null);
-        if(user.getImageUrl()!=""){
+        if(user.getImageUrl().contains("firebasestorage.googleapis")){
             StorageReference httpRef= FirebaseStorage.getInstance().getReferenceFromUrl(user.getImageUrl());
             Glide.with(view.getContext())
                     .using(new FirebaseImageLoader())

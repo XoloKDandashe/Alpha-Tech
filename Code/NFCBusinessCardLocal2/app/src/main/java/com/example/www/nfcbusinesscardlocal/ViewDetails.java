@@ -169,7 +169,7 @@ public class ViewDetails extends AppCompatActivity implements Listener{
             Toast.makeText(getApplicationContext(), "Unable to get image, internet connection needed.", Toast.LENGTH_SHORT).show();
             return;
         }
-        if(user.getImageUrl()!=""){
+        if(user.getImageUrl().contains("firebasestorage.googleapis")){
             StorageReference httpRef= FirebaseStorage.getInstance().getReferenceFromUrl(user.getImageUrl());
             Glide.with(getApplicationContext())
                     .using(new FirebaseImageLoader())
