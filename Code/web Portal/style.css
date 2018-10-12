@@ -20,7 +20,7 @@ input, button {
 p{
   color: #00B4CC;
 }
-html {zoom: 80%;}
+html {zoom: 90%;}
 
 .container1{
   display:flex;
@@ -84,8 +84,8 @@ html {zoom: 80%;}
   
   /* padding-left: 5px;
   margin: auto; */
-  /* margin-top: 40px; */
-
+ /*  margin-top: 100px; */
+ padding: 80px 100px;
   margin: auto; 
 }
 
@@ -213,17 +213,17 @@ li p {
 #more{
 	position: absolute;
 	top: 3%;
-	right: 3%;
-	animation: bounce 2s infinite;
+	right: 5%;
+/*	animation: bounce 2s infinite;
 	-webkit-animation: bounce 2s infinite;
 	-moz-animation: bounce 2s infinite;
 	-o-animation: bounce 2s infinite;
- 
+ */
 }
 #delete{
 	position: absolute;
 	top: 3%;
-	left: 3%;
+	left: 5%;
 
  
 }
@@ -334,7 +334,15 @@ tr:hover{
 }
 
 
+.pagination{
+/*
+  bottom: 10px;
+  right: 50px;
+ */
 
+    padding: 40px 350px;
+    text-decoration: none;
+}
 
 	
 
@@ -351,6 +359,9 @@ img {
   border-radius: 50px;
   float: left;
 }
+.photo1{
+  border-radius: 50px;
+}
 
 .logout {
   font-size: .8em;
@@ -361,6 +372,7 @@ img {
   overflow: hidden;
   letter-spacing: 3px;
   opacity: 0;
+  text-decoration-color: #ffffff;
   transition: opacity .45s;
   -webkit-transition: opacity .35s;
   

@@ -84,9 +84,9 @@
               <i class="fa fa-institution" style="font-size:24px " >{{person.companyName}}</i>
          
             </div>
-        
-            <div class="card-reveal" style="max-height: 100%; word-break: break-all;" >
-              <a id="more" class="card-title activator btn-floating btn-large waves-effect waves-light pink"><i class="material-icons medium">keyboard_arrow_left</i></a>
+           
+            <div class="card-reveal" style="max-height: 100%; width: 100%; word-break: break-all;" >
+              <button id="more" class="card-title activator btn-floating btn-large waves-effect waves-light pink"><i class="material-icons medium">keyboard_arrow_left</i></button>
               <button id="delete" ng-click="delete(person)" ng-confirm-click="Are you sure to delete this Card ?"class="btn-floating btn-large waves-effect waves-light black"><i class="material-icons medium">delete</i></button>
   
               <div id="titles-back">
@@ -139,21 +139,26 @@
       
       </div>
               </div>
+    
+
             </div>
-       
-            <div>
-            <pagination total-items="totalItems" ng-model="currentPage" ng-change="pageChanged()" class="pagination-sm" items-per-page="itemsPerPage"></pagination>
-          </div>
+
+           
+            
+          
           </span>
     
 
        
 
 
+  </div>
 
+  <div class="pagination " class="pagination justify-content-center"></div>
+  <!-- class="pagination-sm"-->
+  <pagination total-items="totalItems" ng-model="currentPage" ng-change="pageChanged()" items-per-page="itemsPerPage"></pagination>
   </div>
 </div>
-
 
 
  
@@ -252,7 +257,7 @@ var $scope = getScope('myCtrl');
 
 
 $scope.people = JSON.parse(obj) ;
-  $scope.viewby = 2;
+  $scope.viewby = 4;
  /* $scope.totalItems=function(){
         var myFilteredData = $filter('filter')($scope.people,$scope.search_notes); //Filter the data
         return Math.ceil(myFilteredData.length/$scope.pageSize);                
