@@ -186,7 +186,7 @@ public class ViewCardDetails extends AppCompatActivity {
         {
             return;
         }
-        if(user.getImageUrl()!=""){
+        if(user.getImageUrl().contains("firebasestorage.googleapis")){
             StorageReference httpRef= FirebaseStorage.getInstance().getReferenceFromUrl(user.getImageUrl());
             Glide.with(getApplicationContext())
                     .using(new FirebaseImageLoader())

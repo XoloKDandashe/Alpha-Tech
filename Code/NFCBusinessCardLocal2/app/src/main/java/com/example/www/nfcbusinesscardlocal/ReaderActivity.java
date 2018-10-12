@@ -40,8 +40,8 @@ public class ReaderActivity extends AppCompatActivity {
     private DatabaseReference databaseReference;
     private FirebaseAuth firebaseAuth;
     private ProgressDialog mProgressDialog;
-    FirebaseUser firebaseUser;
-    User person=null;
+    private FirebaseUser firebaseUser;
+    private User person=null;
     private Button scan_btn;
     private View view;
     public String etname, etpos, etphon,etmail,etOff,etWAddress;
