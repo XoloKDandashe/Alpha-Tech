@@ -1,4 +1,4 @@
-package com.example.www.nfcbusinesscardlocal;
+package com.alphatech.www.nfcbusinesscardlocal;
 
 import java.io.Serializable;
 import java.security.NoSuchAlgorithmException;

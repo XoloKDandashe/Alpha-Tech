@@ -1,4 +1,4 @@
-package com.example.www.nfcbusinesscardlocal;
+package com.alphatech.www.nfcbusinesscardlocal;
 
 import android.content.Intent;
 import android.content.SharedPreferences;

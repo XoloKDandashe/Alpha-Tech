@@ -1,4 +1,4 @@
-package com.example.www.nfcbusinesscardlocal;
+package com.alphatech.www.nfcbusinesscardlocal;
 
 import android.app.AlertDialog;
 import android.app.DatePickerDialog;

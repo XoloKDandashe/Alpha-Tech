@@ -1,4 +1,4 @@
-package com.example.www.nfcbusinesscardlocal.Ocr;
+package com.alphatech.www.nfcbusinesscardlocal.Ocr;
 
 import android.Manifest;
 import android.annotation.SuppressLint;
@@ -23,17 +23,17 @@ import android.view.ScaleGestureDetector;
 import android.view.View;
 import android.widget.Toast;
 
-import com.example.www.nfcbusinesscardlocal.R;
+import com.alphatech.www.nfcbusinesscardlocal.R;
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.GoogleApiAvailability;
 import com.google.android.gms.common.api.CommonStatusCodes;
 import com.google.android.gms.vision.text.TextBlock;
 import com.google.android.gms.vision.text.TextRecognizer;
-import com.example.www.nfcbusinesscardlocal.Ocr.camera.CameraSource;
-import com.example.www.nfcbusinesscardlocal.Ocr.camera.CameraSourcePreview;
-import com.example.www.nfcbusinesscardlocal.Ocr.camera.GraphicOverlay;
-import com.example.www.nfcbusinesscardlocal.Ocr.camera.util.OcrDetectorProcessor;
-import com.example.www.nfcbusinesscardlocal.Ocr.camera.util.OcrGraphic;
+import com.alphatech.www.nfcbusinesscardlocal.Ocr.camera.CameraSource;
+import com.alphatech.www.nfcbusinesscardlocal.Ocr.camera.CameraSourcePreview;
+import com.alphatech.www.nfcbusinesscardlocal.Ocr.camera.GraphicOverlay;
+import com.alphatech.www.nfcbusinesscardlocal.Ocr.camera.util.OcrDetectorProcessor;
+import com.alphatech.www.nfcbusinesscardlocal.Ocr.camera.util.OcrGraphic;
 
 import java.io.IOException;
 import java.util.Arrays;

@@ -1,4 +1,4 @@
-package com.example.www.nfcbusinesscardlocal;
+package com.alphatech.www.nfcbusinesscardlocal;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;

@@ -1,4 +1,4 @@
-package com.example.www.nfcbusinesscardlocal.Ocr;
+package com.alphatech.www.nfcbusinesscardlocal.Ocr;
 
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;

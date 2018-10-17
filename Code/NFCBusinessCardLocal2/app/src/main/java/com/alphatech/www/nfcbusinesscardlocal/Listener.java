@@ -1,4 +1,4 @@
-package com.example.www.nfcbusinesscardlocal;
+package com.alphatech.www.nfcbusinesscardlocal;
 
 /**
  * Created by Xolo Kagiso Dandashe on 12 Jul 2018.

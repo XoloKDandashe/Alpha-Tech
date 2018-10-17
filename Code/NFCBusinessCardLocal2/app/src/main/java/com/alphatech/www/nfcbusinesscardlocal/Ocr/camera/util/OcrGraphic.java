@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.example.www.nfcbusinesscardlocal.Ocr.camera.util;
+package com.alphatech.www.nfcbusinesscardlocal.Ocr.camera.util;
 
 import android.graphics.Canvas;
 import android.graphics.Color;
@@ -23,7 +23,7 @@ import android.support.annotation.NonNull;
 
 import com.google.android.gms.vision.text.Text;
 import com.google.android.gms.vision.text.TextBlock;
-import com.example.www.nfcbusinesscardlocal.Ocr.camera.GraphicOverlay;
+import com.alphatech.www.nfcbusinesscardlocal.Ocr.camera.GraphicOverlay;
 
 import java.util.List;
 

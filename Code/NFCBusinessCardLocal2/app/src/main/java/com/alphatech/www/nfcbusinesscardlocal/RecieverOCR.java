@@ -1,4 +1,4 @@
-package com.example.www.nfcbusinesscardlocal;
+package com.alphatech.www.nfcbusinesscardlocal;
 
 import android.app.ProgressDialog;
 import android.os.Bundle;
@@ -21,7 +21,7 @@ import android.widget.Toast;
 
 
 import com.google.android.gms.common.api.CommonStatusCodes;
-import com.example.www.nfcbusinesscardlocal.Ocr.OCRCapture;
+import com.alphatech.www.nfcbusinesscardlocal.Ocr.OCRCapture;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
@@ -41,7 +41,7 @@ import java.util.Locale;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import static com.example.www.nfcbusinesscardlocal.Ocr.OcrCaptureActivity.TextBlockObject;
+import static com.alphatech.www.nfcbusinesscardlocal.Ocr.OcrCaptureActivity.TextBlockObject;
 
 public class RecieverOCR extends AppCompatActivity {
 
