@@ -175,7 +175,7 @@ public class ReceiverActivity extends AppCompatActivity {
                 Toast.makeText(ReceiverActivity.this, "No information read.", Toast.LENGTH_SHORT).show();
                 return;
             }
-            else if(shred.length<6){
+            else if(shred.length<8){
                 Toast.makeText(ReceiverActivity.this, "Information is not for our application.", Toast.LENGTH_SHORT).show();
                 return;
             }

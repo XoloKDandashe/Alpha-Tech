@@ -107,6 +107,11 @@ public class CardReadInformation extends AppCompatActivity implements Listener{
 
                     cardReadInformationFragment = (CardReadInformationFragment)getFragmentManager().findFragmentByTag(CardReadInformationFragment.TAG);
                     String message=cardReadInformationFragment.onNfcDetected(ndef);
+                    if(message.contains("No information available.")==true)
+                    {
+                        Toast.makeText(getApplicationContext(), message, Toast.LENGTH_SHORT).show();
+                        return;
+                    }
                     LinearLayout linearLayout =(LinearLayout) findViewById(R.id.read_layout);
                     linearLayout.setVisibility(View.VISIBLE);
                     String [] details=message.split("\n");
